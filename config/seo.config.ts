@@ -1,26 +1,83 @@
-export const seoConfig = {
-  // Core SEO Configuration
-  defaultTitle: "52Roofer | #1 Trusted Local Roofers in South England",
-  titleTemplate: "%s | 52Roofer",
-  description: "Find top-rated local roofers in Oxfordshire, Gloucestershire, Wiltshire & Berkshire. 24/7 emergency repairs, installations & maintenance. 100% satisfaction guaranteed.",
-  
-  // OpenGraph
-  openGraph: {
-    type: "website",
-    locale: "en_GB",
-    url: "https://52roofer.com",
-    site_name: "52Roofer",
-    images: [
-      {
-        url: "https://52roofer.com/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "52Roofer - Professional Roofing Services",
-      },
-    ],
-  },
+export interface SEOData {
+  title: string;
+  description: string;
+  keywords: string;
+}
 
-  // Location Information
+export interface SEOConfig {
+  default: SEOData;
+  locations: { [key: string]: SEOData };
+  services: { [key: string]: SEOData };
+  openGraph: {
+    type: string;
+    locale: string;
+    url: string;
+    site_name: string;
+    images: {
+      url: string;
+      width: number;
+      height: number;
+      alt: string;
+    }[];
+  };
+  organization: {
+    name: string;
+    legalName: string;
+    url: string;
+    logo: string;
+    foundingDate: string;
+    founders: {
+      "@type": string;
+      name: string;
+    }[];
+    address: {
+      "@type": string;
+      addressLocality: string;
+      addressRegion: string;
+      addressCountry: string;
+      postalCode: string;
+    };
+    contactPoint: {
+      "@type": string;
+      telephone: string;
+      contactType: string;
+      areaServed: string[];
+      availableLanguage: string[];
+      contactOption: string[];
+      hoursAvailable: string;
+    };
+  };
+  reviews: {
+    aggregateRating: {
+      "@type": string;
+      ratingValue: string;
+      reviewCount: string;
+      bestRating: string;
+      worstRating: string;
+    };
+    reviews: {
+      "@type": string;
+      reviewRating: {
+        "@type": string;
+        ratingValue: string;
+        bestRating: string;
+      };
+      author: {
+        "@type": string;
+        name: string;
+      };
+      datePublished: string;
+      reviewBody: string;
+    }[];
+  };
+}
+
+const seoConfig: SEOConfig = {
+  default: {
+    title: "52Roofer | #1 Trusted Local Roofers in South England",
+    description: "Find top-rated local roofers in Oxfordshire, Gloucestershire, Wiltshire & Berkshire. 24/7 emergency repairs, installations & maintenance. 100% satisfaction guaranteed.",
+    keywords: "roofing, roof repair, roof installation, professional roofer, UK roofing",
+  },
   locations: {
     Oxfordshire: {
       title: "Top Roofers in Oxfordshire | Emergency Repairs & Installation",
@@ -43,8 +100,6 @@ export const seoConfig = {
       keywords: "Berkshire roofers, roof repairs Reading, emergency roofer Berkshire, local roofing contractors Reading",
     },
   },
-
-  // Service Pages SEO
   services: {
     repairs: {
       title: "Professional Roof Repairs | Emergency Roofing Services",
@@ -67,24 +122,38 @@ export const seoConfig = {
       keywords: "emergency roof repair, 24 hour roofer, storm damage repair, urgent roof fixes",
     },
   },
-
-  // Local Business Schema
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: "https://52roofer.com",
+    site_name: "52Roofer",
+    images: [
+      {
+        url: "https://52roofer.com/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "52Roofer - Professional Roofing Services",
+      },
+    ],
+  },
   organization: {
     name: "52Roofer",
     legalName: "52Roofer Ltd",
     url: "https://52roofer.com",
     logo: "https://52roofer.com/images/logo.png",
     foundingDate: "2023",
-    founders: [{
-      "@type": "Person",
-      "name": "Professional Roofing Expert"
-    }],
+    founders: [
+      {
+        "@type": "Person",
+        name: "Professional Roofing Expert",
+      },
+    ],
     address: {
       "@type": "PostalAddress",
-      "addressLocality": "Oxford",
-      "addressRegion": "Oxfordshire",
-      "addressCountry": "UK",
-      "postalCode": "OX1"
+      addressLocality: "Oxford",
+      addressRegion: "Oxfordshire",
+      addressCountry: "UK",
+      postalCode: "OX1",
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -93,18 +162,16 @@ export const seoConfig = {
       areaServed: ["GB"],
       availableLanguage: ["English"],
       contactOption: ["TollFree"],
-      hoursAvailable: "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59"
-    }
+      hoursAvailable: "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
+    },
   },
-
-  // Review Schema
   reviews: {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
       reviewCount: "189",
       bestRating: "5",
-      worstRating: "1"
+      worstRating: "1",
     },
     reviews: [
       {
@@ -112,16 +179,18 @@ export const seoConfig = {
         reviewRating: {
           "@type": "Rating",
           ratingValue: "5",
-          bestRating: "5"
+          bestRating: "5",
         },
         author: {
           "@type": "Person",
-          name: "John Smith"
+          name: "John Smith",
         },
         datePublished: "2023-11-15",
-        reviewBody: "Excellent emergency roofing service. The team arrived within an hour and fixed our leak professionally."
+        reviewBody: "Excellent emergency roofing service. The team arrived within an hour and fixed our leak professionally.",
       },
       // Add more reviews here
-    ]
-  }
+    ],
+  },
 };
+
+export default seoConfig;

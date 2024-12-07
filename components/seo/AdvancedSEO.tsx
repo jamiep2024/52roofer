@@ -31,12 +31,12 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
   service,
 }) => {
   // Get location or service specific SEO data
-  const locationData = location ? seoConfig.locations[location] : null;
-  const serviceData = service ? seoConfig.services[service] : null;
+  const locationData = location && seoConfig.locations[location];
+  const serviceData = service && seoConfig.services[service];
 
   // Combine with default SEO config
-  const finalTitle = locationData?.title || serviceData?.title || title;
-  const finalDescription = locationData?.description || serviceData?.description || description;
+  const finalTitle = title || locationData?.title || serviceData?.title || seoConfig.default.title;
+  const finalDescription = description || locationData?.description || serviceData?.description || seoConfig.default.description;
   const keywords = locationData?.keywords || serviceData?.keywords || '';
 
   // Generate breadcrumb schema
