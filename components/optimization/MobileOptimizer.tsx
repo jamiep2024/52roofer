@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 
 const MobileOptimizer: React.FC = () => {
   useEffect(() => {
-    // Optimize images based on device
     const optimizeImages = () => {
       const images = document.querySelectorAll('img[data-src]');
       const isMobile = window.innerWidth <= 768;
 
-      images.forEach((img: HTMLImageElement) => {
+      images.forEach((element) => {
+        const img = element as HTMLImageElement;
         const src = img.getAttribute('data-src');
         const mobileSrc = img.getAttribute('data-mobile-src');
         
@@ -16,44 +16,37 @@ const MobileOptimizer: React.FC = () => {
         } else if (src) {
           img.src = src;
         }
+
+        // Remove data attributes after setting src
+        img.removeAttribute('data-src');
+        img.removeAttribute('data-mobile-src');
       });
     };
 
-    // Optimize font loading
     const optimizeFonts = () => {
-      const fontLinks = document.querySelectorAll('link[rel="stylesheet"][href*="fonts"]');
-      fontLinks.forEach((link: HTMLLinkElement) => {
-        link.setAttribute('media', 'print');
-        link.setAttribute('onload', "this.media='all'");
-      });
-    };
+      const fontLinks = document.querySelectorAll('link[rel="preload"][as="font"]');
+      const isMobile = window.innerWidth <= 768;
 
-    // Add touch optimization
-    const optimizeTouch = () => {
-      document.addEventListener('touchstart', () => {}, {passive: true});
-      document.addEventListener('touchmove', () => {}, {passive: true});
-      document.addEventListener('wheel', () => {}, {passive: true});
-    };
-
-    // Optimize scroll performance
-    const optimizeScroll = () => {
-      let ticking = false;
-      document.addEventListener('scroll', () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            // Perform scroll optimizations
-            ticking = false;
-          });
-          ticking = true;
+      fontLinks.forEach((link) => {
+        if (isMobile) {
+          // Adjust font loading strategy for mobile
+          link.setAttribute('media', '(max-width: 768px)');
         }
       });
     };
 
-    // Initialize optimizations
+    const optimizeTouchEvents = () => {
+      const clickableElements = document.querySelectorAll('a, button, [role="button"]');
+      
+      clickableElements.forEach((element) => {
+        element.setAttribute('touch-action', 'manipulation');
+      });
+    };
+
+    // Run optimizations
     optimizeImages();
     optimizeFonts();
-    optimizeTouch();
-    optimizeScroll();
+    optimizeTouchEvents();
 
     // Add resize listener for responsive optimizations
     window.addEventListener('resize', optimizeImages);
