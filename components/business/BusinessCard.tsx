@@ -18,8 +18,18 @@ interface BusinessCardProps {
   business: Business;
 }
 
-const getBadgeStyle = (badge: string, isGrandeur: boolean) => {
-  const styles = {
+interface BadgeStyle {
+  bg: string;
+  text: string;
+  icon: JSX.Element;
+}
+
+type BadgeStyles = {
+  [key: string]: BadgeStyle;
+};
+
+const getBadgeStyle = (badge: string, isGrandeur: boolean): BadgeStyle => {
+  const styles: BadgeStyles = {
     'Verified': {
       bg: isGrandeur ? 'bg-gold/20' : 'bg-emerald-100',
       text: isGrandeur ? 'text-gold-dark' : 'text-emerald-700',
