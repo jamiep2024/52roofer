@@ -6,9 +6,12 @@ const PerformanceOptimizer: React.FC = () => {
     const lazyLoadImages = () => {
       if ('loading' in HTMLImageElement.prototype) {
         const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-          if (img.dataset.src) {
-            img.src = img.dataset.src;
+        images.forEach((element) => {
+          const img = element as HTMLImageElement;
+          const src = img.getAttribute('data-src');
+          if (src) {
+            img.src = src;
+            img.removeAttribute('data-src');
           }
         });
       } else {
@@ -24,15 +27,17 @@ const PerformanceOptimizer: React.FC = () => {
       const preloadLinks = [
         { rel: 'preload', href: '/fonts/main-font.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
         { rel: 'preload', href: '/images/hero-bg.jpg', as: 'image' },
-        { rel: 'preload', href: '/images/logo.png', as: 'image' }
+        { rel: 'preload', href: '/images/logo.png', as: 'image' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' }
       ];
 
       preloadLinks.forEach(link => {
-        const linkEl = document.createElement('link');
+        const linkElement = document.createElement('link');
         Object.entries(link).forEach(([key, value]) => {
-          linkEl.setAttribute(key, value);
+          linkElement.setAttribute(key, value);
         });
-        document.head.appendChild(linkEl);
+        document.head.appendChild(linkElement);
       });
     };
 
