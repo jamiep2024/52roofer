@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import seoConfig from '../../config/seo.config';
+import seoConfig, { SEOData } from '../../config/seo.config';
 
 interface AdvancedSEOProps {
   title?: string;
@@ -16,13 +16,13 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
   service,
 }) => {
   // Get location or service specific SEO data
-  const locationData = location && seoConfig.locations[location];
-  const serviceData = service && seoConfig.services[service];
+  const locationData: SEOData | undefined = location ? seoConfig.locations[location] : undefined;
+  const serviceData: SEOData | undefined = service ? seoConfig.services[service] : undefined;
 
   // Combine with default SEO config
   const finalTitle = title || locationData?.title || serviceData?.title || seoConfig.default.title;
   const finalDescription = description || locationData?.description || serviceData?.description || seoConfig.default.description;
-  const keywords = locationData?.keywords || serviceData?.keywords || '';
+  const keywords = locationData?.keywords || serviceData?.keywords || seoConfig.default.keywords;
 
   // Generate structured data
   const structuredData = {
