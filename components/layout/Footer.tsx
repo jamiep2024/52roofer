@@ -66,12 +66,13 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>Phone: 0800 123 4567</li>
-              <li>Email: info@52roofer.com</li>
-              <li>Mon-Fri: 8:00 AM - 6:00 PM</li>
-              <li>Sat: 9:00 AM - 4:00 PM</li>
+            <h3 className="text-sm font-semibold leading-6 text-white">Contact Us</h3>
+            <ul role="list" className="mt-6 space-y-4">
+              <li>
+                <a href="mailto:52rooferteam@gmail.com" className="text-sm leading-6 text-gray-300 hover:text-white">
+                  Email: 52rooferteam@gmail.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>

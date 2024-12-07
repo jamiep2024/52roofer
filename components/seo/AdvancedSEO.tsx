@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { seoConfig } from '../../config/seo.config';
 
 interface AdvancedSEOProps {
   title: string;
@@ -16,12 +17,8 @@ interface AdvancedSEOProps {
       alt?: string;
     }>;
   };
-  localBusiness?: {
-    name: string;
-    areas: string[];
-    rating: number;
-    reviewCount: number;
-  };
+  location?: string;
+  service?: string;
 }
 
 const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
@@ -30,79 +27,19 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
   jsonLd = [],
   canonical,
   openGraph,
-  localBusiness,
+  location,
+  service,
 }) => {
-  // Generate current timestamp for lastmod in sitemap
-  const currentDate = new Date().toISOString();
+  // Get location or service specific SEO data
+  const locationData = location ? seoConfig.locations[location] : null;
+  const serviceData = service ? seoConfig.services[service] : null;
 
-  // Enhanced Local Business Schema
-  const localBusinessSchema = localBusiness ? {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://52roofer.com/#localbusiness",
-    "name": localBusiness.name,
-    "url": "https://52roofer.com",
-    "logo": "https://52roofer.com/images/logo.png",
-    "image": "https://52roofer.com/images/hero-bg.jpg",
-    "description": description,
-    "areaServed": localBusiness.areas.map(area => ({
-      "@type": "State",
-      "name": area
-    })),
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": localBusiness.rating.toString(),
-      "reviewCount": localBusiness.reviewCount.toString(),
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "priceRange": "££",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "GB",
-      "addressRegion": "England"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": [
-      "https://www.facebook.com/52roofer",
-      "https://twitter.com/52roofer",
-      "https://www.linkedin.com/company/52roofer",
-      "https://www.instagram.com/52roofer"
-    ]
-  } : null;
+  // Combine with default SEO config
+  const finalTitle = locationData?.title || serviceData?.title || title;
+  const finalDescription = locationData?.description || serviceData?.description || description;
+  const keywords = locationData?.keywords || serviceData?.keywords || '';
 
-  // Website Schema
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://52roofer.com/#website",
-    "url": "https://52roofer.com",
-    "name": "52Roofer",
-    "description": "Find Trusted Local Roofers in South England",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://52roofer.com/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  };
-
-  // Breadcrumb Schema
+  // Generate breadcrumb schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -113,35 +50,62 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
         "name": "Home",
         "item": "https://52roofer.com"
       },
-      {
+      ...(location ? [{
         "@type": "ListItem",
         "position": 2,
-        "name": title,
-        "item": canonical || "https://52roofer.com"
-      }
+        "name": location,
+        "item": `https://52roofer.com/location/${location.toLowerCase()}`
+      }] : []),
+      ...(service ? [{
+        "@type": "ListItem",
+        "position": location ? 3 : 2,
+        "name": serviceData?.title || service,
+        "item": `https://52roofer.com/services/${service.toLowerCase()}`
+      }] : [])
     ]
   };
+
+  // Combine all schema
+  const fullSchema = [
+    seoConfig.organization,
+    breadcrumbSchema,
+    ...jsonLd,
+    ...(location || service ? [seoConfig.reviews] : [])
+  ];
 
   return (
     <Head>
       {/* Basic Meta Tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{finalTitle}</title>
+      <meta name="description" content={finalDescription} />
+      <meta name="keywords" content={keywords} />
+      
+      {/* Technical SEO */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-
-      {/* Technical SEO */}
-      <link rel="canonical" href={canonical || "https://52roofer.com"} />
+      <link rel="canonical" href={canonical || `https://52roofer.com${location ? `/location/${location.toLowerCase()}` : service ? `/services/${service.toLowerCase()}` : ''}`} />
+      
+      {/* Mobile Optimization */}
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      <meta name="theme-color" content="#4F46E5" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content="52Roofer" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="application-name" content="52Roofer" />
+      <meta name="format-detection" content="telephone=no" />
+      
+      {/* PWA Links */}
+      <link rel="manifest" href="/manifest.json" />
+      <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       
       {/* Open Graph */}
-      <meta property="og:locale" content="en_GB" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={openGraph?.title || title} />
-      <meta property="og:description" content={openGraph?.description || description} />
-      <meta property="og:url" content={canonical || "https://52roofer.com"} />
       <meta property="og:site_name" content="52Roofer" />
+      <meta property="og:title" content={openGraph?.title || finalTitle} />
+      <meta property="og:description" content={openGraph?.description || finalDescription} />
+      <meta property="og:url" content={canonical || `https://52roofer.com${location ? `/location/${location.toLowerCase()}` : service ? `/services/${service.toLowerCase()}` : ''}`} />
       {openGraph?.images?.map((image, index) => (
         <React.Fragment key={index}>
           <meta property="og:image" content={image.url} />
@@ -150,46 +114,37 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
           {image.alt && <meta property="og:image:alt" content={image.alt} />}
         </React.Fragment>
       ))}
-
+      
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@52roofer" />
       <meta name="twitter:creator" content="@52roofer" />
-      <meta name="twitter:title" content={openGraph?.title || title} />
-      <meta name="twitter:description" content={openGraph?.description || description} />
+      <meta name="twitter:title" content={openGraph?.title || finalTitle} />
+      <meta name="twitter:description" content={openGraph?.description || finalDescription} />
       {openGraph?.images?.[0] && (
         <meta name="twitter:image" content={openGraph.images[0].url} />
       )}
 
+      {/* Preconnect to Important Origins */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      
+      {/* DNS Prefetch */}
+      <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+      <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      
       {/* Schema.org JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            websiteSchema,
-            breadcrumbSchema,
-            ...(localBusinessSchema ? [localBusinessSchema] : []),
-            ...jsonLd
-          ])
+          __html: JSON.stringify(fullSchema)
         }}
       />
-
-      {/* Additional Technical SEO */}
-      <link rel="alternate" href={canonical || "https://52roofer.com"} hrefLang="en-gb" />
-      <meta name="format-detection" content="telephone=no" />
-      <meta name="theme-color" content="#4F46E5" />
-      <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="application-name" content="52Roofer" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-title" content="52Roofer" />
-
-      {/* Preconnect to important third-party domains */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       
-      {/* Performance optimizations */}
-      <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-      <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      {/* Verification Tags */}
+      <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+      <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
     </Head>
   );
 };
