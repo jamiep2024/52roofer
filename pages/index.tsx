@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { businesses } from '../data/businesses';
 import { serviceAreas } from '../data/serviceAreas';
 import BusinessCard from '../components/business/BusinessCard';
@@ -123,6 +124,7 @@ const combinedSchema = [
 ];
 
 export default function Home() {
+  const router = useRouter();
   const [location, setLocation] = useState("");
   const [showResults, setShowResults] = useState(false);
   const locations = ['Oxfordshire', 'Gloucestershire', 'Wiltshire', 'Berkshire'];
@@ -400,18 +402,24 @@ export default function Home() {
                       ))}
                     </ul>
                     <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                      <button onClick={() => router.push('/find-roofer')} className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors duration-200">
+                      <Link
+                        href="/find-roofer"
+                        className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors duration-200"
+                      >
                         Find a Roofer
                         <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
-                      </button>
-                      <button onClick={() => router.push('/contact')} className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-accent bg-white border-2 border-accent rounded-xl hover:bg-accent hover:text-white transition-colors duration-200">
+                      </Link>
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-accent bg-white border-2 border-accent rounded-xl hover:bg-accent hover:text-white transition-colors duration-200"
+                      >
                         Contact Us
                         <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
-                      </button>
+                      </Link>
                     </div>
                   </div>
                   
