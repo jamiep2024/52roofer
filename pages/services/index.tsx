@@ -17,7 +17,7 @@ const services = [
   {
     id: 2,
     title: 'Emergency Roof Repairs',
-    slug: 'emergency-roof-repairs',
+    slug: 'emergency-roof-repair',
     description: '24/7 emergency roofing services for urgent repairs and storm damage.',
     icon: '🚨'
   },
@@ -34,6 +34,34 @@ const services = [
     slug: 'roof-maintenance',
     description: 'Regular maintenance and inspections to extend your roof\'s lifespan.',
     icon: '🔧'
+  },
+  {
+    id: 5,
+    title: 'Roof Inspection',
+    slug: 'roof-inspection',
+    description: 'Thorough roof inspections to identify and prevent potential issues.',
+    icon: '🔍'
+  },
+  {
+    id: 6,
+    title: 'Gutter Services',
+    slug: 'gutter-service',
+    description: 'Professional gutter installation, repair, and maintenance services.',
+    icon: '🏗️'
+  },
+  {
+    id: 7,
+    title: 'Roof Ventilation',
+    slug: 'roof-ventilation',
+    description: 'Expert ventilation solutions for optimal roof performance.',
+    icon: '💨'
+  },
+  {
+    id: 8,
+    title: 'Skylight Installation',
+    slug: 'skylight-installation',
+    description: 'Professional skylight installation and maintenance services.',
+    icon: '☀️'
   }
 ];
 
