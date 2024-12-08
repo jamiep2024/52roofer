@@ -288,23 +288,38 @@ export default function Home() {
 
             {/* Service Areas */}
             <div className="mt-32">
-              <h2 className="text-4xl font-bold tracking-tight gradient-text text-center mb-6">Our Service Areas</h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600 text-center max-w-2xl mx-auto">
-                We provide comprehensive roofing services across major regions in South England, ensuring every homeowner has access to quality roofing solutions.
-              </p>
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <h2 className="text-4xl font-bold tracking-tight gradient-text mb-6">Our Service Areas</h2>
+                <p className="mt-6 text-lg leading-8 text-gray-600">
+                  We provide comprehensive roofing services across major regions in South England,
+                  ensuring every homeowner has access to quality roofing solutions.
+                </p>
+              </div>
               
-              <div className="mt-16 responsive-grid">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {Object.values(serviceAreas).map((area) => (
-                  <div key={area.name} className="rounded-xl bg-gray-50 p-8 card-hover">
-                    <h3 className="text-xl font-semibold text-gray-900 gradient-text">{area.name}</h3>
-                    <ul className="mt-4 space-y-2">
-                      {area.mainTowns.slice(0, 4).map((town) => (
-                        <li key={town} className="text-gray-600 flex items-center">
-                          <span className="mr-2">•</span>
-                          {town}
-                        </li>
-                      ))}
-                    </ul>
+                  <div key={area.name} className="glass-effect p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    <div className="flex items-center justify-between mb-6">
+                      <h3 className="text-2xl font-semibold gradient-text">{area.name}</h3>
+                      <span className="text-3xl">🏠</span>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="border-t border-gray-100 pt-4">
+                        <p className="text-sm text-gray-500 mb-2">Main Service Areas:</p>
+                        <ul className="grid grid-cols-1 gap-2">
+                          {area.mainTowns.map((town) => (
+                            <li key={town} className="text-gray-700 flex items-center">
+                              <span className="mr-2 text-accent">•</span>
+                              {town}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="border-t border-gray-100 pt-4">
+                        <p className="text-sm text-gray-500 mb-2">Postcodes Covered:</p>
+                        <p className="text-gray-700">{area.postcodes.join(', ')}</p>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
