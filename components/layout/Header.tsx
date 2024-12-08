@@ -28,9 +28,11 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-accent">
-              52roofer.com
-            </Link>
+            {router.pathname !== '/' && (
+              <Link href="/" className="text-2xl font-bold text-accent">
+                52roofer.com
+              </Link>
+            )}
           </div>
           
           <div className="hidden md:block">
@@ -53,9 +55,9 @@ const Header = () => {
               <Link href="/contact" className="text-gray-700 hover:text-accent px-3 py-2">
                 Contact
               </Link>
-              <Link 
-                href="/find-roofer" 
-                className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors"
+              <Link
+                href="/find-roofer"
+                className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-accent hover:bg-accent/90 transition-all"
               >
                 Find a Roofer
               </Link>
