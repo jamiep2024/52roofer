@@ -32,7 +32,16 @@ const roofingIssues: RoofingIssue[] = [
   },
 ];
 
-const locations = ['Oxfordshire', 'Gloucestershire', 'Wiltshire', 'Berkshire'];
+const locations = [
+  'Berkshire',
+  'Buckinghamshire',
+  'Gloucestershire',
+  'Hampshire',
+  'Oxfordshire',
+  'Surrey',
+  'West Sussex',
+  'Wiltshire',
+];
 
 export default function FindRoofer() {
   const [location, setLocation] = useState('');
