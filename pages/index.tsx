@@ -250,49 +250,6 @@ export default function Home() {
           </div>
         )}
 
-        {/* Trusted Partner Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <h2 className="text-4xl font-bold text-gray-900">Your Trusted Roofing Partner</h2>
-                <p className="text-lg text-gray-600">
-                  At 52roofer.com, we're committed to revolutionizing how homeowners find and connect with trusted roofing professionals. Our platform serves as a bridge between quality-focused homeowners and vetted, experienced roofers across South England.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
-                  <Image
-                    src="/images/before-roof.jpg"
-                    alt="Before: Church roof requiring restoration"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-white text-center">
-                    Before
-                  </div>
-                </div>
-                <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
-                  <Image
-                    src="/images/after-roof.jpg"
-                    alt="After: Restored church roof with new ladder access"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-white text-center">
-                    After
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* About Section */}
         <div id="about-section" className="overflow-hidden bg-white py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
