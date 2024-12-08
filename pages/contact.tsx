@@ -11,7 +11,7 @@ const ContactPage = () => {
         description="Get in touch with 52 Roofer for all your roofing needs. Email us at 52rooferteam@gmail.com for professional roofing services."
       />
       
-      <div className="bg-white py-24 sm:py-32">
+      <div className="bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl space-y-16">
             <div className="text-center">
