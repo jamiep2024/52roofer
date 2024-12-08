@@ -34,6 +34,9 @@ const faqSchema = {
   ]
 };
 
+// Get array of area names for display
+const areaNames = Object.values(serviceAreas).map(area => area.name);
+
 const RoofingFAQ = () => {
   const faqs = [
     {
@@ -80,8 +83,8 @@ const RoofingFAQ = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Frequently Asked Roofing Questions
           </h1>
-          <p className="text-xl text-gray-600">
-            Expert answers to common questions about roof maintenance, repairs, and replacement
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Expert answers to common roofing questions from professionals across {areaNames.join(', ')}.
           </p>
         </div>
 
@@ -101,7 +104,7 @@ const RoofingFAQ = () => {
         <div className="bg-blue-50 p-6 rounded-lg mt-12">
           <h2 className="text-xl font-semibold text-blue-900 mb-4">Still Have Questions?</h2>
           <p className="text-blue-800 mb-4">
-            Our network of experienced roofers across {serviceAreas.join(', ')} is ready to help answer your specific questions.
+            Our network of experienced roofers across {areaNames.join(', ')} is ready to help answer your specific questions.
           </p>
           <Link
             href="/contact"

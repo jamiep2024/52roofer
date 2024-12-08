@@ -29,6 +29,9 @@ const articleSchema = {
 };
 
 const RoofMaintenanceGuide = () => {
+  // Get array of area names for display
+  const areaNames = Object.values(serviceAreas).map(area => area.name);
+
   return (
     <>
       <Head>
@@ -122,7 +125,7 @@ const RoofMaintenanceGuide = () => {
             <div className="bg-blue-50 p-6 rounded-lg mt-8">
               <h2 className="text-xl font-semibold text-blue-900 mb-4">Need Professional Roof Maintenance?</h2>
               <p className="text-blue-800 mb-4">
-                Our network of trusted roofers provides expert maintenance services across {serviceAreas.join(', ')}.
+                Our network of trusted roofers provides expert maintenance services across {areaNames.join(', ')}.
               </p>
               <Link
                 href="/find-roofer"

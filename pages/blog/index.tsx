@@ -45,6 +45,9 @@ const blogSchema = {
   }
 };
 
+// Get array of area names for display
+const areaNames = Object.values(serviceAreas).map(area => area.name);
+
 const BlogIndex = () => {
   return (
     <>
@@ -62,10 +65,10 @@ const BlogIndex = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Roofing Tips & Expert Advice
+            Roofing Tips & Insights
           </h1>
-          <p className="text-xl text-gray-600">
-            Learn from the experts about roof maintenance, repairs, and best practices
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Expert roofing advice and guides from trusted professionals across {areaNames.join(', ')}.
           </p>
         </div>
 

@@ -29,6 +29,9 @@ const articleSchema = {
 };
 
 const RoofReplacementSigns = () => {
+  // Get array of area names for display
+  const areaNames = Object.values(serviceAreas).map(area => area.name);
+
   return (
     <>
       <Head>
@@ -128,10 +131,9 @@ const RoofReplacementSigns = () => {
             </ul>
 
             <div className="bg-blue-50 p-6 rounded-lg mt-8">
-              <h2 className="text-xl font-semibold text-blue-900 mb-4">Need a Professional Roof Inspection?</h2>
+              <h2 className="text-xl font-semibold text-blue-900 mb-4">Ready to Get Your Roof Inspected?</h2>
               <p className="text-blue-800 mb-4">
-                Our network of trusted roofers across {serviceAreas.join(', ')} can help you determine 
-                if it's time for a roof replacement.
+                Our network of certified roofers across {areaNames.join(', ')} can help assess your roof's condition.
               </p>
               <Link
                 href="/find-roofer"

@@ -122,6 +122,9 @@ const RoofInspectionGuide = () => {
     }
   ];
 
+  // Get array of area names for display
+  const areaNames = Object.values(serviceAreas).map(area => area.name);
+
   return (
     <>
       <Head>
@@ -214,10 +217,9 @@ const RoofInspectionGuide = () => {
             </ul>
 
             <div className="bg-blue-50 p-6 rounded-lg mt-8">
-              <h2 className="text-xl font-semibold text-blue-900 mb-4">Ready for a Professional Inspection?</h2>
+              <h2 className="text-xl font-semibold text-blue-900 mb-4">Schedule Your Professional Inspection</h2>
               <p className="text-blue-800 mb-4">
-                Our network of certified roofers across {serviceAreas.join(', ')} provides thorough 
-                roof inspections with detailed reports and recommendations.
+                Get your roof inspected by certified professionals across {areaNames.join(', ')}.
               </p>
               <Link
                 href="/find-roofer"
