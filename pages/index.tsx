@@ -371,33 +371,69 @@ export default function Home() {
             </div>
 
             {/* Call to Action */}
-            <div className="mt-32 rounded-3xl hero-gradient py-20 sm:py-32">
-              <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-4xl font-bold tracking-tight text-white text-shadow sm:text-5xl">
-                  Ready to Find Your Perfect Roofer?
-                </h2>
-                <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/90">
-                  Connect with trusted local roofers today and get your roofing project started with confidence.
-                </p>
-                <div className="mt-10 flex items-center justify-center gap-x-6">
-                  <button
-                    onClick={() => {
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                      setShowResults(false);
-                    }}
-                    className="glass-effect px-8 py-4 text-lg font-semibold text-white rounded-xl hover:bg-white/20 transition-all transform hover:scale-105"
-                  >
-                    Find a Roofer
-                  </button>
-                  <Link
-                    href="/contact"
-                    className="text-lg font-semibold leading-6 text-white hover:text-white/80 transition-colors"
-                  >
-                    Contact Us <span aria-hidden="true">→</span>
-                  </Link>
+            <div className="relative mt-32 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 opacity-90 rounded-3xl"></div>
+              
+              <div className="relative px-8 py-24 mx-auto max-w-7xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                  {/* Left Content */}
+                  <div className="space-y-8">
+                    <h2 className="text-5xl font-bold tracking-tight text-gray-900">
+                      Ready to Find Your Perfect Roofer?
+                    </h2>
+                    <p className="text-xl text-gray-600 leading-relaxed">
+                      Connect with trusted local roofers today and get your roofing project started with confidence. Our vetted professionals are ready to help with:
+                    </p>
+                    <ul className="space-y-4">
+                      {[
+                        'Free, no-obligation quotes',
+                        'Expert advice on your roofing needs',
+                        'Local, trusted professionals',
+                        'Quality workmanship guarantee'
+                      ].map((item) => (
+                        <li key={item} className="flex items-center text-gray-700">
+                          <svg className="w-5 h-5 mr-3 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                      <button onClick={() => router.push('/find-roofer')} className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors duration-200">
+                        Find a Roofer
+                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </button>
+                      <button onClick={() => router.push('/contact')} className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-accent bg-white border-2 border-accent rounded-xl hover:bg-accent hover:text-white transition-colors duration-200">
+                        Contact Us
+                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  {/* Right Content - Stats */}
+                  <div className="grid grid-cols-2 gap-8">
+                    {[
+                      { number: '500+', label: 'Projects Completed' },
+                      { number: '50+', label: 'Active Roofers' },
+                      { number: '8', label: 'Counties Covered' },
+                      { number: '4.9', label: 'Average Rating' }
+                    ].map((stat) => (
+                      <div key={stat.label} className="bg-white/80 backdrop-blur-sm p-6 rounded-xl text-center transform hover:scale-105 transition-transform duration-200">
+                        <div className="text-3xl font-bold text-accent mb-2">{stat.number}</div>
+                        <div className="text-gray-600">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
+            
+            {/* Footer */}
           </div>
         </div>
       </div>
