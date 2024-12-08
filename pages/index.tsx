@@ -5,6 +5,7 @@ import { businesses } from '../data/businesses';
 import { serviceAreas } from '../data/serviceAreas';
 import BusinessCard from '../components/business/BusinessCard';
 import SEO from '../components/seo/SEO';
+import Image from 'next/image';
 
 // JSON-LD structured data for rich snippets
 const organizationSchema = {
@@ -247,6 +248,60 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        {/* Trusted Partner Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <h2 className="text-4xl font-bold text-gray-900">Your Trusted Roofing Partner</h2>
+                <p className="text-lg text-gray-600">
+                  With years of experience in the roofing industry, we deliver exceptional craftsmanship and 
+                  reliable service across Oxfordshire, Gloucestershire, Wiltshire, and Berkshire.
+                </p>
+                <div className="flex gap-4">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+                  >
+                    Contact Us
+                  </a>
+                  <a
+                    href="https://www.grandeurheritageroofing.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+                  >
+                    Visit Our Partner
+                  </a>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
+                  <Image
+                    src="/images/roofer-at-work.jpg"
+                    alt="Professional roofer at work"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
+                <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
+                  <Image
+                    src="/images/completed-roof.jpg"
+                    alt="Completed roofing project"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* About Section */}
         <div id="about-section" className="overflow-hidden bg-white py-24 sm:py-32">
