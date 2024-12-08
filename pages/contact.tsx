@@ -1,11 +1,10 @@
 import React, { FormEvent } from 'react';
-import Layout from '../components/layout/Layout';
 import AdvancedSEO from '../components/seo/AdvancedSEO';
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 const ContactPage = () => {
   return (
-    <Layout>
+    <>
       <AdvancedSEO 
         title="Contact Us - 52 Roofer"
         description="Get in touch with 52 Roofer for all your roofing needs. Email us at 52rooferteam@gmail.com for professional roofing services."
@@ -126,7 +125,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

@@ -5,21 +5,12 @@ import { useRouter } from 'next/router';
 const Header = () => {
   const router = useRouter();
 
-  const scrollToAbout = () => {
-    const aboutSection = document.querySelector('#about-section');
+  const handleAboutClick = () => {
+    const aboutSection = document.getElementById('about');
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleAboutClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (router.pathname === '/') {
-      scrollToAbout();
-    } else {
-      router.push('/').then(() => {
-        setTimeout(scrollToAbout, 100);
-      });
+    } else if (router.pathname !== '/') {
+      router.push('/#about');
     }
   };
 
@@ -28,11 +19,9 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
-            {router.pathname !== '/' && (
-              <Link href="/" className="text-2xl font-bold text-accent">
-                52roofer.com
-              </Link>
-            )}
+            <Link href="/" className="text-2xl font-bold text-accent">
+              52roofer.com
+            </Link>
           </div>
           
           <div className="hidden md:block">
