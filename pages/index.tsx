@@ -254,47 +254,35 @@ export default function Home() {
         <div id="about-section" className="overflow-hidden bg-white py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             {/* Our Mission */}
-            <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-              <div className="lg:pr-8 lg:pt-4">
-                <div className="lg:max-w-lg">
-                  <h2 className="text-4xl font-bold tracking-tight gradient-text mb-6">Your Trusted Roofing Partner</h2>
-                  <p className="mt-6 text-lg leading-8 text-gray-600">
-                    At 52roofer.com, we're committed to revolutionizing how homeowners find and connect with trusted roofing professionals. Our platform serves as a bridge between quality-focused homeowners and vetted, experienced roofers across South England.
-                  </p>
-                  <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-                    {[
-                      {
-                        name: 'Verified Professionals',
-                        description: 'Every roofer in our network undergoes thorough vetting, including license verification, insurance checks, and performance reviews.'
-                      },
-                      {
-                        name: 'Quality Assurance',
-                        description: 'We maintain strict quality standards, ensuring only the most reliable and skilled roofers are recommended to our clients.'
-                      },
-                      {
-                        name: 'Local Expertise',
-                        description: 'Our roofers bring deep knowledge of local building regulations and architectural styles specific to South England.'
-                      }
-                    ].map((feature) => (
-                      <div key={feature.name} className="card-hover p-6 rounded-xl bg-gray-50">
-                        <dt className="font-semibold text-gray-900">{feature.name}</dt>
-                        <dd className="mt-2">{feature.description}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
+            <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none">
+              <div className="text-center max-w-3xl mx-auto">
+                <h2 className="text-4xl font-bold tracking-tight gradient-text mb-6">Your Trusted Roofing Partner</h2>
+                <p className="mt-6 text-lg leading-8 text-gray-600">
+                  At 52roofer.com, we're committed to revolutionizing how homeowners find and connect with trusted roofing professionals. Our platform serves as a bridge between quality-focused homeowners and vetted, experienced roofers across South England.
+                </p>
               </div>
-              <div className="grid grid-cols-1 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-                <img
-                  src="/images/roofing-1.jpg"
-                  alt="Professional roofer at work"
-                  className="rounded-xl bg-gray-900/5 object-cover shadow-lg card-hover"
-                />
-                <img
-                  src="/images/roofing-2.jpg"
-                  alt="Completed roofing project"
-                  className="rounded-xl bg-gray-900/5 object-cover shadow-lg card-hover"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div className="glass-effect p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                  <div className="text-4xl mb-6 text-center">🛡️</div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Verified Professionals</h3>
+                  <p className="text-gray-600">
+                    Every roofer in our network undergoes thorough vetting, including license verification, insurance checks, and performance reviews.
+                  </p>
+                </div>
+                <div className="glass-effect p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                  <div className="text-4xl mb-6 text-center">⭐</div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Quality Assurance</h3>
+                  <p className="text-gray-600">
+                    We maintain strict quality standards, ensuring only the most reliable and skilled roofers are recommended to our clients.
+                  </p>
+                </div>
+                <div className="glass-effect p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                  <div className="text-4xl mb-6 text-center">🏠</div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Local Expertise</h3>
+                  <p className="text-gray-600">
+                    Our roofers bring deep knowledge of local building regulations and architectural styles specific to South England.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -358,9 +346,9 @@ export default function Home() {
                     icon: "🏠"
                   }
                 ].map((feature) => (
-                  <div key={feature.title} className="glass-effect bg-white p-8 rounded-xl card-hover">
-                    <div className="text-4xl mb-4 floating">{feature.icon}</div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                  <div key={feature.title} className="glass-effect bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    <div className="text-4xl mb-6 text-center">{feature.icon}</div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
                     <p className="text-gray-600">{feature.description}</p>
                   </div>
                 ))}
