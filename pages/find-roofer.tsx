@@ -157,9 +157,11 @@ export default function FindRoofer() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {businesses.map((business) => (
-                  <BusinessCard key={business.id} business={business} />
-                ))}
+                {businesses
+                  .filter((business) => business.location === location)
+                  .map((business) => (
+                    <BusinessCard key={business.id} business={business} />
+                  ))}
               </div>
 
               <div className="mt-8 text-center">
