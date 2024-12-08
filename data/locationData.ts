@@ -416,6 +416,60 @@ export const locationData: { [key: string]: LocationData } = {
       "Swindon Designer Outlet"
     ],
     history: "Swindon transformed from a small market town into a major railway hub during the Industrial Revolution. This history is reflected in its diverse architecture, from Victorian railway workers' cottages to modern developments.",
+    heritage: {
+      listedBuildings: {
+        gradeI: [
+          "GWR Railway Village",
+          "St Mark's Church",
+          "Christ Church",
+          "Lydiard House",
+          "Holy Rood Church"
+        ],
+        gradeII: [
+          "STEAM Museum",
+          "Railway Works Water Tower",
+          "Central Community Centre",
+          "Health Hydro",
+          "Mechanics' Institute"
+        ],
+        gradeIIStar: [
+          "Railway Village Museum",
+          "Pattern Store",
+          "Railway Works Drawing Office",
+          "St Mary's Church"
+        ]
+      },
+      conservationAreas: [
+        "Railway Village Conservation Area",
+        "Old Town Conservation Area",
+        "Lydiard Park Conservation Area",
+        "Wood Street Conservation Area"
+      ],
+      historicSites: [
+        {
+          name: "GWR Railway Village",
+          description: "Victorian railway workers' housing with unique roofing features",
+          period: "1841-1842",
+          roofingFeatures: [
+            "Welsh slate roofing",
+            "Original Victorian chimneys",
+            "Cast iron guttering",
+            "Traditional dormer windows"
+          ]
+        },
+        {
+          name: "STEAM Museum",
+          description: "Former railway works building",
+          period: "1840s",
+          roofingFeatures: [
+            "Industrial saw-tooth roof",
+            "Original timber trusses",
+            "Glass roof lights",
+            "Cast iron structure"
+          ]
+        }
+      ]
+    },
     roofingInfo: {
       commonStyles: [
         "Victorian slate roofing",
@@ -494,7 +548,61 @@ export const locationData: { [key: string]: LocationData } = {
       "Madejski Stadium",
       "Reading Museum"
     ],
-    history: "Reading's history spans from its medieval abbey to its role as a major commercial center. The town's architecture reflects its evolution, featuring medieval, Victorian, and modern buildings requiring diverse roofing approaches.",
+    history: "Reading's history spans from its medieval abbey to its role as a major commercial center.",
+    heritage: {
+      listedBuildings: {
+        gradeI: [
+          "Reading Abbey Ruins",
+          "St Laurence's Church",
+          "Reading Minster",
+          "Greyfriars Church",
+          "St Mary's Chapel"
+        ],
+        gradeII: [
+          "Reading Town Hall",
+          "Market House",
+          "Great Western House",
+          "Reading Station",
+          "Concert Hall"
+        ],
+        gradeIIStar: [
+          "Forbury Gardens",
+          "St Mary's Church House",
+          "Reading School",
+          "The Maiwand Lion"
+        ]
+      },
+      conservationAreas: [
+        "Market Place/London Street Conservation Area",
+        "St Mary's Butts/Castle Street Conservation Area",
+        "Russell Street/Castle Hill Conservation Area",
+        "Kendrick Conservation Area"
+      ],
+      historicSites: [
+        {
+          name: "Reading Abbey",
+          description: "Medieval abbey ruins with significant architectural features",
+          period: "12th Century",
+          roofingFeatures: [
+            "Original vaulted ceilings",
+            "Medieval stone work",
+            "Historic roof line evidence",
+            "Conservation roofing techniques"
+          ]
+        },
+        {
+          name: "Reading Town Hall",
+          description: "Victorian Gothic municipal building",
+          period: "1875",
+          roofingFeatures: [
+            "Slate roof with decorative ridge tiles",
+            "Original Victorian chimneys",
+            "Lead flashings and gutters",
+            "Ornamental roof features"
+          ]
+        }
+      ]
+    },
     roofingInfo: {
       commonStyles: [
         "Modern tile roofing",
@@ -574,6 +682,60 @@ export const locationData: { [key: string]: LocationData } = {
       "University of Surrey"
     ],
     history: "Guildford's rich history dates from Saxon times, with significant medieval and Tudor architecture. The town's development through the ages is reflected in its diverse roofing styles and requirements.",
+    heritage: {
+      listedBuildings: {
+        gradeI: [
+          "Guildford Cathedral",
+          "Guildford Castle",
+          "Holy Trinity Church",
+          "St Mary's Church",
+          "The Guildhall"
+        ],
+        gradeII: [
+          "Guildford Town Hall",
+          "The Angel Hotel",
+          "The White Horse",
+          "The George Abbot",
+          "Guildford Museum"
+        ],
+        gradeIIStar: [
+          "St Nicholas Church",
+          "The Castle Arch",
+          "The Old Grammar School",
+          "The Guildford Institute"
+        ]
+      },
+      conservationAreas: [
+        "Guildford Town Centre Conservation Area",
+        "St Mary's Conservation Area",
+        "Chertsey Street Conservation Area",
+        "Woodbridge Road Conservation Area"
+      ],
+      historicSites: [
+        {
+          name: "Guildford Castle",
+          description: "Medieval castle with unique architectural features",
+          period: "11th Century",
+          roofingFeatures: [
+            "Original medieval stone work",
+            "Medieval timber roof structure",
+            "Lead-covered towers",
+            "Traditional slate roofing"
+          ]
+        },
+        {
+          name: "Guildford Cathedral",
+          description: "20th-century cathedral with striking architecture",
+          period: "1936-1961",
+          roofingFeatures: [
+            "Reinforced concrete structure",
+            "Copper roofing",
+            "Stained glass windows",
+            "Modern roof design"
+          ]
+        }
+      ]
+    },
     roofingInfo: {
       commonStyles: [
         "Clay tile roofing",
@@ -653,6 +815,60 @@ export const locationData: { [key: string]: LocationData } = {
       "Roald Dahl Children's Gallery"
     ],
     history: "Aylesbury's history spans from its medieval market town origins to its modern role as the county town of Buckinghamshire. Its architecture reflects various periods of growth and development.",
+    heritage: {
+      listedBuildings: {
+        gradeI: [
+          "St Mary's Church",
+          "County Hall",
+          "The King's Head Inn",
+          "Prebendal House",
+          "The Old County Hall"
+        ],
+        gradeII: [
+          "Market Square Buildings",
+          "Ceely House",
+          "The Queens Park Arts Centre",
+          "Walton Street Chapel",
+          "The Old Town Hall"
+        ],
+        gradeIIStar: [
+          "The Clock Tower",
+          "Temple Square Houses",
+          "The Judge's Lodgings",
+          "Ardenham House"
+        ]
+      },
+      conservationAreas: [
+        "Aylesbury Town Centre Conservation Area",
+        "Walton Conservation Area",
+        "Hartwell Conservation Area",
+        "Stone Conservation Area"
+      ],
+      historicSites: [
+        {
+          name: "St Mary's Church",
+          description: "Medieval parish church with distinctive spire",
+          period: "13th-15th Century",
+          roofingFeatures: [
+            "Lead-covered spire",
+            "Medieval timber roof structure",
+            "Original stone vaulting",
+            "Traditional slate roofing"
+          ]
+        },
+        {
+          name: "The King's Head Inn",
+          description: "15th-century coaching inn",
+          period: "15th Century",
+          roofingFeatures: [
+            "Crown post roof structure",
+            "Original medieval timbers",
+            "Traditional clay tiles",
+            "Historic chimneys"
+          ]
+        }
+      ]
+    },
     roofingInfo: {
       commonStyles: [
         "Traditional tile roofing",
@@ -732,6 +948,60 @@ export const locationData: { [key: string]: LocationData } = {
       "Fishbourne Roman Palace"
     ],
     history: "Chichester's history dates back to Roman times, with well-preserved medieval city walls and Georgian architecture. The city's roofing requirements reflect its historic character and coastal location.",
+    heritage: {
+      listedBuildings: {
+        gradeI: [
+          "Chichester Cathedral",
+          "The Market Cross",
+          "St Mary's Hospital",
+          "The Guildhall",
+          "Bishop's Palace"
+        ],
+        gradeII: [
+          "Council House",
+          "Pallant House",
+          "St John's Chapel",
+          "The Ship Hotel",
+          "Theatre Royal"
+        ],
+        gradeIIStar: [
+          "St Olave's Church",
+          "Vicars' Hall",
+          "The Council House",
+          "Dolphin & Anchor Hotel"
+        ]
+      },
+      conservationAreas: [
+        "Chichester City Centre Conservation Area",
+        "Summersdale Conservation Area",
+        "Westgate Conservation Area",
+        "St Pancras Conservation Area"
+      ],
+      historicSites: [
+        {
+          name: "Chichester Cathedral",
+          description: "Norman and Gothic cathedral with unique spire",
+          period: "11th-14th Century",
+          roofingFeatures: [
+            "Lead-covered spire",
+            "Medieval timber roof",
+            "Flying buttresses",
+            "Vaulted ceilings"
+          ]
+        },
+        {
+          name: "Bishop's Palace",
+          description: "Medieval palace with Georgian additions",
+          period: "12th-18th Century",
+          roofingFeatures: [
+            "Traditional slate roofing",
+            "Lead guttering",
+            "Period chimneys",
+            "Historic dormers"
+          ]
+        }
+      ]
+    },
     roofingInfo: {
       commonStyles: [
         "Traditional slate roofing",
