@@ -18,16 +18,61 @@ const RoofMaintenance = () => {
       "@type": "State",
       "name": area.name
     })),
-    "description": "Professional roof maintenance services including inspections, cleaning, and preventive maintenance across the UK."
+    "description": "Professional roof maintenance services to extend your roof's lifespan and prevent costly repairs."
   };
 
+  const services = [
+    {
+      title: "Regular Inspections",
+      description: "Scheduled roof health checks",
+      icon: "🔍"
+    },
+    {
+      title: "Preventive Care",
+      description: "Proactive maintenance solutions",
+      icon: "🛠️"
+    },
+    {
+      title: "Gutter Cleaning",
+      description: "Regular gutter maintenance",
+      icon: "🧹"
+    },
+    {
+      title: "Minor Repairs",
+      description: "Quick fixes for small issues",
+      icon: "🔧"
+    }
+  ];
+
+  const benefits = [
+    {
+      title: "Extended Lifespan",
+      description: "Maximize your roof's durability",
+      icon: "⏳"
+    },
+    {
+      title: "Cost Savings",
+      description: "Prevent expensive repairs",
+      icon: "💰"
+    },
+    {
+      title: "Protection",
+      description: "Keep your property safe",
+      icon: "🏡"
+    }
+  ];
+
   return (
-    <ServiceLayout>
+    <ServiceLayout
+      heroImage="/images/services/roof-maintenance-hero.jpg"
+      heroTitle="Roof Maintenance Services"
+      heroDescription="Keep your roof in top condition year-round"
+    >
       <Head>
         <title>Roof Maintenance Services | 52roofer.com</title>
         <meta 
           name="description" 
-          content={`Professional roof maintenance services across ${areaNames.join(', ')}. Regular inspections and maintenance to extend your roof's lifespan.`}
+          content={`Professional roof maintenance services across ${areaNames.join(', ')}. Regular care to prevent costly repairs.`}
         />
         <link rel="canonical" href="https://www.52roofer.com/services/roof-maintenance" />
         <script
@@ -36,61 +81,108 @@ const RoofMaintenance = () => {
         />
       </Head>
 
-      <div className="prose max-w-none">
-        <h1>Roof Maintenance Services</h1>
-        
-        <p className="lead">
-          Regular roof maintenance is essential for protecting your property and extending your roof's lifespan. 
-          Our comprehensive maintenance services help prevent costly repairs and ensure your roof remains in optimal condition.
-        </p>
-
-        <h2>Our Maintenance Services Include:</h2>
-        <ul>
-          <li>Regular Roof Inspections</li>
-          <li>Gutter Cleaning and Maintenance</li>
-          <li>Moss and Algae Removal</li>
-          <li>Minor Repairs and Fixes</li>
-          <li>Preventive Maintenance</li>
-          <li>Weather Damage Assessment</li>
-          <li>Roof Coating and Protection</li>
-          <li>Ventilation System Checks</li>
-        </ul>
-
-        <h2>Benefits of Regular Roof Maintenance</h2>
-        <ul>
-          <li>Extended Roof Lifespan</li>
-          <li>Prevention of Major Issues</li>
-          <li>Cost Savings Over Time</li>
-          <li>Improved Energy Efficiency</li>
-          <li>Better Weather Protection</li>
-          <li>Maintained Property Value</li>
-          <li>Peace of Mind</li>
-        </ul>
-
-        <h2>Our Maintenance Process</h2>
-        <ol>
-          <li><strong>Thorough Inspection:</strong> Comprehensive check of all roof components</li>
-          <li><strong>Documentation:</strong> Detailed report of findings and recommendations</li>
-          <li><strong>Preventive Work:</strong> Address minor issues before they become major problems</li>
-          <li><strong>Cleaning:</strong> Remove debris, moss, and other harmful materials</li>
-          <li><strong>Maintenance:</strong> Perform necessary upkeep and minor repairs</li>
-          <li><strong>Follow-up:</strong> Schedule regular maintenance visits</li>
-        </ol>
-
-        <h2>Maintenance Plans</h2>
-        <p>
-          We offer customized maintenance plans to suit your specific needs and budget. 
-          Whether you need quarterly, bi-annual, or annual inspections, we'll create a 
-          plan that ensures your roof stays in excellent condition year-round.
-        </p>
-
-        <div className="call-to-action">
-          <h2>Start Your Maintenance Plan Today</h2>
-          <p>
-            Don't wait for problems to develop. Contact us now to schedule a roof inspection 
-            and discuss our maintenance plans. Protect your investment with professional 
-            roof maintenance services.
+      <div className="space-y-12">
+        {/* Introduction */}
+        <div>
+          <p className="lead text-xl text-gray-600">
+            Professional roof maintenance services across {areaNames.join(', ')}. 
+            Keep your roof in perfect condition with our comprehensive maintenance programs.
           </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-4xl mb-4">{service.icon}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+              <p className="text-gray-600">{service.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Benefits Section */}
+        <div className="bg-gray-50 rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Benefits of Regular Maintenance</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl mb-4">{benefit.icon}</div>
+                <div className="text-xl font-semibold mb-2">{benefit.title}</div>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Process Section */}
+        <div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Maintenance Process</h2>
+          <div className="space-y-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">1</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Initial Assessment</h3>
+                <p className="text-gray-600">Comprehensive roof condition evaluation</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">2</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Maintenance Plan</h3>
+                <p className="text-gray-600">Customized care schedule for your roof</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">3</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Regular Service</h3>
+                <p className="text-gray-600">Scheduled maintenance and inspections</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">4</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Documentation</h3>
+                <p className="text-gray-600">Detailed reports after each service</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="bg-gray-50 rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Maintenance Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex items-start space-x-4">
+              <span className="text-accent text-xl">✓</span>
+              <div>
+                <h3 className="font-semibold mb-1">Debris Removal</h3>
+                <p className="text-gray-600">Regular cleaning of roof surface and gutters</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="text-accent text-xl">✓</span>
+              <div>
+                <h3 className="font-semibold mb-1">Leak Prevention</h3>
+                <p className="text-gray-600">Identify and fix potential leak points</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="text-accent text-xl">✓</span>
+              <div>
+                <h3 className="font-semibold mb-1">Minor Repairs</h3>
+                <p className="text-gray-600">Fix small issues before they grow</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="text-accent text-xl">✓</span>
+              <div>
+                <h3 className="font-semibold mb-1">Seasonal Checks</h3>
+                <p className="text-gray-600">Pre and post-season inspections</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </ServiceLayout>

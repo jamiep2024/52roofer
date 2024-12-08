@@ -18,11 +18,56 @@ const ResidentialRoofing = () => {
       "@type": "State",
       "name": area.name
     })),
-    "description": "Complete residential roofing services including installations, repairs, and replacements for homes across the UK."
+    "description": "Complete residential roofing services including installations, repairs, and replacements across the UK."
   };
 
+  const services = [
+    {
+      title: "New Roof Installation",
+      description: "Complete installation of new roofs with quality materials",
+      icon: "🏠"
+    },
+    {
+      title: "Roof Repairs",
+      description: "Fix leaks, damaged tiles, and structural issues",
+      icon: "🔧"
+    },
+    {
+      title: "Roof Replacement",
+      description: "Full roof replacement when repairs aren't enough",
+      icon: "🔄"
+    },
+    {
+      title: "Tile & Slate Roofing",
+      description: "Expert installation of tile and slate roofs",
+      icon: "🏺"
+    }
+  ];
+
+  const benefits = [
+    {
+      title: "Quality Materials",
+      description: "Premium roofing materials from trusted suppliers",
+      icon: "🏆"
+    },
+    {
+      title: "Expert Installation",
+      description: "Skilled roofers with years of experience",
+      icon: "👨‍🔧"
+    },
+    {
+      title: "Long-term Warranty",
+      description: "Comprehensive warranties on all our work",
+      icon: "✅"
+    }
+  ];
+
   return (
-    <ServiceLayout>
+    <ServiceLayout
+      heroImage="/images/services/residential-hero.jpg"
+      heroTitle="Residential Roofing Services"
+      heroDescription="Protect your home with expert roofing solutions"
+    >
       <Head>
         <title>Residential Roofing Services | 52roofer.com</title>
         <meta 
@@ -36,53 +81,104 @@ const ResidentialRoofing = () => {
         />
       </Head>
 
-      <div className="prose max-w-none">
-        <h1>Residential Roofing Services</h1>
-        
-        <p className="lead">
-          Expert residential roofing solutions for homeowners across {areaNames.join(', ')}. 
-          We provide comprehensive roofing services to protect your home and family.
-        </p>
-
-        <h2>Our Residential Roofing Services Include:</h2>
-        <ul>
-          <li>New Roof Installation</li>
-          <li>Roof Replacement</li>
-          <li>Roof Repair and Maintenance</li>
-          <li>Tile and Slate Roofing</li>
-          <li>Flat Roof Solutions</li>
-          <li>Chimney Repairs and Maintenance</li>
-          <li>Guttering and Drainage</li>
-          <li>Roof Insulation</li>
-        </ul>
-
-        <h2>Why Choose Us for Your Home's Roofing Needs?</h2>
-        <ul>
-          <li>Experienced and Qualified Roofers</li>
-          <li>Full Insurance Coverage</li>
-          <li>Quality Materials and Workmanship</li>
-          <li>Competitive Pricing</li>
-          <li>Free Detailed Quotes</li>
-          <li>Emergency Repair Service Available</li>
-          <li>Long-term Guarantees</li>
-        </ul>
-
-        <h2>Our Process</h2>
-        <ol>
-          <li><strong>Initial Consultation:</strong> We discuss your needs and arrange a site visit</li>
-          <li><strong>Inspection:</strong> Thorough assessment of your roof's condition</li>
-          <li><strong>Detailed Quote:</strong> Clear pricing with no hidden costs</li>
-          <li><strong>Quality Installation:</strong> Expert workmanship using premium materials</li>
-          <li><strong>Final Inspection:</strong> Ensuring everything meets our high standards</li>
-          <li><strong>Aftercare:</strong> Ongoing support and maintenance as needed</li>
-        </ol>
-
-        <div className="call-to-action">
-          <h2>Get Started with Your Roofing Project</h2>
-          <p>
-            Contact us today for a free, no-obligation quote for your residential roofing needs. 
-            Our expert team is ready to help protect your home with quality roofing solutions.
+      <div className="space-y-12">
+        {/* Introduction */}
+        <div>
+          <p className="lead text-xl text-gray-600">
+            Expert residential roofing solutions across {areaNames.join(', ')}. 
+            We provide comprehensive roofing services to protect your home and family.
           </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-4xl mb-4">{service.icon}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+              <p className="text-gray-600">{service.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Benefits Section */}
+        <div className="bg-gray-50 rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Us?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl mb-4">{benefit.icon}</div>
+                <div className="text-xl font-semibold mb-2">{benefit.title}</div>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Process Section */}
+        <div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Installation Process</h2>
+          <div className="space-y-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">1</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Initial Consultation</h3>
+                <p className="text-gray-600">We discuss your needs and arrange a site visit</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">2</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Detailed Inspection</h3>
+                <p className="text-gray-600">Thorough assessment of your roof's condition</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">3</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Custom Solution</h3>
+                <p className="text-gray-600">Tailored roofing solution with detailed quote</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">4</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Expert Installation</h3>
+                <p className="text-gray-600">Professional installation with minimal disruption</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Features */}
+        <div className="bg-gray-50 rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Additional Services</h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <li className="flex items-center">
+              <span className="text-accent mr-2">✓</span>
+              <span>Chimney Repairs and Maintenance</span>
+            </li>
+            <li className="flex items-center">
+              <span className="text-accent mr-2">✓</span>
+              <span>Roof Window Installation</span>
+            </li>
+            <li className="flex items-center">
+              <span className="text-accent mr-2">✓</span>
+              <span>Guttering and Drainage</span>
+            </li>
+            <li className="flex items-center">
+              <span className="text-accent mr-2">✓</span>
+              <span>Roof Insulation</span>
+            </li>
+            <li className="flex items-center">
+              <span className="text-accent mr-2">✓</span>
+              <span>Lead Work</span>
+            </li>
+            <li className="flex items-center">
+              <span className="text-accent mr-2">✓</span>
+              <span>Emergency Repairs</span>
+            </li>
+          </ul>
         </div>
       </div>
     </ServiceLayout>
