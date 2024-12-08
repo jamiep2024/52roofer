@@ -134,6 +134,17 @@ const ContactPage = () => {
                   </div>
                 ))}
               </div>
+              <div className="mt-8 text-gray-600">
+                <p>For expert roofing services, you can also visit our trusted partner:</p>
+                <a 
+                  href="https://www.grandeurheritageroofing.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  Grandeur Heritage Roofing
+                </a>
+              </div>
             </div>
           </div>
         </div>

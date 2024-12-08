@@ -66,6 +66,22 @@ const Footer = () => {
           </div>
           
           <div>
+            <h4 className="text-lg font-semibold mb-4">Trusted Partners</h4>
+            <ul className="space-y-2">
+              <li>
+                <a 
+                  href="https://www.grandeurheritageroofing.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-accent"
+                >
+                  Grandeur Heritage Roofing
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
             <h3 className="text-sm font-semibold leading-6 text-white">Contact Us</h3>
             <ul role="list" className="mt-6 space-y-4">
               <li>
