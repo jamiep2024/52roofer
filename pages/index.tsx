@@ -280,8 +280,8 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
                   <Image
-                    src="/images/roofer-at-work.jpg"
-                    alt="Professional roofer at work"
+                    src="/images/before-roof.jpg"
+                    alt="Before: Roof requiring professional attention"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -290,8 +290,8 @@ export default function Home() {
                 </div>
                 <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
                   <Image
-                    src="/images/completed-roof.jpg"
-                    alt="Completed roofing project"
+                    src="/images/after-roof.jpg"
+                    alt="After: Professional roofing work completed"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
