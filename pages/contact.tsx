@@ -13,7 +13,7 @@ const ContactPage = () => {
       
       <div className="bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl space-y-16">
+          <div className="mx-auto max-w-2xl space-y-16 py-16">
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                 Contact Us
@@ -47,7 +47,7 @@ const ContactPage = () => {
                       <MapPinIcon className="h-7 w-6 text-gray-400" aria-hidden="true" />
                     </dt>
                     <dd>
-                      Serving Oxfordshire, Gloucestershire, Wiltshire & Berkshire
+                      Serving Oxfordshire, Gloucestershire, Wiltshire, Berkshire, Hampshire, Surrey, Buckinghamshire, and West Sussex
                     </dd>
                   </div>
                 </dl>
@@ -128,7 +128,7 @@ const ContactPage = () => {
             <div className="text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Service Areas</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Oxfordshire', 'Gloucestershire', 'Wiltshire', 'Berkshire'].map((area) => (
+                {['Oxfordshire', 'Gloucestershire', 'Wiltshire', 'Berkshire', 'Hampshire', 'Surrey', 'Buckinghamshire', 'West Sussex'].map((area) => (
                   <div key={area} className="p-4 bg-gray-50 rounded-lg">
                     <p className="font-medium text-gray-900">{area}</p>
                   </div>
