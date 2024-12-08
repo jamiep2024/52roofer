@@ -18,5 +18,25 @@ export const serviceAreas = {
     name: 'Gloucestershire',
     postcodes: ['GL1-GL20', 'GL50-GL56'],
     mainTowns: ['Gloucester', 'Cheltenham', 'Stroud', 'Cirencester', 'Tewkesbury', 'Dursley', 'Tetbury', 'Stow-on-the-Wold', 'Moreton-in-Marsh', 'Fairford']
+  },
+  hampshire: {
+    name: 'Hampshire',
+    postcodes: ['SO14-SO53', 'PO1-PO17', 'RG21-RG29'],
+    mainTowns: ['Southampton', 'Portsmouth', 'Winchester', 'Basingstoke', 'Andover', 'Aldershot', 'Farnborough', 'Eastleigh', 'Fareham', 'Gosport']
+  },
+  surrey: {
+    name: 'Surrey',
+    postcodes: ['GU1-GU35', 'KT1-KT24', 'RH1-RH11'],
+    mainTowns: ['Guildford', 'Woking', 'Farnham', 'Epsom', 'Redhill', 'Reigate', 'Staines', 'Dorking', 'Camberley', 'Leatherhead']
+  },
+  buckinghamshire: {
+    name: 'Buckinghamshire',
+    postcodes: ['HP1-HP23', 'MK1-MK19'],
+    mainTowns: ['Milton Keynes', 'High Wycombe', 'Aylesbury', 'Amersham', 'Marlow', 'Buckingham', 'Chesham', 'Beaconsfield', 'Princes Risborough', 'Gerrards Cross']
+  },
+  westSussex: {
+    name: 'West Sussex',
+    postcodes: ['BN11-BN18', 'PO18-PO22', 'RH10-RH20'],
+    mainTowns: ['Crawley', 'Worthing', 'Horsham', 'Chichester', 'Bognor Regis', 'Littlehampton', 'East Grinstead', 'Haywards Heath', 'Burgess Hill', 'Shoreham-by-Sea']
   }
 };
