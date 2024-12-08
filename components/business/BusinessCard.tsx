@@ -226,7 +226,7 @@ export default function BusinessCard({ business }: BusinessCardProps) {
               }`}
             >
               <EnvelopeIcon className="h-6 w-6 mr-2" />
-              {business.email}
+              {business.name.includes('Grandeur Heritage Group') ? 'Email Us' : business.email}
             </a>
           )}
         </div>
