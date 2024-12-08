@@ -183,13 +183,14 @@ export default function Home() {
                     required
                   >
                     <option value="">Enter your location</option>
-                    {locations.map((loc) => (
+                    {serviceAreas.map((loc) => (
                       <option key={loc} value={loc}>
                         {loc}
                       </option>
                     ))}
                   </select>
                 </div>
+
                 <button
                   type="submit"
                   className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-xl transition-all transform hover:scale-105 text-lg whitespace-nowrap shadow-lg"
@@ -256,47 +257,36 @@ export default function Home() {
               <div className="space-y-6">
                 <h2 className="text-4xl font-bold text-gray-900">Your Trusted Roofing Partner</h2>
                 <p className="text-lg text-gray-600">
-                  With years of experience in the roofing industry, we deliver exceptional craftsmanship and 
-                  reliable service across Oxfordshire, Gloucestershire, Wiltshire, and Berkshire.
+                  At 52roofer.com, we're committed to revolutionizing how homeowners find and connect with trusted roofing professionals. Our platform serves as a bridge between quality-focused homeowners and vetted, experienced roofers across South England.
                 </p>
-                <div className="flex gap-4">
-                  <a
-                    href="/contact"
-                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
-                  >
-                    Contact Us
-                  </a>
-                  <a
-                    href="https://www.grandeurheritageroofing.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
-                  >
-                    Visit Our Partner
-                  </a>
-                </div>
               </div>
               
               <div className="grid grid-cols-2 gap-6">
                 <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
                   <Image
                     src="/images/before-roof.jpg"
-                    alt="Before: Roof requiring professional attention"
+                    alt="Before: Church roof requiring restoration"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
                   />
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-white text-center">
+                    Before
+                  </div>
                 </div>
                 <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
                   <Image
                     src="/images/after-roof.jpg"
-                    alt="After: Professional roofing work completed"
+                    alt="After: Restored church roof with new ladder access"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
                   />
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-white text-center">
+                    After
+                  </div>
                 </div>
               </div>
             </div>
