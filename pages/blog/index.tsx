@@ -8,25 +8,33 @@ const blogPosts = [
     id: 1,
     title: 'Complete Guide to Roof Maintenance',
     slug: 'complete-guide-to-roof-maintenance',
-    excerpt: 'Learn essential roof maintenance tips to extend your roof's lifespan and prevent costly repairs.',
+    excerpt: "Learn essential roof maintenance tips to extend your roof's lifespan and prevent costly repairs.",
     category: 'Maintenance',
     date: '2024-01-05'
   },
   {
     id: 2,
-    title: 'Signs You Need a Roof Replacement',
+    title: '10 Signs You Need a Roof Replacement',
     slug: 'signs-you-need-roof-replacement',
-    excerpt: 'Discover the key indicators that suggest it's time to replace your roof rather than repair it.',
-    category: 'Repairs',
+    excerpt: 'Discover the key warning signs that indicate your roof may need replacement.',
+    category: 'Replacement',
     date: '2024-01-10'
   },
   {
     id: 3,
     title: 'Choosing the Right Roofing Material',
     slug: 'choosing-right-roofing-material',
-    excerpt: 'Compare different roofing materials to find the perfect match for your home and budget.',
+    excerpt: 'A comprehensive guide to different roofing materials and their benefits.',
     category: 'Materials',
     date: '2024-01-15'
+  },
+  {
+    id: 4,
+    title: 'Professional Roof Inspection Guide',
+    slug: 'professional-roof-inspection-guide',
+    excerpt: 'Understanding what to expect during a professional roof inspection.',
+    category: 'Inspection',
+    date: '2024-01-20'
   }
 ];
 
