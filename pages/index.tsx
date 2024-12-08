@@ -183,9 +183,9 @@ export default function Home() {
                     required
                   >
                     <option value="">Enter your location</option>
-                    {serviceAreas.map((loc) => (
-                      <option key={loc} value={loc}>
-                        {loc}
+                    {Object.values(serviceAreas).map((area) => (
+                      <option key={area.name} value={area.name}>
+                        {area.name}
                       </option>
                     ))}
                   </select>
