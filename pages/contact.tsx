@@ -1,7 +1,7 @@
 import React, { FormEvent } from 'react';
 import Layout from '../components/layout/Layout';
 import AdvancedSEO from '../components/seo/AdvancedSEO';
-import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 const ContactPage = () => {
   return (
@@ -115,36 +115,13 @@ const ContactPage = () => {
                   <div>
                     <button
                       type="submit"
-                      className="w-full rounded-md bg-blue-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                      className="block w-full rounded-md bg-blue-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                     >
                       Send Message
                     </button>
                   </div>
                 </div>
               </form>
-            </div>
-
-            {/* Service Areas */}
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Service Areas</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Oxfordshire', 'Gloucestershire', 'Wiltshire', 'Berkshire', 'Hampshire', 'Surrey', 'Buckinghamshire', 'West Sussex'].map((area) => (
-                  <div key={area} className="p-4 bg-gray-50 rounded-lg">
-                    <p className="font-medium text-gray-900">{area}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 text-gray-600">
-                <p>For expert roofing services, you can also visit our trusted partner:</p>
-                <a 
-                  href="https://www.grandeurheritageroofing.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 font-medium"
-                >
-                  Grandeur Heritage Roofing
-                </a>
-              </div>
             </div>
           </div>
         </div>

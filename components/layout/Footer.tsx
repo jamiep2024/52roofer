@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-accent">52roofer.com</h3>
             <p className="text-gray-400">
-              Expert roofing services across Oxfordshire, Gloucestershire, Wiltshire, and Berkshire.
+              Expert roofing services across Oxfordshire, Gloucestershire, Wiltshire, Berkshire, Hampshire, Surrey, Buckinghamshire, and West Sussex.
             </p>
           </div>
           
@@ -62,12 +62,37 @@ const Footer = () => {
                   Berkshire
                 </Link>
               </li>
+              <li>
+                <Link href="/locations/hampshire" className="text-gray-400 hover:text-accent">
+                  Hampshire
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/surrey" className="text-gray-400 hover:text-accent">
+                  Surrey
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/buckinghamshire" className="text-gray-400 hover:text-accent">
+                  Buckinghamshire
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/west-sussex" className="text-gray-400 hover:text-accent">
+                  West Sussex
+                </Link>
+              </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Trusted Partners</h4>
+            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-2">
+              <li>
+                <a href="mailto:52rooferteam@gmail.com" className="text-gray-400 hover:text-accent">
+                  Email: 52rooferteam@gmail.com
+                </a>
+              </li>
               <li>
                 <a 
                   href="https://www.grandeurheritageroofing.com" 
@@ -76,17 +101,6 @@ const Footer = () => {
                   className="text-gray-400 hover:text-accent"
                 >
                   Grandeur Heritage Roofing
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-sm font-semibold leading-6 text-white">Contact Us</h3>
-            <ul role="list" className="mt-6 space-y-4">
-              <li>
-                <a href="mailto:52rooferteam@gmail.com" className="text-sm leading-6 text-gray-300 hover:text-white">
-                  Email: 52rooferteam@gmail.com
                 </a>
               </li>
             </ul>
