@@ -11,7 +11,7 @@ export default function Locations() {
     "name": "52Roofer",
     "url": "https://52roofer.com",
     "logo": "https://52roofer.com/images/logo.png",
-    "description": "Professional roofing services across South England. Find trusted local roofers in Oxfordshire, Gloucestershire, Wiltshire, and Berkshire."
+    "description": "Professional roofing services across South England. Find trusted local roofers in Oxfordshire, Gloucestershire, Wiltshire, Berkshire, Hampshire, Surrey, Buckinghamshire, and West Sussex."
   };
 
   const breadcrumbSchema = {
@@ -37,7 +37,7 @@ export default function Locations() {
     <>
       <SEO
         title="Local Roofing Services | Coverage Areas | 52Roofer"
-        description="Find professional roofing services in your area. We cover Oxfordshire, Gloucestershire, Wiltshire, and Berkshire. Local experts for all your roofing needs."
+        description="Find professional roofing services in your area. We cover Oxfordshire, Gloucestershire, Wiltshire, Berkshire, Hampshire, Surrey, Buckinghamshire, and West Sussex. Local experts for all your roofing needs."
         jsonLd={[organizationSchema, breadcrumbSchema]}
       />
 

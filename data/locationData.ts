@@ -177,5 +177,165 @@ export const locationData: { [key: string]: LocationData } = {
       "Whitley"
     ],
     postalCodes: ["RG1", "RG2", "RG4", "RG6", "RG30", "RG31"]
+  },
+  hampshire: {
+    name: "Hampshire",
+    county: "Hampshire",
+    coordinates: {
+      latitude: "51.0577",
+      longitude: "-1.3081"
+    },
+    population: "1,844,245",
+    landmarks: [
+      "Winchester Cathedral",
+      "Portsmouth Historic Dockyard",
+      "New Forest National Park",
+      "Southampton Docks",
+      "Highclere Castle"
+    ],
+    history: "Hampshire's architectural heritage spans from medieval castles to Georgian mansions and modern developments, requiring diverse roofing expertise for both historic and contemporary buildings.",
+    roofingInfo: {
+      commonStyles: [
+        "Traditional slate roofing",
+        "Clay tile roofing",
+        "Thatched roofing",
+        "Modern tile systems"
+      ],
+      challenges: [
+        "Coastal weather conditions",
+        "Historic building preservation",
+        "Modern development standards",
+        "Conservation area compliance"
+      ],
+      regulations: "Hampshire County Council maintains strict building regulations for roofing work, with specific guidelines for conservation areas and listed buildings."
+    },
+    nearbyAreas: [
+      "Winchester",
+      "Southampton",
+      "Portsmouth",
+      "Basingstoke",
+      "Andover"
+    ],
+    postalCodes: ["SO14", "SO15", "SO16", "SO17", "PO1", "PO2", "RG21", "RG22", "SP10"]
+  },
+  surrey: {
+    name: "Surrey",
+    county: "Surrey",
+    coordinates: {
+      latitude: "51.3148",
+      longitude: "-0.5600"
+    },
+    population: "1,189,934",
+    landmarks: [
+      "Hampton Court Palace",
+      "RHS Garden Wisley",
+      "Guildford Cathedral",
+      "Box Hill",
+      "Thorpe Park"
+    ],
+    history: "Surrey features a mix of historic Tudor buildings, Victorian architecture, and modern developments, requiring varied roofing expertise from traditional to contemporary techniques.",
+    roofingInfo: {
+      commonStyles: [
+        "Clay tile roofing",
+        "Slate roofing",
+        "Modern flat roofs",
+        "Heritage roofing"
+      ],
+      challenges: [
+        "Listed building requirements",
+        "Green belt regulations",
+        "Modern property standards",
+        "Conservation area guidelines"
+      ],
+      regulations: "Surrey County Council enforces comprehensive building regulations for roofing work, with particular attention to heritage properties and conservation areas."
+    },
+    nearbyAreas: [
+      "Guildford",
+      "Woking",
+      "Epsom",
+      "Reigate",
+      "Farnham"
+    ],
+    postalCodes: ["GU1", "GU2", "KT1", "KT2", "RH1", "RH2", "TW9", "TW10"]
+  },
+  buckinghamshire: {
+    name: "Buckinghamshire",
+    county: "Buckinghamshire",
+    coordinates: {
+      latitude: "51.8161",
+      longitude: "-0.8123"
+    },
+    population: "543,973",
+    landmarks: [
+      "Waddesdon Manor",
+      "Stowe House",
+      "Hughenden Manor",
+      "Bletchley Park",
+      "Chiltern Hills"
+    ],
+    history: "Buckinghamshire's architectural heritage includes grand country houses, traditional market towns, and modern urban developments, requiring diverse roofing expertise.",
+    roofingInfo: {
+      commonStyles: [
+        "Traditional slate",
+        "Clay tile roofing",
+        "Heritage roofing",
+        "Modern systems"
+      ],
+      challenges: [
+        "Historic building maintenance",
+        "Conservation area compliance",
+        "Modern development standards",
+        "Weather resistance"
+      ],
+      regulations: "Buckinghamshire Council requires strict adherence to building regulations for roofing work, with additional requirements for listed buildings and conservation areas."
+    },
+    nearbyAreas: [
+      "Aylesbury",
+      "High Wycombe",
+      "Milton Keynes",
+      "Amersham",
+      "Marlow"
+    ],
+    postalCodes: ["HP1", "HP2", "MK1", "MK2", "SL0", "SL1"]
+  },
+  westSussex: {
+    name: "West Sussex",
+    county: "West Sussex",
+    coordinates: {
+      latitude: "50.9278",
+      longitude: "-0.4617"
+    },
+    population: "858,852",
+    landmarks: [
+      "Chichester Cathedral",
+      "Arundel Castle",
+      "Petworth House",
+      "South Downs National Park",
+      "Worthing Pier"
+    ],
+    history: "West Sussex combines medieval, Georgian, and Victorian architecture with modern developments, requiring expertise in both traditional and contemporary roofing techniques.",
+    roofingInfo: {
+      commonStyles: [
+        "Clay tile roofing",
+        "Slate roofing",
+        "Coastal-resistant systems",
+        "Heritage roofing"
+      ],
+      challenges: [
+        "Coastal weather protection",
+        "Historic preservation",
+        "Conservation guidelines",
+        "Modern building standards"
+      ],
+      regulations: "West Sussex County Council maintains strict building regulations for roofing work, with specific requirements for coastal areas and historic buildings."
+    },
+    nearbyAreas: [
+      "Chichester",
+      "Worthing",
+      "Crawley",
+      "Horsham",
+      "Bognor Regis"
+    ],
+    postalCodes: ["PO18", "PO19", "RH10", "RH11", "BN11", "BN12", "BN13"]
   }
 };
