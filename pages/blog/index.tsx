@@ -35,6 +35,38 @@ const blogPosts = [
     excerpt: 'Understanding what to expect during a professional roof inspection.',
     category: 'Inspection',
     date: '2024-01-20'
+  },
+  {
+    id: 5,
+    title: 'How Much Does a New Roof Cost?',
+    slug: 'new-roof-cost-guide',
+    excerpt: 'Complete guide to roof replacement costs in 2024, including materials and labour.',
+    category: 'Costs',
+    date: '2024-01-25'
+  },
+  {
+    id: 6,
+    title: 'The Ultimate Guide to Roof Ventilation',
+    slug: 'ultimate-roof-ventilation-guide',
+    excerpt: 'Everything you need to know about roof ventilation systems and their benefits.',
+    category: 'Ventilation',
+    date: '2024-01-28'
+  },
+  {
+    id: 7,
+    title: 'Common Roofing Problems in UK Weather',
+    slug: 'uk-weather-roofing-problems',
+    excerpt: 'Learn how to protect your roof from common weather-related issues in the UK.',
+    category: 'Maintenance',
+    date: '2024-01-30'
+  },
+  {
+    id: 8,
+    title: 'Energy-Efficient Roofing Solutions',
+    slug: 'energy-efficient-roofing',
+    excerpt: 'Discover how to reduce energy costs with modern roofing solutions.',
+    category: 'Energy Efficiency',
+    date: '2024-02-01'
   }
 ];
 
