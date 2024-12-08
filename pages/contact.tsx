@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 import Layout from '../components/layout/Layout';
 import AdvancedSEO from '../components/seo/AdvancedSEO';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
@@ -54,7 +54,19 @@ const ContactPage = () => {
               </div>
 
               {/* Contact Form */}
-              <form className="rounded-2xl border border-gray-100 p-10 shadow-lg">
+              <form 
+                className="rounded-2xl border border-gray-100 p-10 shadow-lg"
+                onSubmit={(e: FormEvent) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.target as HTMLFormElement);
+                  const name = formData.get('name') as string;
+                  const email = formData.get('email') as string;
+                  const message = formData.get('message') as string;
+                  
+                  const mailtoLink = `mailto:52rooferteam@gmail.com?subject=Website Inquiry from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+                  window.location.href = mailtoLink;
+                }}
+              >
                 <h2 className="text-2xl font-bold text-gray-900 mb-8">Send us a message</h2>
                 
                 <div className="space-y-6">
