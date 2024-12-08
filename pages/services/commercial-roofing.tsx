@@ -3,6 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { serviceAreas } from '../../data/serviceAreas';
 
+// Get array of area names for display
+const areaNames = Object.values(serviceAreas).map(area => area.name);
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -12,9 +15,9 @@ const serviceSchema = {
     "name": "52roofer.com",
     "image": "https://www.52roofer.com/images/logo.png"
   },
-  "areaServed": serviceAreas.map(area => ({
+  "areaServed": Object.values(serviceAreas).map(area => ({
     "@type": "State",
-    "name": area
+    "name": area.name
   })),
   "description": "Professional commercial roofing services including installation, repair, and maintenance for all types of commercial buildings.",
   "serviceType": "Commercial Roofing"
@@ -157,7 +160,7 @@ const CommercialRoofing = () => {
             Commercial Roofing Solutions
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Expert commercial roofing services across {serviceAreas.join(', ')}. 
+            Expert commercial roofing services across {areaNames.join(', ')}. 
             From installation to maintenance, we've got your business covered.
           </p>
         </div>

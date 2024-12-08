@@ -12,9 +12,9 @@ const serviceSchema = {
     "name": "52roofer.com",
     "image": "https://www.52roofer.com/images/logo.png"
   },
-  "areaServed": serviceAreas.map(area => ({
+  "areaServed": Object.values(serviceAreas).map(area => ({
     "@type": "State",
-    "name": area
+    "name": area.name
   })),
   "description": "24/7 emergency roof repair services for storm damage, leaks, and urgent roofing problems. Fast response from qualified local roofers.",
   "serviceType": "Emergency Roof Repair"
@@ -90,6 +90,9 @@ const EmergencyRoofRepairs = () => {
     }
   ];
 
+  // Get array of area names for display
+  const areaNames = Object.values(serviceAreas).map(area => area.name);
+
   return (
     <>
       <Head>
@@ -109,7 +112,7 @@ const EmergencyRoofRepairs = () => {
             24/7 Emergency Roof Repair Services
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Fast response to urgent roofing problems across {serviceAreas.join(', ')}. 
+            Fast response to urgent roofing problems across {areaNames.join(', ')}. 
             Professional roofers ready to help when you need it most.
           </p>
         </div>

@@ -127,6 +127,9 @@ const RoofingMaterialsGuide = () => {
     }
   ];
 
+  // Get array of area names for display
+  const areaNames = Object.values(serviceAreas).map(area => area.name);
+
   return (
     <>
       <Head>
@@ -225,7 +228,7 @@ const RoofingMaterialsGuide = () => {
             <div className="bg-blue-50 p-6 rounded-lg mt-8">
               <h2 className="text-xl font-semibold text-blue-900 mb-4">Need Help Choosing the Right Material?</h2>
               <p className="text-blue-800 mb-4">
-                Our network of experienced roofers across {serviceAreas.join(', ')} can help you choose 
+                Our network of experienced roofers across {areaNames.join(', ')} can help you choose 
                 the perfect roofing material for your home and budget.
               </p>
               <Link
