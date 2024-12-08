@@ -1,21 +1,4 @@
-interface LocationData {
-  name: string;
-  county: string;
-  coordinates: {
-    latitude: string;
-    longitude: string;
-  };
-  population: string;
-  landmarks: string[];
-  history: string;
-  roofingInfo: {
-    commonStyles: string[];
-    challenges: string[];
-    regulations: string;
-  };
-  nearbyAreas: string[];
-  postalCodes: string[];
-}
+import { LocationData } from '../types/location';
 
 export const locationData: { [key: string]: LocationData } = {
   oxford: {
@@ -47,56 +30,134 @@ export const locationData: { [key: string]: LocationData } = {
         "Weather exposure",
         "Historic material matching"
       ],
-      regulations: "Oxford City Council enforces strict planning regulations for roofing work, particularly in conservation areas and on listed buildings. All roofing work must comply with the Oxford Local Plan 2036."
+      regulations: "Oxford City Council enforces strict planning regulations for roofing work, particularly in conservation areas and on listed buildings. All roofing work must comply with the Oxford Local Plan 2036.",
+      materials: {
+        traditional: [
+          "Welsh slate",
+          "Cotswold stone tiles",
+          "Lead sheeting",
+          "Clay plain tiles"
+        ],
+        modern: [
+          "Synthetic slate",
+          "Modern clay tiles",
+          "EPDM rubber roofing",
+          "Green roof systems"
+        ],
+        specializedSolutions: [
+          "Heritage matching materials",
+          "Conservation roof lights",
+          "Traditional lime mortar",
+          "Period-appropriate guttering"
+        ]
+      },
+      weatherConsiderations: {
+        annualRainfall: "650mm average",
+        windExposure: "Moderate, with occasional strong winds",
+        temperatureRange: "-5°C to 30°C",
+        commonIssues: [
+          "Rain penetration in historic buildings",
+          "Frost damage to tiles",
+          "Lead theft risk",
+          "Moss growth on north-facing slopes"
+        ]
+      },
+      buildingRegulations: {
+        planningRequirements: "Full planning permission required for most alterations in conservation areas",
+        conservationGuidelines: "Strict adherence to historic building practices in the city center",
+        energyEfficiencyStandards: "Minimum U-value of 0.18 W/m²K for roof renovations",
+        heritageRestrictions: "Listed building consent required for all external alterations"
+      }
     },
     nearbyAreas: [
       "Headington",
       "Cowley",
       "Botley",
       "Wolvercote",
-      "Summertown"
+      "Summertown",
+      "Marston",
+      "Iffley"
     ],
     postalCodes: ["OX1", "OX2", "OX3", "OX4"]
   },
-  cheltenham: {
-    name: "Cheltenham",
+  gloucester: {
+    name: "Gloucester",
     county: "Gloucestershire",
     coordinates: {
-      latitude: "51.8979",
-      longitude: "-2.0705"
+      latitude: "51.8642",
+      longitude: "-2.2380"
     },
-    population: "118,800",
+    population: "129,285",
     landmarks: [
-      "Cheltenham Racecourse",
-      "Pittville Pump Room",
-      "Montpellier Gardens",
-      "Imperial Gardens",
-      "The Promenade"
+      "Gloucester Cathedral",
+      "Gloucester Docks",
+      "Gloucester Quays",
+      "Blackfriars Priory",
+      "Robinswood Hill Country Park"
     ],
-    history: "Cheltenham rose to prominence as a spa town in the 18th century, known for its Regency architecture. The town's distinctive roofing styles, including the iconic Regency terraces, require specialized maintenance and restoration.",
+    history: "Gloucester's history dates back to Roman times, with medieval and Victorian architecture prominently featured throughout the city. The city's roofing reflects its maritime and industrial heritage, combined with historic preservation requirements.",
     roofingInfo: {
       commonStyles: [
-        "Regency period slate roofing",
-        "Victorian tiling",
-        "Lead work",
-        "Cotswold stone roofing"
+        "Victorian slate roofing",
+        "Traditional clay tiles",
+        "Modern flat roofing",
+        "Heritage conservation roofing"
       ],
       challenges: [
-        "Heritage preservation",
-        "Regency architecture requirements",
-        "Weather damage prevention",
-        "Listed building compliance"
+        "Historic preservation requirements",
+        "Coastal weather influence",
+        "Industrial area considerations",
+        "Period property maintenance"
       ],
-      regulations: "Cheltenham Borough Council requires planning permission for most roofing alterations in conservation areas, with specific guidelines for maintaining the town's Regency character."
+      regulations: "Gloucester City Council requires planning permission for significant roofing alterations, especially in conservation areas. All work must comply with the Gloucester City Plan and local building regulations.",
+      materials: {
+        traditional: [
+          "Forest of Dean stone",
+          "Welsh slate",
+          "Handmade clay tiles",
+          "Lead flashings"
+        ],
+        modern: [
+          "Concrete tiles",
+          "GRP flat roofing",
+          "Metal sheet roofing",
+          "Solar tiles"
+        ],
+        specializedSolutions: [
+          "Industrial roofing systems",
+          "Heritage slate matching",
+          "Waterfront-specific materials",
+          "Period guttering systems"
+        ]
+      },
+      weatherConsiderations: {
+        annualRainfall: "700mm average",
+        windExposure: "Moderate to high, especially near docks",
+        temperatureRange: "-2°C to 28°C",
+        commonIssues: [
+          "Industrial pollution effects",
+          "Maritime air corrosion",
+          "Heavy rainfall management",
+          "Wind-driven rain penetration"
+        ]
+      },
+      buildingRegulations: {
+        planningRequirements: "Strict controls in conservation areas and docklands",
+        conservationGuidelines: "Special considerations for Victorian and industrial heritage",
+        energyEfficiencyStandards: "Current building regulations require 0.18 W/m²K U-value",
+        heritageRestrictions: "Cathedral precinct has specific heritage requirements"
+      }
     },
     nearbyAreas: [
-      "Prestbury",
-      "Charlton Kings",
-      "Leckhampton",
-      "Bishop's Cleeve",
-      "Winchcombe"
+      "Barnwood",
+      "Longlevens",
+      "Hucclecote",
+      "Tuffley",
+      "Quedgeley",
+      "Churchdown",
+      "Brockworth"
     ],
-    postalCodes: ["GL50", "GL51", "GL52", "GL53"]
+    postalCodes: ["GL1", "GL2", "GL3", "GL4"]
   },
   swindon: {
     name: "Swindon",
@@ -105,36 +166,75 @@ export const locationData: { [key: string]: LocationData } = {
       latitude: "51.5558",
       longitude: "-1.7797"
     },
-    population: "222,193",
+    population: "192,599",
     landmarks: [
       "STEAM Museum",
       "Lydiard Park",
       "Coate Water Country Park",
       "Railway Village",
-      "The Magic Roundabout"
+      "Swindon Designer Outlet"
     ],
-    history: "Swindon's growth was driven by the Great Western Railway in the 19th century, leading to diverse architectural styles from Victorian railway workers' cottages to modern developments, each requiring specific roofing expertise.",
+    history: "Swindon transformed from a small market town into a major railway hub during the Industrial Revolution. This history is reflected in its diverse architecture, from Victorian railway workers' cottages to modern developments.",
     roofingInfo: {
       commonStyles: [
         "Victorian slate roofing",
         "Modern tile roofing",
-        "Industrial roofing",
-        "Contemporary flat roofs"
+        "Industrial flat roofing",
+        "Contemporary systems"
       ],
       challenges: [
-        "Industrial heritage preservation",
-        "Modern building regulations",
-        "Railway heritage conservation",
-        "Urban development requirements"
+        "Mix of historic and modern buildings",
+        "Industrial area requirements",
+        "Urban development considerations",
+        "Railway heritage preservation"
       ],
-      regulations: "Swindon Borough Council requires building regulations approval for all major roofing work, with specific guidelines for the Railway Village Conservation Area."
+      regulations: "Swindon Borough Council has specific guidelines for roofing work in conservation areas and on listed buildings. New developments must comply with the Swindon Local Plan 2036.",
+      materials: {
+        traditional: [
+          "Welsh slate",
+          "Clay plain tiles",
+          "Stone tiles",
+          "Lead work"
+        ],
+        modern: [
+          "Concrete tiles",
+          "Single-ply membranes",
+          "Metal roofing systems",
+          "Composite slate"
+        ],
+        specializedSolutions: [
+          "Industrial roof coatings",
+          "Heritage matching materials",
+          "Green roof systems",
+          "Solar panel integration"
+        ]
+      },
+      weatherConsiderations: {
+        annualRainfall: "750mm average",
+        windExposure: "Moderate, exposed on hills",
+        temperatureRange: "-3°C to 29°C",
+        commonIssues: [
+          "Industrial area exposure",
+          "Urban heat island effect",
+          "Storm water management",
+          "Thermal movement in large structures"
+        ]
+      },
+      buildingRegulations: {
+        planningRequirements: "Specific requirements for Railway Village conservation area",
+        conservationGuidelines: "Heritage considerations for Victorian buildings",
+        energyEfficiencyStandards: "Modern developments must meet BREEAM standards",
+        heritageRestrictions: "Listed building consent required in historic areas"
+      }
     },
     nearbyAreas: [
       "Old Town",
       "West Swindon",
       "North Swindon",
+      "Stratton",
       "Wroughton",
-      "Highworth"
+      "Highworth",
+      "Royal Wootton Bassett"
     ],
     postalCodes: ["SN1", "SN2", "SN3", "SN4", "SN5", "SN6"]
   },
@@ -149,193 +249,388 @@ export const locationData: { [key: string]: LocationData } = {
     landmarks: [
       "Reading Abbey",
       "Forbury Gardens",
-      "Reading Museum",
-      "Maiwand Lion",
-      "Oracle Shopping Centre"
+      "Reading Station",
+      "Madejski Stadium",
+      "Reading Museum"
     ],
-    history: "Reading's architectural evolution spans from medieval times through the Victorian industrial era to modern development. The town's roofing requirements reflect this diverse heritage, from historic abbey restoration to contemporary commercial projects.",
+    history: "Reading's history spans from its medieval abbey to its role as a major commercial center. The town's architecture reflects its evolution, featuring medieval, Victorian, and modern buildings requiring diverse roofing approaches.",
     roofingInfo: {
       commonStyles: [
-        "Traditional slate",
-        "Modern flat roofing",
-        "Commercial roofing",
-        "Heritage conservation"
+        "Modern tile roofing",
+        "Commercial flat roofing",
+        "Heritage slate roofing",
+        "Contemporary systems"
       ],
       challenges: [
-        "Urban development compliance",
+        "Urban development requirements",
         "Historic building preservation",
         "Commercial property standards",
-        "Modern building regulations"
+        "Mixed-use building considerations"
       ],
-      regulations: "Reading Borough Council enforces strict building regulations for roofing work, with additional requirements for conservation areas and listed buildings."
+      regulations: "Reading Borough Council maintains strict planning controls, particularly for conservation areas and listed buildings. All roofing work must comply with the Reading Local Plan.",
+      materials: {
+        traditional: [
+          "Welsh slate",
+          "Clay plain tiles",
+          "Handmade clay tiles",
+          "Lead work"
+        ],
+        modern: [
+          "Concrete tiles",
+          "Single-ply membranes",
+          "Metal roofing systems",
+          "Green roof systems"
+        ],
+        specializedSolutions: [
+          "Commercial roof coatings",
+          "Heritage matching materials",
+          "Solar panel integration",
+          "Roof-mounted plant systems"
+        ]
+      },
+      weatherConsiderations: {
+        annualRainfall: "600mm average",
+        windExposure: "Moderate, with occasional strong winds",
+        temperatureRange: "-4°C to 28°C",
+        commonIssues: [
+          "Urban heat island effect",
+          "Storm water management",
+          "Thermal movement in large structures",
+          "Roof-mounted equipment maintenance"
+        ]
+      },
+      buildingRegulations: {
+        planningRequirements: "Specific requirements for town center conservation area",
+        conservationGuidelines: "Heritage considerations for medieval and Victorian buildings",
+        energyEfficiencyStandards: "Modern developments must meet BREEAM standards",
+        heritageRestrictions: "Listed building consent required in historic areas"
+      }
     },
     nearbyAreas: [
       "Caversham",
       "Woodley",
       "Tilehurst",
       "Earley",
-      "Whitley"
+      "Whitley",
+      "Calcot",
+      "Lower Earley"
     ],
     postalCodes: ["RG1", "RG2", "RG4", "RG6", "RG30", "RG31"]
   },
-  hampshire: {
-    name: "Hampshire",
+  winchester: {
+    name: "Winchester",
     county: "Hampshire",
     coordinates: {
-      latitude: "51.0577",
+      latitude: "51.0632",
       longitude: "-1.3081"
     },
-    population: "1,844,245",
+    population: "45,184",
     landmarks: [
       "Winchester Cathedral",
-      "Portsmouth Historic Dockyard",
-      "New Forest National Park",
-      "Southampton Docks",
-      "Highclere Castle"
+      "Great Hall",
+      "Winchester College",
+      "City Mill",
+      "Wolvesey Castle"
     ],
-    history: "Hampshire's architectural heritage spans from medieval castles to Georgian mansions and modern developments, requiring diverse roofing expertise for both historic and contemporary buildings.",
+    history: "Winchester, the ancient capital of England, boasts over 2000 years of history. Its architectural heritage includes Roman, Medieval, Georgian, and Victorian buildings, requiring specialized roofing expertise.",
+    roofingInfo: {
+      commonStyles: [
+        "Traditional slate roofing",
+        "Historic tile roofing",
+        "Lead work",
+        "Conservation roofing"
+      ],
+      challenges: [
+        "Historic preservation requirements",
+        "Conservation area restrictions",
+        "Heritage material matching",
+        "Ancient building considerations"
+      ],
+      regulations: "Winchester City Council has strict conservation guidelines. All roofing work in the historic core must meet heritage preservation standards and local planning requirements.",
+      materials: {
+        traditional: [
+          "Welsh slate",
+          "Handmade clay tiles",
+          "Lead sheeting",
+          "Stone tiles"
+        ],
+        modern: [
+          "Synthetic slate",
+          "Modern clay tiles",
+          "EPDM rubber roofing",
+          "Green roof systems"
+        ],
+        specializedSolutions: [
+          "Heritage matching materials",
+          "Conservation roof lights",
+          "Traditional lime mortar",
+          "Period-appropriate guttering"
+        ]
+      },
+      weatherConsiderations: {
+        annualRainfall: "650mm average",
+        windExposure: "Moderate, with occasional strong winds",
+        temperatureRange: "-5°C to 30°C",
+        commonIssues: [
+          "Rain penetration in historic buildings",
+          "Frost damage to tiles",
+          "Lead theft risk",
+          "Moss growth on north-facing slopes"
+        ]
+      },
+      buildingRegulations: {
+        planningRequirements: "Full planning permission required for most alterations in conservation areas",
+        conservationGuidelines: "Strict adherence to historic building practices in the city center",
+        energyEfficiencyStandards: "Minimum U-value of 0.18 W/m²K for roof renovations",
+        heritageRestrictions: "Listed building consent required for all external alterations"
+      }
+    },
+    nearbyAreas: [
+      "St Cross",
+      "Badger Farm",
+      "Weeke",
+      "Fulflood",
+      "Stanmore",
+      "Twyford",
+      "Kings Worthy"
+    ],
+    postalCodes: ["SO21", "SO22", "SO23"]
+  },
+  guildford: {
+    name: "Guildford",
+    county: "Surrey",
+    coordinates: {
+      latitude: "51.2362",
+      longitude: "-0.5704"
+    },
+    population: "77,057",
+    landmarks: [
+      "Guildford Cathedral",
+      "Guildford Castle",
+      "High Street",
+      "Guildhall",
+      "University of Surrey"
+    ],
+    history: "Guildford's rich history dates from Saxon times, with significant medieval and Tudor architecture. The town's development through the ages is reflected in its diverse roofing styles and requirements.",
+    roofingInfo: {
+      commonStyles: [
+        "Clay tile roofing",
+        "Slate roofing",
+        "Modern flat roofing",
+        "Period property roofing"
+      ],
+      challenges: [
+        "Historic building requirements",
+        "Modern development standards",
+        "Conservation area guidelines",
+        "University property maintenance"
+      ],
+      regulations: "Guildford Borough Council enforces strict planning controls in conservation areas and for listed buildings. All roofing work must comply with the Guildford Local Plan.",
+      materials: {
+        traditional: [
+          "Welsh slate",
+          "Handmade clay tiles",
+          "Lead sheeting",
+          "Stone tiles"
+        ],
+        modern: [
+          "Concrete tiles",
+          "GRP flat roofing",
+          "Metal sheet roofing",
+          "Solar tiles"
+        ],
+        specializedSolutions: [
+          "Heritage matching materials",
+          "Conservation roof lights",
+          "Traditional lime mortar",
+          "Period-appropriate guttering"
+        ]
+      },
+      weatherConsiderations: {
+        annualRainfall: "600mm average",
+        windExposure: "Moderate, with occasional strong winds",
+        temperatureRange: "-4°C to 28°C",
+        commonIssues: [
+          "Rain penetration in historic buildings",
+          "Frost damage to tiles",
+          "Lead theft risk",
+          "Moss growth on north-facing slopes"
+        ]
+      },
+      buildingRegulations: {
+        planningRequirements: "Full planning permission required for most alterations in conservation areas",
+        conservationGuidelines: "Strict adherence to historic building practices in the town center",
+        energyEfficiencyStandards: "Minimum U-value of 0.18 W/m²K for roof renovations",
+        heritageRestrictions: "Listed building consent required for all external alterations"
+      }
+    },
+    nearbyAreas: [
+      "Merrow",
+      "Burpham",
+      "Onslow Village",
+      "Stoughton",
+      "Woodbridge",
+      "Shalford",
+      "Worplesdon"
+    ],
+    postalCodes: ["GU1", "GU2", "GU3", "GU4"]
+  },
+  aylesbury: {
+    name: "Aylesbury",
+    county: "Buckinghamshire",
+    coordinates: {
+      latitude: "51.8156",
+      longitude: "-0.8125"
+    },
+    population: "71,977",
+    landmarks: [
+      "Waddesdon Manor",
+      "Aylesbury Waterside Theatre",
+      "County Museum",
+      "Market Square",
+      "Roald Dahl Children's Gallery"
+    ],
+    history: "Aylesbury's history spans from its medieval market town origins to its modern role as the county town of Buckinghamshire. Its architecture reflects various periods of growth and development.",
+    roofingInfo: {
+      commonStyles: [
+        "Traditional tile roofing",
+        "Modern slate roofing",
+        "Contemporary systems",
+        "Period property roofing"
+      ],
+      challenges: [
+        "Mixed architectural styles",
+        "Modern development requirements",
+        "Historic preservation",
+        "Urban expansion considerations"
+      ],
+      regulations: "Aylesbury Vale District Council requires planning permission for significant roofing alterations, particularly in conservation areas and for listed buildings.",
+      materials: {
+        traditional: [
+          "Welsh slate",
+          "Handmade clay tiles",
+          "Lead sheeting",
+          "Stone tiles"
+        ],
+        modern: [
+          "Concrete tiles",
+          "Single-ply membranes",
+          "Metal roofing systems",
+          "Green roof systems"
+        ],
+        specializedSolutions: [
+          "Heritage matching materials",
+          "Conservation roof lights",
+          "Traditional lime mortar",
+          "Period-appropriate guttering"
+        ]
+      },
+      weatherConsiderations: {
+        annualRainfall: "550mm average",
+        windExposure: "Moderate, with occasional strong winds",
+        temperatureRange: "-4°C to 28°C",
+        commonIssues: [
+          "Rain penetration in historic buildings",
+          "Frost damage to tiles",
+          "Lead theft risk",
+          "Moss growth on north-facing slopes"
+        ]
+      },
+      buildingRegulations: {
+        planningRequirements: "Full planning permission required for most alterations in conservation areas",
+        conservationGuidelines: "Strict adherence to historic building practices in the town center",
+        energyEfficiencyStandards: "Minimum U-value of 0.18 W/m²K for roof renovations",
+        heritageRestrictions: "Listed building consent required for all external alterations"
+      }
+    },
+    nearbyAreas: [
+      "Bedgrove",
+      "Watermead",
+      "Fairford Leys",
+      "Haydon Hill",
+      "Stoke Mandeville",
+      "Bierton",
+      "Wendover"
+    ],
+    postalCodes: ["HP19", "HP20", "HP21", "HP22"]
+  },
+  chichester: {
+    name: "Chichester",
+    county: "West Sussex",
+    coordinates: {
+      latitude: "50.8365",
+      longitude: "-0.7792"
+    },
+    population: "26,795",
+    landmarks: [
+      "Chichester Cathedral",
+      "Chichester Cross",
+      "Pallant House Gallery",
+      "Roman Walls",
+      "Fishbourne Roman Palace"
+    ],
+    history: "Chichester's history dates back to Roman times, with well-preserved medieval city walls and Georgian architecture. The city's roofing requirements reflect its historic character and coastal location.",
     roofingInfo: {
       commonStyles: [
         "Traditional slate roofing",
         "Clay tile roofing",
-        "Thatched roofing",
-        "Modern tile systems"
+        "Heritage roofing",
+        "Coastal-resistant systems"
       ],
       challenges: [
         "Coastal weather conditions",
-        "Historic building preservation",
-        "Modern development standards",
-        "Conservation area compliance"
-      ],
-      regulations: "Hampshire County Council maintains strict building regulations for roofing work, with specific guidelines for conservation areas and listed buildings."
-    },
-    nearbyAreas: [
-      "Winchester",
-      "Southampton",
-      "Portsmouth",
-      "Basingstoke",
-      "Andover"
-    ],
-    postalCodes: ["SO14", "SO15", "SO16", "SO17", "PO1", "PO2", "RG21", "RG22", "SP10"]
-  },
-  surrey: {
-    name: "Surrey",
-    county: "Surrey",
-    coordinates: {
-      latitude: "51.3148",
-      longitude: "-0.5600"
-    },
-    population: "1,189,934",
-    landmarks: [
-      "Hampton Court Palace",
-      "RHS Garden Wisley",
-      "Guildford Cathedral",
-      "Box Hill",
-      "Thorpe Park"
-    ],
-    history: "Surrey features a mix of historic Tudor buildings, Victorian architecture, and modern developments, requiring varied roofing expertise from traditional to contemporary techniques.",
-    roofingInfo: {
-      commonStyles: [
-        "Clay tile roofing",
-        "Slate roofing",
-        "Modern flat roofs",
-        "Heritage roofing"
-      ],
-      challenges: [
-        "Listed building requirements",
-        "Green belt regulations",
-        "Modern property standards",
-        "Conservation area guidelines"
-      ],
-      regulations: "Surrey County Council enforces comprehensive building regulations for roofing work, with particular attention to heritage properties and conservation areas."
-    },
-    nearbyAreas: [
-      "Guildford",
-      "Woking",
-      "Epsom",
-      "Reigate",
-      "Farnham"
-    ],
-    postalCodes: ["GU1", "GU2", "KT1", "KT2", "RH1", "RH2", "TW9", "TW10"]
-  },
-  buckinghamshire: {
-    name: "Buckinghamshire",
-    county: "Buckinghamshire",
-    coordinates: {
-      latitude: "51.8161",
-      longitude: "-0.8123"
-    },
-    population: "543,973",
-    landmarks: [
-      "Waddesdon Manor",
-      "Stowe House",
-      "Hughenden Manor",
-      "Bletchley Park",
-      "Chiltern Hills"
-    ],
-    history: "Buckinghamshire's architectural heritage includes grand country houses, traditional market towns, and modern urban developments, requiring diverse roofing expertise.",
-    roofingInfo: {
-      commonStyles: [
-        "Traditional slate",
-        "Clay tile roofing",
-        "Heritage roofing",
-        "Modern systems"
-      ],
-      challenges: [
-        "Historic building maintenance",
-        "Conservation area compliance",
-        "Modern development standards",
-        "Weather resistance"
-      ],
-      regulations: "Buckinghamshire Council requires strict adherence to building regulations for roofing work, with additional requirements for listed buildings and conservation areas."
-    },
-    nearbyAreas: [
-      "Aylesbury",
-      "High Wycombe",
-      "Milton Keynes",
-      "Amersham",
-      "Marlow"
-    ],
-    postalCodes: ["HP1", "HP2", "MK1", "MK2", "SL0", "SL1"]
-  },
-  westSussex: {
-    name: "West Sussex",
-    county: "West Sussex",
-    coordinates: {
-      latitude: "50.9278",
-      longitude: "-0.4617"
-    },
-    population: "858,852",
-    landmarks: [
-      "Chichester Cathedral",
-      "Arundel Castle",
-      "Petworth House",
-      "South Downs National Park",
-      "Worthing Pier"
-    ],
-    history: "West Sussex combines medieval, Georgian, and Victorian architecture with modern developments, requiring expertise in both traditional and contemporary roofing techniques.",
-    roofingInfo: {
-      commonStyles: [
-        "Clay tile roofing",
-        "Slate roofing",
-        "Coastal-resistant systems",
-        "Heritage roofing"
-      ],
-      challenges: [
-        "Coastal weather protection",
         "Historic preservation",
-        "Conservation guidelines",
-        "Modern building standards"
+        "Conservation area requirements",
+        "Roman heritage considerations"
       ],
-      regulations: "West Sussex County Council maintains strict building regulations for roofing work, with specific requirements for coastal areas and historic buildings."
+      regulations: "Chichester District Council maintains strict planning controls for the historic city center and conservation areas. All roofing work must meet local heritage guidelines.",
+      materials: {
+        traditional: [
+          "Welsh slate",
+          "Handmade clay tiles",
+          "Lead sheeting",
+          "Stone tiles"
+        ],
+        modern: [
+          "Synthetic slate",
+          "Modern clay tiles",
+          "EPDM rubber roofing",
+          "Green roof systems"
+        ],
+        specializedSolutions: [
+          "Heritage matching materials",
+          "Conservation roof lights",
+          "Traditional lime mortar",
+          "Period-appropriate guttering"
+        ]
+      },
+      weatherConsiderations: {
+        annualRainfall: "600mm average",
+        windExposure: "Moderate to high, especially near coast",
+        temperatureRange: "-4°C to 28°C",
+        commonIssues: [
+          "Rain penetration in historic buildings",
+          "Frost damage to tiles",
+          "Lead theft risk",
+          "Moss growth on north-facing slopes"
+        ]
+      },
+      buildingRegulations: {
+        planningRequirements: "Full planning permission required for most alterations in conservation areas",
+        conservationGuidelines: "Strict adherence to historic building practices in the city center",
+        energyEfficiencyStandards: "Minimum U-value of 0.18 W/m²K for roof renovations",
+        heritageRestrictions: "Listed building consent required for all external alterations"
+      }
     },
     nearbyAreas: [
-      "Chichester",
-      "Worthing",
-      "Crawley",
-      "Horsham",
-      "Bognor Regis"
+      "Fishbourne",
+      "Stockbridge",
+      "Whyke",
+      "Summersdale",
+      "Donnington",
+      "Bognor Regis",
+      "Selsey"
     ],
-    postalCodes: ["PO18", "PO19", "RH10", "RH11", "BN11", "BN12", "BN13"]
+    postalCodes: ["PO19", "PO20"]
   }
 };
