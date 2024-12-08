@@ -8,6 +8,20 @@ export interface LocationData {
   population: string;
   landmarks: string[];
   history: string;
+  heritage: {
+    listedBuildings: {
+      gradeI: string[];
+      gradeII: string[];
+      gradeIIStar: string[];
+    };
+    conservationAreas: string[];
+    historicSites: {
+      name: string;
+      description: string;
+      period: string;
+      roofingFeatures: string[];
+    }[];
+  };
   roofingInfo: {
     commonStyles: string[];
     challenges: string[];

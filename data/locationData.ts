@@ -17,6 +17,60 @@ export const locationData: { [key: string]: LocationData } = {
       "Oxford Castle"
     ],
     history: "Oxford's architectural heritage spans over 1,000 years, featuring distinctive Norman, Gothic, and Baroque buildings. The city's roofing styles reflect this rich history, with many Grade I and II listed buildings requiring specialist roofing expertise.",
+    heritage: {
+      listedBuildings: {
+        gradeI: [
+          "Christ Church Cathedral",
+          "Radcliffe Camera",
+          "Bodleian Library",
+          "Sheldonian Theatre",
+          "Tom Tower, Christ Church"
+        ],
+        gradeII: [
+          "Oxford Town Hall",
+          "Examination Schools",
+          "Rhodes House",
+          "Oxford Union Society",
+          "Natural History Museum"
+        ],
+        gradeIIStar: [
+          "Ashmolean Museum",
+          "Magdalen College Tower",
+          "Merton College Chapel",
+          "University College Main Quad"
+        ]
+      },
+      conservationAreas: [
+        "Central Oxford Conservation Area",
+        "Jericho Conservation Area",
+        "North Oxford Victorian Suburb Conservation Area",
+        "St Clement's and Iffley Road Conservation Area"
+      ],
+      historicSites: [
+        {
+          name: "Oxford Castle",
+          description: "Norman medieval castle with unique roofing features",
+          period: "11th Century",
+          roofingFeatures: [
+            "Original Norman stone vaulting",
+            "Medieval timber roof structure",
+            "Lead-covered defensive towers",
+            "Restored Victorian slate roofing"
+          ]
+        },
+        {
+          name: "Christ Church Cathedral",
+          description: "Cathedral church with distinctive spire and roofing",
+          period: "12th-16th Century",
+          roofingFeatures: [
+            "Gothic vaulted ceiling",
+            "Lead-covered spire",
+            "Original medieval timberwork",
+            "Decorative stone pinnacles"
+          ]
+        }
+      ]
+    },
     roofingInfo: {
       commonStyles: [
         "Slate roofing",
@@ -95,7 +149,61 @@ export const locationData: { [key: string]: LocationData } = {
       "Blackfriars Priory",
       "Robinswood Hill Country Park"
     ],
-    history: "Gloucester's history dates back to Roman times, with medieval and Victorian architecture prominently featured throughout the city. The city's roofing reflects its maritime and industrial heritage, combined with historic preservation requirements.",
+    history: "Gloucester's history dates back to Roman times, with medieval and Victorian architecture prominently featured throughout the city.",
+    heritage: {
+      listedBuildings: {
+        gradeI: [
+          "Gloucester Cathedral",
+          "St Mary de Crypt Church",
+          "Blackfriars Priory",
+          "St Nicholas Church",
+          "The New Inn"
+        ],
+        gradeII: [
+          "Gloucester Docks Warehouses",
+          "The Folk Museum",
+          "St Michael's Tower",
+          "The Dick Whittington Pub",
+          "Mariners' Chapel"
+        ],
+        gradeIIStar: [
+          "St Mary de Lode Church",
+          "The Old Bell Inn",
+          "Parliament Rooms",
+          "Llanthony Secunda Priory"
+        ]
+      },
+      conservationAreas: [
+        "City Centre Conservation Area",
+        "Gloucester Docks Conservation Area",
+        "London Road Conservation Area",
+        "Denmark Road Conservation Area"
+      ],
+      historicSites: [
+        {
+          name: "Gloucester Cathedral",
+          description: "Medieval cathedral with exceptional fan vaulting",
+          period: "11th-15th Century",
+          roofingFeatures: [
+            "Fan-vaulted cloisters",
+            "Great East Window",
+            "Central tower with pinnacles",
+            "Medieval timber roof structure"
+          ]
+        },
+        {
+          name: "Blackfriars Priory",
+          description: "Best-preserved Dominican priory in England",
+          period: "13th Century",
+          roofingFeatures: [
+            "Original medieval roof timbers",
+            "Restored slate roofing",
+            "Traditional lead guttering",
+            "Historic dormitory roof structure"
+          ]
+        }
+      ]
+    },
     roofingInfo: {
       commonStyles: [
         "Victorian slate roofing",
@@ -158,6 +266,139 @@ export const locationData: { [key: string]: LocationData } = {
       "Brockworth"
     ],
     postalCodes: ["GL1", "GL2", "GL3", "GL4"]
+  },
+  winchester: {
+    name: "Winchester",
+    county: "Hampshire",
+    coordinates: {
+      latitude: "51.0632",
+      longitude: "-1.3081"
+    },
+    population: "45,184",
+    landmarks: [
+      "Winchester Cathedral",
+      "Great Hall",
+      "Winchester College",
+      "City Mill",
+      "Wolvesey Castle"
+    ],
+    history: "Winchester, the ancient capital of England, boasts over 2000 years of history.",
+    heritage: {
+      listedBuildings: {
+        gradeI: [
+          "Winchester Cathedral",
+          "Great Hall",
+          "Winchester College",
+          "Hospital of St Cross",
+          "Wolvesey Castle"
+        ],
+        gradeII: [
+          "City Mill",
+          "Guildhall",
+          "Peninsula Barracks",
+          "Winchester School of Art",
+          "Abbey House"
+        ],
+        gradeIIStar: [
+          "St Cross Church",
+          "Pilgrim's Hall",
+          "Kingsgate",
+          "God Begot House"
+        ]
+      },
+      conservationAreas: [
+        "Winchester City Conservation Area",
+        "St Cross Conservation Area",
+        "Hyde Conservation Area",
+        "Winnall Conservation Area"
+      ],
+      historicSites: [
+        {
+          name: "Winchester Cathedral",
+          description: "One of Europe's largest Gothic cathedrals",
+          period: "11th-16th Century",
+          roofingFeatures: [
+            "Medieval timber roof structure",
+            "Lead-covered vaults",
+            "Norman tower with lead roof",
+            "Victorian restoration work"
+          ]
+        },
+        {
+          name: "Great Hall",
+          description: "Only surviving part of Winchester Castle",
+          period: "13th Century",
+          roofingFeatures: [
+            "Original medieval roof timbers",
+            "Double hammer-beam roof",
+            "Lead-covered turrets",
+            "Traditional slate covering"
+          ]
+        }
+      ]
+    },
+    roofingInfo: {
+      commonStyles: [
+        "Traditional slate roofing",
+        "Historic tile roofing",
+        "Lead work",
+        "Conservation roofing"
+      ],
+      challenges: [
+        "Historic preservation requirements",
+        "Conservation area restrictions",
+        "Heritage material matching",
+        "Ancient building considerations"
+      ],
+      regulations: "Winchester City Council has strict conservation guidelines. All roofing work in the historic core must meet heritage preservation standards and local planning requirements.",
+      materials: {
+        traditional: [
+          "Welsh slate",
+          "Handmade clay tiles",
+          "Lead sheeting",
+          "Stone tiles"
+        ],
+        modern: [
+          "Synthetic slate",
+          "Modern clay tiles",
+          "EPDM rubber roofing",
+          "Green roof systems"
+        ],
+        specializedSolutions: [
+          "Heritage matching materials",
+          "Conservation roof lights",
+          "Traditional lime mortar",
+          "Period-appropriate guttering"
+        ]
+      },
+      weatherConsiderations: {
+        annualRainfall: "650mm average",
+        windExposure: "Moderate, with occasional strong winds",
+        temperatureRange: "-5°C to 30°C",
+        commonIssues: [
+          "Rain penetration in historic buildings",
+          "Frost damage to tiles",
+          "Lead theft risk",
+          "Moss growth on north-facing slopes"
+        ]
+      },
+      buildingRegulations: {
+        planningRequirements: "Full planning permission required for most alterations in conservation areas",
+        conservationGuidelines: "Strict adherence to historic building practices in the city center",
+        energyEfficiencyStandards: "Minimum U-value of 0.18 W/m²K for roof renovations",
+        heritageRestrictions: "Listed building consent required for all external alterations"
+      }
+    },
+    nearbyAreas: [
+      "St Cross",
+      "Badger Farm",
+      "Weeke",
+      "Fulflood",
+      "Stanmore",
+      "Twyford",
+      "Kings Worthy"
+    ],
+    postalCodes: ["SO21", "SO22", "SO23"]
   },
   swindon: {
     name: "Swindon",
@@ -316,85 +557,6 @@ export const locationData: { [key: string]: LocationData } = {
       "Lower Earley"
     ],
     postalCodes: ["RG1", "RG2", "RG4", "RG6", "RG30", "RG31"]
-  },
-  winchester: {
-    name: "Winchester",
-    county: "Hampshire",
-    coordinates: {
-      latitude: "51.0632",
-      longitude: "-1.3081"
-    },
-    population: "45,184",
-    landmarks: [
-      "Winchester Cathedral",
-      "Great Hall",
-      "Winchester College",
-      "City Mill",
-      "Wolvesey Castle"
-    ],
-    history: "Winchester, the ancient capital of England, boasts over 2000 years of history. Its architectural heritage includes Roman, Medieval, Georgian, and Victorian buildings, requiring specialized roofing expertise.",
-    roofingInfo: {
-      commonStyles: [
-        "Traditional slate roofing",
-        "Historic tile roofing",
-        "Lead work",
-        "Conservation roofing"
-      ],
-      challenges: [
-        "Historic preservation requirements",
-        "Conservation area restrictions",
-        "Heritage material matching",
-        "Ancient building considerations"
-      ],
-      regulations: "Winchester City Council has strict conservation guidelines. All roofing work in the historic core must meet heritage preservation standards and local planning requirements.",
-      materials: {
-        traditional: [
-          "Welsh slate",
-          "Handmade clay tiles",
-          "Lead sheeting",
-          "Stone tiles"
-        ],
-        modern: [
-          "Synthetic slate",
-          "Modern clay tiles",
-          "EPDM rubber roofing",
-          "Green roof systems"
-        ],
-        specializedSolutions: [
-          "Heritage matching materials",
-          "Conservation roof lights",
-          "Traditional lime mortar",
-          "Period-appropriate guttering"
-        ]
-      },
-      weatherConsiderations: {
-        annualRainfall: "650mm average",
-        windExposure: "Moderate, with occasional strong winds",
-        temperatureRange: "-5°C to 30°C",
-        commonIssues: [
-          "Rain penetration in historic buildings",
-          "Frost damage to tiles",
-          "Lead theft risk",
-          "Moss growth on north-facing slopes"
-        ]
-      },
-      buildingRegulations: {
-        planningRequirements: "Full planning permission required for most alterations in conservation areas",
-        conservationGuidelines: "Strict adherence to historic building practices in the city center",
-        energyEfficiencyStandards: "Minimum U-value of 0.18 W/m²K for roof renovations",
-        heritageRestrictions: "Listed building consent required for all external alterations"
-      }
-    },
-    nearbyAreas: [
-      "St Cross",
-      "Badger Farm",
-      "Weeke",
-      "Fulflood",
-      "Stanmore",
-      "Twyford",
-      "Kings Worthy"
-    ],
-    postalCodes: ["SO21", "SO22", "SO23"]
   },
   guildford: {
     name: "Guildford",
