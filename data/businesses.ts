@@ -284,5 +284,106 @@ export const businesses: Business[] = [
     services: ['New Roofs', 'Repairs', 'Maintenance'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 9am-5pm'
-  }
+  },
+
+  // Hampshire Branch
+  {
+    id: 'ghg-ha-001',
+    name: 'Grandeur Heritage Group Hampshire',
+    description: 'Premier roofing specialists with over 20 years of experience. Experts in traditional and modern roofing solutions.',
+    rating: 5.0,
+    reviewCount: 127,
+    location: `${serviceAreas.hampshire.name}`,
+    serviceAreas: serviceAreas.hampshire.postcodes,
+    phone: '07990101321',
+    email: 'grandeurheritagegroup@gmail.com',
+    website: 'https://www.grandeurheritageroofing.com',
+    services: [
+      'Roof Repairs',
+      'New Roof Installation',
+      'Heritage Roofing',
+      'Emergency Repairs',
+      'Guttering',
+      'Chimney Work'
+    ],
+    featured: true,
+    badges: ['Verified', 'Premium Partner', '20+ Years Experience', 'Quick Response'],
+    availability: 'Available 24/7 for emergencies',
+    responseTime: 'Usually responds within 1 hour'
+  },
+  // Surrey Branch
+  {
+    id: 'ghg-sr-001',
+    name: 'Grandeur Heritage Group Surrey',
+    description: 'Premier roofing specialists with over 20 years of experience. Experts in traditional and modern roofing solutions.',
+    rating: 5.0,
+    reviewCount: 127,
+    location: `${serviceAreas.surrey.name}`,
+    serviceAreas: serviceAreas.surrey.postcodes,
+    phone: '07990101321',
+    email: 'grandeurheritagegroup@gmail.com',
+    website: 'https://www.grandeurheritageroofing.com',
+    services: [
+      'Roof Repairs',
+      'New Roof Installation',
+      'Heritage Roofing',
+      'Emergency Repairs',
+      'Guttering',
+      'Chimney Work'
+    ],
+    featured: true,
+    badges: ['Verified', 'Premium Partner', '20+ Years Experience', 'Quick Response'],
+    availability: 'Available 24/7 for emergencies',
+    responseTime: 'Usually responds within 1 hour'
+  },
+  // Buckinghamshire Branch
+  {
+    id: 'ghg-bk-001',
+    name: 'Grandeur Heritage Group Buckinghamshire',
+    description: 'Premier roofing specialists with over 20 years of experience. Experts in traditional and modern roofing solutions.',
+    rating: 5.0,
+    reviewCount: 127,
+    location: `${serviceAreas.buckinghamshire.name}`,
+    serviceAreas: serviceAreas.buckinghamshire.postcodes,
+    phone: '07990101321',
+    email: 'grandeurheritagegroup@gmail.com',
+    website: 'https://www.grandeurheritageroofing.com',
+    services: [
+      'Roof Repairs',
+      'New Roof Installation',
+      'Heritage Roofing',
+      'Emergency Repairs',
+      'Guttering',
+      'Chimney Work'
+    ],
+    featured: true,
+    badges: ['Verified', 'Premium Partner', '20+ Years Experience', 'Quick Response'],
+    availability: 'Available 24/7 for emergencies',
+    responseTime: 'Usually responds within 1 hour'
+  },
+  // West Sussex Branch
+  {
+    id: 'ghg-ws-001',
+    name: 'Grandeur Heritage Group West Sussex',
+    description: 'Premier roofing specialists with over 20 years of experience. Experts in traditional and modern roofing solutions.',
+    rating: 5.0,
+    reviewCount: 127,
+    location: `${serviceAreas.westSussex.name}`,
+    serviceAreas: serviceAreas.westSussex.postcodes,
+    phone: '07990101321',
+    email: 'grandeurheritagegroup@gmail.com',
+    website: 'https://www.grandeurheritageroofing.com',
+    services: [
+      'Roof Repairs',
+      'New Roof Installation',
+      'Heritage Roofing',
+      'Emergency Repairs',
+      'Guttering',
+      'Chimney Work'
+    ],
+    featured: true,
+    badges: ['Verified', 'Premium Partner', '20+ Years Experience', 'Quick Response'],
+    availability: 'Available 24/7 for emergencies',
+    responseTime: 'Usually responds within 1 hour'
+  },
 ];
