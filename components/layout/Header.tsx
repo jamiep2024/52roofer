@@ -1,19 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import { useRouter } from 'next/router';
 
 const Header = () => {
-  const router = useRouter();
-
-  const handleAboutClick = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    } else if (router.pathname !== '/') {
-      router.push('/#about');
-    }
-  };
-
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,22 +29,22 @@ const Header = () => {
               <Link href="/locations" className="text-gray-700 hover:text-accent px-3 py-2">
                 Locations
               </Link>
-              <button
-                onClick={handleAboutClick}
-                className="text-gray-700 hover:text-accent px-3 py-2"
-              >
+              <Link href="/about" className="text-gray-700 hover:text-accent px-3 py-2">
                 About
-              </button>
+              </Link>
               <Link href="/contact" className="text-gray-700 hover:text-accent px-3 py-2">
                 Contact
               </Link>
-              <Link
-                href="/find-roofer"
-                className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-accent hover:bg-accent/90 transition-all"
-              >
-                Find a Roofer
-              </Link>
             </div>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-accent focus:outline-none">
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
         </div>
       </nav>
