@@ -17,62 +17,19 @@ export default function About() {
         title=" #1 Emergency Roofers Near Me | 24/7 Local Roof Repairs | Best Price Guarantee 2024"
         description="FAST Emergency Roofer Near Me 24/7 Roof Repairs 10-Year Guarantee 500+ 5 Reviews FREE Quote in 1Hr. Best Local Roofers: Oxfordshire, Gloucestershire, Wiltshire & Berkshire. Roof Replacement from 2999. Emergency Call-Out in 60mins!"
         canonical="https://www.52roofer.com/about"
-        additionalMetaTags={[
-          {
-            name: 'geo.region',
-            content: 'GB-OXF'
-          },
-          {
-            name: 'geo.placename',
-            content: 'Watchfield, Oxford'
-          },
-          {
-            name: 'geo.position',
-            content: '51.6166;-1.6411'
-          },
-          {
-            name: 'ICBM',
-            content: '51.6166, -1.6411'
-          },
-          {
-            name: 'google',
-            content: 'notranslate'
-          },
-          {
-            name: 'google-site-verification',
-            content: 'your-verification-code'
-          }
-        ]}
         openGraph={{
-          type: 'website',
-          locale: 'en_GB',
           url: 'https://www.52roofer.com/about',
-          site_name: '52roofer.com - #1 Emergency Roofing Services',
-          title: ' Emergency Roofer Near Me | 24/7 Local Roof Repairs | Best Price Guarantee',
-          description: 'URGENT Roof Repairs? We\'re Here 24/7! 60min Response FREE Quote 10-Year Guarantee. Your Local Emergency Roofers in Oxfordshire & Surrounding Areas. CALL NOW!',
+          title: '#1 Emergency Roofers Near Me | 24/7 Local Roof Repairs',
+          description: 'Emergency roofing services with 60-minute response time. Available 24/7 across Oxfordshire, Gloucestershire, Wiltshire & Berkshire.',
           images: [
             {
               url: 'https://www.52roofer.com/images/og-image.jpg',
               width: 1200,
               height: 630,
               alt: 'Emergency Roofing Services',
-              type: 'image/jpeg'
-            }
+            },
           ],
-          videos: [
-            {
-              url: 'https://www.52roofer.com/videos/emergency-repairs.mp4',
-              width: 1920,
-              height: 1080,
-              alt: 'Emergency Roof Repairs Demo',
-              type: 'video/mp4'
-            }
-          ]
-        }}
-        twitter={{
-          handle: '@52roofer',
-          site: '@52roofer',
-          cardType: 'summary_large_image',
+          siteName: '52roofer.com',
         }}
       />
 
@@ -475,4 +432,23 @@ export default function About() {
             })
           }} 
         />
-{{ ... }}
+      </Head>
+
+      <main className="flex-1">
+        <div className="overflow-hidden bg-white py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            {/* Our Story */}
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Our Story
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Founded in 2003, 52roofer.com emerged from a simple observation: homeowners needed a better way to find reliable roofing professionals. What started as a small directory in Oxfordshire has grown into South England's premier roofing network.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}
