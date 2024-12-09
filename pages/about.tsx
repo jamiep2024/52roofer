@@ -106,10 +106,10 @@ export default function About() {
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                Your Trusted Roofing Partner
+                About 52roofer.com
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">
-                Connecting homeowners with professional, vetted roofers across South England since 2003.
+                Building trust in the roofing industry through innovation and excellence since 2003.
               </p>
             </div>
           </div>
@@ -118,27 +118,27 @@ export default function About() {
         {/* Main Content */}
         <div className="overflow-hidden bg-white py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            {/* Our Mission */}
+            {/* Our Story */}
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
               <div className="lg:pr-8 lg:pt-4">
                 <div className="lg:max-w-lg">
-                  <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Mission</h2>
+                  <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Story</h2>
                   <p className="mt-6 text-lg leading-8 text-gray-600">
-                    At 52roofer.com, we're committed to revolutionizing how homeowners find and connect with trusted roofing professionals. Our platform serves as a bridge between quality-focused homeowners and vetted, experienced roofers across Oxfordshire, Gloucestershire, Wiltshire, and Berkshire.
+                    Founded in 2003, 52roofer.com emerged from a simple observation: homeowners needed a better way to find reliable roofing professionals. What started as a small directory in Oxfordshire has grown into South England's premier roofing network, connecting thousands of homeowners with trusted local roofers.
                   </p>
                   <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                     {[
                       {
-                        name: 'Verified Professionals',
-                        description: 'Every roofer in our network undergoes thorough vetting, including license verification, insurance checks, and performance reviews.'
+                        name: 'Our Values',
+                        description: 'Trust, transparency, and excellence form the foundation of everything we do. We believe in creating lasting relationships between homeowners and roofers built on mutual respect and quality workmanship.'
                       },
                       {
-                        name: 'Quality Assurance',
-                        description: 'We maintain strict quality standards, ensuring only the most reliable and skilled roofers are recommended to our clients.'
+                        name: 'Our Impact',
+                        description: 'Over the past 20 years, we've facilitated over 50,000 successful roofing projects, maintaining a 98% customer satisfaction rate and helping create hundreds of jobs in local communities.'
                       },
                       {
-                        name: 'Local Expertise',
-                        description: 'Our roofers bring deep knowledge of local building regulations and architectural styles specific to South England.'
+                        name: 'Our Commitment',
+                        description: 'We're dedicated to maintaining the highest standards in the industry through rigorous vetting processes, ongoing quality monitoring, and continuous improvement of our service.'
                       }
                     ].map((feature) => (
                       <div key={feature.name}>
@@ -171,62 +171,55 @@ export default function About() {
               </div>
             </div>
 
-            {/* Service Areas */}
+            {/* Vision & Goals */}
             <div className="mt-32">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">Our Service Areas</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">Vision & Future Goals</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 text-center max-w-2xl mx-auto">
-                We provide comprehensive roofing services across major regions in South England, ensuring every homeowner has access to quality roofing solutions.
+                As we look to the future, we're committed to revolutionizing the roofing industry through technology and innovation.
               </p>
               
-              <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                {Object.values(serviceAreas).map((area) => (
-                  <div key={area.name} className="rounded-xl bg-gray-50 p-6">
-                    <h3 className="text-xl font-semibold text-gray-900">{area.name}</h3>
-                    <ul className="mt-4 space-y-2">
-                      {area.mainTowns.slice(0, 4).map((town) => (
-                        <li key={town} className="text-gray-600">{town}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+              <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="rounded-xl bg-gray-50 p-6">
+                  <h3 className="text-xl font-semibold text-gray-900">Digital Innovation</h3>
+                  <p className="mt-4 text-gray-600">
+                    We're developing cutting-edge tools for virtual roof inspections and AI-powered damage assessment to streamline the roofing process.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-gray-50 p-6">
+                  <h3 className="text-xl font-semibold text-gray-900">Sustainability Focus</h3>
+                  <p className="mt-4 text-gray-600">
+                    By 2025, we aim to have 50% of our network specializing in eco-friendly roofing solutions and sustainable materials.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-gray-50 p-6">
+                  <h3 className="text-xl font-semibold text-gray-900">Community Growth</h3>
+                  <p className="mt-4 text-gray-600">
+                    We're expanding our apprenticeship program to train the next generation of roofers and create more jobs in local communities.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Why Choose Us */}
+            {/* Team & Culture */}
             <div className="mt-32">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">Why Choose 52roofer.com</h2>
-              <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {[
-                  {
-                    title: "20+ Years Experience",
-                    description: "Two decades of connecting homeowners with trusted roofing professionals."
-                  },
-                  {
-                    title: "Vetted Professionals",
-                    description: "Every roofer in our network is thoroughly vetted and monitored for quality."
-                  },
-                  {
-                    title: "Emergency Services",
-                    description: "24/7 emergency roofing support when you need it most."
-                  },
-                  {
-                    title: "Free Consultations",
-                    description: "Get expert advice and quotes without any obligation."
-                  },
-                  {
-                    title: "Quality Guaranteed",
-                    description: "All work is backed by our satisfaction guarantee."
-                  },
-                  {
-                    title: "Local Expertise",
-                    description: "Deep knowledge of local building regulations and architectural styles."
-                  }
-                ].map((feature) => (
-                  <div key={feature.title} className="relative rounded-xl border border-gray-200 p-8">
-                    <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
-                    <p className="mt-4 text-gray-600">{feature.description}</p>
-                  </div>
-                ))}
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">Our Team & Culture</h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600 text-center max-w-2xl mx-auto">
+                Behind 52roofer.com is a dedicated team of industry experts, technology innovators, and customer service professionals.
+              </p>
+              
+              <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                <div className="rounded-xl bg-gray-50 p-6">
+                  <h3 className="text-xl font-semibold text-gray-900">Expert Leadership</h3>
+                  <p className="mt-4 text-gray-600">
+                    Our leadership team brings together over 50 years of combined experience in roofing, technology, and customer service excellence.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-gray-50 p-6">
+                  <h3 className="text-xl font-semibold text-gray-900">Continuous Learning</h3>
+                  <p className="mt-4 text-gray-600">
+                    We invest in regular training and development programs for both our team and network partners to stay ahead of industry trends.
+                  </p>
+                </div>
               </div>
             </div>
 
