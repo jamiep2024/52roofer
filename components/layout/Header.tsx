@@ -35,6 +35,12 @@ const Header = () => {
               <Link href="/contact" className="text-gray-700 hover:text-accent px-3 py-2">
                 Contact
               </Link>
+              <Link 
+                href="/find-roofer" 
+                className="bg-accent text-white hover:bg-accent-dark px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out"
+              >
+                Find a Roofer
+              </Link>
             </div>
           </div>
 
