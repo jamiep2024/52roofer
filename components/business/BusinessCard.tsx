@@ -213,12 +213,14 @@ export default function BusinessCard({ business }: BusinessCardProps) {
               }`}
             >
               <PhoneIcon className="h-6 w-6 mr-2" />
-              {business.phone}
+              {business.name.includes('Grandeur Heritage Group') ? 'Call Us' : business.phone}
             </a>
           )}
           {business.email && (
             <a
-              href={`mailto:${business.email}`}
+              href={business.name.includes('Grandeur Heritage Group') 
+                ? process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL 
+                : `mailto:${business.email}`}
               className={`inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-lg ${
                 business.featured
                   ? 'text-white bg-gradient-to-r from-yellow-600 to-yellow-800 hover:from-yellow-700 hover:to-yellow-900'
