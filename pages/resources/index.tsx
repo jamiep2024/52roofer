@@ -17,6 +17,27 @@ export default function Resources() {
     ]
   };
 
+  const resourceGuides = [
+    {
+      title: 'Slate Roofs Guide',
+      description: 'Everything you need to know about slate roofs',
+      link: '/resources/guides/slate-roofs',
+      image: '/images/hero-bg.jpg'
+    },
+    {
+      title: 'Roof Maintenance Guide',
+      description: 'Essential maintenance tips for your roof',
+      link: '/blog/complete-guide-to-roof-maintenance',
+      image: '/images/hero-bg.jpg'
+    },
+    {
+      title: 'Emergency Repairs Guide',
+      description: 'What to do in roofing emergencies',
+      link: '/services/emergency-roof-repair',
+      image: '/images/hero-bg.jpg'
+    }
+  ];
+
   return (
     <>
       <SEO
@@ -63,15 +84,15 @@ export default function Resources() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources/guides/tile-roofs" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <h3 className="font-semibold text-lg mb-1">Tile Roofs</h3>
-                    <p className="text-gray-600 text-sm">Complete guide to clay and concrete tile roofing systems</p>
+                  <Link href="/blog/choosing-right-roofing-material" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                    <h3 className="font-semibold text-lg mb-1">Roofing Materials</h3>
+                    <p className="text-gray-600 text-sm">Complete guide to different roofing materials and their benefits</p>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources/guides/flat-roofs" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <h3 className="font-semibold text-lg mb-1">Flat Roofs</h3>
-                    <p className="text-gray-600 text-sm">Everything about EPDM, felt, and modern flat roofing solutions</p>
+                  <Link href="/blog/energy-efficient-roofing" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                    <h3 className="font-semibold text-lg mb-1">Energy Efficient Roofing</h3>
+                    <p className="text-gray-600 text-sm">Modern roofing solutions for better energy efficiency</p>
                   </Link>
                 </li>
               </ul>
@@ -82,21 +103,21 @@ export default function Resources() {
               <h2 className="text-2xl font-bold mb-4 gradient-text">Maintenance Tips</h2>
               <ul className="space-y-4">
                 <li>
-                  <Link href="/resources/maintenance/seasonal-checks" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                  <Link href="/blog/complete-guide-to-roof-maintenance" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
                     <h3 className="font-semibold text-lg mb-1">Seasonal Roof Checks</h3>
                     <p className="text-gray-600 text-sm">Essential maintenance tasks for each season</p>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources/maintenance/gutter-care" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <h3 className="font-semibold text-lg mb-1">Gutter Maintenance</h3>
-                    <p className="text-gray-600 text-sm">Keep your gutters clean and functioning properly</p>
+                  <Link href="/blog/professional-roof-inspection-guide" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                    <h3 className="font-semibold text-lg mb-1">Professional Inspections</h3>
+                    <p className="text-gray-600 text-sm">What to expect during a professional roof inspection</p>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources/maintenance/moss-removal" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <h3 className="font-semibold text-lg mb-1">Moss Treatment</h3>
-                    <p className="text-gray-600 text-sm">Preventing and removing moss from your roof</p>
+                  <Link href="/blog/ultimate-roof-ventilation-guide" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                    <h3 className="font-semibold text-lg mb-1">Roof Ventilation</h3>
+                    <p className="text-gray-600 text-sm">Understanding and maintaining proper roof ventilation</p>
                   </Link>
                 </li>
               </ul>
@@ -107,21 +128,21 @@ export default function Resources() {
               <h2 className="text-2xl font-bold mb-4 gradient-text">Emergency Repairs</h2>
               <ul className="space-y-4">
                 <li>
-                  <Link href="/resources/emergency/leak-detection" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <h3 className="font-semibold text-lg mb-1">Leak Detection</h3>
-                    <p className="text-gray-600 text-sm">How to identify and temporarily fix roof leaks</p>
+                  <Link href="/blog/signs-you-need-roof-replacement" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                    <h3 className="font-semibold text-lg mb-1">Warning Signs</h3>
+                    <p className="text-gray-600 text-sm">Identify when your roof needs immediate attention</p>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources/emergency/storm-damage" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <h3 className="font-semibold text-lg mb-1">Storm Damage</h3>
-                    <p className="text-gray-600 text-sm">What to do after storm damage to your roof</p>
+                  <Link href="/blog/uk-weather-roofing-problems" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                    <h3 className="font-semibold text-lg mb-1">Weather Damage</h3>
+                    <p className="text-gray-600 text-sm">Dealing with UK weather-related roofing issues</p>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources/emergency/temporary-repairs" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <h3 className="font-semibold text-lg mb-1">Temporary Fixes</h3>
-                    <p className="text-gray-600 text-sm">Emergency measures until professional help arrives</p>
+                  <Link href="/services/emergency-roof-repair" className="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                    <h3 className="font-semibold text-lg mb-1">Emergency Services</h3>
+                    <p className="text-gray-600 text-sm">24/7 emergency roofing repair services</p>
                   </Link>
                 </li>
               </ul>
@@ -132,38 +153,18 @@ export default function Resources() {
           <div className="mt-16">
             <h2 className="text-3xl font-bold mb-8 gradient-text text-center">Featured Articles</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <article className="bg-white rounded-xl shadow-sm overflow-hidden">
-                <img src="/images/roof-inspection.jpg" alt="Roof inspection guide" className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Complete Roof Inspection Guide</h3>
-                  <p className="text-gray-600 mb-4">Learn what professionals look for during a roof inspection and how to maintain your roof's integrity.</p>
-                  <Link href="/resources/guides/roof-inspection" className="text-accent hover:text-accent/80">
-                    Read More →
-                  </Link>
-                </div>
-              </article>
-
-              <article className="bg-white rounded-xl shadow-sm overflow-hidden">
-                <img src="/images/energy-efficiency.jpg" alt="Energy efficient roofing" className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Energy Efficient Roofing</h3>
-                  <p className="text-gray-600 mb-4">Discover how your roof can help reduce energy costs and improve your home's efficiency.</p>
-                  <Link href="/resources/guides/energy-efficiency" className="text-accent hover:text-accent/80">
-                    Read More →
-                  </Link>
-                </div>
-              </article>
-
-              <article className="bg-white rounded-xl shadow-sm overflow-hidden">
-                <img src="/images/roofing-materials.jpg" alt="Roofing materials guide" className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Choosing Roofing Materials</h3>
-                  <p className="text-gray-600 mb-4">Compare different roofing materials to find the best option for your home and budget.</p>
-                  <Link href="/resources/guides/materials-comparison" className="text-accent hover:text-accent/80">
-                    Read More →
-                  </Link>
-                </div>
-              </article>
+              {resourceGuides.map((guide, index) => (
+                <article key={index} className="bg-white rounded-xl shadow-sm overflow-hidden">
+                  <img src={guide.image} alt={guide.title} className="w-full h-48 object-cover" />
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{guide.title}</h3>
+                    <p className="text-gray-600 mb-4">{guide.description}</p>
+                    <Link href={guide.link} className="text-accent hover:text-accent/80">
+                      Read More →
+                    </Link>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </div>

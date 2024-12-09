@@ -1,5 +1,6 @@
 import SEO from '../../../components/seo/SEO';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function SlateRoofs() {
   const articleSchema = {
@@ -34,25 +35,14 @@ export default function SlateRoofs() {
 
       <div className="relative bg-white">
         {/* Hero Section */}
-        <div className="relative bg-gray-900 h-[40vh] min-h-[400px]">
-          <div className="absolute inset-0 overflow-hidden">
-            <img
-              className="h-full w-full object-cover opacity-40"
-              src="/images/slate-roof-hero.jpg"
-              alt="Slate roof installation and maintenance guide"
-            />
-            <div className="absolute inset-0 hero-gradient opacity-60"></div>
-          </div>
-          <div className="relative h-full flex items-center justify-center">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 text-shadow">
-                Complete Guide to Slate Roofs
-              </h1>
-              <p className="text-xl text-white/90 max-w-2xl mx-auto px-4">
-                Everything you need to know about slate roofing
-              </p>
-            </div>
-          </div>
+        <div className="relative h-64 w-full mb-8">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt="Slate roof installation"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg"
+          />
         </div>
 
         {/* Main Content */}

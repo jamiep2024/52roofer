@@ -150,16 +150,24 @@ export default function About() {
                 </div>
               </div>
               <div className="grid grid-cols-1 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-                <img
-                  src="/images/roofing-1.jpg"
-                  alt="Professional roofer at work"
-                  className="rounded-xl bg-gray-900/5 object-cover"
-                />
-                <img
-                  src="/images/roofing-2.jpg"
-                  alt="Completed roofing project"
-                  className="rounded-xl bg-gray-900/5 object-cover"
-                />
+                <div className="relative h-64 rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/hero-bg.jpg"
+                    alt="Professional roofing services"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                  />
+                </div>
+                <div className="relative h-64 rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/hero-bg.jpg"
+                    alt="Quality roofing work"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                  />
+                </div>
               </div>
             </div>
 
