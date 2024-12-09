@@ -68,7 +68,17 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Special handling for phone numbers to ensure they start with 0
+    if (name === 'phone') {
+      let formattedPhone = value;
+      if (value && !value.startsWith('0')) {
+        formattedPhone = `0${value}`;
+      }
+      setFormData(prev => ({ ...prev, [name]: formattedPhone }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   return (
@@ -102,7 +112,7 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
             value={formData.phone}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
-            placeholder="Your phone number"
+            placeholder="07XXX XXXXXX"
           />
         </div>
       </div>
@@ -119,7 +129,7 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
           value={formData.email}
           onChange={handleChange}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
-          placeholder="Your email"
+          placeholder="your@email.com"
         />
       </div>
 
@@ -135,13 +145,13 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
           value={formData.address || location}
           onChange={handleChange}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
-          placeholder={`Address in ${location || 'your area'}`}
+          placeholder={`Address in ${location}`}
         />
       </div>
 
       <div>
         <label htmlFor="serviceNeeded" className="block text-sm font-medium text-gray-700 mb-1">
-          What roofing service do you need? *
+          Service Needed *
         </label>
         <select
           id="serviceNeeded"
@@ -155,24 +165,45 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
           <option value="Emergency Repair">Emergency Repair</option>
           <option value="Roof Repair">Roof Repair</option>
           <option value="Roof Replacement">Roof Replacement</option>
+          <option value="Leak Fix">Leak Fix</option>
           <option value="Inspection">Inspection</option>
-          <option value="Maintenance">Maintenance</option>
           <option value="Other">Other</option>
         </select>
       </div>
 
       <div>
+        <label htmlFor="urgency" className="block text-sm font-medium text-gray-700 mb-1">
+          How urgent is your need? *
+        </label>
+        <select
+          id="urgency"
+          name="urgency"
+          required
+          value={formData.urgency}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
+        >
+          <option value="">Select urgency</option>
+          <option value="Emergency - Need help now">Emergency - Need help now</option>
+          <option value="Urgent - Within 24 hours">Urgent - Within 24 hours</option>
+          <option value="Soon - Within a week">Soon - Within a week</option>
+          <option value="Planning ahead">Planning ahead</option>
+        </select>
+      </div>
+
+      <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-          Please describe your roofing problem
+          Please describe your roofing problem *
         </label>
         <textarea
           id="message"
           name="message"
-          rows={4}
+          required
           value={formData.message}
           onChange={handleChange}
+          rows={4}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
-          placeholder="Tell us about your roofing issue..."
+          placeholder="Please provide details about your roofing issue..."
         />
       </div>
 
@@ -180,13 +211,15 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-accent text-white py-3 px-6 rounded-md hover:bg-accent/90 transition-colors font-medium"
+          className={`w-full bg-accent hover:bg-accent/90 text-white font-bold py-3 px-6 rounded-md transition-colors ${
+            isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
         >
           {isSubmitting ? 'Submitting...' : 'Submit Request'}
         </button>
       </div>
-
-      <p className="text-sm text-gray-500">* Required fields</p>
+      
+      <p className="text-xs text-gray-500 mt-2">* Required fields</p>
     </form>
   );
 }
