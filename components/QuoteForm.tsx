@@ -25,6 +25,7 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
     try {
       const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!, {
         method: 'POST',
+        mode: 'no-cors', 
         headers: {
           'Content-Type': 'application/json',
         },
@@ -40,12 +41,14 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
           source: typeof window !== 'undefined' ? window.location.pathname : '',
           status: 'New Lead',
           followUpNotes: ''
-        }),
-        redirect: 'follow'
+        })
       });
 
-      // Google Apps Script returns a redirect response, which is fine
+      // Since we're using no-cors, we won't get a proper response
+      // but if we reach here, it means the request was sent
       toast.success('Thank you! We will contact you shortly about your roofing needs.');
+      
+      // Reset form
       setFormData({
         name: '',
         phone: '',
@@ -69,10 +72,10 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
             Name *
           </label>
           <input
@@ -82,12 +85,13 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
             required
             value={formData.name}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
+            placeholder="Your name"
           />
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
             Phone *
           </label>
           <input
@@ -97,13 +101,14 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
             required
             value={formData.phone}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
+            placeholder="Your phone number"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
           Email *
         </label>
         <input
@@ -113,12 +118,13 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
           required
           value={formData.email}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
+          placeholder="Your email"
         />
       </div>
 
       <div>
-        <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
           Property Address *
         </label>
         <input
@@ -126,16 +132,16 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
           id="address"
           name="address"
           required
-          value={formData.address}
+          value={formData.address || location}
           onChange={handleChange}
-          placeholder={location ? `Address in ${location}` : 'Enter your property address'}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
+          placeholder={`Address in ${location || 'your area'}`}
         />
       </div>
 
       <div>
-        <label htmlFor="serviceNeeded" className="block text-sm font-medium text-gray-700">
-          Service Needed *
+        <label htmlFor="serviceNeeded" className="block text-sm font-medium text-gray-700 mb-1">
+          What roofing service do you need? *
         </label>
         <select
           id="serviceNeeded"
@@ -143,64 +149,44 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
           required
           value={formData.serviceNeeded}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
         >
           <option value="">Select a service</option>
-          <option value="Repair">Roof Repair</option>
-          <option value="Replacement">Roof Replacement</option>
-          <option value="Inspection">Roof Inspection</option>
-          <option value="Emergency">Emergency Repair</option>
-          <option value="Other">Other (please specify in message)</option>
+          <option value="Emergency Repair">Emergency Repair</option>
+          <option value="Roof Repair">Roof Repair</option>
+          <option value="Roof Replacement">Roof Replacement</option>
+          <option value="Inspection">Inspection</option>
+          <option value="Maintenance">Maintenance</option>
+          <option value="Other">Other</option>
         </select>
       </div>
 
       <div>
-        <label htmlFor="urgency" className="block text-sm font-medium text-gray-700">
-          How urgent is your need? *
-        </label>
-        <select
-          id="urgency"
-          name="urgency"
-          required
-          value={formData.urgency}
-          onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
-        >
-          <option value="">Select urgency</option>
-          <option value="Emergency">Emergency (Need help now)</option>
-          <option value="Urgent">Urgent (Within 24 hours)</option>
-          <option value="Soon">Soon (This week)</option>
-          <option value="Planning">Planning (No immediate rush)</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-          Please describe your roofing problem *
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+          Please describe your roofing problem
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          required
           value={formData.message}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
-          placeholder="Please provide details about your roofing issue..."
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
+          placeholder="Tell us about your roofing issue..."
         />
       </div>
 
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-accent hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50"
-      >
-        {isSubmitting ? 'Submitting...' : 'Submit Request'}
-      </button>
+      <div>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-accent text-white py-3 px-6 rounded-md hover:bg-accent/90 transition-colors font-medium"
+        >
+          {isSubmitting ? 'Submitting...' : 'Submit Request'}
+        </button>
+      </div>
 
-      <p className="text-xs text-gray-500 mt-2">
-        * Required fields
-      </p>
+      <p className="text-sm text-gray-500">* Required fields</p>
     </form>
   );
 }
