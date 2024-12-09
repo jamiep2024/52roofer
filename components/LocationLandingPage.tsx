@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { LocationData } from '../types/location';
 import Link from 'next/link';
 import Image from 'next/image';
-import LocationContactForm from './LocationContactForm';
+import QuoteForm from './QuoteForm';
 
 interface LocationLandingPageProps {
   locationData: LocationData;
@@ -50,33 +50,30 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({ locationData,
                   href="tel:07990101324"
                   className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-accent hover:bg-accent/90 transition-colors"
                 >
-                  📞 Call Now
-                  <span className="ml-2 text-sm opacity-90">- Fast Response</span>
+                  Call Now
+                  <span className="ml-2">→</span>
                 </a>
-                <Link
+                <a
                   href="#quote-form"
-                  className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-gray-700 hover:bg-gray-600 transition-colors"
+                  className="inline-flex items-center px-8 py-4 border border-white text-lg font-medium rounded-md text-white hover:bg-white/10 transition-colors"
                 >
-                  Get Free Quote
-                  <span className="ml-2 text-sm opacity-90">- No Obligation</span>
-                </Link>
-              </div>
-
-              <div className="mt-8 flex justify-center space-x-6">
-                <div className="flex items-center">
-                  <span className="text-accent">✓</span>
-                  <span className="ml-2 text-white">60min Response</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-accent">✓</span>
-                  <span className="ml-2 text-white">10 Year Guarantee</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-accent">✓</span>
-                  <span className="ml-2 text-white">500+ 5★ Reviews</span>
-                </div>
+                  Get Quote
+                  <span className="ml-2">→</span>
+                </a>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quote Form Section */}
+      <div id="quote-form" className="bg-gray-50 py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white p-8 rounded-xl shadow-sm">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+              Get Your Free Quote
+            </h2>
+            <QuoteForm location={locationData.name} />
           </div>
         </div>
       </div>
@@ -128,77 +125,6 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({ locationData,
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Quote Form */}
-      <div id="quote-form" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold mb-4">Get a Free Quote</h2>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="address" className="block text-sm font-medium text-gray-700">
-                  Address in {locationData.name}
-                </label>
-                <input
-                  type="text"
-                  name="address"
-                  id="address"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Describe Your Roofing Need
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
-                ></textarea>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="w-full bg-accent text-white py-3 px-6 rounded-md hover:bg-accent/90 transition-colors"
-                >
-                  Get Free Quote Now
-                </button>
-              </div>
-              <p className="text-sm text-gray-500 text-center">
-                No obligation quote - hear back within 60 minutes
-              </p>
-            </form>
-          </div>
-          <div>
-            <LocationContactForm locationName={locationData.name} />
           </div>
         </div>
       </div>
@@ -255,14 +181,14 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({ locationData,
               href="tel:07990101324"
               className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-accent hover:bg-accent/90 transition-colors"
             >
-              📞 Call Now for Fast Response
+              Call Now for Fast Response
             </a>
-            <Link
+            <a
               href="#quote-form"
-              className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-gray-700 hover:bg-gray-600 transition-colors"
+              className="inline-flex items-center px-8 py-4 border border-white text-lg font-medium rounded-md text-white hover:bg-white/10 transition-colors"
             >
               Get Your Free Quote
-            </Link>
+            </a>
           </div>
         </div>
       </div>
