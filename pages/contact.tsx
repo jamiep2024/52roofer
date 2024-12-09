@@ -48,13 +48,13 @@ const ContactPage = () => {
                   <PhoneIcon className="h-6 w-6 text-accent mt-1" aria-hidden="true" />
                   <div>
                     <p className="font-medium text-gray-900 mb-1">Call Us</p>
-                    <a 
-                      href="tel:07990101324"
-                      className="text-gray-600 hover:text-accent transition-colors"
+                    <button 
+                      onClick={() => window.location.href = 'tel:07990101324'}
+                      className="inline-flex items-center px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors"
                     >
-                      07990 101324
-                    </a>
-                    <p className="text-sm text-gray-500 mt-1">Available 24/7 for emergencies</p>
+                      Call Now
+                    </button>
+                    <p className="text-sm text-gray-500 mt-2">Available 24/7 for emergencies</p>
                   </div>
                 </div>
 
@@ -76,7 +76,7 @@ const ContactPage = () => {
                 </h3>
                 <ul className="space-y-3 text-gray-600">
                   <li>✓ 24/7 Emergency Service</li>
-                  <li>✓ 10-Year Guarantee</li>
+                  <li>✓ Fully Insured & Qualified</li>
                   <li>✓ 500+ 5★ Reviews</li>
                   <li>✓ 60min Response Time</li>
                 </ul>
