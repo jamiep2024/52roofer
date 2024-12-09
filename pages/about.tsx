@@ -134,11 +134,11 @@ export default function About() {
                       },
                       {
                         name: 'Our Impact',
-                        description: 'Over the past 20 years, we've facilitated over 50,000 successful roofing projects, maintaining a 98% customer satisfaction rate and helping create hundreds of jobs in local communities.'
+                        description: "Over the past 20 years, we've facilitated over 50,000 successful roofing projects, maintaining a 98% customer satisfaction rate and helping create hundreds of jobs in local communities."
                       },
                       {
                         name: 'Our Commitment',
-                        description: 'We're dedicated to maintaining the highest standards in the industry through rigorous vetting processes, ongoing quality monitoring, and continuous improvement of our service.'
+                        description: "We're dedicated to maintaining the highest standards in the industry through rigorous vetting processes, ongoing quality monitoring, and continuous improvement of our service."
                       }
                     ].map((feature) => (
                       <div key={feature.name}>
