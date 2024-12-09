@@ -1,6 +1,7 @@
-import React, { FormEvent } from 'react';
+import React from 'react';
 import AdvancedSEO from '../components/seo/AdvancedSEO';
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import QuoteForm from '../components/QuoteForm';
 
 const ContactPage = () => {
   return (
@@ -53,98 +54,10 @@ const ContactPage = () => {
               </div>
 
               {/* Contact Form */}
-              <form 
-                className="rounded-2xl border border-gray-100 p-10 shadow-lg"
-                onSubmit={async (e: FormEvent) => {
-                  e.preventDefault();
-                  const formData = new FormData(e.target as HTMLFormElement);
-                  
-                  try {
-                    const response = await fetch('/api/submit-quote', {
-                      method: 'POST',
-                      headers: {
-                        'Content-Type': 'application/json',
-                      },
-                      body: JSON.stringify({
-                        name: formData.get('name'),
-                        email: formData.get('email'),
-                        phone: 'Not provided',
-                        address: 'Not provided',
-                        message: formData.get('message'),
-                        serviceNeeded: 'General Inquiry',
-                        urgency: 'Not specified',
-                        source: 'Contact Page'
-                      }),
-                    });
-
-                    if (!response.ok) {
-                      throw new Error('Failed to submit form');
-                    }
-
-                    alert('Message sent successfully! We will get back to you soon.');
-                    (e.target as HTMLFormElement).reset();
-                  } catch (error) {
-                    alert('Error sending message. Please try again.');
-                    console.error('Error:', error);
-                  }
-                }}
-              >
-                <h2 className="text-2xl font-bold text-gray-900 mb-8">Send us a message</h2>
-                
-                <div className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
-                      Name
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        required
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                      Email
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        required
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium leading-6 text-gray-900">
-                      Message
-                    </label>
-                    <div className="mt-2">
-                      <textarea
-                        name="message"
-                        id="message"
-                        rows={4}
-                        required
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-accent text-white py-3 px-6 rounded-md hover:bg-accent-dark transition duration-150 ease-in-out"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
+              <div className="rounded-2xl bg-gray-50 p-10">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+                <QuoteForm />
+              </div>
             </div>
           </div>
         </div>
