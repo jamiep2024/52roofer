@@ -137,12 +137,83 @@ export default function Locations() {
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly can you respond to emergency roof repairs in Oxfordshire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our Oxfordshire roofers provide 24/7 emergency response, typically arriving within 2-4 hours for urgent repairs in Oxford, Banbury, Bicester, and surrounding areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What roofing services do you offer in Gloucestershire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Gloucestershire, we offer comprehensive roofing services including repairs, installations, maintenance, chimney work, and guttering across Gloucester, Cheltenham, Stroud, and nearby towns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide free roofing quotes in Wiltshire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide free, no-obligation roofing quotes across Wiltshire including Swindon, Salisbury, and Chippenham. Our local roofers will assess your needs and provide detailed estimates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of roofs do you work with in Berkshire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our Berkshire roofers are experienced with all roof types including slate, tile, flat roofs, and EPDM. We serve Reading, Newbury, Windsor, and all surrounding areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a roof replacement take in Hampshire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Hampshire, most residential roof replacements take 2-5 days, depending on size and complexity. We serve Southampton, Portsmouth, Winchester, and nearby areas with minimal disruption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer roof maintenance services in Surrey?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide regular roof maintenance services throughout Surrey, including Guildford, Woking, and Farnham. Our maintenance programs help prevent costly repairs and extend roof life."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What roofing guarantees do you offer in Buckinghamshire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Buckinghamshire, including Milton Keynes and High Wycombe, we offer up to 20-year guarantees on new roofs and 10-year warranties on major repairs, all backed by insurance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you handle commercial roofing projects in West Sussex?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our West Sussex team handles both commercial and residential roofing projects in Crawley, Worthing, Horsham, and surrounding areas, with specialized crews for large-scale work."
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <SEO
         title="Local Roofing Services in South England | Expert Roofers Near You | 52Roofer"
         description="Professional roofing services in Oxfordshire, Gloucestershire, Wiltshire, Berkshire, Hampshire, Surrey, Buckinghamshire, and West Sussex. 24/7 emergency repairs, installations & maintenance from trusted local roofers. Free quotes available."
-        jsonLd={[organizationSchema, breadcrumbSchema]}
+        jsonLd={[organizationSchema, breadcrumbSchema, faqSchema]}
       />
 
       <div className="relative bg-white">
