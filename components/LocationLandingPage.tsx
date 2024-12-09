@@ -14,7 +14,7 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({ locationData,
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Emergency CTA */}
-      <div className="relative bg-gray-900 h-[70vh] min-h-[600px]">
+      <div className="relative bg-gray-900 min-h-screen">
         <div className="absolute inset-0">
           <Image
             src="/images/hero-bg.jpg"
@@ -27,53 +27,48 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({ locationData,
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-900/70" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex flex-col justify-center h-full pb-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen">
+          <div className="grid md:grid-cols-2 gap-8 items-center min-h-screen py-16">
+            {/* Left side - Hero Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">
-                Emergency Roofing in {locationData.name}
-                <span className="block text-accent mt-2">Available 24/7</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                Emergency Roofing Services in {locationData.name}
               </h1>
-
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                {emergencyCount}+ Emergency Callouts in {locationData.name} This Month. 
-                Professional Roofers Available Now - Response in 60 Minutes!
+              <p className="text-2xl md:text-3xl text-accent font-bold mb-6">
+                Available 24/7
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <p className="text-lg text-gray-300 mb-8">
+                24/7 emergency roofing services in {locationData.name}. Our expert team responds within 60 minutes for urgent repairs.
+              </p>
+
+              <p className="text-xl text-gray-300 mb-8">
+                {emergencyCount}+ Emergency Callouts in {locationData.name} This Month
+                <br />
+                Professional Roofers Available Now
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="tel:07990101324"
-                  className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-accent hover:bg-accent/90 transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-accent hover:bg-accent/90 transition-colors"
                 >
-                  Call Now
-                  <span className="ml-2">→</span>
-                </a>
-                <a
-                  href="#quote-form"
-                  className="inline-flex items-center px-8 py-4 border border-white text-lg font-medium rounded-md text-white hover:bg-white/10 transition-colors"
-                >
-                  Get Quote
-                  <span className="ml-2">→</span>
+                  Call Now →
                 </a>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </div>
 
-      {/* Quote Form Section */}
-      <div id="quote-form" className="bg-gray-50 py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-8 rounded-xl shadow-sm">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-              Get Your Free Roofing Quote in {locationData.name}
-            </h2>
-            <QuoteForm location={locationData.name} />
+            {/* Right side - Form */}
+            <div className="bg-white rounded-lg p-8 shadow-lg">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Get Your Free Quote
+              </h2>
+              <QuoteForm location={locationData.name} />
+            </div>
           </div>
         </div>
       </div>
