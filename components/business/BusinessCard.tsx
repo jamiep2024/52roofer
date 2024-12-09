@@ -13,6 +13,7 @@ import {
   EnvelopeIcon,
   MapPinIcon
 } from '@heroicons/react/24/outline';
+import { toast } from 'react-hot-toast';
 
 interface BusinessCardProps {
   business: Business;
@@ -219,8 +220,33 @@ export default function BusinessCard({ business }: BusinessCardProps) {
           {business.email && (
             <a
               href={business.name.includes('Grandeur Heritage Group') 
-                ? process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL 
+                ? '#'
                 : `mailto:${business.email}`}
+              onClick={async (e) => {
+                if (business.name.includes('Grandeur Heritage Group')) {
+                  e.preventDefault();
+                  try {
+                    const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!, {
+                      method: 'POST',
+                      mode: 'no-cors',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        timestamp: new Date().toISOString(),
+                        source: typeof window !== 'undefined' ? window.location.pathname : '',
+                        status: 'New Lead',
+                        followUpNotes: 'Lead from Grandeur Heritage Group listing'
+                      })
+                    });
+                    
+                    toast.success('Thank you for your interest! We will contact you shortly.');
+                  } catch (error) {
+                    console.error('Submission error:', error);
+                    toast.error('Sorry, there was an error. Please try again or call us directly.');
+                  }
+                }
+              }}
               className={`inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-lg ${
                 business.featured
                   ? 'text-white bg-gradient-to-r from-yellow-600 to-yellow-800 hover:from-yellow-700 hover:to-yellow-900'
