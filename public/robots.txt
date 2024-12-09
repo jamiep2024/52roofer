@@ -1,4 +1,12 @@
 # https://52roofer.com/robots.txt
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap
+Sitemap: https://52roofer.com/sitemap.xml
+
 # Main Search Engines
 User-agent: Googlebot
 Allow: /
@@ -7,43 +15,24 @@ Crawl-delay: 1
 User-agent: Googlebot-Image
 Allow: /images/
 Allow: /*.jpg$
+Allow: /*.jpeg$
 Allow: /*.png$
 Allow: /*.gif$
 Allow: /*.webp$
+Allow: /*.svg$
 
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-User-agent: *
+# Social Media Crawlers
+User-agent: Twitterbot
 Allow: /
+Allow: /images/
+
+User-agent: facebookexternalhit
+Allow: /
+Allow: /images/
 
 # Host
 Host: https://52roofer.com
-
-# Sitemaps
-Sitemap: https://52roofer.com/sitemap.xml
-
-# Important Directories - High Priority
-Allow: /services/
-Allow: /location/
-Allow: /images/
-Allow: /roofer/
-Allow: /about/
-Allow: /contact/
-
-# Block Private Areas
-Disallow: /admin/
-Disallow: /private/
-Disallow: /api/
-Disallow: /*?*
-Disallow: /*?
-Disallow: /*&
-Disallow: /*.json$
-Disallow: /webpack-runtime
-Disallow: /_next/static/
-Noindex: /404
-Noindex: /500
-
-# Clean Parameters
-Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&fbclid&gclid

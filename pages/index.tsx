@@ -15,7 +15,12 @@ const organizationSchema = {
   "@id": "https://52roofer.com/#organization",
   "name": "52Roofer",
   "url": "https://52roofer.com",
-  "logo": "https://52roofer.com/images/logo.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://52roofer.com/images/logo.png",
+    "width": "512",
+    "height": "512"
+  },
   "description": "Find trusted local roofers in Oxfordshire, Gloucestershire, Wiltshire, and Berkshire. Professional roofing services for repairs, installations, and maintenance.",
   "areaServed": [
     {
@@ -40,35 +45,79 @@ const organizationSchema = {
     "telephone": "+44-0800-123-4567",
     "contactType": "customer service",
     "areaServed": ["GB"],
-    "availableLanguage": ["English"]
-  }
+    "availableLanguage": ["English"],
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  },
+  "sameAs": [
+    "https://www.facebook.com/52roofer",
+    "https://twitter.com/52roofer",
+    "https://www.linkedin.com/company/52roofer"
+  ]
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "RoofingContractor",
   "@id": "https://52roofer.com/#localbusiness",
   "name": "52Roofer - Professional Roofing Services",
-  "image": "https://52roofer.com/images/hero-bg.jpg",
-  "priceRange": "££",
+  "image": "https://52roofer.com/images/logo.png",
+  "priceRange": "££-£££",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "GB",
-    "addressRegion": "England"
+    "addressRegion": "Oxfordshire"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "51.7520",
+    "longitude": "-1.2577"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
-    "reviewCount": "157"
+    "reviewCount": "150"
   },
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.7520",
-      "longitude": "-1.2577"
-    },
-    "geoRadius": "50000"
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Roofing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Roof Repairs",
+          "description": "24/7 emergency roof repair service"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Roof Installation",
+          "description": "Professional roof installation services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Roof Maintenance",
+          "description": "Regular roof maintenance and inspections"
+        }
+      }
+    ]
   }
 };
 
