@@ -104,6 +104,124 @@ export default function Locations() {
             ))}
           </div>
 
+          {/* Comprehensive Service Areas */}
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold mb-8 gradient-text text-center">All Service Areas</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="glass-effect p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3 gradient-text">Oxfordshire</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>Oxford</li>
+                  <li>Headington</li>
+                  <li>Cowley</li>
+                  <li>Botley</li>
+                  <li>Wolvercote</li>
+                  <li>Summertown</li>
+                  <li>Marston</li>
+                  <li>Iffley</li>
+                </ul>
+              </div>
+
+              <div className="glass-effect p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3 gradient-text">Gloucestershire</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>Gloucester</li>
+                  <li>Cheltenham</li>
+                  <li>Stroud</li>
+                  <li>Tewkesbury</li>
+                  <li>Cirencester</li>
+                  <li>Dursley</li>
+                  <li>Stow-on-the-Wold</li>
+                  <li>Moreton-in-Marsh</li>
+                </ul>
+              </div>
+
+              <div className="glass-effect p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3 gradient-text">Wiltshire</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>Swindon</li>
+                  <li>Salisbury</li>
+                  <li>Chippenham</li>
+                  <li>Trowbridge</li>
+                  <li>Marlborough</li>
+                  <li>Devizes</li>
+                  <li>Warminster</li>
+                  <li>Melksham</li>
+                </ul>
+              </div>
+
+              <div className="glass-effect p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3 gradient-text">Berkshire</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>Reading</li>
+                  <li>Newbury</li>
+                  <li>Windsor</li>
+                  <li>Maidenhead</li>
+                  <li>Bracknell</li>
+                  <li>Wokingham</li>
+                  <li>Thatcham</li>
+                  <li>Slough</li>
+                </ul>
+              </div>
+
+              <div className="glass-effect p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3 gradient-text">Hampshire</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>Winchester</li>
+                  <li>Southampton</li>
+                  <li>Portsmouth</li>
+                  <li>Basingstoke</li>
+                  <li>Andover</li>
+                  <li>Aldershot</li>
+                  <li>Farnborough</li>
+                  <li>Fleet</li>
+                </ul>
+              </div>
+
+              <div className="glass-effect p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3 gradient-text">Surrey</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>Guildford</li>
+                  <li>Woking</li>
+                  <li>Farnham</li>
+                  <li>Epsom</li>
+                  <li>Redhill</li>
+                  <li>Staines</li>
+                  <li>Camberley</li>
+                  <li>Dorking</li>
+                </ul>
+              </div>
+
+              <div className="glass-effect p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3 gradient-text">Buckinghamshire</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>Aylesbury</li>
+                  <li>High Wycombe</li>
+                  <li>Milton Keynes</li>
+                  <li>Amersham</li>
+                  <li>Chesham</li>
+                  <li>Marlow</li>
+                  <li>Beaconsfield</li>
+                  <li>Buckingham</li>
+                </ul>
+              </div>
+
+              <div className="glass-effect p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3 gradient-text">West Sussex</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>Chichester</li>
+                  <li>Crawley</li>
+                  <li>Worthing</li>
+                  <li>Horsham</li>
+                  <li>Bognor Regis</li>
+                  <li>Littlehampton</li>
+                  <li>East Grinstead</li>
+                  <li>Haywards Heath</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           {/* Service Coverage */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8">Why Choose Our Local Roofers?</h2>
