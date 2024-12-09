@@ -55,15 +55,38 @@ const ContactPage = () => {
               {/* Contact Form */}
               <form 
                 className="rounded-2xl border border-gray-100 p-10 shadow-lg"
-                onSubmit={(e: FormEvent) => {
+                onSubmit={async (e: FormEvent) => {
                   e.preventDefault();
                   const formData = new FormData(e.target as HTMLFormElement);
-                  const name = formData.get('name') as string;
-                  const email = formData.get('email') as string;
-                  const message = formData.get('message') as string;
                   
-                  const mailtoLink = `mailto:52rooferteam@gmail.com?subject=Website Inquiry from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-                  window.location.href = mailtoLink;
+                  try {
+                    const response = await fetch('/api/submit-quote', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        phone: 'Not provided',
+                        address: 'Not provided',
+                        message: formData.get('message'),
+                        serviceNeeded: 'General Inquiry',
+                        urgency: 'Not specified',
+                        source: 'Contact Page'
+                      }),
+                    });
+
+                    if (!response.ok) {
+                      throw new Error('Failed to submit form');
+                    }
+
+                    alert('Message sent successfully! We will get back to you soon.');
+                    (e.target as HTMLFormElement).reset();
+                  } catch (error) {
+                    alert('Error sending message. Please try again.');
+                    console.error('Error:', error);
+                  }
                 }}
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-8">Send us a message</h2>
@@ -78,6 +101,7 @@ const ContactPage = () => {
                         type="text"
                         name="name"
                         id="name"
+                        required
                         className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                       />
                     </div>
@@ -92,6 +116,7 @@ const ContactPage = () => {
                         type="email"
                         name="email"
                         id="email"
+                        required
                         className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                       />
                     </div>
@@ -106,19 +131,18 @@ const ContactPage = () => {
                         name="message"
                         id="message"
                         rows={4}
+                        required
                         className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>
 
-                  <div>
-                    <button
-                      type="submit"
-                      className="block w-full rounded-md bg-blue-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                    >
-                      Send Message
-                    </button>
-                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-accent text-white py-3 px-6 rounded-md hover:bg-accent-dark transition duration-150 ease-in-out"
+                  >
+                    Send Message
+                  </button>
                 </div>
               </form>
             </div>
