@@ -99,6 +99,47 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({ location }) => {
           </div>
         </div>
       </div>
+
+      {/* Frequently Asked Questions */}
+      <div className="bg-white rounded-xl shadow-sm p-6">
+        <h2 className="text-2xl font-bold mb-6 gradient-text">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-semibold mb-2">How quickly can you respond to emergency roof repairs in {location.name}?</h3>
+            <p className="text-gray-600">
+              Our {location.name} roofers provide 24/7 emergency response, typically arriving within 2-4 hours for urgent repairs in {location.name} and surrounding areas like {location.nearbyAreas.slice(0, 3).join(", ")}.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="font-semibold mb-2">What roofing services do you offer in {location.county}?</h3>
+            <p className="text-gray-600">
+              In {location.county}, we offer comprehensive roofing services including repairs, installations, maintenance, chimney work, and guttering. Our services are available across {location.name} and nearby areas.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-2">Do you provide free roofing quotes in {location.name}?</h3>
+            <p className="text-gray-600">
+              Yes, we provide free, no-obligation roofing quotes throughout {location.name} and surrounding areas. Our local roofers will assess your needs and provide detailed estimates for any roofing work required.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-2">What types of roofs do you work with in {location.name}?</h3>
+            <p className="text-gray-600">
+              Our {location.name} roofers are experienced with all roof types including {location.roofingInfo.commonStyles.join(", ")}. We serve {location.name} and all surrounding areas with expert roofing solutions.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-2">What guarantees do you offer on roofing work in {location.name}?</h3>
+            <p className="text-gray-600">
+              In {location.name}, we offer up to 20-year guarantees on new roofs and 10-year warranties on major repairs, all backed by insurance. Our work is fully guaranteed and we provide detailed warranties for your peace of mind.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
