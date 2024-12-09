@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Layout from '../components/layout/Layout';
 import MobileOptimizer from '../components/optimization/MobileOptimizer';
 import PerformanceOptimizer from '../components/optimization/PerformanceOptimizer';
+import { Toaster } from 'react-hot-toast';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Toaster position="top-right" />
       <MobileOptimizer />
       <PerformanceOptimizer />
       <Layout>
