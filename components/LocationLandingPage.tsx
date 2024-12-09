@@ -27,49 +27,39 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({ locationData,
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-900/70" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen">
-          <div className="grid md:grid-cols-2 gap-8 items-center min-h-screen py-16">
-            {/* Left side - Hero Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+              Emergency Roofing Services in {locationData.name}
+            </h1>
+            <p className="text-2xl md:text-3xl text-accent font-bold mb-6">
+              Available 24/7
+            </p>
+
+            <p className="text-lg text-gray-300 mb-8">
+              24/7 emergency roofing services in {locationData.name}. Our expert team responds within 60 minutes for urgent repairs.
+            </p>
+
+            <p className="text-xl text-gray-300 mb-8">
+              {emergencyCount}+ Emergency Callouts in {locationData.name} This Month
+            </p>
+
+            <Link
+              href="tel:01234567890"
+              className="inline-block bg-accent hover:bg-accent/90 text-white font-bold py-4 px-8 rounded-lg text-xl mb-12 transition-all"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                Emergency Roofing Services in {locationData.name}
-              </h1>
-              <p className="text-2xl md:text-3xl text-accent font-bold mb-6">
-                Available 24/7
-              </p>
+              Call Now
+            </Link>
 
-              <p className="text-lg text-gray-300 mb-8">
-                24/7 emergency roofing services in {locationData.name}. Our expert team responds within 60 minutes for urgent repairs.
-              </p>
-
-              <p className="text-xl text-gray-300 mb-8">
-                {emergencyCount}+ Emergency Callouts in {locationData.name} This Month
-                <br />
-                Professional Roofers Available Now
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="tel:07990101324"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-accent hover:bg-accent/90 transition-colors"
-                >
-                  Call Now →
-                </a>
-              </div>
-            </motion.div>
-
-            {/* Right side - Form */}
-            <div className="bg-white rounded-lg p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Get Your Free Quote
-              </h2>
+            <div className="max-w-2xl mx-auto bg-white/95 backdrop-blur-sm rounded-xl p-8 shadow-2xl">
               <QuoteForm location={locationData.name} />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
