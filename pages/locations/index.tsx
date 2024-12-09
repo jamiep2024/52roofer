@@ -11,7 +11,111 @@ export default function Locations() {
     "name": "52Roofer",
     "url": "https://52roofer.com",
     "logo": "https://52roofer.com/images/logo.png",
-    "description": "Professional roofing services across South England. Find trusted local roofers in Oxfordshire, Gloucestershire, Wiltshire, Berkshire, Hampshire, Surrey, Buckinghamshire, and West Sussex."
+    "description": "Professional roofing services across South England. Find trusted local roofers in Oxfordshire, Gloucestershire, Wiltshire, Berkshire, Hampshire, Surrey, Buckinghamshire, and West Sussex.",
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "Oxfordshire",
+        "containsPlace": [
+          {"@type": "City", "name": "Oxford"},
+          {"@type": "City", "name": "Banbury"},
+          {"@type": "City", "name": "Bicester"}
+        ]
+      },
+      {
+        "@type": "State",
+        "name": "Gloucestershire",
+        "containsPlace": [
+          {"@type": "City", "name": "Gloucester"},
+          {"@type": "City", "name": "Cheltenham"},
+          {"@type": "City", "name": "Stroud"}
+        ]
+      },
+      {
+        "@type": "State",
+        "name": "Wiltshire",
+        "containsPlace": [
+          {"@type": "City", "name": "Swindon"},
+          {"@type": "City", "name": "Salisbury"},
+          {"@type": "City", "name": "Chippenham"}
+        ]
+      },
+      {
+        "@type": "State",
+        "name": "Berkshire",
+        "containsPlace": [
+          {"@type": "City", "name": "Reading"},
+          {"@type": "City", "name": "Newbury"},
+          {"@type": "City", "name": "Windsor"}
+        ]
+      },
+      {
+        "@type": "State",
+        "name": "Hampshire",
+        "containsPlace": [
+          {"@type": "City", "name": "Southampton"},
+          {"@type": "City", "name": "Portsmouth"},
+          {"@type": "City", "name": "Winchester"}
+        ]
+      },
+      {
+        "@type": "State",
+        "name": "Surrey",
+        "containsPlace": [
+          {"@type": "City", "name": "Guildford"},
+          {"@type": "City", "name": "Woking"},
+          {"@type": "City", "name": "Farnham"}
+        ]
+      },
+      {
+        "@type": "State",
+        "name": "Buckinghamshire",
+        "containsPlace": [
+          {"@type": "City", "name": "Milton Keynes"},
+          {"@type": "City", "name": "High Wycombe"},
+          {"@type": "City", "name": "Aylesbury"}
+        ]
+      },
+      {
+        "@type": "State",
+        "name": "West Sussex",
+        "containsPlace": [
+          {"@type": "City", "name": "Crawley"},
+          {"@type": "City", "name": "Worthing"},
+          {"@type": "City", "name": "Horsham"}
+        ]
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Roofing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Emergency Roof Repairs",
+            "description": "24/7 emergency roofing repairs across South England"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Roof Installation",
+            "description": "Professional roof installation services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Roof Maintenance",
+            "description": "Regular roof maintenance and inspections"
+          }
+        }
+      ]
+    }
   };
 
   const breadcrumbSchema = {
@@ -36,8 +140,8 @@ export default function Locations() {
   return (
     <>
       <SEO
-        title="Local Roofing Services | Coverage Areas | 52Roofer"
-        description="Find professional roofing services in your area. We cover Oxfordshire, Gloucestershire, Wiltshire, Berkshire, Hampshire, Surrey, Buckinghamshire, and West Sussex. Local experts for all your roofing needs."
+        title="Local Roofing Services in South England | Expert Roofers Near You | 52Roofer"
+        description="Professional roofing services in Oxfordshire, Gloucestershire, Wiltshire, Berkshire, Hampshire, Surrey, Buckinghamshire, and West Sussex. 24/7 emergency repairs, installations & maintenance from trusted local roofers. Free quotes available."
         jsonLd={[organizationSchema, breadcrumbSchema]}
       />
 
@@ -107,11 +211,14 @@ export default function Locations() {
           {/* Comprehensive Service Areas */}
           <div className="mt-16">
             <h2 className="text-3xl font-bold mb-8 gradient-text text-center">All Service Areas</h2>
+            <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+              52Roofer provides comprehensive roofing services across South England. Our network of trusted local roofers offers emergency repairs, installations, and maintenance services 24/7. Each area is served by fully qualified and insured professionals.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="glass-effect p-6 rounded-xl">
                 <h3 className="text-xl font-bold mb-3 gradient-text">Oxfordshire</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>Oxford</li>
+                  <li><Link href="/location/oxford" className="hover:text-accent transition-colors">Oxford</Link></li>
                   <li>Banbury</li>
                   <li>Bicester</li>
                   <li>Witney</li>
@@ -236,6 +343,16 @@ export default function Locations() {
                 </ul>
               </div>
             </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <h3 className="text-2xl font-bold mb-4 gradient-text">Need a Roofer in Your Area?</h3>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Whether you need emergency repairs, a new roof installation, or regular maintenance, our local roofers are here to help. All our services come with warranties and guarantees.
+            </p>
+            <Link href="/contact" className="inline-block bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+              Get a Free Quote
+            </Link>
           </div>
 
           {/* Service Coverage */}
