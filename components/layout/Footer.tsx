@@ -41,48 +41,98 @@ const Footer = () => {
           
           <div>
             <h4 className="text-lg font-semibold mb-4">Service Areas</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/locations/oxfordshire" className="text-gray-400 hover:text-accent">
-                  Oxfordshire
-                </Link>
-              </li>
-              <li>
-                <Link href="/locations/gloucestershire" className="text-gray-400 hover:text-accent">
-                  Gloucestershire
-                </Link>
-              </li>
-              <li>
-                <Link href="/locations/wiltshire" className="text-gray-400 hover:text-accent">
-                  Wiltshire
-                </Link>
-              </li>
-              <li>
-                <Link href="/locations/berkshire" className="text-gray-400 hover:text-accent">
-                  Berkshire
-                </Link>
-              </li>
-              <li>
-                <Link href="/locations/hampshire" className="text-gray-400 hover:text-accent">
-                  Hampshire
-                </Link>
-              </li>
-              <li>
-                <Link href="/locations/surrey" className="text-gray-400 hover:text-accent">
-                  Surrey
-                </Link>
-              </li>
-              <li>
-                <Link href="/locations/buckinghamshire" className="text-gray-400 hover:text-accent">
-                  Buckinghamshire
-                </Link>
-              </li>
-              <li>
-                <Link href="/locations/west-sussex" className="text-gray-400 hover:text-accent">
-                  West Sussex
-                </Link>
-              </li>
-            </ul>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+              <div>
+                <h5 className="text-sm font-medium text-gray-300 mb-2">Counties</h5>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="/locations/oxfordshire" className="text-gray-400 hover:text-accent">
+                      Oxfordshire
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/gloucestershire" className="text-gray-400 hover:text-accent">
+                      Gloucestershire
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/wiltshire" className="text-gray-400 hover:text-accent">
+                      Wiltshire
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/berkshire" className="text-gray-400 hover:text-accent">
+                      Berkshire
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/hampshire" className="text-gray-400 hover:text-accent">
+                      Hampshire
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/surrey" className="text-gray-400 hover:text-accent">
+                      Surrey
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/buckinghamshire" className="text-gray-400 hover:text-accent">
+                      Buckinghamshire
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/west-sussex" className="text-gray-400 hover:text-accent">
+                      West Sussex
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h5 className="text-sm font-medium text-gray-300 mb-2">Major Cities</h5>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="/locations/oxford" className="text-gray-400 hover:text-accent">
+                      Oxford
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/gloucester" className="text-gray-400 hover:text-accent">
+                      Gloucester
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/swindon" className="text-gray-400 hover:text-accent">
+                      Swindon
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/reading" className="text-gray-400 hover:text-accent">
+                      Reading
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/guildford" className="text-gray-400 hover:text-accent">
+                      Guildford
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/aylesbury" className="text-gray-400 hover:text-accent">
+                      Aylesbury
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/chichester" className="text-gray-400 hover:text-accent">
+                      Chichester
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/locations/winchester" className="text-gray-400 hover:text-accent">
+                      Winchester
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           
           <div>

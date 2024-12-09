@@ -4,8 +4,9 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-# Sitemap
+# Sitemaps
 Sitemap: https://52roofer.com/sitemap.xml
+Sitemap: https://52roofer.com/sitemap-locations.xml
 
 # Main Search Engines
 User-agent: Googlebot
@@ -19,20 +20,18 @@ Allow: /*.jpeg$
 Allow: /*.png$
 Allow: /*.gif$
 Allow: /*.webp$
-Allow: /*.svg$
 
+# Bing
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-# Social Media Crawlers
-User-agent: Twitterbot
+# DuckDuckGo
+User-agent: DuckDuckBot
 Allow: /
-Allow: /images/
+Crawl-delay: 1
 
-User-agent: facebookexternalhit
+# Yahoo
+User-agent: Slurp
 Allow: /
-Allow: /images/
-
-# Host
-Host: https://52roofer.com
+Crawl-delay: 1
