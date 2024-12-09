@@ -100,16 +100,19 @@ export default function BusinessCard({ business }: BusinessCardProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          timestamp: new Date().toISOString(),
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          message: formData.message,
-          source: typeof window !== 'undefined' ? window.location.pathname : '',
-          status: 'New Lead',
-          followUpNotes: 'Lead from Grandeur Heritage Group listing'
-        })
+        body: JSON.stringify([
+          new Date().toISOString(), // Timestamp
+          formData.name,            // Name
+          formData.phone,           // Phone
+          formData.email,           // Email
+          business.location || '',   // Address
+          'General Inquiry',        // Service Needed
+          'Standard',               // Urgency
+          formData.message,         // Message
+          typeof window !== 'undefined' ? window.location.pathname : '', // Source
+          'New Lead',               // Status
+          `Lead from Grandeur Heritage Group listing - ${business.location}` // Follow up notes
+        ])
       });
       
       toast.success('Thank you! We will contact you shortly.');
