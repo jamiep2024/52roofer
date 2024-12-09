@@ -178,8 +178,8 @@ export default function Locations() {
                 href={`/location/${key}`}
                 className="block group"
               >
-                <div className="glass-effect p-8 rounded-xl card-hover">
-                  <h2 className="text-2xl font-bold mb-4 gradient-text">
+                <div className="p-8 rounded-xl card-hover">
+                  <h2 className="text-2xl font-bold mb-4">
                     {location.name}, {location.county}
                   </h2>
                   <p className="text-gray-600 mb-4">
@@ -210,15 +210,15 @@ export default function Locations() {
 
           {/* Comprehensive Service Areas */}
           <div className="mt-16">
-            <h2 className="text-3xl font-bold mb-8 gradient-text text-center">All Service Areas</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">All Service Areas</h2>
             <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
               52Roofer provides comprehensive roofing services across South England. Our network of trusted local roofers offers emergency repairs, installations, and maintenance services 24/7. Each area is served by fully qualified and insured professionals.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="glass-effect p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-3 gradient-text">Oxfordshire</h3>
+              <div className="p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3">Oxfordshire</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li><Link href="/location/oxford" className="hover:text-accent transition-colors">Oxford</Link></li>
+                  <li>Oxford</li>
                   <li>Banbury</li>
                   <li>Bicester</li>
                   <li>Witney</li>
@@ -231,8 +231,8 @@ export default function Locations() {
                 </ul>
               </div>
 
-              <div className="glass-effect p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-3 gradient-text">Gloucestershire</h3>
+              <div className="p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3">Gloucestershire</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>Gloucester</li>
                   <li>Cheltenham</li>
@@ -247,8 +247,8 @@ export default function Locations() {
                 </ul>
               </div>
 
-              <div className="glass-effect p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-3 gradient-text">Wiltshire</h3>
+              <div className="p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3">Wiltshire</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>Swindon</li>
                   <li>Salisbury</li>
@@ -263,8 +263,8 @@ export default function Locations() {
                 </ul>
               </div>
 
-              <div className="glass-effect p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-3 gradient-text">Berkshire</h3>
+              <div className="p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3">Berkshire</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>Reading</li>
                   <li>Newbury</li>
@@ -279,8 +279,8 @@ export default function Locations() {
                 </ul>
               </div>
 
-              <div className="glass-effect p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-3 gradient-text">Hampshire</h3>
+              <div className="p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3">Hampshire</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>Southampton</li>
                   <li>Portsmouth</li>
@@ -295,8 +295,8 @@ export default function Locations() {
                 </ul>
               </div>
 
-              <div className="glass-effect p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-3 gradient-text">Surrey</h3>
+              <div className="p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3">Surrey</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>Guildford</li>
                   <li>Woking</li>
@@ -311,8 +311,8 @@ export default function Locations() {
                 </ul>
               </div>
 
-              <div className="glass-effect p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-3 gradient-text">Buckinghamshire</h3>
+              <div className="p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3">Buckinghamshire</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>Milton Keynes</li>
                   <li>High Wycombe</li>
@@ -327,8 +327,8 @@ export default function Locations() {
                 </ul>
               </div>
 
-              <div className="glass-effect p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-3 gradient-text">West Sussex</h3>
+              <div className="p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-3">West Sussex</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>Crawley</li>
                   <li>Worthing</li>
@@ -346,7 +346,7 @@ export default function Locations() {
           </div>
 
           <div className="mt-12 text-center">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">Need a Roofer in Your Area?</h3>
+            <h3 className="text-2xl font-bold mb-4">Need a Roofer in Your Area?</h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Whether you need emergency repairs, a new roof installation, or regular maintenance, our local roofers are here to help. All our services come with warranties and guarantees.
             </p>
