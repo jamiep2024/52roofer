@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { LocationData } from '../types/location';
 import Link from 'next/link';
 import Image from 'next/image';
+import LocationContactForm from './LocationContactForm';
 
 interface LocationLandingPageProps {
   locationData: LocationData;
@@ -132,12 +133,10 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({ locationData,
       </div>
 
       {/* Quote Form */}
-      <div id="quote-form" className="bg-white py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-50 p-8 rounded-xl shadow-sm">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-              Get Your Free Quote
-            </h2>
+      <div id="quote-form" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-2xl font-semibold mb-4">Get a Free Quote</h2>
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -197,6 +196,9 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({ locationData,
                 No obligation quote - hear back within 60 minutes
               </p>
             </form>
+          </div>
+          <div>
+            <LocationContactForm locationName={locationData.name} />
           </div>
         </div>
       </div>
