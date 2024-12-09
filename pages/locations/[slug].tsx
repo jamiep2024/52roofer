@@ -316,22 +316,7 @@ export default function LocationPage({ location, slug }: LocationPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <main className="flex-1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                Emergency Roofing Services in {location.name}
-              </h1>
-              <p className="text-lg text-gray-600 mb-8">
-                24/7 emergency roofing services in {location.name}. Our expert team responds within 60 minutes for urgent repairs.
-              </p>
-              <LocationLandingPage locationData={location} />
-            </div>
-            <div>
-              <QuoteForm location={location.name} />
-            </div>
-          </div>
-        </div>
+        <LocationLandingPage locationData={location} />
       </main>
     </>
   );
