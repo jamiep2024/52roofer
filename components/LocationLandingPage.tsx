@@ -71,7 +71,7 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({ locationData,
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white p-8 rounded-xl shadow-sm">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-              Get Your Free Quote
+              Get Your Free Roofing Quote in {locationData.name}
             </h2>
             <QuoteForm location={locationData.name} />
           </div>
@@ -182,12 +182,6 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({ locationData,
               className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-accent hover:bg-accent/90 transition-colors"
             >
               Call Now for Fast Response
-            </a>
-            <a
-              href="#quote-form"
-              className="inline-flex items-center px-8 py-4 border border-white text-lg font-medium rounded-md text-white hover:bg-white/10 transition-colors"
-            >
-              Get Your Free Quote
             </a>
           </div>
         </div>

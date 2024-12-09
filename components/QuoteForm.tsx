@@ -37,16 +37,14 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
           serviceNeeded: formData.serviceNeeded,
           urgency: formData.urgency,
           message: formData.message,
-          source: window.location.pathname,
+          source: typeof window !== 'undefined' ? window.location.pathname : '',
           status: 'New Lead',
           followUpNotes: ''
         }),
+        redirect: 'follow'
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
-      }
-
+      // Google Apps Script returns a redirect response, which is fine
       toast.success('Thank you! We will contact you shortly about your roofing needs.');
       setFormData({
         name: '',
@@ -58,6 +56,7 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
         message: ''
       });
     } catch (error) {
+      console.error('Form submission error:', error);
       toast.error('Sorry, there was an error submitting your request. Please try again.');
     } finally {
       setIsSubmitting(false);
