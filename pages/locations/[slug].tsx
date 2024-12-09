@@ -2,17 +2,119 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { locationData } from '../../data/locationData';
 import LocationLandingPage from '../../components/LocationLandingPage';
 import { NextSeo } from 'next-seo';
+import { LocationData } from '../../types/location';
 
-export default function LocationPage({ location, slug }) {
+interface LocationPageProps {
+  location: LocationData;
+  slug: string;
+}
+
+interface Schema {
+  "@context": string;
+  "@type": string;
+  "@id": string;
+  "name": string;
+  "description": string;
+  "url": string;
+  "logo": string;
+  "image": string;
+  "telephone": string;
+  "email": string;
+  "address": {
+    "@type": string;
+    "addressLocality": string;
+    "addressRegion": string;
+    "addressCountry": string;
+  };
+  "geo": {
+    "@type": string;
+    "latitude": number;
+    "longitude": number;
+  };
+  "areaServed": {
+    "@type": string;
+    "name": string;
+    "containedInPlace": {
+      "@type": string;
+      "name": string;
+    };
+  };
+  "openingHours": string;
+  "priceRange": string;
+  "hasOfferCatalog": {
+    "@type": string;
+    "name": string;
+    "itemListElement": {
+      "@type": string;
+      "itemOffered": {
+        "@type": string;
+        "name": string;
+        "description": string;
+        "serviceType": string;
+        "provider": {
+          "@type": string;
+          "name": string;
+          "areaServed": {
+            "@type": string;
+            "name": string;
+          };
+        };
+      };
+      "priceSpecification": {
+        "@type": string;
+        "price": number;
+        "priceCurrency": string;
+      };
+    }[];
+  };
+  "review": {
+    "@type": string;
+    "reviewRating": {
+      "@type": string;
+      "ratingValue": number;
+      "bestRating": number;
+    };
+    "author": {
+      "@type": string;
+      "name": string;
+    };
+    "reviewBody": string;
+  }[];
+  "potentialAction": {
+    "@type": string;
+    "target": {
+      "@type": string;
+      "urlTemplate": string;
+      "inLanguage": string;
+      "actionPlatform": string[];
+    };
+    "result": {
+      "@type": string;
+      "priceSpecification": {
+        "@type": string;
+        "priceCurrency": string;
+      };
+    };
+  };
+  "aggregateRating": {
+    "@type": string;
+    "ratingValue": number;
+    "reviewCount": number;
+    "bestRating": number;
+    "worstRating": number;
+  };
+}
+
+export default function LocationPage({ location, slug }: LocationPageProps) {
   const seoTitle = `🏆 Emergency Roofers ${location.name} | 24/7 Local Roof Repairs | Best Price 2024`;
   const seoDescription = `⚡FAST Emergency Roofer in ${location.name} - 24/7 Roof Repairs ✓10-Year Guarantee ✓500+ 5★ Reviews ✓60min Response ✓FREE Quote. Local Experts in ${location.county}. Roof Replacement from £2999. CALL NOW!`;
 
-  const schema = {
+  const schema: Schema = {
     "@context": "https://schema.org",
     "@type": "RoofingContractor",
     "@id": `https://52roofer.com/locations/${slug}#business`,
     "name": `52roofer.com - Emergency Roofing Services ${location.name}`,
-    "description": `24/7 emergency roofing services in ${location.name}, ${location.county}. Specializing in rapid roof repairs, replacements, and maintenance. Trusted by local homeowners with 500+ 5-star reviews.`,
+    "description": `24/7 emergency roofing services in ${location.name}, ${location.county}. Specializing in rapid roof repairs, replacements, and maintenance. Trusted by 10,000+ homeowners with 500+ 5-star reviews.`,
     "url": `https://52roofer.com/locations/${slug}`,
     "logo": "https://52roofer.com/images/logo.png",
     "image": "https://52roofer.com/images/storefront.jpg",
@@ -26,8 +128,8 @@ export default function LocationPage({ location, slug }) {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": location.coordinates.latitude,
-      "longitude": location.coordinates.longitude
+      "latitude": parseFloat(location.coordinates.latitude),
+      "longitude": parseFloat(location.coordinates.longitude)
     },
     "areaServed": {
       "@type": "City",
@@ -61,7 +163,7 @@ export default function LocationPage({ location, slug }) {
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
-            "price": "150",
+            "price": 150,
             "priceCurrency": "GBP"
           }
         },
@@ -83,7 +185,7 @@ export default function LocationPage({ location, slug }) {
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
-            "price": "2999",
+            "price": 2999,
             "priceCurrency": "GBP"
           }
         }
@@ -94,8 +196,8 @@ export default function LocationPage({ location, slug }) {
         "@type": "Review",
         "reviewRating": {
           "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
+          "ratingValue": 5,
+          "bestRating": 5
         },
         "author": {
           "@type": "Person",
@@ -107,8 +209,8 @@ export default function LocationPage({ location, slug }) {
         "@type": "Review",
         "reviewRating": {
           "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
+          "ratingValue": 5,
+          "bestRating": 5
         },
         "author": {
           "@type": "Person",
@@ -138,10 +240,10 @@ export default function LocationPage({ location, slug }) {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "500",
-      "bestRating": "5",
-      "worstRating": "1"
+      "ratingValue": 4.9,
+      "reviewCount": 500,
+      "bestRating": 5,
+      "worstRating": 1
     }
   };
 
@@ -228,7 +330,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<LocationPageProps> = async ({ params }) => {
   const slug = params?.slug as string;
   const location = locationData[slug];
 
