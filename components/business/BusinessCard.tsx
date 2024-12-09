@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Business } from '../../types/business';
 import { 
   StarIcon, 
@@ -11,7 +11,8 @@ import {
   UserGroupIcon,
   PhoneIcon,
   EnvelopeIcon,
-  MapPinIcon
+  MapPinIcon,
+  XMarkIcon
 } from '@heroicons/react/24/outline';
 import { toast } from 'react-hot-toast';
 
@@ -28,6 +29,13 @@ interface BadgeStyle {
 type BadgeStyles = {
   [key: string]: BadgeStyle;
 };
+
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+}
 
 const getBadgeStyle = (badge: string, isGrandeur: boolean): BadgeStyle => {
   const styles: BadgeStyles = {
@@ -71,7 +79,59 @@ const getBadgeStyle = (badge: string, isGrandeur: boolean): BadgeStyle => {
 };
 
 export default function BusinessCard({ business }: BusinessCardProps) {
+  const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const isGrandeur = business.name === 'Grandeur Heritage Group';
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          timestamp: new Date().toISOString(),
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+          source: typeof window !== 'undefined' ? window.location.pathname : '',
+          status: 'New Lead',
+          followUpNotes: 'Lead from Grandeur Heritage Group listing'
+        })
+      });
+      
+      toast.success('Thank you! We will contact you shortly.');
+      setShowModal(false);
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast.error('Sorry, there was an error. Please try again or call us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   return (
     <div className={`relative bg-white rounded-lg shadow-lg overflow-hidden ${
@@ -219,32 +279,13 @@ export default function BusinessCard({ business }: BusinessCardProps) {
           )}
           {business.email && (
             <a
-              href={business.name.includes('Grandeur Heritage Group') 
-                ? '#'
-                : `mailto:${business.email}`}
-              onClick={async (e) => {
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
                 if (business.name.includes('Grandeur Heritage Group')) {
-                  e.preventDefault();
-                  try {
-                    const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!, {
-                      method: 'POST',
-                      mode: 'no-cors',
-                      headers: {
-                        'Content-Type': 'application/json',
-                      },
-                      body: JSON.stringify({
-                        timestamp: new Date().toISOString(),
-                        source: typeof window !== 'undefined' ? window.location.pathname : '',
-                        status: 'New Lead',
-                        followUpNotes: 'Lead from Grandeur Heritage Group listing'
-                      })
-                    });
-                    
-                    toast.success('Thank you for your interest! We will contact you shortly.');
-                  } catch (error) {
-                    console.error('Submission error:', error);
-                    toast.error('Sorry, there was an error. Please try again or call us directly.');
-                  }
+                  setShowModal(true);
+                } else {
+                  window.location.href = `mailto:${business.email}`;
                 }
               }}
               className={`inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-lg ${
@@ -286,6 +327,97 @@ export default function BusinessCard({ business }: BusinessCardProps) {
           )}
         </div>
       </div>
+
+      {/* Contact Form Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-md w-full p-6 relative">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              <XMarkIcon className="h-6 w-6" />
+            </button>
+            
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Contact Us</h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                  Phone *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
+                  placeholder="Your phone number"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
+                  placeholder="Your email"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
+                  placeholder="How can we help you?"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full px-6 py-3 text-white bg-accent hover:bg-accent/90 rounded-lg font-medium ${
+                  isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
