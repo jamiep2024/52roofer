@@ -12,6 +12,7 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
     email: '',
     address: '',
     serviceNeeded: '',
+    urgency: '',
     message: ''
   });
 
@@ -28,11 +29,17 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
           timestamp: new Date().toISOString(),
-          status: 'New Lead',
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          address: formData.address || location,
+          serviceNeeded: formData.serviceNeeded,
+          urgency: formData.urgency,
+          message: formData.message,
           source: window.location.pathname,
-          location: location || formData.address
+          status: 'New Lead',
+          followUpNotes: ''
         }),
       });
 
@@ -47,6 +54,7 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
         email: '',
         address: '',
         serviceNeeded: '',
+        urgency: '',
         message: ''
       });
     } catch (error) {
@@ -121,13 +129,14 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
           required
           value={formData.address}
           onChange={handleChange}
+          placeholder={location ? `Address in ${location}` : 'Enter your property address'}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
         />
       </div>
 
       <div>
         <label htmlFor="serviceNeeded" className="block text-sm font-medium text-gray-700">
-          What roofing service do you need? *
+          Service Needed *
         </label>
         <select
           id="serviceNeeded"
@@ -147,17 +156,38 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
       </div>
 
       <div>
+        <label htmlFor="urgency" className="block text-sm font-medium text-gray-700">
+          How urgent is your need? *
+        </label>
+        <select
+          id="urgency"
+          name="urgency"
+          required
+          value={formData.urgency}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+        >
+          <option value="">Select urgency</option>
+          <option value="Emergency">Emergency (Need help now)</option>
+          <option value="Urgent">Urgent (Within 24 hours)</option>
+          <option value="Soon">Soon (This week)</option>
+          <option value="Planning">Planning (No immediate rush)</option>
+        </select>
+      </div>
+
+      <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-          Please describe your roofing problem
+          Please describe your roofing problem *
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
+          required
           value={formData.message}
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
-          placeholder="Tell us about your roofing issue..."
+          placeholder="Please provide details about your roofing issue..."
         />
       </div>
 
