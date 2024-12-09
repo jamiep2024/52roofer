@@ -1,10 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { serviceAreas } from '../data/serviceAreas';
 
 // Schema markup for better SEO
 const organizationSchema = {
@@ -104,29 +101,13 @@ export default function About() {
       </Head>
 
       <div className="bg-white">
-        {/* Hero Section with parallax effect */}
+        {/* Hero Section */}
         <div className="relative bg-gray-900 py-32 sm:py-40">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute inset-0">
-              <Image
-                src="/images/hero-bg.jpg"
-                alt="Professional roofing services"
-                layout="fill"
-                objectFit="cover"
-                className="transform scale-105 opacity-25 transition-transform duration-1000"
-                priority
-              />
-            </div>
-            <div className="absolute inset-0 bg-gray-900/75 mix-blend-multiply" />
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent" />
           </div>
           
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ duration: 0.6 }}
-            className="relative mx-auto max-w-7xl px-6 lg:px-8"
-          >
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 About 52roofer.com
@@ -135,198 +116,131 @@ export default function About() {
                 Building trust in the roofing industry through innovation and excellence since 2003.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Main Content */}
         <div className="overflow-hidden bg-white py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            {/* Our Story Section */}
-            <motion.div 
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={fadeIn}
-              transition={{ duration: 0.8 }}
-              className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 items-center"
-            >
-              <div className="lg:pr-8 lg:pt-4">
-                <div className="lg:max-w-lg">
+            {/* Our Story */}
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Our Story
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Founded in 2003, 52roofer.com emerged from a simple observation: homeowners needed a better way to find reliable roofing professionals. What started as a small directory in Oxfordshire has grown into South England's premier roofing network.
+              </p>
+            </div>
+
+            <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
+              <div className="rounded-2xl bg-gray-50 p-8 shadow-sm hover:shadow-md transition-all">
+                <div className="text-accent mb-4">
+                  <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">Our Values</h3>
+                <p className="mt-4 text-gray-600">Trust, transparency, and excellence form the foundation of everything we do.</p>
+              </div>
+
+              <div className="rounded-2xl bg-gray-50 p-8 shadow-sm hover:shadow-md transition-all">
+                <div className="text-accent mb-4">
+                  <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">Our Impact</h3>
+                <p className="mt-4 text-gray-600">Over 50,000 successful projects and 98% customer satisfaction rate.</p>
+              </div>
+
+              <div className="rounded-2xl bg-gray-50 p-8 shadow-sm hover:shadow-md transition-all">
+                <div className="text-accent mb-4">
+                  <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">Our Commitment</h3>
+                <p className="mt-4 text-gray-600">Maintaining the highest standards through rigorous vetting and monitoring.</p>
+              </div>
+            </div>
+
+            {/* Vision & Goals */}
+            <div className="mt-32 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-white/50 rounded-3xl" />
+              <div className="relative px-8 py-16 rounded-3xl">
+                <div className="text-center">
                   <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                    Our Story
+                    Vision & Future Goals
                   </h2>
-                  <p className="mt-6 text-lg leading-8 text-gray-600">
-                    Founded in 2003, 52roofer.com emerged from a simple observation: homeowners needed a better way to find reliable roofing professionals. What started as a small directory in Oxfordshire has grown into South England's premier roofing network.
+                  <p className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
+                    As we look to the future, we're committed to revolutionizing the roofing industry through technology and innovation.
                   </p>
-                  <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-                    {[
-                      {
-                        name: 'Our Values',
-                        description: 'Trust, transparency, and excellence form the foundation of everything we do. We believe in creating lasting relationships between homeowners and roofers built on mutual respect and quality workmanship.'
-                      },
-                      {
-                        name: 'Our Impact',
-                        description: "Over the past 20 years, we've facilitated over 50,000 successful roofing projects, maintaining a 98% customer satisfaction rate and helping create hundreds of jobs in local communities."
-                      },
-                      {
-                        name: 'Our Commitment',
-                        description: "We're dedicated to maintaining the highest standards in the industry through rigorous vetting processes, ongoing quality monitoring, and continuous improvement of our service."
-                      }
-                    ].map((feature) => (
-                      <div key={feature.name} className="relative pl-9">
-                        <dt className="inline font-semibold text-gray-900">
-                          <div className="absolute left-1 top-1 h-5 w-5 text-accent">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                              <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-                            </svg>
-                          </div>
-                          {feature.name}
-                        </dt>
-                        <dd className="inline ml-1">
-                          {" "}
-                          {feature.description}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
+                </div>
+
+                <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
+                  <div className="rounded-2xl bg-white p-8 shadow-sm hover:shadow-md transition-all border border-gray-100">
+                    <div className="text-accent mb-4">
+                      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900">Digital Innovation</h3>
+                    <p className="mt-4 text-gray-600">Virtual inspections and AI-powered assessments.</p>
+                  </div>
+
+                  <div className="rounded-2xl bg-white p-8 shadow-sm hover:shadow-md transition-all border border-gray-100">
+                    <div className="text-accent mb-4">
+                      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900">Sustainability Focus</h3>
+                    <p className="mt-4 text-gray-600">50% eco-friendly solutions by 2025.</p>
+                  </div>
+
+                  <div className="rounded-2xl bg-white p-8 shadow-sm hover:shadow-md transition-all border border-gray-100">
+                    <div className="text-accent mb-4">
+                      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900">Community Growth</h3>
+                    <p className="mt-4 text-gray-600">Expanding apprenticeship programs.</p>
+                  </div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-                <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                  className="relative h-64 rounded-xl overflow-hidden shadow-lg"
-                >
-                  <Image
-                    src="/images/hero-bg.jpg"
-                    alt="Professional roofing services"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-xl"
-                  />
-                </motion.div>
-                <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                  className="relative h-64 rounded-xl overflow-hidden shadow-lg"
-                >
-                  <Image
-                    src="/images/hero-bg.jpg"
-                    alt="Quality roofing work"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-xl"
-                  />
-                </motion.div>
-              </div>
-            </motion.div>
+            </div>
 
-            {/* Vision & Goals Section */}
-            <motion.div 
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={fadeIn}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-32"
-            >
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
-                Vision & Future Goals
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600 text-center max-w-2xl mx-auto">
-                As we look to the future, we're committed to revolutionizing the roofing industry through technology and innovation.
-              </p>
-              
-              <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {[
-                  {
-                    title: "Digital Innovation",
-                    description: "We're developing cutting-edge tools for virtual roof inspections and AI-powered damage assessment to streamline the roofing process."
-                  },
-                  {
-                    title: "Sustainability Focus",
-                    description: "By 2025, we aim to have 50% of our network specializing in eco-friendly roofing solutions and sustainable materials."
-                  },
-                  {
-                    title: "Community Growth",
-                    description: "We're expanding our apprenticeship program to train the next generation of roofers and create more jobs in local communities."
-                  }
-                ].map((item) => (
-                  <motion.div
-                    key={item.title}
-                    whileHover={{ y: -5 }}
-                    transition={{ duration: 0.2 }}
-                    className="rounded-xl bg-gray-50 p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
-                  >
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Team & Culture Section */}
-            <motion.div 
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={fadeIn}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-32"
-            >
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
-                Our Team & Culture
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600 text-center max-w-2xl mx-auto">
-                Behind 52roofer.com is a dedicated team of industry experts, technology innovators, and customer service professionals.
-              </p>
-              
-              <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                {[
-                  {
-                    title: "Expert Leadership",
-                    description: "Our leadership team brings together over 50 years of combined experience in roofing, technology, and customer service excellence."
-                  },
-                  {
-                    title: "Continuous Learning",
-                    description: "We invest in regular training and development programs for both our team and network partners to stay ahead of industry trends."
-                  }
-                ].map((item) => (
-                  <motion.div
-                    key={item.title}
-                    whileHover={{ y: -5 }}
-                    transition={{ duration: 0.2 }}
-                    className="rounded-xl bg-gray-50 p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
-                  >
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Call to Action */}
-            <div className="mt-32 rounded-3xl bg-gray-900 py-20 sm:py-32">
-              <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  Ready to Find Your Perfect Roofer?
+            {/* Team & Culture */}
+            <div className="mt-32">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  Our Team & Culture
                 </h2>
-                <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-                  Connect with trusted local roofers today and get your roofing project started with confidence.
+                <p className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
+                  Behind 52roofer.com is a dedicated team of industry experts, technology innovators, and customer service professionals.
                 </p>
-                <div className="mt-10 flex items-center justify-center gap-x-6">
-                  <Link
-                    href="/find-roofer"
-                    className="rounded-md bg-accent px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-accent/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  >
-                    Find a Roofer
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="text-lg font-semibold leading-6 text-white"
-                  >
-                    Contact Us <span aria-hidden="true">→</span>
-                  </Link>
+              </div>
+
+              <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                <div className="rounded-2xl bg-gray-50 p-8 shadow-sm hover:shadow-md transition-all">
+                  <div className="text-accent mb-4">
+                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">Expert Leadership</h3>
+                  <p className="mt-4 text-gray-600">50+ years of combined industry experience.</p>
+                </div>
+
+                <div className="rounded-2xl bg-gray-50 p-8 shadow-sm hover:shadow-md transition-all">
+                  <div className="text-accent mb-4">
+                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">Continuous Learning</h3>
+                  <p className="mt-4 text-gray-600">Regular training and development programs.</p>
                 </div>
               </div>
             </div>
