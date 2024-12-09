@@ -191,14 +191,6 @@ export default function Locations() {
       },
       {
         "@type": "Question",
-        "name": "What roofing guarantees do you offer in Buckinghamshire?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "In Buckinghamshire, including Milton Keynes and High Wycombe, we offer up to 20-year guarantees on new roofs and 10-year warranties on major repairs, all backed by insurance."
-        }
-      },
-      {
-        "@type": "Question",
         "name": "Can you handle commercial roofing projects in West Sussex?",
         "acceptedAnswer": {
           "@type": "Answer",

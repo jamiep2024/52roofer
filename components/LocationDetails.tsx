@@ -131,13 +131,6 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({ location }) => {
               Our {location.name} roofers are experienced with all roof types including {location.roofingInfo.commonStyles.join(", ")}. We serve {location.name} and all surrounding areas with expert roofing solutions.
             </p>
           </div>
-
-          <div>
-            <h3 className="font-semibold mb-2">What guarantees do you offer on roofing work in {location.name}?</h3>
-            <p className="text-gray-600">
-              In {location.name}, we offer up to 20-year guarantees on new roofs and 10-year warranties on major repairs, all backed by insurance. Our work is fully guaranteed and we provide detailed warranties for your peace of mind.
-            </p>
-          </div>
         </div>
       </div>
     </div>
