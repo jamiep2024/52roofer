@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 
 interface QuoteFormProps {
   location?: string;
@@ -11,177 +12,166 @@ export default function QuoteForm({ location = '' }: QuoteFormProps) {
     email: '',
     address: '',
     serviceNeeded: '',
-    urgency: '',
     message: ''
   });
-  const [status, setStatus] = useState({
-    submitting: false,
-    submitted: false,
-    error: ''
-  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus({ submitting: true, submitted: false, error: '' });
+    setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/submit-quote', {
+      const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+          status: 'New Lead',
+          source: window.location.pathname,
+          location: location || formData.address
+        }),
       });
-
-      const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Error submitting form');
+        throw new Error('Failed to submit form');
       }
 
-      setStatus({
-        submitting: false,
-        submitted: true,
-        error: ''
-      });
+      toast.success('Thank you! We will contact you shortly about your roofing needs.');
       setFormData({
         name: '',
         phone: '',
         email: '',
         address: '',
         serviceNeeded: '',
-        urgency: '',
         message: ''
       });
     } catch (error) {
-      setStatus({
-        submitting: false,
-        submitted: false,
-        error: error instanceof Error ? error.message : 'Error submitting form'
-      });
+      toast.error('Sorry, there was an error submitting your request. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold text-center mb-6">Get Your Free Quote</h2>
-      {status.submitted ? (
-        <div className="text-center p-4 bg-green-50 text-green-700 rounded-md">
-          <p className="font-medium">Thank you for your request!</p>
-          <p className="mt-2">We'll get back to you within 60 minutes.</p>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            Name *
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            value={formData.name}
+            onChange={handleChange}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+          />
         </div>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <div className="space-y-4">
-            <div>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Full Name*"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
-              />
-            </div>
-            <div>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Phone Number*"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email Address*"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="address"
-                value={formData.address}
-                onChange={handleChange}
-                placeholder={`Address in ${location || 'your area'}*`}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
-              />
-            </div>
-            <div>
-              <select
-                name="serviceNeeded"
-                value={formData.serviceNeeded}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
-              >
-                <option value="">Select Service Needed*</option>
-                <option value="Emergency Repair">Emergency Repair</option>
-                <option value="Roof Replacement">Roof Replacement</option>
-                <option value="Leak Repair">Leak Repair</option>
-                <option value="Inspection">Roof Inspection</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div>
-              <select
-                name="urgency"
-                value={formData.urgency}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent"
-              >
-                <option value="">How Urgent Is Your Need?*</option>
-                <option value="Emergency">Emergency (Need help now)</option>
-                <option value="Urgent">Urgent (Within 24 hours)</option>
-                <option value="Soon">Soon (This week)</option>
-                <option value="Planning">Planning (No immediate rush)</option>
-              </select>
-            </div>
-            <div>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Please describe your roofing need"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-accent focus:border-accent h-32"
-              />
-            </div>
-            {status.error && (
-              <div className="text-red-600 text-sm">
-                {status.error}
-              </div>
-            )}
-            <button
-              type="submit"
-              disabled={status.submitting}
-              className="w-full bg-accent text-white py-3 px-6 rounded-md hover:bg-accent-dark transition duration-150 ease-in-out disabled:opacity-50"
-            >
-              {status.submitting ? 'Sending...' : 'Get Free Quote Now'}
-            </button>
-            <p className="text-center text-sm text-gray-500 mt-2">
-              No obligation quote - hear back within 60 minutes
-            </p>
-          </div>
-        </form>
-      )}
-    </div>
+
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+            Phone *
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            value={formData.phone}
+            onChange={handleChange}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          Email *
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          value={formData.email}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+          Property Address *
+        </label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          required
+          value={formData.address}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="serviceNeeded" className="block text-sm font-medium text-gray-700">
+          What roofing service do you need? *
+        </label>
+        <select
+          id="serviceNeeded"
+          name="serviceNeeded"
+          required
+          value={formData.serviceNeeded}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+        >
+          <option value="">Select a service</option>
+          <option value="Repair">Roof Repair</option>
+          <option value="Replacement">Roof Replacement</option>
+          <option value="Inspection">Roof Inspection</option>
+          <option value="Emergency">Emergency Repair</option>
+          <option value="Other">Other (please specify in message)</option>
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+          Please describe your roofing problem
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows={4}
+          value={formData.message}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"
+          placeholder="Tell us about your roofing issue..."
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-accent hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50"
+      >
+        {isSubmitting ? 'Submitting...' : 'Submit Request'}
+      </button>
+
+      <p className="text-xs text-gray-500 mt-2">
+        * Required fields
+      </p>
+    </form>
   );
 }
