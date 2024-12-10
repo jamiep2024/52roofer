@@ -6,7 +6,6 @@ Disallow: /_next/
 
 # Sitemaps
 Sitemap: https://52roofer.com/sitemap.xml
-Sitemap: https://52roofer.com/sitemap-locations.xml
 
 # Main Search Engines
 User-agent: Googlebot
