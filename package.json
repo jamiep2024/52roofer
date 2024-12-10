@@ -12,7 +12,8 @@
     "@heroicons/react": "^2.0.18",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.16",
-    "next": "14.0.4",
+    "next": "14.2.20",
+    "next-seo": "6.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.5.3",
@@ -21,6 +22,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@types/next-seo": "1.10.0",
     "@types/node": "^20.10.4",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.17",
