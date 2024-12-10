@@ -2,8 +2,14 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { locationData } from '../../data/locationData';
 import LocationLandingPage from '../../components/LocationLandingPage';
 import { NextSeo } from 'next-seo';
+import { LocationData } from '../../types/location';
 
-export default function LocationPage({ location, slug }) {
+interface LocationPageProps {
+  location: LocationData;
+  slug: string;
+}
+
+export default function LocationPage({ location, slug }: LocationPageProps) {
   const seoTitle = `🏆 Emergency Roofers ${location.name} | 24/7 Local Roof Repairs | Best Price 2024`;
   const seoDescription = `⚡FAST Emergency Roofer in ${location.name} - 24/7 Roof Repairs ✓10-Year Guarantee ✓500+ 5★ Reviews ✓60min Response ✓FREE Quote. Local Experts in ${location.county}. Roof Replacement from £2999. CALL NOW!`;
 
