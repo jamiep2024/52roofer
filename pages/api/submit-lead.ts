@@ -1,46 +1,39 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
-// Get the Apps Script Web App URL from environment variable
-const APPS_SCRIPT_URL = process.env.APPS_SCRIPT_URL;
+import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-  );
-
-  // Handle preflight request
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
-
-  if (req.method !== 'POST') {
-    return res.status(405).json({ 
-      status: 'error',
-      message: 'Method not allowed. Only POST requests are accepted.' 
-    });
-  }
-
-  // Check if Apps Script URL is configured
-  if (!APPS_SCRIPT_URL) {
-    console.error('APPS_SCRIPT_URL environment variable is not set');
-    return res.status(500).json({ 
-      status: 'error',
-      message: 'Server configuration error: Missing Apps Script URL' 
-    });
-  }
-
   try {
+    // Handle preflight request
+    if (req.method === 'OPTIONS') {
+      res.setHeader('Access-Control-Allow-Credentials', 'true');
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+      res.setHeader(
+        'Access-Control-Allow-Headers',
+        'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+      );
+      return res.status(200).json({ status: 'success' });
+    }
+
+    if (req.method !== 'POST') {
+      return res.status(405).json({ 
+        status: 'error',
+        message: 'Method not allowed. Only POST requests are accepted.' 
+      });
+    }
+
+    // Check if Apps Script URL is configured
+    if (!process.env.APPS_SCRIPT_URL) {
+      console.error('APPS_SCRIPT_URL environment variable is not set');
+      return res.status(500).json({ 
+        status: 'error',
+        message: 'Server configuration error: Missing Apps Script URL' 
+      });
+    }
+
     const {
-      timestamp,
       name,
       phone,
       email,
@@ -48,120 +41,101 @@ export default async function handler(
       service,
       urgency,
       message,
-      source,
-      status,
-      notes
+      source = 'Website Form',
+      status = 'New',
+      notes = ''
     } = req.body;
 
     // Validate required fields
-    const requiredFields = ['name', 'phone', 'email', 'service', 'urgency'];
-    const missingFields = requiredFields.filter(field => !req.body[field]);
-    
-    if (missingFields.length > 0) {
-      return res.status(400).json({ 
+    if (!name || !phone || !email || !service) {
+      return res.status(400).json({
         status: 'error',
-        message: `Missing required fields: ${missingFields.join(', ')}` 
+        message: 'Missing required fields'
       });
     }
 
-    // Basic email validation
+    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.status(400).json({ 
+      return res.status(400).json({
         status: 'error',
-        message: 'Invalid email format' 
+        message: 'Invalid email format'
       });
     }
 
-    // Basic phone validation (allows various formats)
-    const phoneRegex = /^[\d\s()+.-]+$/;
+    // Validate phone format (basic validation)
+    const phoneRegex = /^[\d\s\+\-\(\)]{10,}$/;
     if (!phoneRegex.test(phone)) {
-      return res.status(400).json({ 
+      return res.status(400).json({
         status: 'error',
-        message: 'Invalid phone number format' 
+        message: 'Invalid phone number format'
       });
     }
 
-    // Log the request data for debugging
-    console.log('Submitting to Google Apps Script:', {
-      url: APPS_SCRIPT_URL,
-      data: {
-        timestamp,
-        name,
-        phone,
-        email,
-        service,
-        urgency,
-        // Exclude sensitive data from logs
-        hasAddress: !!address,
-        hasMessage: !!message,
-        source,
-        status
-      }
-    });
+    // Prepare data for Google Apps Script - exactly matching spreadsheet columns
+    const formData = {
+      timestamp: new Date().toISOString(),
+      name,
+      phone,
+      email,
+      address: address || '',
+      service,
+      urgency: urgency || 'Not Specified',
+      message: message || '',
+      source,
+      status,
+      notes
+    };
 
-    // Make request to Google Apps Script Web App
-    const response = await fetch(APPS_SCRIPT_URL, {
+    // Submit to Google Apps Script
+    const response = await fetch(process.env.APPS_SCRIPT_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
       },
-      body: JSON.stringify({
-        timestamp,
-        name,
-        phone,
-        email,
-        address,
-        service,
-        urgency,
-        message,
-        source,
-        status,
-        notes
-      })
+      body: JSON.stringify(formData)
     });
 
-    // Log the response status and headers for debugging
+    // First try to get the response as text
+    const responseText = await response.text();
+    
+    // Try to parse the response as JSON
+    let responseData;
+    try {
+      responseData = JSON.parse(responseText);
+    } catch (parseError) {
+      console.error('Google Apps Script returned invalid JSON:', responseText);
+      throw new Error('Invalid response from form processing service');
+    }
+
+    // Log the response status and data for debugging
     console.log('Google Apps Script response:', {
       status: response.status,
       statusText: response.statusText,
-      headers: Object.fromEntries(response.headers.entries())
+      data: responseData
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Error response from Google Apps Script:', errorText);
-      throw new Error(`Failed to submit to Google Apps Script: ${response.status} ${response.statusText}`);
-    }
-
-    const result = await response.json();
-    console.log('Google Apps Script result:', result);
-
-    if (result.status === 'error') {
-      throw new Error(result.message || 'Error submitting lead');
+    if (!response.ok || responseData.status === 'error') {
+      throw new Error(responseData.message || `Failed to submit to Google Apps Script: ${response.status} ${response.statusText}`);
     }
 
     res.status(200).json({ 
       status: 'success',
       message: 'Lead submitted successfully',
-      result 
+      result: responseData
     });
   } catch (error) {
     // Enhanced error logging
     console.error('Error submitting lead:', {
-      error: error instanceof Error ? {
-        message: error.message,
-        stack: error.stack
-      } : error,
-      url: APPS_SCRIPT_URL
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined,
+      timestamp: new Date().toISOString()
     });
 
     // Return a more detailed error message
     res.status(500).json({
       status: 'error',
-      message: error instanceof Error ? error.message : 'An unexpected error occurred while submitting the lead',
-      details: process.env.NODE_ENV === 'development' ? error : undefined
+      message: error instanceof Error ? error.message : 'An unexpected error occurred while submitting the lead'
     });
   }
 }

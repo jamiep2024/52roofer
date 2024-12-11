@@ -42,17 +42,26 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
         body: JSON.stringify(data),
       });
 
-      const responseData = await response.json();
+      // First try to get the response as text
+      const responseText = await response.text();
+      
+      // Try to parse it as JSON
+      let responseData;
+      try {
+        responseData = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('Response is not valid JSON:', responseText);
+        throw new Error('Server returned invalid JSON response. Please try again later.');
+      }
 
       if (!response.ok) {
-        console.error('Server response:', responseData);
         throw new Error(responseData.message || 'Submission failed');
       }
       
       setSubmitStatus('success');
       form.reset();
     } catch (error) {
-      console.error('Submission error:', error);
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
       setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
     } finally {

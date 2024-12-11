@@ -8,7 +8,7 @@ function doPost(e) {
     const data = JSON.parse(e.postData.contents);
     
     // Validate required fields
-    if (!data.name || !data.phone || !data.email || !data.service || !data.urgency) {
+    if (!data.name || !data.phone || !data.email || !data.service) {
       return sendResponse({
         status: 'error',
         message: 'Missing required fields'
@@ -33,30 +33,30 @@ function doPost(e) {
     
     // Get the active spreadsheet and sheet
     const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-    const sheet = spreadsheet.getSheetByName('Leads');
+    const sheet = spreadsheet.getSheetByName('Sheet1');
     
     // If sheet doesn't exist, create it with headers
     if (!sheet) {
-      const newSheet = spreadsheet.insertSheet('Leads');
+      const newSheet = spreadsheet.insertSheet('Sheet1');
       const headers = [
-        'Timestamp',
-        'Name',
-        'Phone',
-        'Email',
-        'Address',
-        'Service',
-        'Urgency',
-        'Message',
-        'Source',
-        'Status',
-        'Notes'
+        'timestamp',
+        'name',
+        'phone',
+        'email',
+        'address',
+        'service',
+        'urgency',
+        'message',
+        'source',
+        'status',
+        'notes'
       ];
       newSheet.getRange(1, 1, 1, headers.length).setValues([headers]);
       newSheet.setFrozenRows(1);
       sheet = newSheet;
     }
     
-    // Prepare the row data
+    // Prepare the row data - exactly matching spreadsheet columns
     const rowData = [
       data.timestamp || new Date().toISOString(),
       data.name,
@@ -64,9 +64,9 @@ function doPost(e) {
       data.email,
       data.address || '',
       data.service,
-      data.urgency,
+      data.urgency || 'Not Specified',
       data.message || '',
-      data.source || '',
+      data.source || 'Website Form',
       data.status || 'New',
       data.notes || ''
     ];
@@ -97,8 +97,7 @@ function doPost(e) {
         timestamp: data.timestamp,
         name: data.name,
         email: data.email,
-        service: data.service,
-        urgency: data.urgency
+        service: data.service
       }
     });
     
@@ -155,11 +154,12 @@ function testScript() {
     name: 'Test User',
     phone: '1234567890',
     email: 'test@example.com',
-    service: 'Test Service',
-    urgency: 'Test Urgency',
+    address: '123 Test St',
+    service: 'Roof Repair',
+    urgency: 'High',
     message: 'Test Message',
-    source: 'Test',
-    status: 'Test',
+    source: 'Website Form',
+    status: 'New',
     notes: 'Test Notes'
   };
   
