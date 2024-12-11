@@ -53,81 +53,71 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
   };
 
   return (
-    <form onSubmit={handleSubmit} className={`space-y-4 ${className}`}>
-      <div className="space-y-4">
-        {/* Name Field */}
+    <form onSubmit={handleSubmit} className={`space-y-6 ${className}`}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
             Name *
           </label>
           <input
             type="text"
             name="name"
             id="name"
-            placeholder="Your full name"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
           />
         </div>
 
-        {/* Phone Field */}
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
             Phone *
           </label>
           <input
             type="tel"
             name="phone"
             id="phone"
-            placeholder="Your phone number"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
           />
         </div>
 
-        {/* Email Field */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
             Email *
           </label>
           <input
             type="email"
             name="email"
             id="email"
-            placeholder="Your email address"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
           />
         </div>
 
-        {/* Address Field */}
         <div>
-          <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
-            Property Address *
+          <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+            Address *
           </label>
           <input
             type="text"
             name="address"
             id="address"
-            placeholder="Full property address"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
           />
         </div>
 
-        {/* Service Field */}
         <div>
-          <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="service" className="block text-sm font-medium text-gray-700">
             Service Required *
           </label>
           <select
             name="service"
             id="service"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
-            defaultValue=""
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
           >
-            <option value="" disabled>Select a service</option>
+            <option value="">Select a service</option>
             <option value="Residential Roofing">Residential Roofing</option>
             <option value="Commercial Roofing">Commercial Roofing</option>
             <option value="Roof Maintenance">Roof Maintenance</option>
@@ -139,61 +129,79 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
           </select>
         </div>
 
-        {/* Urgency Field */}
         <div>
-          <label htmlFor="urgency" className="block text-sm font-medium text-gray-700 mb-1">
-            How Urgent Is Your Request? *
+          <label htmlFor="urgency" className="block text-sm font-medium text-gray-700">
+            Urgency *
           </label>
           <select
             name="urgency"
             id="urgency"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
-            defaultValue=""
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
           >
-            <option value="" disabled>Select urgency level</option>
+            <option value="">Select urgency</option>
             <option value="Emergency">Emergency - Need help immediately</option>
             <option value="Urgent">Urgent - Within 24-48 hours</option>
             <option value="Soon">Soon - Within a week</option>
             <option value="Planning">Planning - Just getting quotes</option>
           </select>
         </div>
-
-        {/* Message Field */}
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-            Additional Details
-          </label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Please describe your roofing needs in detail"
-            rows={4}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
-          ></textarea>
-        </div>
       </div>
 
-      {/* Submit Button */}
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="w-full bg-accent text-white font-medium py-3 px-4 rounded-md hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50"
-      >
-        {isSubmitting ? 'Submitting...' : 'Get Free Quote'}
-      </button>
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+          Message
+        </label>
+        <textarea
+          name="message"
+          id="message"
+          rows={4}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
+          placeholder="Please describe your roofing needs in detail"
+        ></textarea>
+      </div>
 
-      {/* Success Message */}
+      <div>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-accent hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50"
+        >
+          {isSubmitting ? 'Submitting...' : 'Get Free Quote'}
+        </button>
+      </div>
+
       {submitStatus === 'success' && (
-        <div className="p-4 rounded-md bg-green-50 text-green-800">
-          Thank you! Your message has been sent successfully. We'll be in touch shortly.
+        <div className="rounded-md bg-green-50 p-4">
+          <div className="flex">
+            <div className="flex-shrink-0">
+              <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div className="ml-3">
+              <p className="text-sm font-medium text-green-800">
+                Thank you! Your message has been sent successfully.
+              </p>
+            </div>
+          </div>
         </div>
       )}
 
-      {/* Error Message */}
       {submitStatus === 'error' && (
-        <div className="p-4 rounded-md bg-red-50 text-red-800">
-          Sorry, there was an error submitting your message. Please try again or call us directly.
+        <div className="rounded-md bg-red-50 p-4">
+          <div className="flex">
+            <div className="flex-shrink-0">
+              <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div className="ml-3">
+              <p className="text-sm font-medium text-red-800">
+                Sorry, there was an error submitting your message. Please try again.
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </form>
