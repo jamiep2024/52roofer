@@ -10,9 +10,9 @@ import {
   BuildingOfficeIcon,
   UserGroupIcon,
   PhoneIcon,
-  EnvelopeIcon,
   MapPinIcon
 } from '@heroicons/react/24/outline';
+import LeadForm from '../forms/LeadForm';
 
 interface BusinessCardProps {
   business: Business;
@@ -213,20 +213,7 @@ export default function BusinessCard({ business }: BusinessCardProps) {
               }`}
             >
               <PhoneIcon className="h-6 w-6 mr-2" />
-              {business.phone}
-            </a>
-          )}
-          {business.email && (
-            <a
-              href={`mailto:${business.email}`}
-              className={`inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-lg ${
-                business.featured
-                  ? 'text-white bg-gradient-to-r from-yellow-600 to-yellow-800 hover:from-yellow-700 hover:to-yellow-900'
-                  : 'text-gray-700 hover:text-gray-900'
-              }`}
-            >
-              <EnvelopeIcon className="h-6 w-6 mr-2" />
-              {business.name.includes('Grandeur Heritage Group') ? 'Email Us' : business.email}
+              Call Now
             </a>
           )}
         </div>
@@ -234,7 +221,7 @@ export default function BusinessCard({ business }: BusinessCardProps) {
         <div className="mt-6 flex flex-col sm:flex-row gap-4">
           {business.website && (
             <a
-              href={business.website}
+              href="https://www.grandeurheritageroofing.com"
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-lg shadow-sm ${
@@ -257,6 +244,14 @@ export default function BusinessCard({ business }: BusinessCardProps) {
             </a>
           )}
         </div>
+
+        {/* Lead Form for Grandeur Heritage */}
+        {isGrandeur && (
+          <div className="mt-8">
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">Request a Quote</h4>
+            <LeadForm source={`Grandeur Heritage - ${business.location}`} />
+          </div>
+        )}
       </div>
     </div>
   );
