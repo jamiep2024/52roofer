@@ -13,6 +13,9 @@ export default function LocationPage({ location, slug }: LocationPageProps) {
   const seoTitle = `🏆 Emergency Roofers ${location.name} | 24/7 Local Roof Repairs | Best Price 2024`;
   const seoDescription = `⚡FAST Emergency Roofer in ${location.name} - 24/7 Roof Repairs ✓10-Year Guarantee ✓500+ 5★ Reviews ✓60min Response ✓FREE Quote. Local Experts in ${location.county}. Roof Replacement from £2999. CALL NOW!`;
 
+  // Generate a rich description using available location data
+  const generatedDescription = `We provide professional roofing services in ${location.name}, ${location.county}. With expertise in ${location.roofingInfo.commonStyles.join(', ')}, our team specializes in addressing local challenges such as ${location.roofingInfo.challenges.join(', ')}. We understand the unique requirements of ${location.name}'s buildings, including ${location.heritage.listedBuildings.gradeII.length} Grade II listed properties, and work in compliance with local ${location.roofingInfo.buildingRegulations.planningRequirements}. Our services are tailored to handle ${location.roofingInfo.weatherConsiderations.commonIssues.join(', ')} common in the area.`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "RoofingContractor",
@@ -218,7 +221,11 @@ export default function LocationPage({ location, slug }: LocationPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <LocationLandingPage locationData={location} />
+      <LocationLandingPage 
+        city={location.name}
+        county={location.county}
+        description={generatedDescription}
+      />
     </>
   );
 }
