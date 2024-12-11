@@ -97,7 +97,7 @@ const Footer = () => {
                     ].map((county) => (
                       <li key={county}>
                         <Link
-                          href={`/location/${county}`}
+                          href={`/county/${county}`}
                           className="text-gray-400 hover:text-accent transition-colors duration-200 block py-1 touch-target capitalize"
                         >
                           {county.replace('-', ' ')}

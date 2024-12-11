@@ -147,7 +147,7 @@ export default function About() {
           url: 'https://www.52roofer.com/about',
           site_name: '52roofer.com - #1 Emergency Roofing Services',
           title: 'Emergency Roofer Near Me | 24/7 Local Roof Repairs | Best Price Guarantee',
-          description: 'URGENT Roof Repairs? We\'re Here 24/7! 60min Response FREE Quote 10-Year Guarantee. Your Local Emergency Roofers in Oxfordshire & Surrounding Areas. CALL NOW!',
+          description: 'URGENT Roof Repairs? We&apos;re Here 24/7! 60min Response FREE Quote 10-Year Guarantee. Your Local Emergency Roofers in Oxfordshire & Surrounding Areas. CALL NOW!',
           images: [
             {
               url: 'https://www.52roofer.com/images/og-image.jpg',
@@ -205,7 +205,7 @@ export default function About() {
                 Our Story
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Founded in 2003, 52roofer.com emerged from a simple observation: homeowners needed a better way to find reliable roofing professionals. What started as a small directory in Oxfordshire has grown into South England's premier roofing network.
+                Founded in 2003, 52roofer.com emerged from a simple observation: homeowners needed a better way to find reliable roofing professionals. What started as a small directory in Oxfordshire has grown into South England&apos;s premier roofing network.
               </p>
             </div>
 

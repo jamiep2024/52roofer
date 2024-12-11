@@ -158,7 +158,7 @@ const RoofingMaterialsGuide = () => {
           <div className="prose prose-lg max-w-none">
             <h2>Factors to Consider When Choosing Roofing Materials</h2>
             <p>
-              Selecting the right roofing material is crucial for your home's protection and value. 
+              Selecting the right roofing material is crucial for your home&apos;s protection and value. 
               Consider these key factors:
             </p>
             <ul>
