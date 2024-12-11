@@ -57,10 +57,14 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
       <div className="space-y-4">
         {/* Name Field */}
         <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            Name *
+          </label>
           <input
             type="text"
             name="name"
-            placeholder="Your Name *"
+            id="name"
+            placeholder="Your full name"
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
           />
@@ -68,10 +72,14 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
 
         {/* Phone Field */}
         <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+            Phone *
+          </label>
           <input
             type="tel"
             name="phone"
-            placeholder="Phone Number *"
+            id="phone"
+            placeholder="Your phone number"
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
           />
@@ -79,10 +87,14 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
 
         {/* Email Field */}
         <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            Email *
+          </label>
           <input
             type="email"
             name="email"
-            placeholder="Email Address *"
+            id="email"
+            placeholder="Your email address"
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
           />
@@ -90,10 +102,14 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
 
         {/* Address Field */}
         <div>
+          <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
+            Property Address *
+          </label>
           <input
             type="text"
             name="address"
-            placeholder="Property Address *"
+            id="address"
+            placeholder="Full property address"
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
           />
@@ -101,13 +117,17 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
 
         {/* Service Field */}
         <div>
+          <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
+            Service Required *
+          </label>
           <select
             name="service"
+            id="service"
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
             defaultValue=""
           >
-            <option value="" disabled>Select Service Required *</option>
+            <option value="" disabled>Select a service</option>
             <option value="Residential Roofing">Residential Roofing</option>
             <option value="Commercial Roofing">Commercial Roofing</option>
             <option value="Roof Maintenance">Roof Maintenance</option>
@@ -121,13 +141,17 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
 
         {/* Urgency Field */}
         <div>
+          <label htmlFor="urgency" className="block text-sm font-medium text-gray-700 mb-1">
+            How Urgent Is Your Request? *
+          </label>
           <select
             name="urgency"
+            id="urgency"
             required
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
             defaultValue=""
           >
-            <option value="" disabled>How Urgent Is Your Request? *</option>
+            <option value="" disabled>Select urgency level</option>
             <option value="Emergency">Emergency - Need help immediately</option>
             <option value="Urgent">Urgent - Within 24-48 hours</option>
             <option value="Soon">Soon - Within a week</option>
@@ -137,8 +161,12 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
 
         {/* Message Field */}
         <div>
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+            Additional Details
+          </label>
           <textarea
             name="message"
+            id="message"
             placeholder="Please describe your roofing needs in detail"
             rows={4}
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent"
