@@ -37,7 +37,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.oxfordshire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.oxfordgreenroofs.co.uk/',
+    website: '',
     services: ['Green Roofs', 'Eco-Friendly Solutions', 'Repairs'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 9am-5pm'
@@ -52,7 +52,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.oxfordshire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.banburyroofingandpaving.co.uk/',
+    website: '',
     services: ['Repairs', 'Paving', 'Maintenance'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 8am-5pm'
@@ -67,7 +67,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.oxfordshire.postcodes,
     phone: '',
     email: '',
-    website: 'https://a1-roofing-oxford.co.uk/',
+    website: '',
     services: ['Repairs', 'Maintenance', 'Emergency Services'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 9am-5pm'
@@ -108,7 +108,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.gloucestershire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.cheltenhamroofing.co.uk',
+    website: '',
     services: ['Repairs', 'Maintenance', 'New Roofs'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 8am-6pm'
@@ -123,7 +123,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.gloucestershire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.prestburyroofers.co.uk',
+    website: '',
     services: ['Residential Roofing', 'Commercial Roofing', 'Repairs'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 8am-5pm'
@@ -138,7 +138,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.gloucestershire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.heritageroofingcheltenham.co.uk',
+    website: '',
     services: ['Heritage Roofing', 'Period Properties', 'Restoration'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 9am-5pm'
@@ -179,7 +179,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.wiltshire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.swindonroofingpro.co.uk',
+    website: '',
     services: ['Repairs', 'Installation', 'Maintenance'],
     badges: ['Verified'],
     availability: 'Mon-Sat, 8am-5pm'
@@ -194,7 +194,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.wiltshire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.wiltshireroofcare.co.uk',
+    website: '',
     services: ['Residential Roofing', 'Commercial Roofing', 'Maintenance'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 8:30am-5:30pm'
@@ -209,7 +209,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.wiltshire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.advancedroofingswindon.co.uk',
+    website: '',
     services: ['New Roofs', 'Repairs', 'Flat Roofing'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 9am-5pm'
@@ -250,7 +250,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.berkshire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.readingroofing.co.uk',
+    website: '',
     services: ['Repairs', 'Installation', 'Maintenance'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 8:30am-5:30pm'
@@ -265,7 +265,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.berkshire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.berkshireroofingexperts.co.uk',
+    website: '',
     services: ['Residential', 'Commercial', 'Emergency Repairs'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 8am-6pm'
@@ -280,7 +280,7 @@ export const businesses: Business[] = [
     serviceAreas: serviceAreas.berkshire.postcodes,
     phone: '',
     email: '',
-    website: 'https://www.thamesroofing.co.uk',
+    website: '',
     services: ['New Roofs', 'Repairs', 'Maintenance'],
     badges: ['Verified'],
     availability: 'Mon-Fri, 9am-5pm'
