@@ -2,6 +2,15 @@
   command = "npm run build"
   publish = ".next"
 
+# TODO: Update this URL with the correct deployment URL from Google Apps Script
+# To get the correct URL:
+# 1. Go to https://script.google.com/home/projects/1zU1Deg4rwNjCc-qKUNja6fxNGFE8Bu9nycT8cyyKApr8BJOICDzIzv7p
+# 2. Click "Deploy" > "New deployment"
+# 3. Choose "Web app" as type
+# 4. Set "Execute as" to "Me"
+# 5. Set "Who has access" to "Anyone"
+# 6. Click "Deploy"
+# 7. Copy the "Web app URL" and replace the URL below
 [build.environment]
   NEXT_PUBLIC_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwfXX-QbVmgYIjva0toYlcmIG2Cm0owdtqgrwzCc5GC-xO5V7oKyhuaX6bqQWhhDLSgCg/exec"
 

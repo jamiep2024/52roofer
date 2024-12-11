@@ -25,8 +25,8 @@ export default async function handler(
     }
 
     // Check if Apps Script URL is configured
-    if (!process.env.APPS_SCRIPT_URL) {
-      console.error('APPS_SCRIPT_URL environment variable is not set');
+    if (!process.env.NEXT_PUBLIC_APPS_SCRIPT_URL) {
+      console.error('NEXT_PUBLIC_APPS_SCRIPT_URL environment variable is not set');
       return res.status(500).json({ 
         status: 'error',
         message: 'Server configuration error: Missing Apps Script URL' 
@@ -88,7 +88,7 @@ export default async function handler(
     };
 
     // Submit to Google Apps Script
-    const response = await fetch(process.env.APPS_SCRIPT_URL, {
+    const response = await fetch(process.env.NEXT_PUBLIC_APPS_SCRIPT_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
