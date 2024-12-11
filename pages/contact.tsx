@@ -1,11 +1,10 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
 import SimpleLeadForm from '../components/forms/SimpleLeadForm';
 import SEO from '../components/seo/SEO';
 
 const ContactPage = () => {
   return (
-    <Layout>
+    <>
       <SEO 
         title="Contact Us | 52 Roofer"
         description="Get in touch with our roofing experts. We're here to help with all your roofing needs across South England."
@@ -60,7 +59,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
