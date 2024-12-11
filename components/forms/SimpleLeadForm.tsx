@@ -8,11 +8,13 @@ interface SimpleLeadFormProps {
 const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    setErrorMessage('');
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -40,13 +42,19 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) throw new Error('Submission failed');
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        console.error('Server response:', responseData);
+        throw new Error(responseData.message || 'Submission failed');
+      }
       
       setSubmitStatus('success');
       form.reset();
     } catch (error) {
       console.error('Submission error:', error);
       setSubmitStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
     } finally {
       setIsSubmitting(false);
     }
@@ -198,7 +206,7 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
             </div>
             <div className="ml-3">
               <p className="text-sm font-medium text-red-800">
-                Sorry, there was an error submitting your message. Please try again.
+                {errorMessage || 'Sorry, there was an error submitting your message. Please try again.'}
               </p>
             </div>
           </div>

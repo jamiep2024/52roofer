@@ -14,14 +14,30 @@ function doPost(e) {
         message: 'Missing required fields'
       });
     }
+
+    // Validate email format
+    if (!isValidEmail(data.email)) {
+      return sendResponse({
+        status: 'error',
+        message: 'Invalid email format'
+      });
+    }
+
+    // Validate phone format
+    if (!isValidPhone(data.phone)) {
+      return sendResponse({
+        status: 'error',
+        message: 'Invalid phone number format'
+      });
+    }
     
     // Get the active spreadsheet and sheet
     const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-    const sheet = spreadsheet.getSheetByName('Sheet1');
+    const sheet = spreadsheet.getSheetByName('Leads');
     
     // If sheet doesn't exist, create it with headers
     if (!sheet) {
-      const newSheet = spreadsheet.insertSheet('Sheet1');
+      const newSheet = spreadsheet.insertSheet('Leads');
       const headers = [
         'Timestamp',
         'Name',
@@ -37,6 +53,7 @@ function doPost(e) {
       ];
       newSheet.getRange(1, 1, 1, headers.length).setValues([headers]);
       newSheet.setFrozenRows(1);
+      sheet = newSheet;
     }
     
     // Prepare the row data
@@ -75,7 +92,14 @@ function doPost(e) {
     // Return success response
     return sendResponse({
       status: 'success',
-      message: 'Lead submitted successfully'
+      message: 'Lead submitted successfully',
+      data: {
+        timestamp: data.timestamp,
+        name: data.name,
+        email: data.email,
+        service: data.service,
+        urgency: data.urgency
+      }
     });
     
   } catch (error) {
@@ -94,24 +118,20 @@ function doPost(e) {
 function sendResponse(data) {
   return ContentService.createTextOutput(JSON.stringify(data))
     .setMimeType(ContentService.MimeType.JSON)
-    .setHeaders({
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST',
-      'Access-Control-Allow-Headers': 'Content-Type',
-      'Access-Control-Max-Age': '86400'
-    });
+    .addHeader('Access-Control-Allow-Origin', '*')
+    .addHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+    .addHeader('Access-Control-Allow-Headers', 'Content-Type')
+    .addHeader('Access-Control-Max-Age', '86400');
 }
 
 // Handle preflight CORS requests
 function doOptions(e) {
   return ContentService.createTextOutput('')
     .setMimeType(ContentService.MimeType.JSON)
-    .setHeaders({
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST',
-      'Access-Control-Allow-Headers': 'Content-Type',
-      'Access-Control-Max-Age': '86400'
-    });
+    .addHeader('Access-Control-Allow-Origin', '*')
+    .addHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+    .addHeader('Access-Control-Allow-Headers', 'Content-Type')
+    .addHeader('Access-Control-Max-Age', '86400');
 }
 
 // Utility function to validate email format

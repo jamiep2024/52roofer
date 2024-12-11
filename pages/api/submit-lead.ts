@@ -7,14 +7,35 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+
+  // Handle preflight request
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).json({ 
+      status: 'error',
+      message: 'Method not allowed. Only POST requests are accepted.' 
+    });
   }
 
   // Check if Apps Script URL is configured
   if (!APPS_SCRIPT_URL) {
     console.error('APPS_SCRIPT_URL environment variable is not set');
-    return res.status(500).json({ message: 'Server configuration error' });
+    return res.status(500).json({ 
+      status: 'error',
+      message: 'Server configuration error: Missing Apps Script URL' 
+    });
   }
 
   try {
@@ -33,8 +54,32 @@ export default async function handler(
     } = req.body;
 
     // Validate required fields
-    if (!name || !phone || !email || !service || !urgency) {
-      return res.status(400).json({ message: 'Missing required fields' });
+    const requiredFields = ['name', 'phone', 'email', 'service', 'urgency'];
+    const missingFields = requiredFields.filter(field => !req.body[field]);
+    
+    if (missingFields.length > 0) {
+      return res.status(400).json({ 
+        status: 'error',
+        message: `Missing required fields: ${missingFields.join(', ')}` 
+      });
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ 
+        status: 'error',
+        message: 'Invalid email format' 
+      });
+    }
+
+    // Basic phone validation (allows various formats)
+    const phoneRegex = /^[\d\s()+.-]+$/;
+    if (!phoneRegex.test(phone)) {
+      return res.status(400).json({ 
+        status: 'error',
+        message: 'Invalid phone number format' 
+      });
     }
 
     // Log the request data for debugging
@@ -97,7 +142,11 @@ export default async function handler(
       throw new Error(result.message || 'Error submitting lead');
     }
 
-    res.status(200).json({ message: 'Lead submitted successfully', result });
+    res.status(200).json({ 
+      status: 'success',
+      message: 'Lead submitted successfully',
+      result 
+    });
   } catch (error) {
     // Enhanced error logging
     console.error('Error submitting lead:', {
@@ -110,8 +159,9 @@ export default async function handler(
 
     // Return a more detailed error message
     res.status(500).json({
-      message: 'Error submitting lead',
-      error: error instanceof Error ? error.message : 'Unknown error'
+      status: 'error',
+      message: error instanceof Error ? error.message : 'An unexpected error occurred while submitting the lead',
+      details: process.env.NODE_ENV === 'development' ? error : undefined
     });
   }
 }
