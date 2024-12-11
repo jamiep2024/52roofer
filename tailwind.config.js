@@ -14,7 +14,9 @@ module.exports = {
           light: '#FFD700',
           DEFAULT: '#C5A572',
           dark: '#B8860B'
-        }
+        },
+        background: '#f9fafb',  // gray-50
+        text: '#111827',        // gray-900
       },
     },
   },
