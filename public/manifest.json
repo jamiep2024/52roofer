@@ -2,35 +2,65 @@
   "name": "52Roofer - Find Trusted Local Roofers",
   "short_name": "52Roofer",
   "description": "Connect with verified local roofers across South England. Professional roofing services, emergency repairs, and free consultations.",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#4F46E5",
+  "orientation": "portrait",
+  "background_color": "#f9fafb",
+  "theme_color": "#1a365d",
+  "categories": ["business", "services", "home services", "construction"],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Find a Roofer",
+      "url": "/find-roofer",
+      "description": "Quickly connect with local roofers"
+    },
+    {
+      "name": "Emergency Repairs",
+      "url": "/services/emergency-roof-repairs",
+      "description": "Get emergency roofing help"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile-home.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "platform": "narrow",
+      "label": "Homescreen of 52Roofer"
+    }
+  ],
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
       "sizes": "72x72",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-96x96.png",
       "sizes": "96x96",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-128x128.png",
       "sizes": "128x128",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-144x144.png",
       "sizes": "144x144",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-152x152.png",
       "sizes": "152x152",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-192x192.png",
@@ -41,12 +71,26 @@
     {
       "src": "/icons/icon-384x384.png",
       "sizes": "384x384",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "related_applications": [],
+  "iarc_rating_id": "",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "display_override": ["standalone", "minimal-ui"],
+  "handle_links": "preferred",
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
 }
