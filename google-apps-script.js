@@ -2,33 +2,36 @@
 function doPost(e) {
   try {
     // Log the incoming request for debugging
-    console.log('Received request:', e.postData.contents);
+    Logger.log('Received request: ' + e.postData.contents);
     
     // Parse the incoming JSON data
     const data = JSON.parse(e.postData.contents);
     
     // Validate required fields
     if (!data.name || !data.phone || !data.email || !data.service) {
-      return sendResponse({
+      return ContentService.createTextOutput(JSON.stringify({
         status: 'error',
         message: 'Missing required fields'
-      });
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
     }
 
     // Validate email format
     if (!isValidEmail(data.email)) {
-      return sendResponse({
+      return ContentService.createTextOutput(JSON.stringify({
         status: 'error',
         message: 'Invalid email format'
-      });
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
     }
 
     // Validate phone format
     if (!isValidPhone(data.phone)) {
-      return sendResponse({
+      return ContentService.createTextOutput(JSON.stringify({
         status: 'error',
         message: 'Invalid phone number format'
-      });
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
     }
     
     // Get the active spreadsheet and sheet
@@ -87,10 +90,10 @@ function doPost(e) {
     sheet.autoResizeColumns(1, numColumns);
     
     // Log success for debugging
-    console.log('Successfully added row:', rowData);
+    Logger.log('Successfully added row: ' + JSON.stringify(rowData));
     
-    // Return success response
-    return sendResponse({
+    // Return success response with proper CORS headers
+    return ContentService.createTextOutput(JSON.stringify({
       status: 'success',
       message: 'Lead submitted successfully',
       data: {
@@ -99,28 +102,28 @@ function doPost(e) {
         email: data.email,
         service: data.service
       }
-    });
-    
-  } catch (error) {
-    // Log the error for debugging
-    console.error('Error processing submission:', error);
-    
-    // Return error response
-    return sendResponse({
-      status: 'error',
-      message: 'Error processing submission: ' + error.toString()
-    });
-  }
-}
-
-// Helper function to send response with proper CORS headers
-function sendResponse(data) {
-  return ContentService.createTextOutput(JSON.stringify(data))
+    }))
     .setMimeType(ContentService.MimeType.JSON)
     .addHeader('Access-Control-Allow-Origin', '*')
     .addHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
     .addHeader('Access-Control-Allow-Headers', 'Content-Type')
     .addHeader('Access-Control-Max-Age', '86400');
+    
+  } catch (error) {
+    // Log the error for debugging
+    Logger.log('Error processing submission: ' + error.toString());
+    
+    // Return error response with proper CORS headers
+    return ContentService.createTextOutput(JSON.stringify({
+      status: 'error',
+      message: 'Error processing submission: ' + error.toString()
+    }))
+    .setMimeType(ContentService.MimeType.JSON)
+    .addHeader('Access-Control-Allow-Origin', '*')
+    .addHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+    .addHeader('Access-Control-Allow-Headers', 'Content-Type')
+    .addHeader('Access-Control-Max-Age', '86400');
+  }
 }
 
 // Handle preflight CORS requests
@@ -170,6 +173,6 @@ function testScript() {
   };
   
   const result = doPost(mockEvent);
-  console.log('Test result:', result.getContent());
+  Logger.log('Test result: ' + result.getContent());
   return result;
 }
