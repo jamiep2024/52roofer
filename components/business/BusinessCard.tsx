@@ -70,7 +70,7 @@ const getBadgeStyle = (badge: string, isGrandeur: boolean): BadgeStyle => {
 };
 
 export default function BusinessCard({ business }: BusinessCardProps) {
-  const isGrandeur = business.name === 'Grandeur Heritage Group';
+  const isGrandeur = business.name.startsWith('Grandeur Heritage Group');
 
   return (
     <div className={`relative bg-white rounded-lg shadow-lg overflow-hidden ${
@@ -94,7 +94,7 @@ export default function BusinessCard({ business }: BusinessCardProps) {
       <div className={`p-8 ${isGrandeur ? 'pt-16' : ''}`}>
         {/* Header Section */}
         <div className="flex flex-col space-y-3">
-          <h3 className={`font-bold text-gray-900 ${business.name === 'Grandeur Heritage Group' ? 'text-3xl' : 'text-2xl'}`}>{business.name}</h3>
+          <h3 className={`font-bold text-gray-900 ${isGrandeur ? 'text-3xl' : 'text-2xl'}`}>{business.name}</h3>
           <div className="flex items-center space-x-3">
             <div className="flex items-center space-x-1">
               {[...Array(5)].map((_, i) => (
