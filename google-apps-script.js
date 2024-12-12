@@ -155,7 +155,7 @@ function testScript() {
   const testData = {
     timestamp: new Date().toISOString(),
     name: 'Test User',
-    phone: '1234567890',
+    phone: '07990101321',
     email: 'test@example.com',
     address: '123 Test St',
     service: 'Roof Repair',
