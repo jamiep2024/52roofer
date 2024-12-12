@@ -1,9 +1,10 @@
 import React from 'react';
-import HeroImage from "../components/HeroImage";import Head from 'next/head';
-import HeroImage from "../components/HeroImage";import SimpleLeadForm from '../components/forms/SimpleLeadForm';
-import HeroImage from "../components/HeroImage";import { serviceAreas } from '../data/serviceAreas';
-import HeroImage from "../components/HeroImage";import { businesses } from '../data/businesses';
 import HeroImage from "../components/HeroImage";
+import Head from 'next/head';
+import SimpleLeadForm from '../components/forms/SimpleLeadForm';
+import { serviceAreas } from '../data/serviceAreas';
+import { businesses } from '../data/businesses';
+
 export default function RoofersInHeadingtonOxford() {
   const location = {
     name: 'Headington',
