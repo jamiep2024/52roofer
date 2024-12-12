@@ -68,6 +68,12 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/find-roofer"
+                className="bg-accent text-white px-4 py-2 rounded-md hover:bg-accent/90 transition-colors duration-200 font-medium focus-ring"
+              >
+                Find a Roofer Now
+              </Link>
             </div>
           </div>
 
@@ -108,6 +114,13 @@ const Header = () => {
           >
             <div className="h-full flex flex-col overflow-y-auto safe-padding smooth-scroll">
               <div className="px-4 pt-4 pb-6 space-y-6">
+                <Link
+                  href="/find-roofer"
+                  className="block w-full bg-accent text-white px-4 py-3 rounded-md text-center font-medium hover:bg-accent/90 transition-colors duration-200 focus-ring"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Find a Roofer Now
+                </Link>
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
