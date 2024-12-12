@@ -21,7 +21,7 @@ const articleSchema = {
       "url": "https://www.52roofer.com/images/logo.png"
     }
   },
-  "description": "Learn essential roof maintenance tips to extend your roof\'s lifespan and prevent costly repairs. Expert advice from professional roofers.",
+  "description": "Learn essential roof maintenance tips to extend your roof&apos;s lifespan and prevent costly repairs. Expert advice from professional roofers.",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://www.52roofer.com/blog/complete-guide-to-roof-maintenance"
@@ -36,7 +36,7 @@ const RoofMaintenanceGuide = () => {
     <>
       <Head>
         <title>Complete Guide to Roof Maintenance | Essential Tips | 52roofer.com</title>
-        <meta name="description" content="Learn essential roof maintenance tips to extend your roof\'s lifespan and prevent costly repairs. Expert advice from professional roofers on inspection, cleaning, and maintenance." />
+        <meta name="description" content="Learn essential roof maintenance tips to extend your roof&apos;s lifespan and prevent costly repairs. Expert advice from professional roofers on inspection, cleaning, and maintenance." />
         <meta name="keywords" content="roof maintenance, roof inspection, roof cleaning, roof repair, preventive maintenance, roofing tips" />
         <link rel="canonical" href="https://www.52roofer.com/blog/complete-guide-to-roof-maintenance" />
         <script
@@ -53,7 +53,7 @@ const RoofMaintenanceGuide = () => {
               Complete Guide to Roof Maintenance: Essential Tips for Homeowners
             </h1>
             <p className="text-xl text-gray-600">
-              Learn how to protect your investment and extend your roof\'s lifespan with proper maintenance
+              Learn how to protect your investment and extend your roof&apos;s lifespan with proper maintenance
             </p>
           </header>
 
@@ -61,7 +61,7 @@ const RoofMaintenanceGuide = () => {
             <h2>Why Regular Roof Maintenance is Important</h2>
             <p>
               Regular roof maintenance is crucial for protecting your home and preventing costly repairs. 
-              A well-maintained roof not only lasts longer but also helps maintain your home\'s value and 
+              A well-maintained roof not only lasts longer but also helps maintain your home&apos;s value and 
               energy efficiency.
             </p>
 
