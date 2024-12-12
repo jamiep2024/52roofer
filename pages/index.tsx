@@ -7,6 +7,7 @@ import { serviceAreas } from '../data/serviceAreas';
 import BusinessCard from '../components/business/BusinessCard';
 import SEO from '../components/seo/SEO';
 import Image from 'next/image';
+import HeroImage from '../components/HeroImage';
 
 // JSON-LD structured data for rich snippets
 const organizationSchema = {
@@ -210,14 +211,10 @@ export default function Home() {
       <div className="relative bg-white">
         {/* Hero Section with Location Bar */}
         <div className="relative bg-gray-900 min-h-screen w-full">
-          <div className="absolute inset-0 overflow-hidden">
-            <img
-              className="h-full w-full object-cover opacity-40"
-              src="/images/hero-bg.jpg"
-              alt="Professional roofing services"
-            />
-            <div className="absolute inset-0 hero-gradient opacity-60"></div>
-          </div>
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt="Professional roofing services"
+          />
           <div className="relative w-full px-4 py-32 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-screen">
             <div className="max-w-7xl w-full mx-auto">
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white text-center mb-8 text-shadow slide-in">

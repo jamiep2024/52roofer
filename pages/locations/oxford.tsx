@@ -1,54 +1,42 @@
-import { GetStaticProps } from 'next';
+import React from 'react';
+import Head from 'next/head';
+import LocationLandingPage from '../../components/LocationLandingPage';
+import { Business } from '../../types/business';
 import { serviceAreas } from '../../data/serviceAreas';
 import { businesses } from '../../data/businesses';
-import LocationLandingPage from '../../components/LocationLandingPage';
 
-export default function Oxford() {
-  const location = {
-    name: 'Oxford',
-    county: serviceAreas.oxfordshire.name,
-    postcodes: ['OX1', 'OX2', 'OX3', 'OX4'],
-    description: `Looking for trusted roofers in Oxford? Our network of experienced local roofers provides comprehensive roofing services across Oxford and surrounding areas. From emergency repairs to complete roof installations, we deliver quality workmanship and reliable service.`,
-    keyFeatures: [
-      'Emergency Roof Repairs',
-      'Complete Roof Replacements',
-      'Roof Maintenance',
-      'Chimney Repairs',
-      'Guttering Services',
-      'Flat Roof Specialists'
-    ],
-    nearbyAreas: [
-      'Headington',
-      'Cowley',
-      'Botley',
-      'Wolvercote',
-      'Marston',
-      'Iffley',
-      'Summertown',
-      'Blackbird Leys'
-    ],
-    landmarks: [
-      'Oxford University',
-      'Oxford Castle',
-      'Radcliffe Camera',
-      'Ashmolean Museum',
-      'Christ Church Cathedral'
-    ]
-  };
+export default function RoofersInOxford() {
+  const city = 'Oxford';
+  const county = 'Oxfordshire';
+  const description = 'Oxford is a historic university city with a rich architectural heritage. Our roofing services cover all areas of Oxford, providing expert repairs, installations, and maintenance for both historic and modern buildings.';
 
-  const localBusinesses = businesses.filter(
-    business => business.location === serviceAreas.oxfordshire.name
+  const localBusinesses: Business[] = businesses.filter(
+    business => business.location === county
   );
 
   return (
-    <LocationLandingPage
-      location={location}
-      businesses={localBusinesses}
-    />
+    <>
+      <Head>
+        <title>Expert Roofers in Oxford | Emergency Repairs & Installation</title>
+        <meta 
+          name="description" 
+          content="Looking for trusted roofers in Oxford? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving all Oxford postcodes & surrounding areas."
+        />
+        <meta name="keywords" content="roofers Oxford, roofing contractors Oxford, roof repairs Oxfordshire, emergency roofer Oxford, local roofers Oxford" />
+        <link rel="canonical" href="https://52roofer.com/locations/oxford" />
+      </Head>
+
+      <LocationLandingPage
+        city={city}
+        county={county}
+        description={description}
+        businesses={localBusinesses}
+      />
+    </>
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   return {
     props: {},
     revalidate: 3600

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import SEO from '../../components/seo/SEO';
 import { locationData } from '../../data/locationData';
 
@@ -212,10 +213,14 @@ export default function Locations() {
         {/* Hero Section */}
         <div className="relative bg-gray-900 h-[40vh] min-h-[400px]">
           <div className="absolute inset-0 overflow-hidden">
-            <img
+            <Image
               className="h-full w-full object-cover opacity-40"
               src="/images/hero-bg.jpg"
               alt="52Roofer service areas"
+              fill
+              priority
+              sizes="100vw"
+              style={{ objectFit: 'cover' }}
             />
             <div className="absolute inset-0 hero-gradient opacity-60"></div>
           </div>

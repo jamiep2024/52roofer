@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import HeroImage from "../components/HeroImage";
 import SimpleLeadForm from '../components/forms/SimpleLeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
@@ -25,6 +26,12 @@ export default function RoofersInRoseHillOxford() {
           content="Looking for trusted roofers in Rose Hill, Oxford? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving OX4 & surrounding areas."
         />
         <meta name="keywords" content="roofers Rose Hill, roofing contractors Rose Hill, roof repairs Oxford, emergency roofer Rose Hill, local roofers OX4" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Rose Hill, Oxford | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Rose Hill, Oxford? 24/7 Emergency Service, Free Quotes. Local experts serving OX4 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-rose-hill-oxford" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-rose-hill-oxford" />
       </Head>
 
@@ -32,12 +39,10 @@ export default function RoofersInRoseHillOxford() {
         {/* Hero Section */}
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
-            <img
-              className="h-full w-full object-cover"
-              src="/images/hero-bg.jpg"
-              alt="Roofing services in Rose Hill, Oxford"
-            />
-            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt="Professional roofing services in Rose Hill, Oxford"
+          />            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">

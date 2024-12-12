@@ -1,9 +1,9 @@
 import React from 'react';
-import Head from 'next/head';
-import SimpleLeadForm from '../components/forms/SimpleLeadForm';
-import { serviceAreas } from '../data/serviceAreas';
-import { businesses } from '../data/businesses';
-
+import HeroImage from "../components/HeroImage";import Head from 'next/head';
+import HeroImage from "../components/HeroImage";import SimpleLeadForm from '../components/forms/SimpleLeadForm';
+import HeroImage from "../components/HeroImage";import { serviceAreas } from '../data/serviceAreas';
+import HeroImage from "../components/HeroImage";import { businesses } from '../data/businesses';
+import HeroImage from "../components/HeroImage";
 export default function RoofersInChippenhamWiltshire() {
   const location = {
     name: 'Chippenham',
@@ -31,12 +31,10 @@ export default function RoofersInChippenhamWiltshire() {
         {/* Hero Section */}
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
-            <img
-              className="h-full w-full object-cover"
-              src="/images/hero-bg.jpg"
-              alt="Roofing services in Chippenham, Wiltshire"
-            />
-            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt="Roofing services"
+          />            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">

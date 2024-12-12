@@ -11,7 +11,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self' https://script.google.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://script.google.com https://*.google.com;"
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://script.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: *.52roofer.com; font-src 'self' data:; connect-src 'self' https://script.google.com https://*.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
           },
           {
             key: 'X-Frame-Options',
@@ -28,6 +28,10 @@ const nextConfig = {
           {
             key: 'X-XSS-Protection',
             value: '1; mode=block'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()'
           }
         ]
       }

@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import SEO from '../../components/seo/SEO';
+import HeroImage from '../../components/HeroImage';
 
 export default function Resources() {
   const resourceSchema = {
@@ -49,14 +51,11 @@ export default function Resources() {
       <div className="relative bg-white">
         {/* Hero Section */}
         <div className="relative bg-gray-900 h-[40vh] min-h-[400px]">
-          <div className="absolute inset-0 overflow-hidden">
-            <img
-              className="h-full w-full object-cover opacity-40"
-              src="/images/hero-bg.jpg"
-              alt="Roofing resources and guides"
-            />
-            <div className="absolute inset-0 hero-gradient opacity-60"></div>
-          </div>
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt="Roofing resources and guides"
+          />
+          <div className="absolute inset-0 hero-gradient opacity-60"></div>
           <div className="relative h-full flex items-center justify-center">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 text-shadow">
@@ -155,7 +154,15 @@ export default function Resources() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {resourceGuides.map((guide, index) => (
                 <article key={index} className="bg-white rounded-xl shadow-sm overflow-hidden">
-                  <img src={guide.image} alt={guide.title} className="w-full h-48 object-cover" />
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src={guide.image}
+                      alt={guide.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-2">{guide.title}</h3>
                     <p className="text-gray-600 mb-4">{guide.description}</p>

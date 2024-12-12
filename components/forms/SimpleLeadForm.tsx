@@ -19,16 +19,46 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     
+    // Basic validation
+    const name = formData.get('name') as string;
+    const phone = formData.get('phone') as string;
+    const email = formData.get('email') as string;
+
+    if (!name || !phone || !email) {
+      setErrorMessage('Please fill in all required fields');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setErrorMessage('Please enter a valid email address');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Phone validation
+    const phoneRegex = /^[\d\s+()-]{10,}$/;
+    if (!phoneRegex.test(phone)) {
+      setErrorMessage('Please enter a valid phone number');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+    
     const data = {
       timestamp: new Date().toISOString(),
-      name: formData.get('name'),
-      phone: formData.get('phone'),
-      email: formData.get('email'),
+      name,
+      phone,
+      email,
       address: formData.get('address'),
       service: formData.get('service'),
       urgency: formData.get('urgency'),
       message: formData.get('message'),
-      source: source,
+      source,
       status: 'New',
       notes: ''
     };
@@ -42,28 +72,22 @@ const SimpleLeadForm: React.FC<SimpleLeadFormProps> = ({ source, className = '' 
         body: JSON.stringify(data),
       });
 
-      // First try to get the response as text
-      const responseText = await response.text();
-      
-      // Try to parse it as JSON
-      let responseData;
-      try {
-        responseData = JSON.parse(responseText);
-      } catch (parseError) {
-        console.error('Response is not valid JSON:', responseText);
-        throw new Error('Server returned invalid JSON response. Please try again later.');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
 
-      if (!response.ok) {
-        throw new Error(responseData.message || 'Submission failed');
-      }
+      const responseData = await response.json();
       
-      setSubmitStatus('success');
-      form.reset();
+      if (responseData.success) {
+        setSubmitStatus('success');
+        form.reset();
+      } else {
+        throw new Error(responseData.message || 'Failed to submit form');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitStatus('error');
       setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
