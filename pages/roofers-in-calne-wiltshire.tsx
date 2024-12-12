@@ -122,6 +122,23 @@ export default function RoofersInCalneWiltshire() {
             </div>
           </div>
         </div>
+
+        <div id="quote-form" className="bg-gray-50 py-16">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-extrabold text-gray-900">
+                Get Your Free Roofing Quote
+              </h2>
+              <p className="mt-4 text-lg text-gray-600">
+                Fill out the form below and our Calne team will get back to you within 24 hours.
+              </p>
+            </div>
+
+            <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
+              <SimpleLeadForm source="Calne Page" />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
