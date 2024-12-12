@@ -1,10 +1,9 @@
 import React from 'react';
-import HeroImage from "../components/HeroImage";import Head from 'next/head';
-import HeroImage from "../components/HeroImage";import Image from 'next/image';
-import HeroImage from "../components/HeroImage";import SimpleLeadForm from '../components/forms/SimpleLeadForm';
-import HeroImage from "../components/HeroImage";import { serviceAreas } from '../data/serviceAreas';
-import HeroImage from "../components/HeroImage";import { businesses } from '../data/businesses';
-import HeroImage from "../components/HeroImage";
+import Head from 'next/head';
+import { HeroImage, SimpleLeadForm } from "../components";
+import { serviceAreas } from '../data/serviceAreas';
+import { businesses } from '../data/businesses';
+
 export default function RoofersInWestburyWiltshire() {
   const location = {
     name: 'Westbury',
@@ -32,15 +31,10 @@ export default function RoofersInWestburyWiltshire() {
         {/* Hero Section */}
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
-            <div className="relative h-full w-full">
-              <Image
-                src="/images/hero-bg.jpg"
-                alt="Roofing services in Westbury, Wiltshire"
-                layout="fill"
-                objectFit="cover"
-                priority
-              />
-            </div>
+            <HeroImage 
+              src="/images/hero-bg.jpg"
+              alt="Roofing services in Westbury, Wiltshire"
+            />
             <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 
