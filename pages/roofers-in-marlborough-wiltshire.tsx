@@ -1,9 +1,9 @@
 import React from 'react';
-import HeroImage from "../components/HeroImage";import Head from 'next/head';
-import HeroImage from "../components/HeroImage";import SimpleLeadForm from '../components/forms/SimpleLeadForm';
-import HeroImage from "../components/HeroImage";import { serviceAreas } from '../data/serviceAreas';
-import HeroImage from "../components/HeroImage";import { businesses } from '../data/businesses';
-import HeroImage from "../components/HeroImage";
+import Head from 'next/head';
+import SimpleLeadForm from '../components/forms/SimpleLeadForm';
+import { serviceAreas } from '../data/serviceAreas';
+import { businesses } from '../data/businesses';
+
 export default function RoofersInMarlboroughWiltshire() {
   const location = {
     name: 'Marlborough',
@@ -29,19 +29,12 @@ export default function RoofersInMarlboroughWiltshire() {
 
       <div className="bg-white">
         {/* Hero Section */}
-        <div className="relative bg-gray-900">
-          <div className="absolute inset-0">
-          <HeroImage 
-            src="/images/hero-bg.jpg"
-            alt="Roofing services"
-          />            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
-          </div>
-
-          <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+        <div className="bg-blue-600">
+          <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Expert Roofers in Marlborough
             </h1>
-            <p className="mt-6 max-w-3xl text-xl text-gray-300">
+            <p className="mt-6 max-w-3xl text-xl text-gray-100">
               Professional roofing services in Marlborough. From emergency repairs to complete installations, 
               our local experts are here to help. Available 24/7 with free quotes.
             </p>
