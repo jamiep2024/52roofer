@@ -30,21 +30,14 @@ export default function RoofersInMelkshamWiltshire() {
 
       <div className="bg-white">
         {/* Hero Section */}
-        <div className="relative bg-gray-900">
-          <div className="absolute inset-0">
-          <HeroImage 
-            src="/images/hero-bg.jpg"
-            alt={`Roofing services in Melksham`}
-          />            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
-          </div>
-
-          <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+        <div className="bg-gray-900">
+          <HeroImage src="/path/to/new/hero-image.jpg" alt="Hero Image" />
+          <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Expert Roofers in Melksham
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Professional roofing services in Melksham. From emergency repairs to complete installations, 
-              our local experts are here to help. Available 24/7 with free quotes.
+              Your trusted local roofers for all your roofing needs.
             </p>
           </div>
         </div>

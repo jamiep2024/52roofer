@@ -32,8 +32,8 @@ export default function RoofersInCalneWiltshire() {
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
             <HeroImage 
-              src="/images/blue-hero-bg.jpg"
-              alt={`Roofing services in Calne`}
+              src="/path/to/new/hero-image.jpg"
+              alt="Hero Image"
             />
             <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
@@ -43,8 +43,7 @@ export default function RoofersInCalneWiltshire() {
               Expert Roofers in Calne
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Professional roofing services in Calne. From emergency repairs to complete installations, 
-              our local experts are here to help. Available 24/7 with free quotes.
+              Your trusted local roofers for all your roofing needs.
             </p>
           </div>
         </div>
