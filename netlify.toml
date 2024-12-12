@@ -4,6 +4,8 @@
 
 [build.environment]
   NEXT_PUBLIC_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxmcKUsUFVrCZhox9rCLrJEZsEdwLY4ay0lobqSJw81MB-vpeJVwbyp-d_1cCwPP5uRjQ/exec"
+  NODE_VERSION = "18.17.0"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

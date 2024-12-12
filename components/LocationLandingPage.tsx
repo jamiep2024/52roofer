@@ -2,17 +2,20 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import SimpleLeadForm from './forms/SimpleLeadForm';
+import { Business } from '../types/business';
 
 interface LocationLandingPageProps {
   city: string;
   county: string;
   description: string;
+  businesses?: Business[];
 }
 
 const LocationLandingPage: React.FC<LocationLandingPageProps> = ({
   city,
   county,
   description,
+  businesses = []
 }) => {
   return (
     <div className="bg-white">
