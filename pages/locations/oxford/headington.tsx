@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import { serviceAreas } from '../../../data/serviceAreas';
 import { businesses } from '../../../data/businesses';
 import LocationLandingPage from '../../../components/LocationLandingPage';
+import { Business } from '../../../types/business';
 
 export default function Headington() {
   const location = {
@@ -37,13 +38,15 @@ export default function Headington() {
     ]
   };
 
-  const localBusinesses = businesses.filter(
+  const localBusinesses: Business[] = businesses.filter(
     business => business.location === serviceAreas.oxfordshire.name
   );
 
   return (
     <LocationLandingPage
-      location={location}
+      city={location.name}
+      county={location.county}
+      description={location.description}
       businesses={localBusinesses}
     />
   );
