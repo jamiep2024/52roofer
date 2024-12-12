@@ -26,8 +26,9 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({
             <Image
               src="/images/hero-bg.jpg"
               alt={`Roofing services in ${city}`}
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="100vw"
+              style={{ objectFit: 'cover' }}
               priority
             />
           </div>
