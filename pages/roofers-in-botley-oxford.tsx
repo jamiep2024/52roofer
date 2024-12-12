@@ -1,9 +1,9 @@
 import React from 'react';
-import HeroImage from "../components/HeroImage";import Head from 'next/head';
-import HeroImage from "../components/HeroImage";import SimpleLeadForm from '../components/forms/SimpleLeadForm';
-import HeroImage from "../components/HeroImage";import { serviceAreas } from '../data/serviceAreas';
-import HeroImage from "../components/HeroImage";import { businesses } from '../data/businesses';
-import HeroImage from "../components/HeroImage";
+import Head from 'next/head';
+import { HeroImage, SimpleLeadForm } from "../components";
+import { serviceAreas } from '../data/serviceAreas';
+import { businesses } from '../data/businesses';
+
 export default function RoofersInBotleyOxford() {
   const location = {
     name: 'Botley',
@@ -32,10 +32,11 @@ export default function RoofersInBotleyOxford() {
         {/* Hero Section */}
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
-          <HeroImage 
-            src="/images/hero-bg.jpg"
-            alt="Roofing services"
-          />            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+            <HeroImage 
+              src="/images/hero-bg.jpg"
+              alt="Roofing services"
+            />
+            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
