@@ -231,9 +231,11 @@ export default function LocationPage({ location, slug }: LocationPageProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.keys(locationData).map((slug) => ({
-    params: { slug },
-  }));
+  const paths = Object.keys(locationData)
+    .filter(slug => slug !== 'oxford' && slug !== 'gloucester')
+    .map((slug) => ({
+      params: { slug },
+    }));
 
   return {
     paths,
