@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import { HeroImage, SimpleLeadForm } from "../components";
+import HeroImage from "../components/HeroImage";
+import SimpleLeadForm from '../components/forms/SimpleLeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
 
