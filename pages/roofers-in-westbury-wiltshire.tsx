@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import SimpleLeadForm from '../components/forms/SimpleLeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
@@ -31,11 +32,15 @@ export default function RoofersInWestburyWiltshire() {
         {/* Hero Section */}
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
-            <img
-              className="h-full w-full object-cover"
-              src="/images/hero-bg.jpg"
-              alt="Roofing services in Westbury, Wiltshire"
-            />
+            <div className="relative h-full w-full">
+              <Image
+                src="/images/hero-bg.jpg"
+                alt="Roofing services in Westbury, Wiltshire"
+                layout="fill"
+                objectFit="cover"
+                priority
+              />
+            </div>
             <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 

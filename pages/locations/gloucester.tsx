@@ -1,48 +1,45 @@
+import React from 'react';
 import { GetStaticProps } from 'next';
+import LocationLandingPage from '../../components/LocationLandingPage';
+import { Business } from '../../types/business';
 import { serviceAreas } from '../../data/serviceAreas';
 import { businesses } from '../../data/businesses';
-import LocationLandingPage from '../../components/LocationLandingPage';
 
 export default function Gloucester() {
   const location = {
     name: 'Gloucester',
-    county: serviceAreas.gloucestershire.name,
-    postcodes: ['GL1', 'GL2', 'GL3', 'GL4'],
-    description: `Looking for trusted roofers in Gloucester? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving GL1, GL2, GL3, GL4 & surrounding areas.`,
+    county: 'Gloucestershire',
+    description: 'Gloucester is a historic cathedral city and the county town of Gloucestershire. Our roofing services cover all areas of Gloucester, providing expert repairs, installations, and maintenance.',
     keyFeatures: [
-      'Emergency Roof Repairs',
-      'Full Roof Replacements',
-      'Roof Maintenance',
-      'Chimney Repairs',
-      'Guttering Services',
-      'Heritage Roofing Specialists'
+      'Historic cathedral city',
+      'Rich Roman and medieval history',
+      'Modern shopping centers',
+      'Vibrant cultural scene'
     ],
     nearbyAreas: [
-      'Barnwood',
-      'Longlevens',
-      'Tuffley',
-      'Hucclecote',
-      'Quedgeley',
-      'Kingsholm',
-      'Matson',
-      'Abbeydale'
+      'Cheltenham',
+      'Stroud',
+      'Tewkesbury',
+      'Forest of Dean'
     ],
     landmarks: [
       'Gloucester Cathedral',
       'Gloucester Docks',
       'Gloucester Quays',
-      'Kingsholm Stadium',
       'Museum of Gloucester'
-    ]
+    ],
+    postcodes: ['GL1', 'GL2', 'GL3', 'GL4']
   };
 
-  const localBusinesses = businesses.filter(
+  const localBusinesses: Business[] = businesses.filter(
     business => business.location === serviceAreas.gloucestershire.name
   );
 
   return (
     <LocationLandingPage
-      location={location}
+      city={location.name}
+      county={location.county}
+      description={location.description}
       businesses={localBusinesses}
     />
   );

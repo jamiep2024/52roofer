@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import SimpleLeadForm from './forms/SimpleLeadForm';
 
 interface LocationLandingPageProps {
@@ -18,11 +19,15 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({
       {/* Hero Section */}
       <div className="relative bg-gray-900">
         <div className="absolute inset-0">
-          <img
-            className="h-full w-full object-cover"
-            src="/images/hero-bg.jpg"
-            alt={`Roofing services in ${city}`}
-          />
+          <div className="relative h-full w-full">
+            <Image
+              src="/images/hero-bg.jpg"
+              alt={`Roofing services in ${city}`}
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
+          </div>
           <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
         </div>
 
