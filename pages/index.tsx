@@ -213,7 +213,7 @@ export default function Home() {
         <div className="relative bg-gray-900 min-h-screen w-full">
           <HeroImage 
             src="/images/hero-bg.jpg"
-            alt="Professional roofing services"
+            alt={`Hero Image for the Homepage`}
           />
           <div className="relative w-full px-4 py-32 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-screen">
             <div className="max-w-7xl w-full mx-auto">

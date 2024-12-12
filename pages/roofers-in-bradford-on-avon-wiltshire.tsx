@@ -34,7 +34,7 @@ export default function RoofersInBradfordOnAvonWiltshire() {
           <div className="absolute inset-0">
             <HeroImage 
               src="/images/hero-bg.jpg"
-              alt="Roofing services"
+              alt={`Roofing services in Bradford on Avon`}
             />
             <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>

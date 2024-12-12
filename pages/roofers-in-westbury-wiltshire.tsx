@@ -32,8 +32,8 @@ export default function RoofersInWestburyWiltshire() {
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
             <HeroImage 
-              src="/images/hero-bg.jpg"
-              alt="Roofing services in Westbury, Wiltshire"
+              src="/images/blue-hero-bg.jpg"
+              alt={`Roofing services in Westbury`}
             />
             <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>

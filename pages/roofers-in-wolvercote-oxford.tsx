@@ -24,7 +24,7 @@ export default function RoofersInWolvercoteOxford() {
         const areaPrefix = start.replace(/\d+$/, ''); // Get prefix (e.g., 'OX')
         const startNum = parseInt(start.replace(/^\D+/, '')); // Get start number
         const endNum = parseInt(end.replace(/^\D+/, '')); // Get end number
-        const targetNum = parseInt(location.postcodes[0].replace(/^\D+/, '')); // Get target number (2 from OX2)
+        const targetNum = parseInt(location.postcodes[0].replace(/^\D+$/, '')); // Get target number (2 from OX2)
         return areaPrefix === location.postcodes[0].replace(/\d+$/, '') && // Check prefix matches
                targetNum >= startNum && targetNum <= endNum; // Check number is in range
       }
@@ -53,7 +53,7 @@ export default function RoofersInWolvercoteOxford() {
           <div className="absolute inset-0">
             <HeroImage 
               src="/images/hero-bg.jpg"
-              alt="Roofing services"
+              alt={`Roofing services in Wolvercote`}
             />
             <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>

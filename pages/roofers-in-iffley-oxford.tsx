@@ -33,8 +33,8 @@ export default function RoofersInIffleyOxford() {
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
             <HeroImage 
-              src="/images/hero-bg.jpg"
-              alt="Roofing services in Iffley, Oxford"
+              src="/images/blue-hero-bg.jpg"
+              alt={`Roofing services in Iffley`}
             />
             <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>

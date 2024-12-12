@@ -41,7 +41,7 @@ export default function RoofersInRoseHillOxford() {
           <div className="absolute inset-0">
           <HeroImage 
             src="/images/hero-bg.jpg"
-            alt="Professional roofing services in Rose Hill, Oxford"
+            alt={`Roofing services in Rose Hill`}
           />            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 

@@ -8,7 +8,7 @@ interface HeroImageProps {
 
 export default function HeroImage({ src, alt }: HeroImageProps) {
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-blue-600">
       <div className="relative h-full w-full">
         <Image
           src={src}
@@ -28,7 +28,6 @@ export default function HeroImage({ src, alt }: HeroImageProps) {
           }}
         />
       </div>
-      <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
     </div>
   );
 }

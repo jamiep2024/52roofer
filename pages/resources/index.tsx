@@ -53,7 +53,7 @@ export default function Resources() {
         <div className="relative bg-gray-900 h-[40vh] min-h-[400px]">
           <HeroImage 
             src="/images/hero-bg.jpg"
-            alt="Roofing resources and guides"
+            alt={`Hero Image for Resources Page`}
           />
           <div className="absolute inset-0 hero-gradient opacity-60"></div>
           <div className="relative h-full flex items-center justify-center">

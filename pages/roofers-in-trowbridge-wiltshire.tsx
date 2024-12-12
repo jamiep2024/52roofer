@@ -35,7 +35,7 @@ export default function RoofersInTrowbridgeWiltshire() {
         <div className="relative bg-gray-900">
           <HeroImage 
             src="/images/hero-bg.jpg"
-            alt="Roofing services in Trowbridge, Wiltshire"
+            alt={`Roofing services in Trowbridge`}
           />
           <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
