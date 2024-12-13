@@ -32,7 +32,7 @@
     @apply text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-secondary;
   }
   p {
-    @apply text-base-mobile sm:text-base leading-relaxed;
+    @apply base-mobile sm:text-base leading-relaxed;
   }
 }
 
