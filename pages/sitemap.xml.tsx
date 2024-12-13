@@ -1,9 +1,20 @@
 import { GetServerSideProps } from 'next'
 import { businesses } from '../data/businesses';
+import fs from 'fs';
+import path from 'path';
 
 const EXTERNAL_DATA_URL = 'https://52roofer.com';
 
-function generateSiteMap(locations: string[]) {
+function getLocationPages() {
+  const pagesDirectory = path.join(process.cwd(), 'pages');
+  const files = fs.readdirSync(pagesDirectory);
+  
+  return files
+    .filter(file => file.startsWith('roofers-in-') && file.endsWith('.tsx'))
+    .map(file => file.replace('.tsx', ''));
+}
+
+function generateSiteMap(locations: string[], locationPages: string[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -73,6 +84,23 @@ function generateSiteMap(locations: string[]) {
      `;
        })
        .join('')}
+
+     <!-- Specific Location Pages -->
+     ${locationPages
+       .map(page => `
+       <url>
+           <loc>${EXTERNAL_DATA_URL}/${page}</loc>
+           <lastmod>${new Date().toISOString()}</lastmod>
+           <changefreq>weekly</changefreq>
+           <priority>0.9</priority>
+           <image:image>
+             <image:loc>${EXTERNAL_DATA_URL}/images/hero-bg.jpg</image:loc>
+             <image:title>Professional Roofing Services</image:title>
+             <image:caption>Expert roofing services in ${page.replace('roofers-in-', '').replace(/-/g, ' ')}</image:caption>
+           </image:image>
+       </url>
+     `)
+       .join('')}
      
      <!-- Service Pages -->
      <url>
@@ -129,9 +157,10 @@ function SiteMap() {
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const locations = ['Oxfordshire', 'Gloucestershire', 'Wiltshire', 'Berkshire'];
+  const locationPages = getLocationPages();
   
   // Generate the XML sitemap with the locations data
-  const sitemap = generateSiteMap(locations);
+  const sitemap = generateSiteMap(locations, locationPages);
 
   res.setHeader('Content-Type', 'text/xml');
   // Cache the sitemap for 12 hours

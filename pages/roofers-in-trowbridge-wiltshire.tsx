@@ -4,6 +4,7 @@ import HeroImage from "../components/HeroImage";
 import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
+import LocalBusinessSchema from '../components/seo/LocalBusinessSchema';
 
 export default function RoofersInTrowbridgeWiltshire() {
   const location = {
@@ -33,6 +34,13 @@ export default function RoofersInTrowbridgeWiltshire() {
         <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-trowbridge-wiltshire" />
       </Head>
+
+      <LocalBusinessSchema 
+        businessName="52Roofer Trowbridge"
+        location={location}
+        url="https://52roofer.com/roofers-in-roofers-in-trowbridge-wiltshire"
+        image="https://52roofer.com/images/hero-bg.jpg"
+      />
 
       <div className="bg-white">
         {/* Hero Section */}

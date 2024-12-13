@@ -4,6 +4,7 @@ import HeroImage from "../components/HeroImage";
 import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
+import LocalBusinessSchema from '../components/seo/LocalBusinessSchema';
 
 export default function RoofersInMarlboroughWiltshire() {
   const location = {
@@ -33,6 +34,13 @@ export default function RoofersInMarlboroughWiltshire() {
         <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-marlborough-wiltshire" />
       </Head>
+
+      <LocalBusinessSchema 
+        businessName="52Roofer Marlborough"
+        location={location}
+        url="https://52roofer.com/roofers-in-roofers-in-marlborough-wiltshire"
+        image="https://52roofer.com/images/hero-bg.jpg"
+      />
 
       <div className="bg-white">
         {/* Hero Section */}

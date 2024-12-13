@@ -4,6 +4,7 @@ import HeroImage from "../components/HeroImage";
 import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
+import LocalBusinessSchema from '../components/seo/LocalBusinessSchema';
 
 export default function RoofersInSummertownOxford() {
   const location = {
@@ -28,6 +29,13 @@ export default function RoofersInSummertownOxford() {
         <meta name="keywords" content="roofers Summertown, roofing contractors Summertown, roof repairs Oxford, emergency roofer Summertown, local roofers OX2" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-summertown-oxford" />
       </Head>
+
+      <LocalBusinessSchema 
+        businessName="52Roofer Summertown"
+        location={location}
+        url="https://52roofer.com/roofers-in-roofers-in-summertown-oxford"
+        image="https://52roofer.com/images/hero-bg.jpg"
+      />
 
       <div className="bg-white">
         {/* Hero Section */}
