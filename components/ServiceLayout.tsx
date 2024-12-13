@@ -1,19 +1,30 @@
 import React from 'react';
 import Link from 'next/link';
+import { serviceAreas } from '../data/serviceAreas';
 
 interface ServiceLayoutProps {
   children: React.ReactNode;
   heroImage?: string;
   heroTitle?: string;
   heroDescription?: string;
+  serviceName?: string;
 }
 
 const ServiceLayout: React.FC<ServiceLayoutProps> = ({ 
   children, 
   heroImage = "/images/services/default-hero.jpg",
   heroTitle,
-  heroDescription 
+  heroDescription,
+  serviceName
 }) => {
+  // Get all main towns from service areas
+  const allTowns = Object.values(serviceAreas).reduce((acc, area) => {
+    return [...acc, ...area.mainTowns.map(town => ({
+      name: town,
+      county: area.name
+    }))];
+  }, [] as { name: string; county: string }[]);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -44,6 +55,24 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="prose prose-lg max-w-none">
             {children}
+          </div>
+        </div>
+
+        {/* Location Links Section */}
+        <div className="mt-12 bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            {serviceName ? `${serviceName} Services in Popular Areas` : 'Our Service Areas'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {allTowns.map((town, index) => (
+              <Link
+                key={index}
+                href={`/roofers-in-${town.name.toLowerCase().replace(/ /g, '-')}-${town.county.toLowerCase().replace(/ /g, '-')}`}
+                className="text-accent hover:text-accent/80 transition-colors"
+              >
+                {serviceName ? `${serviceName} in ${town.name}` : `Roofing Services in ${town.name}`}
+              </Link>
+            ))}
           </div>
         </div>
 

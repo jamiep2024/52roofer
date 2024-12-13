@@ -45,15 +45,47 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({
           <p>{description}</p>
 
           <h3>Our Services in {city}</h3>
-          <ul>
-            <li>Residential Roofing</li>
-            <li>Commercial Roofing</li>
-            <li>Roof Repairs & Maintenance</li>
-            <li>Emergency Roof Repairs</li>
-            <li>Roof Inspections</li>
-            <li>Gutter Services</li>
-            <li>Skylight Installation</li>
-            <li>Roof Ventilation</li>
+          <ul className="space-y-2">
+            <li>
+              <Link href="/services/residential-roofing" className="text-accent hover:text-accent/80 no-underline">
+                Residential Roofing
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/commercial-roofing" className="text-accent hover:text-accent/80 no-underline">
+                Commercial Roofing
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/roof-maintenance" className="text-accent hover:text-accent/80 no-underline">
+                Roof Repairs & Maintenance
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/emergency-roof-repairs" className="text-accent hover:text-accent/80 no-underline">
+                Emergency Roof Repairs
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/roof-inspection" className="text-accent hover:text-accent/80 no-underline">
+                Roof Inspections
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/gutter-services" className="text-accent hover:text-accent/80 no-underline">
+                Gutter Services
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/skylight-installation" className="text-accent hover:text-accent/80 no-underline">
+                Skylight Installation
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/roof-ventilation" className="text-accent hover:text-accent/80 no-underline">
+                Roof Ventilation
+              </Link>
+            </li>
           </ul>
 
           <h3>Why Choose Us?</h3>

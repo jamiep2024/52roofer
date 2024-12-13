@@ -67,6 +67,7 @@ const ResidentialRoofing = () => {
       heroImage="/images/services/residential-hero.jpg"
       heroTitle="Residential Roofing Services"
       heroDescription="Protect your home with expert roofing solutions"
+      serviceName="Residential Roofing"
     >
       <Head>
         <title>Residential Roofing Services | 52roofer.com</title>
