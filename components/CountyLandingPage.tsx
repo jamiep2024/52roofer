@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import SimpleLeadForm from './forms/SimpleLeadForm';
+import LeadForm from './forms/LeadForm';
 
 interface CountyLandingPageProps {
   county: string;
@@ -96,8 +96,8 @@ const CountyLandingPage: React.FC<CountyLandingPageProps> = ({
             </p>
           </div>
 
-          <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-            <SimpleLeadForm source={`County Page - ${county}`} />
+          <div className="mt-12">
+            <LeadForm source={`County Page - ${county}`} />
           </div>
         </div>
       </div>

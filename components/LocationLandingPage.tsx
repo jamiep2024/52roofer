@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import SimpleLeadForm from './forms/SimpleLeadForm';
+import LeadForm from './forms/LeadForm';
 import { Business } from '../types/business';
 
 interface LocationLandingPageProps {
@@ -80,8 +80,8 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({
             </p>
           </div>
 
-          <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-            <SimpleLeadForm source={`Location Page - ${city}`} />
+          <div className="mt-12">
+            <LeadForm source={`Location Page - ${city}`} />
           </div>
         </div>
       </div>

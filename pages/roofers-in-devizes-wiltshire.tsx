@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroImage from "../components/HeroImage";
 import Head from 'next/head';
-import SimpleLeadForm from '../components/forms/SimpleLeadForm';
+import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
 
@@ -94,11 +94,11 @@ export default function RoofersInDevizesWiltshire() {
 
             {/* Right Column - Form */}
             <div>
-              <div className="bg-gray-50 p-8 rounded-xl shadow-lg">
+              <div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                   Get Your Free Quote Today
                 </h3>
-                <SimpleLeadForm source="Devizes Landing Page" />
+                <LeadForm source="Devizes Landing Page" />
               </div>
 
               {/* Local Landmarks */}
@@ -130,8 +130,8 @@ export default function RoofersInDevizesWiltshire() {
               </p>
             </div>
 
-            <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-              <SimpleLeadForm source="Devizes Page" />
+            <div className="mt-12">
+              <LeadForm source="Devizes Page" />
             </div>
           </div>
         </div>

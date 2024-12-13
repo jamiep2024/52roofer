@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import { HeroImage, SimpleLeadForm } from "../components";
+import { HeroImage } from "../components";
+import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
 
@@ -101,7 +102,7 @@ export default function RoofersInCalneWiltshire() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                   Get Your Free Quote Today
                 </h3>
-                <SimpleLeadForm source="Calne Landing Page" />
+                <LeadForm source="Calne Landing Page" />
               </div>
 
               {/* Local Landmarks */}
@@ -134,7 +135,7 @@ export default function RoofersInCalneWiltshire() {
             </div>
 
             <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-              <SimpleLeadForm source="Calne Page" />
+              <LeadForm source="Calne Page" />
             </div>
           </div>
         </div>

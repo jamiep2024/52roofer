@@ -1,5 +1,5 @@
 import React from 'react';
-import SimpleLeadForm from '../components/forms/SimpleLeadForm';
+import LeadForm from '../components/forms/LeadForm';
 import SEO from '../components/seo/SEO';
 
 const ContactPage = () => {
@@ -51,9 +51,9 @@ const ContactPage = () => {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-gray-100 p-10 shadow-lg">
+              <div className="rounded-2xl p-10">
                 <h2 className="text-2xl font-bold text-gray-900 mb-8">Get Your Free Quote</h2>
-                <SimpleLeadForm source="Contact Page" />
+                <LeadForm source="Contact Page" />
               </div>
             </div>
           </div>

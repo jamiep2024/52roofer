@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import SimpleLeadForm from '../components/forms/SimpleLeadForm';
+import LeadForm from '../components/forms/LeadForm';
 import HeroImage from '../components/HeroImage';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
@@ -100,7 +100,7 @@ export default function RoofersInTrowbridgeWiltshire() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                   Get Your Free Quote Today
                 </h3>
-                <SimpleLeadForm source="Trowbridge Landing Page" />
+                <LeadForm source="Trowbridge Landing Page" />
               </div>
 
               {/* Local Landmarks */}
@@ -133,7 +133,7 @@ export default function RoofersInTrowbridgeWiltshire() {
             </div>
 
             <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-              <SimpleLeadForm source="Trowbridge Page" />
+              <LeadForm source="Trowbridge Page" />
             </div>
           </div>
         </div>

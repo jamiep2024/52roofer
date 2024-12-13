@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroImage from "../components/HeroImage";
 import Head from 'next/head';
-import SimpleLeadForm from '../components/forms/SimpleLeadForm';
+import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
 
@@ -95,7 +95,7 @@ export default function RoofersInMelkshamWiltshire() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                   Get Your Free Quote Today
                 </h3>
-                <SimpleLeadForm source="Melksham Landing Page" />
+                <LeadForm source="Melksham Landing Page" />
               </div>
 
               {/* Local Landmarks */}
@@ -128,7 +128,7 @@ export default function RoofersInMelkshamWiltshire() {
             </div>
 
             <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-              <SimpleLeadForm source="Melksham Page" />
+              <LeadForm source="Melksham Page" />
             </div>
           </div>
         </div>
