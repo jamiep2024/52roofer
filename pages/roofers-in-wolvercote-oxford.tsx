@@ -147,7 +147,7 @@ export default function RoofersInWolvercoteOxford() {
                           <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
                             {business.phone && (
                               <div>
-                                <span className="font-medium">Phone:</span> {business.phone}
+                                <span className="font-medium">Phone:</span> 07990101321
                               </div>
                             )}
                             {business.availability && (
@@ -185,6 +185,16 @@ export default function RoofersInWolvercoteOxford() {
                   <li>• Godstow Abbey</li>
                   <li>• Wolvercote Lakes</li>
                   <li>• The Plough Inn</li>
+                </ul>
+              </div>
+
+              {/* Contact Section */}
+              <div className="mt-12">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                  Contact Us
+                </h3>
+                <ul className="grid grid-cols-1 gap-4">
+                  <li><span className="font-medium">Phone:</span> 07990101321</li>
                 </ul>
               </div>
             </div>

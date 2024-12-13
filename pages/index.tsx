@@ -43,7 +43,7 @@ const organizationSchema = {
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+44-0800-123-4567",
+    "telephone": "07990101321",
     "contactType": "customer service",
     "areaServed": ["GB"],
     "availableLanguage": ["English"],
