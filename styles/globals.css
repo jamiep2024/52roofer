@@ -6,48 +6,58 @@
   .touch-action-manipulation {
     touch-action: manipulation;
   }
-}
-
-@layer base {
-  html {
-    -webkit-text-size-adjust: 100%;
-    touch-action: manipulation;
+  
+  .text-primary {
+    @apply text-black;
   }
   
-  body {
-    @apply bg-background text-text antialiased;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overscroll-behavior-y: none;
+  .text-secondary {
+    @apply text-gray-500;
+  }
+  
+  .bg-primary {
+    @apply bg-blue-500;
+  }
+  
+  .bg-secondary {
+    @apply bg-blue-600;
+  }
+  
+  .hover\:bg-primary\/90 {
+    @apply bg-blue-600;
   }
 
-  /* Mobile-first typography */
-  h1 {
-    @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-primary;
+  .ring-primary {
+    @apply ring-blue-500;
   }
-  h2 {
-    @apply text-xl sm:text-2xl md:text-3xl font-semibold mb-2 md:mb-3 text-primary;
+
+  .from-primary {
+    @apply from-blue-500;
   }
-  h3 {
-    @apply text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-secondary;
-  }
-  p {
-    @apply base-mobile sm:text-base leading-relaxed;
+
+  .to-secondary {
+    @apply to-blue-600;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white px-4 sm:px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors
+    @apply bg-primary text-white px-4 sm:px-6 py-2 rounded-lg transition-colors
            text-sm sm:text-base
            active:scale-95 transform transition
            touch-action-manipulation;
   }
+  .btn-primary:hover {
+    @apply bg-blue-600;
+  }
   .btn-secondary {
-    @apply bg-secondary text-white px-4 sm:px-6 py-2 rounded-lg hover:bg-secondary/90 transition-colors
+    @apply bg-secondary text-white px-4 sm:px-6 py-2 rounded-lg transition-colors
            text-sm sm:text-base
            active:scale-95 transform transition
            touch-action-manipulation;
+  }
+  .btn-secondary:hover {
+    @apply bg-blue-700;
   }
   .btn-accent {
     @apply bg-accent text-white px-4 sm:px-6 py-2 rounded-lg hover:bg-accent/90 transition-colors
@@ -57,8 +67,8 @@
   }
   .input-field {
     @apply w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg 
-           focus:ring-2 focus:ring-primary focus:border-transparent outline-none
-           text-base-mobile sm:text-base
+           focus:ring-2 ring-primary focus:border-transparent outline-none
+           text-sm sm:text-base
            appearance-none;
   }
   
@@ -77,10 +87,38 @@
   /* Mobile navigation utilities */
   .mobile-nav-item {
     @apply py-3 px-4 w-full text-left
-           text-base-mobile sm:text-base
+           text-sm sm:text-base
            hover:bg-gray-50 active:bg-gray-100
            transition-colors duration-200
            touch-action-manipulation;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+  }
+  
+  body {
+    @apply bg-background text-black antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: none;
+  }
+
+  /* Mobile-first typography */
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-black;
+  }
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl font-semibold mb-2 md:mb-3 text-black;
+  }
+  h3 {
+    @apply text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-secondary;
+  }
+  p {
+    @apply text-sm sm:text-base leading-relaxed;
   }
 }
 
@@ -98,7 +136,7 @@
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-600;
 }
 
 .text-shadow {
@@ -168,7 +206,7 @@
 
 /* Mobile-friendly focus styles */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  @apply focus:outline-none focus:ring-2 ring-primary focus:ring-offset-2;
 }
 
 /* Gold Accents */
