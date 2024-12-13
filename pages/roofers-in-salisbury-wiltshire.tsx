@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroImage from "../components/HeroImage";
 import Head from 'next/head';
-import SimpleLeadForm from '../components/forms/SimpleLeadForm';
+import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
 
@@ -102,7 +102,7 @@ export default function RoofersInSalisburyWiltshire() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                   Get Your Free Quote Today
                 </h3>
-                <SimpleLeadForm source="Salisbury Landing Page" />
+                <LeadForm source="Salisbury Landing Page" />
               </div>
 
               {/* Local Landmarks */}
