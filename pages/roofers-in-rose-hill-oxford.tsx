@@ -8,7 +8,6 @@ import { businesses } from '../data/businesses';
 export default function RoofersInRoseHillOxford() {
   const location = {
     name: 'Rose Hill',
-    city: 'Oxford',
     county: serviceAreas.oxfordshire.name,
     postcodes: ['OX4'],
   };
@@ -42,15 +41,16 @@ export default function RoofersInRoseHillOxford() {
           <HeroImage 
             src="/images/hero-bg.jpg"
             alt={`Roofing services in Rose Hill`}
-          />            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Expert Roofers in Rose Hill, Oxford
+              Expert Roofers in Rose Hill
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Professional roofing services in Rose Hill. From emergency repairs to complete installations, 
+              Professional roofing services in Rose Hill, Oxford. From emergency repairs to complete installations, 
               our local experts are here to help. Available 24/7 with free quotes.
             </p>
           </div>
@@ -83,13 +83,13 @@ export default function RoofersInRoseHillOxford() {
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Areas We Cover in Rose Hill</h3>
                 <ul className="grid grid-cols-2 gap-4">
                   <li>• Rose Hill</li>
-                  <li>• Iffley</li>
-                  <li>• Donnington</li>
                   <li>• The Oval</li>
-                  <li>• Littlemore</li>
-                  <li>• Cowley</li>
-                  <li>• Temple Cowley</li>
-                  <li>• Florence Park</li>
+                  <li>• Rivermead Road</li>
+                  <li>• Church Cowley Road</li>
+                  <li>• Ashhurst Way</li>
+                  <li>• Courtland Road</li>
+                  <li>• Rose Hill Road</li>
+                  <li>• Lenthall Road</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Why Choose Our Rose Hill Roofers?</h3>
@@ -121,9 +121,9 @@ export default function RoofersInRoseHillOxford() {
                   <li>• Rose Hill Community Centre</li>
                   <li>• Rose Hill Primary School</li>
                   <li>• Rose Hill Methodist Church</li>
-                  <li>• The Oval Green Space</li>
-                  <li>• Rivermead Nature Park</li>
+                  <li>• The Oval Park</li>
                   <li>• Rose Hill Recreation Ground</li>
+                  <li>• Thames Valley Police Station</li>
                 </ul>
               </div>
             </div>

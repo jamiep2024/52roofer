@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import HeroImage from "../components/HeroImage";
-import SimpleLeadForm from '../components/forms/SimpleLeadForm';
+import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
 
@@ -25,6 +25,12 @@ export default function RoofersInBradfordOnAvonWiltshire() {
           content="Looking for trusted roofers in Bradford-on-Avon, Wiltshire? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving BA15 & surrounding areas."
         />
         <meta name="keywords" content="roofers Bradford-on-Avon, roofing contractors Bradford-on-Avon, roof repairs Wiltshire, emergency roofer Bradford-on-Avon, local roofers BA15" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Bradford-on-Avon, Wiltshire | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Bradford-on-Avon, Wiltshire? 24/7 Emergency Service, Free Quotes. Local experts serving BA15 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-bradford-on-avon-wiltshire" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-bradford-on-avon-wiltshire" />
       </Head>
 
@@ -32,11 +38,11 @@ export default function RoofersInBradfordOnAvonWiltshire() {
         {/* Hero Section */}
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
-            <HeroImage 
-              src="/path/to/new/hero-image.jpg"
-              alt="Hero Image"
-            />
-            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt={`Roofing services in Bradford-on-Avon`}
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
@@ -44,7 +50,8 @@ export default function RoofersInBradfordOnAvonWiltshire() {
               Expert Roofers in Bradford-on-Avon
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Your trusted local roofers for all your roofing needs.
+              Professional roofing services in Bradford-on-Avon. From emergency repairs to complete installations, 
+              our local experts are here to help. Available 24/7 with free quotes.
             </p>
           </div>
         </div>
@@ -79,8 +86,8 @@ export default function RoofersInBradfordOnAvonWiltshire() {
                   <li>• Bearfield</li>
                   <li>• Winsley</li>
                   <li>• Woolley</li>
-                  <li>• Trowle Common</li>
                   <li>• Bradford Leigh</li>
+                  <li>• Trowle Common</li>
                   <li>• Widbrook</li>
                   <li>• Newtown</li>
                 </ul>
@@ -102,7 +109,7 @@ export default function RoofersInBradfordOnAvonWiltshire() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                   Get Your Free Quote Today
                 </h3>
-                <SimpleLeadForm source="Bradford-on-Avon Landing Page" />
+                <LeadForm source="Bradford-on-Avon Landing Page" />
               </div>
 
               {/* Local Landmarks */}
@@ -119,23 +126,6 @@ export default function RoofersInBradfordOnAvonWiltshire() {
                   <li>• Kennet & Avon Canal</li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="quote-form" className="bg-gray-50 py-16">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-extrabold text-gray-900">
-                Get Your Free Roofing Quote
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Fill out the form below and our Bradford-on-Avon team will get back to you within 24 hours.
-              </p>
-            </div>
-
-            <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-              <SimpleLeadForm source="Bradford-on-Avon Page" />
             </div>
           </div>
         </div>

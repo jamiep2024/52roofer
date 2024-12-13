@@ -1,14 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 import HeroImage from "../components/HeroImage";
-import SimpleLeadForm from '../components/forms/SimpleLeadForm';
+import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
 
 export default function RoofersInBlackbirdLeysOxford() {
   const location = {
     name: 'Blackbird Leys',
-    city: 'Oxford',
     county: serviceAreas.oxfordshire.name,
     postcodes: ['OX4'],
   };
@@ -26,6 +25,12 @@ export default function RoofersInBlackbirdLeysOxford() {
           content="Looking for trusted roofers in Blackbird Leys, Oxford? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving OX4 & surrounding areas."
         />
         <meta name="keywords" content="roofers Blackbird Leys, roofing contractors Blackbird Leys, roof repairs Oxford, emergency roofer Blackbird Leys, local roofers OX4" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Blackbird Leys, Oxford | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Blackbird Leys, Oxford? 24/7 Emergency Service, Free Quotes. Local experts serving OX4 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-blackbird-leys-oxford" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-blackbird-leys-oxford" />
       </Head>
 
@@ -33,11 +38,11 @@ export default function RoofersInBlackbirdLeysOxford() {
         {/* Hero Section */}
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
-            <HeroImage 
-              src="/path/to/new/hero-image.jpg"
-              alt="Hero Image"
-            />
-            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt={`Roofing services in Blackbird Leys`}
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
@@ -45,7 +50,8 @@ export default function RoofersInBlackbirdLeysOxford() {
               Expert Roofers in Blackbird Leys
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Your trusted local roofers for all your roofing needs.
+              Professional roofing services in Blackbird Leys, Oxford. From emergency repairs to complete installations, 
+              our local experts are here to help. Available 24/7 with free quotes.
             </p>
           </div>
         </div>
@@ -77,13 +83,13 @@ export default function RoofersInBlackbirdLeysOxford() {
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Areas We Cover in Blackbird Leys</h3>
                 <ul className="grid grid-cols-2 gap-4">
                   <li>• Greater Leys</li>
-                  <li>• Northfield Brook</li>
+                  <li>• Blackbird Leys Estate</li>
                   <li>• Knights Road</li>
-                  <li>• Windale</li>
-                  <li>• Cowley</li>
-                  <li>• Littlemore</li>
-                  <li>• Sandford</li>
-                  <li>• Rose Hill</li>
+                  <li>• Cuddesdon Way</li>
+                  <li>• Windale Avenue</li>
+                  <li>• Pegasus Road</li>
+                  <li>• Field Avenue</li>
+                  <li>• Sandy Lane</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Why Choose Our Blackbird Leys Roofers?</h3>
@@ -103,7 +109,7 @@ export default function RoofersInBlackbirdLeysOxford() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                   Get Your Free Quote Today
                 </h3>
-                <SimpleLeadForm source="Blackbird Leys Landing Page" />
+                <LeadForm source="Blackbird Leys Landing Page" />
               </div>
 
               {/* Local Landmarks */}
@@ -112,11 +118,12 @@ export default function RoofersInBlackbirdLeysOxford() {
                   Proudly Serving Landmarks in Blackbird Leys
                 </h3>
                 <ul className="grid grid-cols-1 gap-4">
-                  <li>• The Leys Pools and Leisure Centre</li>
-                  <li>• Oxford & Cherwell Valley College</li>
-                  <li>• Blackbird Leys Park</li>
+                  <li>• Blackbird Leys Leisure Centre</li>
+                  <li>• The Leys Pool and Leisure Centre</li>
+                  <li>• Oxford City Football Club</li>
                   <li>• Spindleberry Nature Reserve</li>
-                  <li>• The Barn Youth Centre</li>
+                  <li>• Blackbird Leys Park</li>
+                  <li>• The Oxford Academy</li>
                 </ul>
               </div>
             </div>

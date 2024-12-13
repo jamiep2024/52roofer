@@ -1,6 +1,6 @@
 import React from 'react';
-import HeroImage from "../components/HeroImage";
 import Head from 'next/head';
+import HeroImage from "../components/HeroImage";
 import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
@@ -25,19 +25,33 @@ export default function RoofersInMelkshamWiltshire() {
           content="Looking for trusted roofers in Melksham, Wiltshire? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving SN12 & surrounding areas."
         />
         <meta name="keywords" content="roofers Melksham, roofing contractors Melksham, roof repairs Wiltshire, emergency roofer Melksham, local roofers SN12" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Melksham, Wiltshire | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Melksham, Wiltshire? 24/7 Emergency Service, Free Quotes. Local experts serving SN12 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-melksham-wiltshire" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-melksham-wiltshire" />
       </Head>
 
       <div className="bg-white">
         {/* Hero Section */}
-        <div className="bg-gray-900">
-          <HeroImage src="/path/to/new/hero-image.jpg" alt="Hero Image" />
-          <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+        <div className="relative bg-gray-900">
+          <div className="absolute inset-0">
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt={`Roofing services in Melksham`}
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Expert Roofers in Melksham
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Your trusted local roofers for all your roofing needs.
+              Professional roofing services in Melksham. From emergency repairs to complete installations, 
+              our local experts are here to help. Available 24/7 with free quotes.
             </p>
           </div>
         </div>
@@ -75,7 +89,7 @@ export default function RoofersInMelkshamWiltshire() {
                   <li>• Melksham Without</li>
                   <li>• Shaw</li>
                   <li>• Whitley</li>
-                  <li>• Beanacre</li>
+                  <li>• Sandridge Common</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Why Choose Our Melksham Roofers?</h3>
@@ -109,26 +123,9 @@ export default function RoofersInMelkshamWiltshire() {
                   <li>• Melksham House</li>
                   <li>• St Michael's Church</li>
                   <li>• Melksham Railway Station</li>
-                  <li>• Melksham Market Place</li>
+                  <li>• Conigre Mead Nature Reserve</li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="quote-form" className="bg-gray-50 py-16">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-extrabold text-gray-900">
-                Get Your Free Roofing Quote
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Fill out the form below and our Melksham team will get back to you within 24 hours.
-              </p>
-            </div>
-
-            <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-              <LeadForm source="Melksham Page" />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import HeroImage from "../components/HeroImage";
 import Head from 'next/head';
+import HeroImage from "../components/HeroImage";
 import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
@@ -8,7 +8,6 @@ import { businesses } from '../data/businesses';
 export default function RoofersInCowleyOxford() {
   const location = {
     name: 'Cowley',
-    city: 'Oxford',
     county: serviceAreas.oxfordshire.name,
     postcodes: ['OX4'],
   };
@@ -26,22 +25,33 @@ export default function RoofersInCowleyOxford() {
           content="Looking for trusted roofers in Cowley, Oxford? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving OX4 & surrounding areas."
         />
         <meta name="keywords" content="roofers Cowley, roofing contractors Cowley, roof repairs Oxford, emergency roofer Cowley, local roofers OX4" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Cowley, Oxford | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Cowley, Oxford? 24/7 Emergency Service, Free Quotes. Local experts serving OX4 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-cowley-oxford" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-cowley-oxford" />
       </Head>
 
       <div className="bg-white">
         {/* Hero Section */}
-        <div className="bg-gray-900">
+        <div className="relative bg-gray-900">
+          <div className="absolute inset-0">
           <HeroImage 
-            src="/path/to/new/hero-image.jpg"
-            alt="Hero Image"
-          />
-          <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+            src="/images/hero-bg.jpg"
+            alt={`Roofing services in Cowley`}
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Expert Roofers in Cowley
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Your trusted local roofers for all your roofing needs.
+              Professional roofing services in Cowley, Oxford. From emergency repairs to complete installations, 
+              our local experts are here to help. Available 24/7 with free quotes.
             </p>
           </div>
         </div>
@@ -72,14 +82,14 @@ export default function RoofersInCowleyOxford() {
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Areas We Cover in Cowley</h3>
                 <ul className="grid grid-cols-2 gap-4">
-                  <li>• Temple Cowley</li>
                   <li>• Cowley Centre</li>
+                  <li>• Temple Cowley</li>
                   <li>• Florence Park</li>
+                  <li>• Cowley Marsh</li>
                   <li>• Littlemore</li>
                   <li>• Rose Hill</li>
                   <li>• Blackbird Leys</li>
                   <li>• Greater Leys</li>
-                  <li>• Hollow Way</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Why Choose Our Cowley Roofers?</h3>
@@ -108,11 +118,12 @@ export default function RoofersInCowleyOxford() {
                   Proudly Serving Landmarks in Cowley
                 </h3>
                 <ul className="grid grid-cols-1 gap-4">
-                  <li>• MINI Plant Oxford</li>
                   <li>• Templars Square Shopping Centre</li>
                   <li>• Oxford Business Park</li>
+                  <li>• MINI Plant Oxford</li>
                   <li>• Florence Park</li>
-                  <li>• Oxford Science Park</li>
+                  <li>• St James Church</li>
+                  <li>• Oxford & Cherwell Valley College</li>
                 </ul>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { HeroImage } from "../components";
+import HeroImage from "../components/HeroImage";
 import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
@@ -25,6 +25,12 @@ export default function RoofersInCalneWiltshire() {
           content="Looking for trusted roofers in Calne, Wiltshire? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving SN11 & surrounding areas."
         />
         <meta name="keywords" content="roofers Calne, roofing contractors Calne, roof repairs Wiltshire, emergency roofer Calne, local roofers SN11" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Calne, Wiltshire | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Calne, Wiltshire? 24/7 Emergency Service, Free Quotes. Local experts serving SN11 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-calne-wiltshire" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-calne-wiltshire" />
       </Head>
 
@@ -32,11 +38,11 @@ export default function RoofersInCalneWiltshire() {
         {/* Hero Section */}
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
-            <HeroImage 
-              src="/path/to/new/hero-image.jpg"
-              alt="Hero Image"
-            />
-            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt={`Roofing services in Calne`}
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
@@ -44,7 +50,8 @@ export default function RoofersInCalneWiltshire() {
               Expert Roofers in Calne
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Your trusted local roofers for all your roofing needs.
+              Professional roofing services in Calne. From emergency repairs to complete installations, 
+              our local experts are here to help. Available 24/7 with free quotes.
             </p>
           </div>
         </div>
@@ -78,10 +85,10 @@ export default function RoofersInCalneWiltshire() {
                   <li>• Town Centre</li>
                   <li>• Quemerford</li>
                   <li>• Stockley</li>
-                  <li>• Cherhill</li>
-                  <li>• Derry Hill</li>
-                  <li>• Sandy Lane</li>
                   <li>• Studley</li>
+                  <li>• Derry Hill</li>
+                  <li>• Cherhill</li>
+                  <li>• Sandy Lane</li>
                   <li>• Heddington</li>
                 </ul>
 
@@ -113,29 +120,12 @@ export default function RoofersInCalneWiltshire() {
                 <ul className="grid grid-cols-1 gap-4">
                   <li>• St Mary's Church</li>
                   <li>• Calne Heritage Centre</li>
-                  <li>• Castlefields Park</li>
+                  <li>• Bowood House</li>
+                  <li>• Castlefields Canal & River Park</li>
                   <li>• The Green</li>
-                  <li>• Bowood House (nearby)</li>
-                  <li>• North Wilts Golf Club</li>
+                  <li>• Cherhill White Horse</li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="quote-form" className="bg-gray-50 py-16">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-extrabold text-gray-900">
-                Get Your Free Roofing Quote
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Fill out the form below and our Calne team will get back to you within 24 hours.
-              </p>
-            </div>
-
-            <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-              <LeadForm source="Calne Page" />
             </div>
           </div>
         </div>

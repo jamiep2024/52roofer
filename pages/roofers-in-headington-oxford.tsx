@@ -1,6 +1,6 @@
 import React from 'react';
-import HeroImage from "../components/HeroImage";
 import Head from 'next/head';
+import HeroImage from "../components/HeroImage";
 import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
@@ -8,7 +8,6 @@ import { businesses } from '../data/businesses';
 export default function RoofersInHeadingtonOxford() {
   const location = {
     name: 'Headington',
-    city: 'Oxford',
     county: serviceAreas.oxfordshire.name,
     postcodes: ['OX3'],
   };
@@ -26,22 +25,33 @@ export default function RoofersInHeadingtonOxford() {
           content="Looking for trusted roofers in Headington, Oxford? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving OX3 & surrounding areas."
         />
         <meta name="keywords" content="roofers Headington, roofing contractors Headington, roof repairs Oxford, emergency roofer Headington, local roofers OX3" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Headington, Oxford | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Headington, Oxford? 24/7 Emergency Service, Free Quotes. Local experts serving OX3 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-headington-oxford" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-headington-oxford" />
       </Head>
 
       <div className="bg-white">
         {/* Hero Section */}
-        <div className="bg-gray-900">
+        <div className="relative bg-gray-900">
+          <div className="absolute inset-0">
           <HeroImage 
-            src="/path/to/new/hero-image.jpg"
-            alt="Hero Image"
-          />
-          <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+            src="/images/hero-bg.jpg"
+            alt={`Roofing services in Headington`}
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Expert Roofers in Headington
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Your trusted local roofers for all your roofing needs.
+              Professional roofing services in Headington, Oxford. From emergency repairs to complete installations, 
+              our local experts are here to help. Available 24/7 with free quotes.
             </p>
           </div>
         </div>
@@ -74,12 +84,12 @@ export default function RoofersInHeadingtonOxford() {
                 <ul className="grid grid-cols-2 gap-4">
                   <li>• Old Headington</li>
                   <li>• New Headington</li>
-                  <li>• Northway</li>
-                  <li>• Barton</li>
-                  <li>• Risinghurst</li>
-                  <li>• Wood Farm</li>
                   <li>• Quarry</li>
-                  <li>• Marston</li>
+                  <li>• Risinghurst</li>
+                  <li>• Barton</li>
+                  <li>• Wood Farm</li>
+                  <li>• Sandhills</li>
+                  <li>• Northway</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Why Choose Our Headington Roofers?</h3>
@@ -109,10 +119,11 @@ export default function RoofersInHeadingtonOxford() {
                 </h3>
                 <ul className="grid grid-cols-1 gap-4">
                   <li>• John Radcliffe Hospital</li>
+                  <li>• The Headington Shark</li>
                   <li>• Oxford Brookes University</li>
-                  <li>• Headington Shark</li>
-                  <li>• Bury Knowle Park</li>
                   <li>• Headington School</li>
+                  <li>• Bury Knowle Park</li>
+                  <li>• Ruskin College</li>
                 </ul>
               </div>
             </div>

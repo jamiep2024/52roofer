@@ -1,6 +1,6 @@
 import React from 'react';
-import HeroImage from "../components/HeroImage";
 import Head from 'next/head';
+import HeroImage from "../components/HeroImage";
 import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
@@ -25,6 +25,12 @@ export default function RoofersInSalisburyWiltshire() {
           content="Looking for trusted roofers in Salisbury, Wiltshire? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving SP1, SP2 & surrounding areas."
         />
         <meta name="keywords" content="roofers Salisbury, roofing contractors Salisbury, roof repairs Wiltshire, emergency roofer Salisbury, local roofers SP1, SP2" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Salisbury, Wiltshire | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Salisbury, Wiltshire? 24/7 Emergency Service, Free Quotes. Local experts serving SP1, SP2 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-salisbury-wiltshire" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-salisbury-wiltshire" />
       </Head>
 
@@ -35,7 +41,8 @@ export default function RoofersInSalisburyWiltshire() {
           <HeroImage 
             src="/images/hero-bg.jpg"
             alt={`Roofing services in Salisbury`}
-          />            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
@@ -61,7 +68,7 @@ export default function RoofersInSalisburyWiltshire() {
               <div className="prose prose-blue max-w-none">
                 <p>
                   Looking for reliable roofing services in Salisbury? Our experienced team provides 
-                  comprehensive roofing solutions throughout SP1 and SP2 areas. We specialize in:
+                  comprehensive roofing solutions throughout the SP1 and SP2 areas. We specialize in:
                 </p>
 
                 <ul className="mt-8 space-y-4">
@@ -77,12 +84,12 @@ export default function RoofersInSalisburyWiltshire() {
                 <ul className="grid grid-cols-2 gap-4">
                   <li>• City Centre</li>
                   <li>• Harnham</li>
-                  <li>• Bemerton Heath</li>
+                  <li>• Bemerton</li>
                   <li>• Laverstock</li>
                   <li>• Wilton</li>
                   <li>• Bishopdown</li>
-                  <li>• Old Sarum</li>
                   <li>• Churchfields</li>
+                  <li>• Milford</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Why Choose Our Salisbury Roofers?</h3>
@@ -114,9 +121,9 @@ export default function RoofersInSalisburyWiltshire() {
                   <li>• Salisbury Cathedral</li>
                   <li>• Old Sarum</li>
                   <li>• Salisbury Market Place</li>
-                  <li>• The Guildhall</li>
                   <li>• Queen Elizabeth Gardens</li>
                   <li>• Salisbury Arts Centre</li>
+                  <li>• Mompesson House</li>
                 </ul>
               </div>
             </div>

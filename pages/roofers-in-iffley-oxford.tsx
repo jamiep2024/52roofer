@@ -8,7 +8,6 @@ import { businesses } from '../data/businesses';
 export default function RoofersInIffleyOxford() {
   const location = {
     name: 'Iffley',
-    city: 'Oxford',
     county: serviceAreas.oxfordshire.name,
     postcodes: ['OX4'],
   };
@@ -26,6 +25,12 @@ export default function RoofersInIffleyOxford() {
           content="Looking for trusted roofers in Iffley, Oxford? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving OX4 & surrounding areas."
         />
         <meta name="keywords" content="roofers Iffley, roofing contractors Iffley, roof repairs Oxford, emergency roofer Iffley, local roofers OX4" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Iffley, Oxford | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Iffley, Oxford? 24/7 Emergency Service, Free Quotes. Local experts serving OX4 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-iffley-oxford" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-iffley-oxford" />
       </Head>
 
@@ -33,11 +38,11 @@ export default function RoofersInIffleyOxford() {
         {/* Hero Section */}
         <div className="relative bg-gray-900">
           <div className="absolute inset-0">
-            <HeroImage 
-              src="/path/to/new/hero-image.jpg"
-              alt="Hero Image"
-            />
-            <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt={`Roofing services in Iffley`}
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
@@ -45,7 +50,8 @@ export default function RoofersInIffleyOxford() {
               Expert Roofers in Iffley
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Your trusted local roofers for all your roofing needs.
+              Professional roofing services in Iffley, Oxford. From emergency repairs to complete installations, 
+              our local experts are here to help. Available 24/7 with free quotes.
             </p>
           </div>
         </div>
@@ -77,13 +83,13 @@ export default function RoofersInIffleyOxford() {
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Areas We Cover in Iffley</h3>
                 <ul className="grid grid-cols-2 gap-4">
                   <li>• Iffley Village</li>
+                  <li>• Iffley Turn</li>
+                  <li>• Church Way</li>
+                  <li>• Meadow Lane</li>
+                  <li>• Tree Lane</li>
+                  <li>• Iffley Road</li>
+                  <li>• Donnington Bridge Road</li>
                   <li>• Rose Hill</li>
-                  <li>• Donnington</li>
-                  <li>• Iffley Fields</li>
-                  <li>• Florence Park</li>
-                  <li>• Cowley</li>
-                  <li>• Littlemore</li>
-                  <li>• Kennington</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Why Choose Our Iffley Roofers?</h3>
@@ -114,9 +120,10 @@ export default function RoofersInIffleyOxford() {
                 <ul className="grid grid-cols-1 gap-4">
                   <li>• St Mary's Church</li>
                   <li>• Iffley Lock</li>
-                  <li>• Meadow Lane Nature Reserve</li>
-                  <li>• Iffley Road Sports Complex</li>
+                  <li>• Iffley Meadows</li>
+                  <li>• River Thames Path</li>
                   <li>• Iffley Village Hall</li>
+                  <li>• The Tree Hotel</li>
                 </ul>
               </div>
             </div>

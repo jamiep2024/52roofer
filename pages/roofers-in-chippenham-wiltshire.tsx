@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import SimpleLeadForm from '../components/forms/SimpleLeadForm';
-import HeroImage from '../components/HeroImage'; // Assuming HeroImage component is defined in this file
+import HeroImage from "../components/HeroImage";
+import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
 
@@ -25,19 +25,33 @@ export default function RoofersInChippenhamWiltshire() {
           content="Looking for trusted roofers in Chippenham, Wiltshire? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving SN14, SN15 & surrounding areas."
         />
         <meta name="keywords" content="roofers Chippenham, roofing contractors Chippenham, roof repairs Wiltshire, emergency roofer Chippenham, local roofers SN14, SN15" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Chippenham, Wiltshire | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Chippenham, Wiltshire? 24/7 Emergency Service, Free Quotes. Local experts serving SN14, SN15 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-chippenham-wiltshire" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-chippenham-wiltshire" />
       </Head>
 
       <div className="bg-white">
         {/* Hero Section */}
-        <div className="bg-gray-900">
-          <HeroImage src="/path/to/new/hero-image.jpg" alt="Hero Image" />
-          <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+        <div className="relative bg-gray-900">
+          <div className="absolute inset-0">
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt={`Roofing services in Chippenham`}
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Expert Roofers in Chippenham
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Your trusted local roofers for all your roofing needs.
+              Professional roofing services in Chippenham. From emergency repairs to complete installations, 
+              our local experts are here to help. Available 24/7 with free quotes.
             </p>
           </div>
         </div>
@@ -54,7 +68,7 @@ export default function RoofersInChippenhamWiltshire() {
               <div className="prose prose-blue max-w-none">
                 <p>
                   Looking for reliable roofing services in Chippenham? Our experienced team provides 
-                  comprehensive roofing solutions throughout SN14 and SN15 areas. We specialize in:
+                  comprehensive roofing solutions throughout the SN14 and SN15 areas. We specialize in:
                 </p>
 
                 <ul className="mt-8 space-y-4">
@@ -72,10 +86,10 @@ export default function RoofersInChippenhamWiltshire() {
                   <li>• Monkton Park</li>
                   <li>• Pewsham</li>
                   <li>• Hardenhuish</li>
+                  <li>• Lowden</li>
                   <li>• Cepen Park</li>
                   <li>• London Road</li>
-                  <li>• Lowden</li>
-                  <li>• Lackham</li>
+                  <li>• Langley Park</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Why Choose Our Chippenham Roofers?</h3>
@@ -95,7 +109,7 @@ export default function RoofersInChippenhamWiltshire() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                   Get Your Free Quote Today
                 </h3>
-                <SimpleLeadForm source="Chippenham Landing Page" />
+                <LeadForm source="Chippenham Landing Page" />
               </div>
 
               {/* Local Landmarks */}
@@ -106,38 +120,12 @@ export default function RoofersInChippenhamWiltshire() {
                 <ul className="grid grid-cols-1 gap-4">
                   <li>• Chippenham Town Hall</li>
                   <li>• John Coles Park</li>
-                  <li>• Monkton Park</li>
+                  <li>• Chippenham Museum</li>
                   <li>• St Andrew's Church</li>
-                  <li>• Chippenham Museum & Heritage Centre</li>
+                  <li>• Monkton Park</li>
                   <li>• Chippenham Railway Station</li>
                 </ul>
               </div>
-
-              <div className="mt-12">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-                  Contact Us
-                </h3>
-                <ul className="grid grid-cols-1 gap-4">
-                  <li><span className="font-medium">Phone:</span> 07990101321</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="quote-form" className="bg-gray-50 py-16">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-extrabold text-gray-900">
-                Get Your Free Roofing Quote
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Fill out the form below and our Chippenham team will get back to you within 24 hours.
-              </p>
-            </div>
-
-            <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-              <SimpleLeadForm source="Chippenham Page" />
             </div>
           </div>
         </div>

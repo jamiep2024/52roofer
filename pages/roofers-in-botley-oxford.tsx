@@ -1,14 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 import HeroImage from "../components/HeroImage";
-import LeadForm from "../components/forms/LeadForm";
+import LeadForm from '../components/forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
 import { businesses } from '../data/businesses';
 
 export default function RoofersInBotleyOxford() {
   const location = {
     name: 'Botley',
-    city: 'Oxford',
     county: serviceAreas.oxfordshire.name,
     postcodes: ['OX2'],
   };
@@ -26,19 +25,33 @@ export default function RoofersInBotleyOxford() {
           content="Looking for trusted roofers in Botley, Oxford? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving OX2 & surrounding areas."
         />
         <meta name="keywords" content="roofers Botley, roofing contractors Botley, roof repairs Oxford, emergency roofer Botley, local roofers OX2" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Expert Roofers in Botley, Oxford | Emergency Repairs & Installation" />
+        <meta property="og:description" content="Looking for trusted roofers in Botley, Oxford? 24/7 Emergency Service, Free Quotes. Local experts serving OX2 & surrounding areas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://52roofer.com/roofers-in-botley-oxford" />
+        <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
         <link rel="canonical" href="https://52roofer.com/roofers-in-botley-oxford" />
       </Head>
 
       <div className="bg-white">
         {/* Hero Section */}
-        <div className="bg-gray-900">
-          <HeroImage src="/path/to/new/hero-image.jpg" alt="Hero Image" />
-          <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+        <div className="relative bg-gray-900">
+          <div className="absolute inset-0">
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt={`Roofing services in Botley`}
+          />            
+          <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Expert Roofers in Botley
             </h1>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Your trusted local roofers for all your roofing needs.
+              Professional roofing services in Botley, Oxford. From emergency repairs to complete installations, 
+              our local experts are here to help. Available 24/7 with free quotes.
             </p>
           </div>
         </div>
@@ -69,14 +82,14 @@ export default function RoofersInBotleyOxford() {
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Areas We Cover in Botley</h3>
                 <ul className="grid grid-cols-2 gap-4">
+                  <li>• Central Botley</li>
                   <li>• North Hinksey</li>
                   <li>• Dean Court</li>
                   <li>• Cumnor Hill</li>
-                  <li>• West Oxford</li>
-                  <li>• Osney</li>
-                  <li>• New Botley</li>
+                  <li>• West Way</li>
                   <li>• Seacourt</li>
-                  <li>• Wytham</li>
+                  <li>• Botley Road</li>
+                  <li>• Westminster Way</li>
                 </ul>
 
                 <h3 className="text-2xl font-semibold mt-12 mb-4">Why Choose Our Botley Roofers?</h3>
@@ -105,11 +118,12 @@ export default function RoofersInBotleyOxford() {
                   Proudly Serving Landmarks in Botley
                 </h3>
                 <ul className="grid grid-cols-1 gap-4">
-                  <li>• Seacourt Tower</li>
                   <li>• Botley Shopping Centre</li>
-                  <li>• West Oxford Community Centre</li>
+                  <li>• Seacourt Tower</li>
+                  <li>• North Hinksey Village</li>
                   <li>• Raleigh Park</li>
-                  <li>• Matthew Arnold School</li>
+                  <li>• St Lawrence Church</li>
+                  <li>• Oxford Rugby Club</li>
                 </ul>
               </div>
             </div>
