@@ -131,6 +131,10 @@
   );
 }
 
+.hero-section {
+  background-color: white;
+}
+
 .glass-effect {
   @apply backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg;
 }
@@ -141,6 +145,11 @@
 
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form {
+  color: white;
+  font-weight: bold;
 }
 
 /* Mobile-optimized animations */
