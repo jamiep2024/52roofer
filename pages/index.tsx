@@ -210,15 +210,74 @@ export default function Home() {
 
       <div className="relative bg-white">
         {/* Hero Section with Location Bar */}
-        <div className="bg-gray-900">
-          <HeroImage src="/path/to/new/hero-image.jpg" alt="Hero Image" />
-          <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
-            <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl">
-              Welcome to Your Trusted Local Roofers
-            </h1>
-            <p className="mt-6 max-w-3xl text-xl text-gray-300">
-              Your trusted local roofers for all your roofing needs.
-            </p>
+        <div className="relative bg-gray-900 min-h-screen w-full">
+          <HeroImage 
+            src="/images/hero-bg.jpg"
+            alt={`Hero Image for the Homepage`}
+          />
+          <div className="relative w-full px-4 py-32 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-screen">
+            <div className="max-w-7xl w-full mx-auto">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white text-center mb-8 text-shadow slide-in">
+                Find Trusted Local
+                <span className="block mt-2">Roofers</span>
+              </h1>
+              
+              <div className="mx-auto max-w-3xl w-full slide-in" style={{ animationDelay: '0.2s' }}>
+                <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4 justify-center glass-effect p-6 rounded-xl">
+                  <div className="flex-grow">
+                    <select
+                      className="w-full px-6 py-4 text-lg text-gray-700 bg-white bg-opacity-90 border-2 border-white/20 rounded-xl focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all"
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      required
+                    >
+                      <option value="">Enter your location</option>
+                      {Object.values(serviceAreas).map((area) => (
+                        <option key={area.name} value={area.name}>
+                          {area.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-xl transition-all transform hover:scale-105 text-lg whitespace-nowrap shadow-lg"
+                  >
+                    Find a Roofer
+                  </button>
+                </form>
+                <p className="mt-6 text-center text-white/80 text-lg slide-in" style={{ animationDelay: '0.4s' }}>
+                  Serving Oxfordshire, Gloucestershire, Wiltshire, and Berkshire
+                </p>
+              </div>
+
+              <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 w-full slide-in" style={{ animationDelay: '0.6s' }}>
+                {[
+                  {
+                    title: "Verified Experts",
+                    description: "All our roofers are thoroughly vetted",
+                    icon: "🏆"
+                  },
+                  {
+                    title: "Quick Response",
+                    description: "Get connected with local roofers fast",
+                    icon: "⚡"
+                  },
+                  {
+                    title: "Guaranteed Quality",
+                    description: "Satisfaction guaranteed on all work",
+                    icon: "✓"
+                  }
+                ].map((feature, index) => (
+                  <div key={feature.title} className="glass-effect rounded-xl p-6 text-center card-hover">
+                    <div className="text-4xl mb-4 floating">{feature.icon}</div>
+                    <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                    <p className="text-white/80">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 

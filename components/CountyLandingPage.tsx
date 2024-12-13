@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import SimpleLeadForm from './forms/SimpleLeadForm';
-import HeroImage from './HeroImage'; // Assuming HeroImage is a separate component
 
 interface CountyLandingPageProps {
   county: string;
@@ -17,13 +16,12 @@ const CountyLandingPage: React.FC<CountyLandingPageProps> = ({
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="bg-gray-900">
-        <HeroImage src="/path/to/new/hero-image.jpg" alt="Hero Image" />
+      <div className="bg-blue-600">
         <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Professional Roofing Services in {county}
           </h1>
-          <p className="mt-6 text-xl text-gray-300 max-w-3xl">
+          <p className="mt-6 text-xl text-gray-100 max-w-3xl">
             Expert roofing solutions for homeowners and businesses across {county}. Serving all major towns including {mainTowns.slice(0, 5).join(', ')}.
           </p>
           <div className="mt-10">

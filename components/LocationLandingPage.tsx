@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import SimpleLeadForm from './forms/SimpleLeadForm';
-import HeroImage from './HeroImage'; // Assuming HeroImage is a separate component
 import { Business } from '../types/business';
 
 interface LocationLandingPageProps {
@@ -20,14 +19,13 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="bg-gray-900">
-        <HeroImage src="/path/to/new/hero-image.jpg" alt="Hero Image" />
+      <div className="bg-blue-600">
         <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Location Roofing Services
+            Trusted Roofing Services in {city}
           </h1>
-          <p className="mt-6 max-w-3xl text-xl text-gray-300">
-            Your trusted local roofers for all your roofing needs.
+          <p className="mt-6 text-xl text-gray-100 max-w-3xl">
+            Professional roofing solutions for homeowners and businesses in {city}, {county}.
           </p>
           <div className="mt-10">
             <Link
