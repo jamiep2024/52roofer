@@ -2,303 +2,245 @@ import React from 'react';
 import Head from 'next/head';
 import { serviceAreas } from '../../data/serviceAreas';
 import ServiceLayout from '../../components/ServiceLayout';
-import AdvancedSEO from '../../components/seo/AdvancedSEO';
-import LocalBusinessSchema from '../../components/seo/LocalBusinessSchema';
 
 const areaNames = Object.values(serviceAreas).map(area => area.name);
 
 const RoofingConstruction = () => {
-  const pageTitle = "Professional Roofing Construction | New Build Specialists | 52roofer.com";
-  const pageDescription = `Expert roofing construction services in ${areaNames.join(', ')}. Comprehensive new build roofing, structural design, and construction management. Quality craftsmanship for residential and commercial projects.`;
-  const keywords = "roofing construction, new build roofing, roof structure, construction management, commercial construction, residential construction, roofing project management";
-
-  // Enhanced Schema Markup for Service
-  const serviceSchema = {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://www.52roofer.com/services/roofing-construction#service",
     "name": "Roofing Construction Services",
     "provider": {
       "@type": "Organization",
-      "name": "52roofer.com",
-      "image": "https://www.52roofer.com/images/logo.png",
-      "priceRange": "££",
-      "telephone": "52rooferteam@gmail.com",
-      "areaServed": areaNames.map(area => ({
-        "@type": "State",
-        "name": area
-      }))
+      "name": "52roofer.com"
     },
-    "description": pageDescription,
-    "serviceType": "Construction Services",
-    "areaServed": areaNames,
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Construction Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "New Build Roofing",
-            "description": "Complete roofing solutions for new constructions"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Project Management",
-            "description": "Professional construction management services"
-          }
-        }
-      ]
-    }
-  };
-
-  // FAQ Schema
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What does roofing construction involve?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Roofing construction involves structural design, material selection, project planning, and professional installation. It includes everything from framework construction to final weatherproofing for new builds and major renovations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does a roofing construction project take?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Project duration varies based on size and complexity. Typical residential projects take 1-2 weeks, while larger commercial projects may take several weeks to months. We provide detailed timelines during consultation."
-        }
-      }
-    ]
-  };
-
-  // Breadcrumb Schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.52roofer.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Services",
-        "item": "https://www.52roofer.com/services"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Roofing Construction",
-        "item": "https://www.52roofer.com/services/roofing-construction"
-      }
-    ]
+    "areaServed": Object.values(serviceAreas).map(area => ({
+      "@type": "State",
+      "name": area.name
+    })),
+    "description": "Complete roofing construction services including new builds, structural work, and major renovations. Professional construction solutions for all roofing projects."
   };
 
   const services = [
     {
-      title: "Project Planning",
-      description: "Comprehensive construction planning and design",
-      icon: "📋"
-    },
-    {
-      title: "Structural Work",
-      description: "Expert framework and structural construction",
+      title: "New Construction",
+      description: "Complete new roof construction services",
       icon: "🏗️"
     },
     {
-      title: "Quality Control",
-      description: "Rigorous quality assurance throughout",
-      icon: "✅"
+      title: "Structural Work",
+      description: "Expert structural roofing solutions",
+      icon: "🏢"
     },
     {
-      title: "Site Management",
-      description: "Professional construction site coordination",
-      icon: "👷"
+      title: "Major Renovations",
+      description: "Comprehensive roof renovation projects",
+      icon: "🔨"
+    },
+    {
+      title: "Project Management",
+      description: "Full project oversight and coordination",
+      icon: "📋"
     }
   ];
 
   const benefits = [
     {
-      title: "Expert Teams",
-      description: "Skilled construction professionals",
-      icon: "👥"
-    },
-    {
       title: "Quality Build",
-      description: "Superior materials and craftsmanship",
+      description: "Superior construction standards",
       icon: "🏆"
     },
     {
+      title: "Expert Teams",
+      description: "Skilled construction professionals",
+      icon: "👷"
+    },
+    {
       title: "Project Control",
-      description: "Efficient management and timelines",
+      description: "Strict timeline and budget management",
       icon: "⏱️"
     }
   ];
 
   return (
-    <>
+    <ServiceLayout
+      heroImage="/images/services/construction-hero.jpg"
+      heroTitle="Professional Roofing Construction"
+      heroDescription="Expert roofing construction services for all project types"
+      serviceName="Roofing Construction"
+    >
       <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="keywords" content={keywords} />
-        
-        {/* Open Graph Tags */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.52roofer.com/services/roofing-construction" />
-        <meta property="og:image" content="https://www.52roofer.com/images/roofer-at-work.jpg" />
-        
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content="https://www.52roofer.com/images/roofer-at-work.jpg" />
-        
-        {/* Additional SEO Meta Tags */}
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        
-        {/* Canonical URL */}
+        <title>Professional Roofing Construction Services | 52roofer.com</title>
+        <meta 
+          name="description" 
+          content={`Expert roofing construction services across ${areaNames.join(', ')}. Complete construction solutions for all roofing projects.`}
+        />
         <link rel="canonical" href="https://www.52roofer.com/services/roofing-construction" />
-        
-        {/* Schema Markup */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       </Head>
 
-      <ServiceLayout
-        heroImage="/images/roofer-at-work.jpg"
-        heroTitle="Professional Roofing Construction"
-        heroDescription="Expert construction services for all roofing projects"
-        serviceName="Roofing Construction"
-      >
-        {/* Breadcrumb Navigation */}
-        <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
-          <ol className="list-none p-0 inline-flex">
-            <li className="flex items-center">
-              <a href="/" className="hover:text-accent">Home</a>
-              <svg className="fill-current w-3 h-3 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>
-              </svg>
-            </li>
-            <li className="flex items-center">
-              <a href="/services" className="hover:text-accent">Services</a>
-              <svg className="fill-current w-3 h-3 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>
-              </svg>
-            </li>
-            <li className="text-gray-700">Roofing Construction</li>
-          </ol>
-        </nav>
+      <div className="space-y-12">
+        {/* Introduction */}
+        <div>
+          <p className="lead text-xl text-gray-600">
+            Professional roofing construction services across {areaNames.join(', ')}. 
+            We provide comprehensive construction solutions for all types of roofing projects, from new builds to major renovations.
+          </p>
+        </div>
 
-        <div className="space-y-12">
-          {/* Introduction */}
-          <div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">Professional Roofing Construction</h1>
-            <p className="lead text-xl text-gray-600">
-              Expert roofing construction services across {areaNames.join(', ')}. We provide comprehensive 
-              construction solutions for new builds, major renovations, and commercial projects, delivering 
-              quality craftsmanship and professional project management.
-            </p>
-          </div>
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-4xl mb-4">{service.icon}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+              <p className="text-gray-600">{service.description}</p>
+            </div>
+          ))}
+        </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+        {/* Benefits Section */}
+        <div className="bg-gray-50 rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Construction Excellence</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl mb-4">{benefit.icon}</div>
+                <div className="text-xl font-semibold mb-2">{benefit.title}</div>
+                <p className="text-gray-600">{benefit.description}</p>
               </div>
             ))}
           </div>
+        </div>
 
-          {/* Benefits Section */}
-          <div className="bg-gray-50 rounded-xl p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Construction Excellence</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl mb-4">{benefit.icon}</div>
-                  <div className="text-xl font-semibold mb-2">{benefit.title}</div>
-                  <p className="text-gray-600">{benefit.description}</p>
-                </div>
-              ))}
+        {/* Construction Services */}
+        <div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Construction Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold mb-3">New Construction</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Custom Roof Design</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Structural Engineering</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Complete Installation</span>
+                </li>
+              </ul>
             </div>
-          </div>
-
-          {/* FAQ Section */}
-          <div className="bg-white rounded-xl p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">What does roofing construction involve?</h3>
-                <p className="text-gray-600">Roofing construction involves structural design, material selection, project planning, and professional installation. It includes everything from framework construction to final weatherproofing for new builds and major renovations.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">How long does a roofing construction project take?</h3>
-                <p className="text-gray-600">Project duration varies based on size and complexity. Typical residential projects take 1-2 weeks, while larger commercial projects may take several weeks to months. We provide detailed timelines during consultation.</p>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold mb-3">Renovation Projects</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Major Renovations</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Structural Repairs</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>System Upgrades</span>
+                </li>
+              </ul>
             </div>
-          </div>
-
-          {/* Construction Services */}
-          <div className="bg-gray-50 rounded-xl p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Construction Services</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <li className="flex items-center">
-                <span className="text-accent mr-2">✓</span>
-                <span>New Build Construction</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-accent mr-2">✓</span>
-                <span>Structural Design</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-accent mr-2">✓</span>
-                <span>Project Management</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-accent mr-2">✓</span>
-                <span>Quality Assurance</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-accent mr-2">✓</span>
-                <span>Site Coordination</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-accent mr-2">✓</span>
-                <span>Safety Compliance</span>
-              </li>
-            </ul>
           </div>
         </div>
-      </ServiceLayout>
-    </>
+
+        {/* Construction Process */}
+        <div className="bg-gray-50 rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Construction Process</h2>
+          <div className="space-y-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">1</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Project Planning</h3>
+                <p className="text-gray-600">Detailed planning and design phase</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">2</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Site Preparation</h3>
+                <p className="text-gray-600">Preparing the construction site</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">3</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Construction Phase</h3>
+                <p className="text-gray-600">Professional construction execution</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">4</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Quality Control</h3>
+                <p className="text-gray-600">Rigorous quality assurance checks</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">5</div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">Project Completion</h3>
+                <p className="text-gray-600">Final inspection and handover</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Safety Standards */}
+        <div className="bg-white p-8 rounded-lg shadow">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Construction Standards</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Safety Protocols</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Strict Safety Guidelines</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Regular Safety Audits</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Certified Equipment</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Quality Standards</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Building Regulations Compliance</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Industry Best Practices</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-accent mr-2">✓</span>
+                  <span>Material Standards</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ServiceLayout>
   );
 };
 
