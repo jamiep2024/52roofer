@@ -10,11 +10,11 @@ export default function RoofersInHorsham() {
   const location = {
     name: 'Horsham',
     county: 'West Sussex',
-    postcodes: [],
+    postcodes: ["BN11-BN18","PO18-PO22","RH10-RH20"],
   };
 
   const localBusinesses = businesses.filter(
-    business => business.location === serviceAreas.westsussex.name
+    business => business.location === serviceAreas.westSussex.name
   );
 
   return (
@@ -23,12 +23,12 @@ export default function RoofersInHorsham() {
         <title>Expert Roofers in Horsham | Emergency Repairs & Installation</title>
         <meta 
           name="description" 
-          content="Looking for trusted roofers in Horsham? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving undefined & surrounding areas."
+          content="Looking for trusted roofers in Horsham? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving BN11-BN18 & surrounding areas."
         />
-        <meta name="keywords" content="roofers Horsham, roofing contractors Horsham, roof repairs Horsham, emergency roofer Horsham, local roofers undefined" />
+        <meta name="keywords" content="roofers Horsham, roofing contractors Horsham, roof repairs Horsham, emergency roofer Horsham, local roofers BN11-BN18" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content="Expert Roofers in Horsham | Emergency Repairs & Installation" />
-        <meta property="og:description" content="Looking for trusted roofers in Horsham? 24/7 Emergency Service, Free Quotes. Local experts serving undefined & surrounding areas." />
+        <meta property="og:description" content="Looking for trusted roofers in Horsham? 24/7 Emergency Service, Free Quotes. Local experts serving BN11-BN18 & surrounding areas." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://52roofer.com/roofers-in-horsham" />
         <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
@@ -76,7 +76,7 @@ export default function RoofersInHorsham() {
               <div className="prose prose-blue max-w-none">
                 <p>
                   Looking for reliable roofing services in Horsham? Our experienced team provides 
-                  comprehensive roofing solutions throughout the undefined area. We specialize in:
+                  comprehensive roofing solutions throughout the BN11-BN18 area. We specialize in:
                 </p>
 
                 <ul className="mt-8 space-y-4">
@@ -115,7 +115,7 @@ export default function RoofersInHorsham() {
                 </h3>
                 <p className="text-gray-600 mb-4">
                   We provide comprehensive roofing services throughout Horsham and surrounding areas, 
-                  covering all  postcodes.
+                  covering all BN11-BN18, PO18-PO22, RH10-RH20 postcodes.
                 </p>
               </div>
             </div>

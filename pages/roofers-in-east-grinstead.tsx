@@ -10,11 +10,11 @@ export default function RoofersInEastGrinstead() {
   const location = {
     name: 'East Grinstead',
     county: 'West Sussex',
-    postcodes: [],
+    postcodes: ["BN11-BN18","PO18-PO22","RH10-RH20"],
   };
 
   const localBusinesses = businesses.filter(
-    business => business.location === serviceAreas.westsussex.name
+    business => business.location === serviceAreas.westSussex.name
   );
 
   return (
@@ -23,12 +23,12 @@ export default function RoofersInEastGrinstead() {
         <title>Expert Roofers in East Grinstead | Emergency Repairs & Installation</title>
         <meta 
           name="description" 
-          content="Looking for trusted roofers in East Grinstead? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving undefined & surrounding areas."
+          content="Looking for trusted roofers in East Grinstead? ⭐ 24/7 Emergency Service ⭐ Free Quotes. Local experts serving BN11-BN18 & surrounding areas."
         />
-        <meta name="keywords" content="roofers East Grinstead, roofing contractors East Grinstead, roof repairs East Grinstead, emergency roofer East Grinstead, local roofers undefined" />
+        <meta name="keywords" content="roofers East Grinstead, roofing contractors East Grinstead, roof repairs East Grinstead, emergency roofer East Grinstead, local roofers BN11-BN18" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content="Expert Roofers in East Grinstead | Emergency Repairs & Installation" />
-        <meta property="og:description" content="Looking for trusted roofers in East Grinstead? 24/7 Emergency Service, Free Quotes. Local experts serving undefined & surrounding areas." />
+        <meta property="og:description" content="Looking for trusted roofers in East Grinstead? 24/7 Emergency Service, Free Quotes. Local experts serving BN11-BN18 & surrounding areas." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://52roofer.com/roofers-in-east-grinstead" />
         <meta property="og:image" content="https://52roofer.com/images/hero-bg.jpg" />
@@ -76,7 +76,7 @@ export default function RoofersInEastGrinstead() {
               <div className="prose prose-blue max-w-none">
                 <p>
                   Looking for reliable roofing services in East Grinstead? Our experienced team provides 
-                  comprehensive roofing solutions throughout the undefined area. We specialize in:
+                  comprehensive roofing solutions throughout the BN11-BN18 area. We specialize in:
                 </p>
 
                 <ul className="mt-8 space-y-4">
@@ -115,7 +115,7 @@ export default function RoofersInEastGrinstead() {
                 </h3>
                 <p className="text-gray-600 mb-4">
                   We provide comprehensive roofing services throughout East Grinstead and surrounding areas, 
-                  covering all  postcodes.
+                  covering all BN11-BN18, PO18-PO22, RH10-RH20 postcodes.
                 </p>
               </div>
             </div>
