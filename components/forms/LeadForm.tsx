@@ -8,13 +8,13 @@ interface LeadFormProps {
 const LeadForm: React.FC<LeadFormProps> = ({ source, className = '' }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
-    setErrorMessage('');
+    setMessage('');
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -25,7 +25,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ source, className = '' }) => {
     const email = formData.get('email') as string;
 
     if (!name || !phone || !email) {
-      setErrorMessage('Please fill in all required fields');
+      setMessage('Please fill in all required fields');
       setSubmitStatus('error');
       setIsSubmitting(false);
       return;
@@ -34,7 +34,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ source, className = '' }) => {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setErrorMessage('Please enter a valid email address');
+      setMessage('Please enter a valid email address');
       setSubmitStatus('error');
       setIsSubmitting(false);
       return;
@@ -43,7 +43,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ source, className = '' }) => {
     // Phone validation
     const phoneRegex = /^[\d\s+()-]{10,}$/;
     if (!phoneRegex.test(phone)) {
-      setErrorMessage('Please enter a valid phone number');
+      setMessage('Please enter a valid phone number');
       setSubmitStatus('error');
       setIsSubmitting(false);
       return;
@@ -72,21 +72,18 @@ const LeadForm: React.FC<LeadFormProps> = ({ source, className = '' }) => {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
       const responseData = await response.json();
       
-      if (responseData.success) {
+      if (responseData.status === 'success') {
         setSubmitStatus('success');
+        setMessage('Thank you! Your message has been sent successfully. We\'ll be in touch soon.');
         form.reset();
       } else {
         throw new Error(responseData.message || 'Failed to submit form');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
+      setMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -296,7 +293,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ source, className = '' }) => {
             </div>
             <div className="ml-3">
               <p className="text-sm font-medium text-green-800">
-                Thank you! Your message has been sent successfully. We'll be in touch soon.
+                {message}
               </p>
             </div>
           </div>
@@ -313,7 +310,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ source, className = '' }) => {
             </div>
             <div className="ml-3">
               <p className="text-sm font-medium text-red-800">
-                {errorMessage || 'Sorry, there was an error submitting your message. Please try again.'}
+                {message}
               </p>
             </div>
           </div>
