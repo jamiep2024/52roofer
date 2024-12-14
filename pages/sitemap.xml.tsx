@@ -1,9 +1,17 @@
 import { GetServerSideProps } from 'next'
 import { serviceAreas } from '../data/serviceAreas';
-import fs from 'fs';
-import path from 'path';
 
 const EXTERNAL_DATA_URL = 'https://52roofer.com';
+
+const services = [
+  'roofing-companies-near-me',
+  'roofing-firms-near-me',
+  'roofing-contractors',
+  'roof-replacement',
+  'apex-roofing',
+  'advanced-roofing',
+  'roofing-construction'
+];
 
 function getAllLocationPages() {
   // Get all location pages from serviceAreas
@@ -36,7 +44,25 @@ function getAllLocationPages() {
   return locationPages;
 }
 
+function generateServiceLocationUrls() {
+  const urls: string[] = [];
+  
+  // Generate URLs for each service in each location
+  services.forEach(service => {
+    Object.values(serviceAreas).forEach(area => {
+      area.mainTowns.forEach(town => {
+        const locationSlug = town.toLowerCase().replace(/ /g, '-');
+        urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${locationSlug}`);
+      });
+    });
+  });
+
+  return urls;
+}
+
 function generateSiteMap(locationPages: string[]) {
+  const serviceLocationUrls = generateServiceLocationUrls();
+
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -123,6 +149,13 @@ function generateSiteMap(locationPages: string[]) {
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
      </url>
+     ${services.map(service => `
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/services/${service}</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     `).join('')}
      <url>
        <loc>${EXTERNAL_DATA_URL}/services/residential-roofing</loc>
        <changefreq>weekly</changefreq>
@@ -168,6 +201,15 @@ function generateSiteMap(locationPages: string[]) {
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
      </url>
+
+     <!-- Service Location Pages -->
+     ${serviceLocationUrls.map(url => `
+     <url>
+       <loc>${url}</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     `).join('')}
 
      <!-- Resources Pages -->
      <url>
