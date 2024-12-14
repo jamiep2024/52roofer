@@ -77,18 +77,19 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-gray-50 rounded-xl shadow-lg p-8">
-          <div className="prose prose-lg max-w-none">
-            {children}
-          </div>
-        </div>
-
-        {/* Lead Form Section */}
-        <div className="mt-12">
+        {/* Lead Form Section - Moved to top */}
+        <div className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
             Get Your Free Quote Today
           </h2>
           <LeadForm source={serviceName || 'Service Page'} />
+        </div>
+
+        {/* Content Section */}
+        <div className="bg-gray-50 rounded-xl shadow-lg p-8">
+          <div className="prose prose-lg max-w-none">
+            {children}
+          </div>
         </div>
 
         {/* Location Links Section */}
