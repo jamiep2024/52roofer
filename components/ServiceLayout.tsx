@@ -18,12 +18,36 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   serviceName
 }) => {
   // Get all main towns from service areas
-  const allTowns = Object.values(serviceAreas).reduce((acc, area) => {
+  const allTowns = Object.entries(serviceAreas).reduce((acc, [countyKey, area]) => {
     return [...acc, ...area.mainTowns.map(town => ({
       name: town,
-      county: area.name
+      county: area.name,
+      countyKey
     }))];
-  }, [] as { name: string; county: string }[]);
+  }, [] as { name: string; county: string; countyKey: string }[]);
+
+  // Function to format the URL slug
+  const formatSlug = (town: string, countyKey: string) => {
+    const formattedTown = town.toLowerCase().replace(/ /g, '-');
+    
+    // Special cases where we need to append the county
+    const needsCounty = ['warminster', 'marlborough', 'chippenham', 'devizes', 
+                        'melksham', 'trowbridge', 'bradford-on-avon', 'westbury', 
+                        'calne', 'salisbury'].includes(formattedTown);
+    
+    // Special cases where we need to append oxford
+    const needsOxford = ['blackbird-leys', 'botley', 'cowley', 'headington', 
+                        'wolvercote', 'jericho', 'marston', 'rose-hill', 
+                        'iffley', 'summertown'].includes(formattedTown);
+    
+    if (needsCounty && countyKey === 'wiltshire') {
+      return `roofers-in-${formattedTown}-wiltshire`;
+    } else if (needsOxford && countyKey === 'oxfordshire') {
+      return `roofers-in-${formattedTown}-oxford`;
+    }
+    
+    return `roofers-in-${formattedTown}`;
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -67,7 +91,7 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
             {allTowns.map((town, index) => (
               <Link
                 key={index}
-                href={`/roofers-in-${town.name.toLowerCase().replace(/ /g, '-')}-${town.county.toLowerCase().replace(/ /g, '-')}`}
+                href={`/${formatSlug(town.name, town.countyKey)}`}
                 className="text-accent hover:text-accent/80 transition-colors"
               >
                 {serviceName ? `${serviceName} in ${town.name}` : `Roofing Services in ${town.name}`}
