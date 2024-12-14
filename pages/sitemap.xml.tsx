@@ -48,10 +48,10 @@ function generateServiceLocationUrls() {
   const urls: string[] = [];
   
   // Generate URLs for each service in each location
-  services.forEach(service => {
-    Object.values(serviceAreas).forEach(area => {
-      area.mainTowns.forEach(town => {
-        const locationSlug = town.toLowerCase().replace(/ /g, '-');
+  Object.values(serviceAreas).forEach(area => {
+    area.mainTowns.forEach(town => {
+      const locationSlug = town.toLowerCase().replace(/ /g, '-');
+      services.forEach(service => {
         urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${locationSlug}`);
       });
     });
