@@ -37,11 +37,6 @@ function generateSiteMap(locations: string[], locationPages: string[]) {
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
-       <image:image>
-         <image:loc>${EXTERNAL_DATA_URL}/images/services-hero.jpg</image:loc>
-         <image:title>Professional Roofing Services</image:title>
-         <image:caption>Comprehensive roofing solutions for your home</image:caption>
-       </image:image>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/about</loc>
@@ -55,6 +50,160 @@ function generateSiteMap(locations: string[], locationPages: string[]) {
        <changefreq>monthly</changefreq>
        <priority>0.8</priority>
      </url>
+
+     <!-- Main Locations Page -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+
+     <!-- County Location Pages -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/oxford</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/banbury</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/bicester</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/gloucester</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/cheltenham</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/stroud</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/swindon</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/salisbury</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/chippenham</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/reading</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/newbury</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/windsor</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/southampton</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/portsmouth</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/winchester</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/guildford</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/woking</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/farnham</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/milton-keynes</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/high-wycombe</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/aylesbury</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/crawley</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/worthing</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/horsham</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
      
      <!-- Location Pages -->
      ${locations
@@ -63,7 +212,7 @@ function generateSiteMap(locations: string[], locationPages: string[]) {
          const localBusinesses = businesses.filter(b => b.location === location);
          return `
        <url>
-           <loc>${EXTERNAL_DATA_URL}/location/${locationSlug}</loc>
+           <loc>${EXTERNAL_DATA_URL}/locations/${locationSlug}</loc>
            <lastmod>${new Date().toISOString()}</lastmod>
            <changefreq>weekly</changefreq>
            <priority>0.9</priority>
@@ -108,44 +257,68 @@ function generateSiteMap(locations: string[], locationPages: string[]) {
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
-       <image:image>
-         <image:loc>${EXTERNAL_DATA_URL}/images/services/repairs.jpg</image:loc>
-         <image:title>Professional Roof Repairs</image:title>
-         <image:caption>Expert roof repair services in South England</image:caption>
-       </image:image>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/services/roof-installation</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
-       <image:image>
-         <image:loc>${EXTERNAL_DATA_URL}/images/services/installation.jpg</image:loc>
-         <image:title>New Roof Installation</image:title>
-         <image:caption>Professional roof installation services</image:caption>
-       </image:image>
      </url>
      <url>
-       <loc>${EXTERNAL_DATA_URL}/services/emergency-repairs</loc>
+       <loc>${EXTERNAL_DATA_URL}/services/emergency-roof-repairs</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
-       <image:image>
-         <image:loc>${EXTERNAL_DATA_URL}/images/services/emergency.jpg</image:loc>
-         <image:title>24/7 Emergency Roof Repairs</image:title>
-         <image:caption>Emergency roofing services available 24/7</image:caption>
-       </image:image>
      </url>
      <url>
-       <loc>${EXTERNAL_DATA_URL}/services/maintenance</loc>
+       <loc>${EXTERNAL_DATA_URL}/services/roof-maintenance</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
-       <image:image>
-         <image:loc>${EXTERNAL_DATA_URL}/images/services/maintenance.jpg</image:loc>
-         <image:title>Roof Maintenance Services</image:title>
-         <image:caption>Professional roof maintenance and inspections</image:caption>
-       </image:image>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/services/commercial-roofing</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/services/residential-roofing</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/services/roof-inspection</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/services/skylight-installation</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/services/roof-ventilation</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/services/gutter-services</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+
+     <!-- Resources Pages -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/resources/roofing-faq</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
      </url>
    </urlset>
  `;
@@ -156,7 +329,7 @@ function SiteMap() {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  const locations = ['Oxfordshire', 'Gloucestershire', 'Wiltshire', 'Berkshire'];
+  const locations = ['Oxfordshire', 'Gloucestershire', 'Wiltshire', 'Berkshire', 'Hampshire', 'West Sussex'];
   const locationPages = getLocationPages();
   
   // Generate the XML sitemap with the locations data
