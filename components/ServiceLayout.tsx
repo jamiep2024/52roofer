@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { serviceAreas } from '../data/serviceAreas';
+import LeadForm from './forms/LeadForm';
 
 interface ServiceLayoutProps {
   children: React.ReactNode;
@@ -80,6 +81,14 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
           <div className="prose prose-lg max-w-none">
             {children}
           </div>
+        </div>
+
+        {/* Lead Form Section */}
+        <div className="mt-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Get Your Free Quote Today
+          </h2>
+          <LeadForm source={serviceName || 'Service Page'} />
         </div>
 
         {/* Location Links Section */}
