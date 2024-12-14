@@ -27,7 +27,8 @@
     "sass": "^1.69.5",
     "sharp": "0.33.5",
     "tailwind-merge": "^2.1.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "xml2js": "0.6.2"
   },
   "devDependencies": {
     "@types/next-seo": "1.10.0",

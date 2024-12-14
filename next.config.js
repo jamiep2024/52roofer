@@ -4,6 +4,39 @@ const nextConfig = {
   images: {
     domains: ['52roofer.com'],
   },
+  async redirects() {
+    return [
+      // Redirect /location/* to /locations/*
+      {
+        source: '/location/:slug',
+        destination: '/locations/:slug',
+        permanent: true,
+      },
+      // Service page redirects
+      {
+        source: '/services/maintenance',
+        destination: '/services/roof-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/services/emergency-repairs',
+        destination: '/services/emergency-roof-repairs',
+        permanent: true,
+      },
+      // www to non-www redirects
+      {
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: 'www.52roofer.com',
+          },
+        ],
+        destination: 'https://52roofer.com',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {
