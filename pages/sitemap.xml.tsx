@@ -50,6 +50,74 @@ function generateSiteMap(locations: string[], locationPages: string[]) {
        <changefreq>monthly</changefreq>
        <priority>0.8</priority>
      </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/find-roofer</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+
+     <!-- Blog Pages -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog/choosing-right-roofing-material</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog/complete-guide-to-roof-maintenance</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog/energy-efficient-roofing</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog/new-roof-cost-guide</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog/professional-roof-inspection-guide</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog/signs-you-need-roof-replacement</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog/slate-roofs-complete-guide</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog/uk-weather-roofing-problems</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog/ultimate-roof-ventilation-guide</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
 
      <!-- Main Locations Page -->
      <url>
@@ -59,9 +127,23 @@ function generateSiteMap(locations: string[], locationPages: string[]) {
        <priority>0.9</priority>
      </url>
 
+     <!-- County Pages -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/county/west-sussex</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+
      <!-- County Location Pages -->
      <url>
        <loc>${EXTERNAL_DATA_URL}/locations/oxford</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/oxford/headington</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.8</priority>
@@ -265,7 +347,7 @@ function generateSiteMap(locations: string[], locationPages: string[]) {
        <priority>0.9</priority>
      </url>
      <url>
-       <loc>${EXTERNAL_DATA_URL}/services/emergency-roof-repairs</loc>
+       <loc>${EXTERNAL_DATA_URL}/services/emergency-roof-repair</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
@@ -307,7 +389,7 @@ function generateSiteMap(locations: string[], locationPages: string[]) {
        <priority>0.9</priority>
      </url>
      <url>
-       <loc>${EXTERNAL_DATA_URL}/services/gutter-services</loc>
+       <loc>${EXTERNAL_DATA_URL}/services/gutter-service</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
@@ -315,7 +397,19 @@ function generateSiteMap(locations: string[], locationPages: string[]) {
 
      <!-- Resources Pages -->
      <url>
+       <loc>${EXTERNAL_DATA_URL}/resources</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+     <url>
        <loc>${EXTERNAL_DATA_URL}/resources/roofing-faq</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/resources/guides/slate-roofs</loc>
        <lastmod>${new Date().toISOString()}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
