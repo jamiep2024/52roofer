@@ -187,11 +187,27 @@ function generateSiteMap(locationPages: string[]) {
      </url>
 
      <!-- County Pages -->
+     ${Object.entries(serviceAreas).map(([key, county]) => `
      <url>
-       <loc>${EXTERNAL_DATA_URL}/county/west-sussex</loc>
+       <loc>${EXTERNAL_DATA_URL}/county/${key}</loc>
        <changefreq>weekly</changefreq>
        <priority>0.8</priority>
      </url>
+     `).join('')}
+
+     <!-- Major Cities -->
+     ${Object.entries(serviceAreas).map(([key, county]) => {
+       const majorCities = county.mainTowns.filter(town => 
+         ['Oxford', 'Reading', 'Southampton', 'Portsmouth', 'Milton Keynes', 'Swindon', 'Gloucester'].includes(town)
+       );
+       return majorCities.map(city => `
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/locations/${city.toLowerCase().replace(/ /g, '-')}</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+       `).join('');
+     }).join('')}
 
      <!-- Location Pages -->
      ${locationPages
