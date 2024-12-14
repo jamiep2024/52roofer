@@ -77,7 +77,7 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="bg-gray-50 rounded-xl shadow-lg p-8">
           <div className="prose prose-lg max-w-none">
             {children}
           </div>
@@ -92,7 +92,7 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
         </div>
 
         {/* Location Links Section */}
-        <div className="mt-12 bg-white rounded-lg shadow-lg p-8">
+        <div className="mt-12 bg-gray-50 rounded-xl shadow-lg p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             {serviceName ? `${serviceName} Services in Popular Areas` : 'Our Service Areas'}
           </h2>
