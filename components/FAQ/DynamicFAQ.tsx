@@ -13,6 +13,15 @@ interface Props {
   category: string;
 }
 
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  });
+};
+
 const DynamicFAQ: React.FC<Props> = ({ initialFAQs, category }) => {
   const [faqs, setFaqs] = useState(initialFAQs);
   const [trendingQuestions, setTrendingQuestions] = useState<string[]>([]);
@@ -57,6 +66,9 @@ const DynamicFAQ: React.FC<Props> = ({ initialFAQs, category }) => {
     return () => clearInterval(interval);
   }, [faqs, category]);
 
+  // Use a stable date for schema to avoid hydration mismatch
+  const schemaDate = "2024-01-01T00:00:00Z";
+
   // Schema.org FAQ markup
   const faqSchema = {
     "@context": "https://schema.org",
@@ -68,7 +80,7 @@ const DynamicFAQ: React.FC<Props> = ({ initialFAQs, category }) => {
         "@type": "Answer",
         "text": faq.answer
       },
-      "dateModified": faq.lastUpdated
+      "dateModified": schemaDate // Use stable date for schema
     }))
   };
 
@@ -102,7 +114,7 @@ const DynamicFAQ: React.FC<Props> = ({ initialFAQs, category }) => {
               <div className="flex justify-between items-center">
                 <h3 className="text-lg font-medium">{faq.question}</h3>
                 <span className="text-gray-500 text-sm">
-                  {new Date(faq.lastUpdated).toLocaleDateString()}
+                  {formatDate(faq.lastUpdated)}
                 </span>
               </div>
               <p className="mt-2 text-gray-600">{faq.answer}</p>

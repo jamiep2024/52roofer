@@ -41,6 +41,11 @@ interface FAQ {
   lastUpdated: string;
 }
 
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-GB'); // Consistent date format DD/MM/YYYY
+};
+
 const RoofingCompaniesNearMe: React.FC = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
@@ -100,27 +105,27 @@ const RoofingCompaniesNearMe: React.FC = () => {
     {
       name: "Research Local Companies",
       text: "Start by creating a list of local roofing companies with good reputations and reviews.",
-      image: "/images/roofer-at-work.jpg" // Using existing image temporarily
+      image: "/images/how-to/research-companies.png"
     },
     {
       name: "Check Credentials",
       text: "Verify licenses, insurance, and certifications of potential roofing companies.",
-      image: "/images/before-roof.jpg" // Using existing image temporarily
+      image: "/images/how-to/check-credentials.png"
     },
     {
       name: "Get Multiple Quotes",
       text: "Request detailed quotes from at least three different roofing companies.",
-      image: "/images/after-roof.jpg" // Using existing image temporarily
+      image: "/images/how-to/get-quotes.png"
     },
     {
       name: "Review Past Work",
       text: "Ask for references and examples of previous roofing projects.",
-      image: "/images/completed-roof.jpg" // Using existing image
+      image: "/images/how-to/review-work.png"
     },
     {
       name: "Compare Warranties",
       text: "Compare warranty offerings and ensure everything is in writing.",
-      image: "/images/completed-roof.jpg" // Using existing image temporarily
+      image: "/images/how-to/warranty.png"
     }
   ];
 
@@ -289,13 +294,13 @@ const RoofingCompaniesNearMe: React.FC = () => {
           <div className="space-y-8">
             {howToSteps.map((step, index) => (
               <div key={index} className="flex flex-col md:flex-row items-start gap-6 bg-gray-50 rounded-xl p-6">
-                <div className="flex-shrink-0 w-full md:w-1/3 relative aspect-video">
+                <div className="flex-shrink-0 w-full md:w-1/3 relative h-48">
                   <Image
                     src={step.image}
                     alt={step.name}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    style={{ objectFit: 'contain' }}
                     priority={index === 0}
                   />
                 </div>
@@ -349,7 +354,7 @@ const RoofingCompaniesNearMe: React.FC = () => {
                 <p className="text-gray-600 mb-4">{review.reviewBody}</p>
                 <div className="flex justify-between items-center text-sm text-gray-500">
                   <span>{review.author}</span>
-                  <span>{new Date(review.datePublished).toLocaleDateString()}</span>
+                  <span>{formatDate(review.datePublished)}</span>
                 </div>
               </div>
             ))}
