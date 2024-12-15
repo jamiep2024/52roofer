@@ -100,27 +100,27 @@ const RoofingCompaniesNearMe: React.FC = () => {
     {
       name: "Research Local Companies",
       text: "Start by creating a list of local roofing companies with good reputations and reviews.",
-      image: "/images/services/research-roofing.jpg"
+      image: "/images/roofer-at-work.jpg" // Using existing image temporarily
     },
     {
       name: "Check Credentials",
       text: "Verify licenses, insurance, and certifications of potential roofing companies.",
-      image: "/images/services/credentials-check.jpg"
+      image: "/images/before-roof.jpg" // Using existing image temporarily
     },
     {
       name: "Get Multiple Quotes",
       text: "Request detailed quotes from at least three different roofing companies.",
-      image: "/images/services/roofing-quote.jpg"
+      image: "/images/after-roof.jpg" // Using existing image temporarily
     },
     {
       name: "Review Past Work",
       text: "Ask for references and examples of previous roofing projects.",
-      image: "/images/services/completed-roof.jpg"
+      image: "/images/completed-roof.jpg" // Using existing image
     },
     {
       name: "Compare Warranties",
       text: "Compare warranty offerings and ensure everything is in writing.",
-      image: "/images/services/warranty-check.jpg"
+      image: "/images/completed-roof.jpg" // Using existing image temporarily
     }
   ];
 
