@@ -3,6 +3,7 @@ import { serviceAreas } from '../data/serviceAreas';
 
 const EXTERNAL_DATA_URL = 'https://52roofer.com';
 
+// All services including the new ones
 const services = [
   'roofing-companies-near-me',
   'roofing-firms-near-me',
@@ -10,7 +11,16 @@ const services = [
   'roof-replacement',
   'apex-roofing',
   'advanced-roofing',
-  'roofing-construction'
+  'roofing-construction',
+  'residential-roofing',
+  'commercial-roofing',
+  'roof-installation',
+  'roof-maintenance',
+  'emergency-roof-repairs',
+  'roof-inspection',
+  'gutter-services',
+  'skylight-installation',
+  'roof-ventilation'
 ];
 
 function getAllLocationPages() {
@@ -62,6 +72,7 @@ function generateServiceLocationUrls() {
 
 function generateSiteMap(locationPages: string[]) {
   const serviceLocationUrls = generateServiceLocationUrls();
+  const currentDate = new Date().toISOString();
 
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -71,22 +82,25 @@ function generateSiteMap(locationPages: string[]) {
      <!-- Main Pages -->
      <url>
        <loc>${EXTERNAL_DATA_URL}</loc>
-       <lastmod>${new Date().toISOString()}</lastmod>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>daily</changefreq>
        <priority>1.0</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/about</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.8</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/contact</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.8</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/find-roofer</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
      </url>
@@ -94,51 +108,61 @@ function generateSiteMap(locationPages: string[]) {
      <!-- Blog Pages -->
      <url>
        <loc>${EXTERNAL_DATA_URL}/blog</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.8</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/blog/choosing-right-roofing-material</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/blog/complete-guide-to-roof-maintenance</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/blog/energy-efficient-roofing</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/blog/new-roof-cost-guide</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/blog/professional-roof-inspection-guide</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/blog/signs-you-need-roof-replacement</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/blog/slate-roofs-complete-guide</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/blog/uk-weather-roofing-problems</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/blog/ultimate-roof-ventilation-guide</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
@@ -146,66 +170,24 @@ function generateSiteMap(locationPages: string[]) {
      <!-- Service Pages -->
      <url>
        <loc>${EXTERNAL_DATA_URL}/services</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
      </url>
      ${services.map(service => `
      <url>
        <loc>${EXTERNAL_DATA_URL}/services/${service}</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
      </url>
      `).join('')}
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/residential-roofing</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/commercial-roofing</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/roof-installation</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/roof-maintenance</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/emergency-roof-repairs</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/roof-inspection</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/gutter-services</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/skylight-installation</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/roof-ventilation</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
 
      <!-- Service Location Pages -->
      ${serviceLocationUrls.map(url => `
      <url>
        <loc>${url}</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
      </url>
@@ -214,16 +196,19 @@ function generateSiteMap(locationPages: string[]) {
      <!-- Resources Pages -->
      <url>
        <loc>${EXTERNAL_DATA_URL}/resources</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/resources/roofing-faq</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/resources/guides/slate-roofs</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
@@ -232,6 +217,7 @@ function generateSiteMap(locationPages: string[]) {
      ${Object.entries(serviceAreas).map(([key, county]) => `
      <url>
        <loc>${EXTERNAL_DATA_URL}/county/${key}</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.8</priority>
      </url>
@@ -245,6 +231,7 @@ function generateSiteMap(locationPages: string[]) {
        return majorCities.map(city => `
      <url>
        <loc>${EXTERNAL_DATA_URL}/locations/${city.toLowerCase().replace(/ /g, '-')}</loc>
+       <lastmod>${currentDate}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
      </url>
@@ -256,7 +243,7 @@ function generateSiteMap(locationPages: string[]) {
        .map(page => `
        <url>
            <loc>${EXTERNAL_DATA_URL}/${page}</loc>
-           <lastmod>${new Date().toISOString()}</lastmod>
+           <lastmod>${currentDate}</lastmod>
            <changefreq>weekly</changefreq>
            <priority>0.9</priority>
        </url>
@@ -278,8 +265,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const sitemap = generateSiteMap(locationPages);
 
   res.setHeader('Content-Type', 'text/xml');
-  // Cache the sitemap for 12 hours
-  res.setHeader('Cache-Control', 'public, s-maxage=43200, stale-while-revalidate=21600');
+  // No caching - always generate fresh
+  res.setHeader('Cache-Control', 'no-store, must-revalidate');
   res.write(sitemap);
   res.end();
 
