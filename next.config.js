@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['52roofer.com'],
+    domains: ['52roofer.com', 'img.youtube.com'],
   },
   async redirects() {
     return [
@@ -44,7 +44,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://script.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: *.52roofer.com; font-src 'self' data:; connect-src 'self' https://script.google.com https://*.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+            value: "default-src 'self' https://script.google.com https://www.youtube.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: https://img.youtube.com; font-src 'self' data:; frame-src 'self' https://www.youtube.com; connect-src 'self' https://script.google.com https://*.google.com;"
           },
           {
             key: 'X-Frame-Options',
