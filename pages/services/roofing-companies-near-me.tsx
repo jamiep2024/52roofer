@@ -226,10 +226,10 @@ const RoofingCompaniesNearMe: React.FC = () => {
           <VideoSchema
             name="Expert Guide: Choosing a Roofing Company"
             description="Comprehensive guide on selecting the right roofing contractor for your needs"
-            thumbnailUrl="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
+            thumbnailUrl="https://img.youtube.com/vi/g9bHCPSpJxw/maxresdefault.jpg"
             uploadDate="2023-11-01"
             duration="PT10M"
-            embedUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            embedUrl="https://www.youtube.com/embed/g9bHCPSpJxw"
           />
         </Head>
 
@@ -272,7 +272,7 @@ const RoofingCompaniesNearMe: React.FC = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Choose a Roofing Company</h2>
             <div className="space-y-8">
               {howToSteps.map((step, index) => (
-                <div key={index} className="flex flex-col md:flex-row items-start gap-6">
+                <div key={index} className="flex flex-col md:flex-row items-start gap-6 bg-gray-50 rounded-xl p-6">
                   <div className="flex-shrink-0 w-full md:w-1/3 relative h-48">
                     <Image
                       src={step.image}
@@ -294,10 +294,10 @@ const RoofingCompaniesNearMe: React.FC = () => {
           {/* Video Section */}
           <div className="bg-gray-50 rounded-xl p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Expert Guide: Choosing a Roofing Company</h2>
-            <div className="aspect-w-16 aspect-h-9">
+            <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
               <iframe
-                className="rounded-lg shadow-lg w-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/g9bHCPSpJxw"
                 title="Expert Guide: Choosing a Roofing Company"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
