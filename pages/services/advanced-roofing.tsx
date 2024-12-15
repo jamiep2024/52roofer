@@ -1,100 +1,271 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import { serviceAreas } from '../../data/serviceAreas';
 import ServiceLayout from '../../components/ServiceLayout';
+import LocalBusinessSchema from '../../components/seo/LocalBusinessSchema';
+import HowToSchema from '../../components/seo/schemas/HowToSchema';
+import ReviewSchema from '../../components/seo/schemas/ReviewSchema';
+import VideoSchema from '../../components/seo/schemas/VideoSchema';
+import DynamicFAQ from '../../components/FAQ/DynamicFAQ';
 
-const areaNames = Object.values(serviceAreas).map(area => area.name);
+interface Service {
+  title: string;
+  description: string;
+  icon: string;
+}
 
-const AdvancedRoofing = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Advanced Roofing Services",
-    "provider": {
-      "@type": "Organization",
-      "name": "52roofer.com"
-    },
-    "areaServed": Object.values(serviceAreas).map(area => ({
-      "@type": "State",
-      "name": area.name
-    })),
-    "description": "Advanced roofing solutions utilizing modern technology and innovative materials. State-of-the-art roofing systems for superior performance."
-  };
+interface Benefit {
+  title: string;
+  description: string;
+  icon: string;
+}
 
-  const services = [
+interface Step {
+  name: string;
+  text: string;
+  image: string;
+}
+
+interface Review {
+  author: string;
+  reviewRating: number;
+  reviewBody: string;
+  datePublished: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+  views: number;
+  lastUpdated: string;
+}
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-GB');
+};
+
+const AdvancedRoofing: React.FC = () => {
+  const [isSticky, setIsSticky] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const areaNames = Object.values(serviceAreas).map(area => area.name);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 300);
+      setShowMobileNav(window.scrollY > 500);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const services: Service[] = [
     {
       title: "Smart Roofing",
-      description: "Integration of smart roofing technologies",
-      icon: "🔋"
+      description: "Advanced roofing systems with integrated technology",
+      icon: "🔧"
     },
     {
-      title: "Solar Integration",
-      description: "Advanced solar roofing solutions",
-      icon: "☀️"
+      title: "Energy Solutions",
+      description: "Energy-efficient roofing installations",
+      icon: "⚡"
     },
     {
       title: "Modern Materials",
-      description: "Latest innovative roofing materials",
+      description: "Latest high-performance roofing materials",
       icon: "🏗️"
     },
     {
-      title: "Tech Monitoring",
-      description: "Advanced roof monitoring systems",
+      title: "Tech Integration",
+      description: "Smart monitoring and maintenance systems",
       icon: "📱"
     }
   ];
 
-  const benefits = [
+  const benefits: Benefit[] = [
     {
-      title: "Energy Efficient",
-      description: "Reduced energy costs through advanced materials",
-      icon: "⚡"
+      title: "Energy Efficiency",
+      description: "Reduced energy costs with advanced insulation",
+      icon: "💡"
     },
     {
       title: "Smart Features",
-      description: "Integrated technology for monitoring and control",
-      icon: "💻"
+      description: "Integrated monitoring and control systems",
+      icon: "🤖"
     },
     {
       title: "Sustainability",
-      description: "Eco-friendly and sustainable solutions",
+      description: "Eco-friendly materials and solutions",
       icon: "🌱"
     }
   ];
 
+  const howToSteps: Step[] = [
+    {
+      name: "Research Local Companies",
+      text: "Start by creating a list of local roofing companies with good reputations and reviews.",
+      image: "/images/how-to/research-companies.png"
+    },
+    {
+      name: "Check Credentials",
+      text: "Verify licenses, insurance, and certifications of potential roofing companies.",
+      image: "/images/how-to/check-credentials.png"
+    },
+    {
+      name: "Get Multiple Quotes",
+      text: "Request detailed quotes from at least three different roofing companies.",
+      image: "/images/how-to/get-quotes.png"
+    },
+    {
+      name: "Review Past Work",
+      text: "Ask for references and examples of previous roofing projects.",
+      image: "/images/how-to/review-work.png"
+    },
+    {
+      name: "Compare Warranties",
+      text: "Compare warranty offerings and ensure everything is in writing.",
+      image: "/images/how-to/warranty.png"
+    }
+  ];
+
+  const reviews: Review[] = [
+    {
+      author: "James Anderson",
+      reviewRating: 5,
+      reviewBody: "Incredible smart roofing installation with integrated solar and monitoring systems.",
+      datePublished: "2023-11-25"
+    },
+    {
+      author: "Emily Roberts",
+      reviewRating: 5,
+      reviewBody: "The energy-efficient solutions they installed have significantly reduced our bills.",
+      datePublished: "2023-11-08"
+    },
+    {
+      author: "Mark Thompson",
+      reviewRating: 4,
+      reviewBody: "Very impressed with the modern materials and technology integration.",
+      datePublished: "2023-10-20"
+    }
+  ];
+
+  const initialFAQs: FAQ[] = [
+    {
+      question: "What are advanced roofing systems?",
+      answer: "Advanced roofing systems incorporate modern materials, smart technology, and energy-efficient solutions for superior performance and sustainability.",
+      views: 0,
+      lastUpdated: new Date().toISOString()
+    },
+    {
+      question: "What smart features are available?",
+      answer: "Smart features include leak detection systems, temperature monitoring, energy usage tracking, and remote control capabilities.",
+      views: 0,
+      lastUpdated: new Date().toISOString()
+    },
+    {
+      question: "How energy-efficient are modern roofs?",
+      answer: "Modern roofing systems can reduce energy costs by 20-30% through improved insulation, reflective materials, and integrated solar solutions.",
+      views: 0,
+      lastUpdated: new Date().toISOString()
+    },
+    {
+      question: "What are the latest roofing materials?",
+      answer: "Latest materials include solar tiles, cool roofing materials, recycled composites, and smart shingles with integrated sensors.",
+      views: 0,
+      lastUpdated: new Date().toISOString()
+    },
+    {
+      question: "How long do advanced roofs last?",
+      answer: "Advanced roofing systems typically last 30-50 years or more, with smart monitoring helping to extend lifespan through preventive maintenance.",
+      views: 0,
+      lastUpdated: new Date().toISOString()
+    }
+  ];
+
+  const voiceSearchContent = `
+    Looking for advanced roofing solutions? We connect you with specialists in modern 
+    roofing technology and smart systems. From energy-efficient materials to integrated 
+    monitoring solutions, our network of verified contractors delivers cutting-edge 
+    roofing solutions. Find expert advanced roofing specialists in ${areaNames.join(', ')}.
+  `;
+
   return (
     <ServiceLayout
-      heroImage="/images/services/advanced-roofing-hero.jpg"
+      heroImage="/images/services/local-roofing-hero.jpg"
       heroTitle="Advanced Roofing Solutions"
-      heroDescription="Modern roofing technologies for superior performance and efficiency"
+      heroDescription="Modern roofing technology and smart systems"
       serviceName="Advanced Roofing"
     >
-      <Head>
-        <title>Advanced Roofing Solutions | 52roofer.com</title>
-        <meta 
-          name="description" 
-          content={`Advanced roofing solutions across ${areaNames.join(', ')}. Modern technologies and innovative materials for superior roofing performance.`}
-        />
-        <link rel="canonical" href="https://www.52roofer.com/services/advanced-roofing" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      </Head>
-
       <div className="space-y-12">
-        {/* Introduction */}
-        <div>
-          <p className="lead text-xl text-gray-600">
-            Experience the future of roofing across {areaNames.join(', ')}. 
-            We provide cutting-edge roofing solutions that combine innovative materials with smart technology for optimal performance.
+        <Head>
+          <title>Advanced Roofing Solutions | 52roofer.com</title>
+          <meta 
+            name="description" 
+            content={`Advanced roofing solutions across ${areaNames.join(', ')}. Smart technology and energy-efficient systems for modern homes.`}
+          />
+          <link rel="canonical" href="https://www.52roofer.com/services/advanced-roofing" />
+          
+          <LocalBusinessSchema
+            businessName="52Roofer"
+            location={{
+              name: "Oxford",
+              county: "Oxfordshire",
+              postcodes: ["OX1", "OX2", "OX3", "OX4"],
+              coordinates: {
+                latitude: 51.7520,
+                longitude: -1.2577
+              }
+            }}
+            url="https://www.52roofer.com"
+            image="/images/services/local-roofing-hero.jpg"
+            rating={{
+              ratingValue: 4.8,
+              reviewCount: reviews.length
+            }}
+          />
+          
+          <HowToSchema
+            name="How to Choose Advanced Roofing Solutions"
+            description="A comprehensive guide to selecting modern roofing systems"
+            steps={howToSteps}
+            totalTime="P1D"
+          />
+          
+          <ReviewSchema
+            itemReviewed={{
+              name: "52Roofer Advanced Roofing Services",
+              image: "/images/services/local-roofing-hero.jpg",
+              description: "Advanced roofing solutions across the UK"
+            }}
+            reviews={reviews}
+            aggregateRating={{
+              ratingValue: 4.8,
+              reviewCount: reviews.length
+            }}
+          />
+          
+          <VideoSchema
+            name="Expert Guide: Advanced Roofing Systems"
+            description="Comprehensive guide on modern roofing technologies"
+            thumbnailUrl="https://img.youtube.com/vi/g9bHCPSpJxw/maxresdefault.jpg"
+            uploadDate="2023-11-01"
+            duration="PT10M"
+            embedUrl="https://www.youtube.com/embed/g9bHCPSpJxw"
+          />
+        </Head>
+
+        {/* Voice Search Optimized Introduction */}
+        <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
+          <p className="text-xl text-gray-700 leading-relaxed" aria-label="Voice search friendly introduction">
+            {voiceSearchContent}
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
@@ -102,9 +273,9 @@ const AdvancedRoofing = () => {
           ))}
         </div>
 
-        {/* Benefits Section */}
+        {/* Benefits Section with Enhanced Multimedia */}
         <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Advanced Roofing Benefits</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Benefits of Advanced Roofing</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="text-center">
@@ -116,86 +287,118 @@ const AdvancedRoofing = () => {
           </div>
         </div>
 
-        {/* Technology Features */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Advanced Technologies</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-xl font-semibold mb-3">Smart Systems</h3>
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <span className="text-accent mr-2">✓</span>
-                  <span>Temperature Monitoring</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="text-accent mr-2">✓</span>
-                  <span>Leak Detection</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="text-accent mr-2">✓</span>
-                  <span>Energy Management</span>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-xl font-semibold mb-3">Modern Materials</h3>
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <span className="text-accent mr-2">✓</span>
-                  <span>Solar Tiles</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="text-accent mr-2">✓</span>
-                  <span>Smart Membranes</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="text-accent mr-2">✓</span>
-                  <span>Eco-friendly Solutions</span>
-                </li>
-              </ul>
-            </div>
+        {/* How to Choose Section with Optimized Images */}
+        <div className="bg-white rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Choose Advanced Roofing Solutions</h2>
+          <div className="space-y-8">
+            {howToSteps.map((step, index) => (
+              <div key={index} className="flex flex-col md:flex-row items-start gap-6 bg-gray-50 rounded-xl p-6">
+                <div className="flex-shrink-0 w-full md:w-1/3 relative h-48">
+                  <Image
+                    src={step.image}
+                    alt={step.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    style={{ objectFit: 'contain' }}
+                    priority={index === 0}
+                  />
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-xl font-semibold mb-2">{step.name}</h3>
+                  <p className="text-gray-600">{step.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Implementation Process */}
+        {/* Video Section with Enhanced Schema */}
         <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Advanced Implementation Process</h2>
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">1</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Technology Assessment</h3>
-                <p className="text-gray-600">Evaluating optimal technology solutions</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Expert Guide: Advanced Roofing Systems</h2>
+          <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/g9bHCPSpJxw"
+              title="Expert Guide: Advanced Roofing Systems"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <p className="mt-4 text-gray-600">
+            Watch our comprehensive guide on advanced roofing systems. 
+            Learn about smart technology integration, energy-efficient solutions, and modern materials.
+          </p>
+        </div>
+
+        {/* Reviews Section with Schema */}
+        <div className="bg-white rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Customer Reviews</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {reviews.map((review, index) => (
+              <div key={index} className="bg-gray-50 rounded-lg p-6">
+                <div className="flex items-center mb-4">
+                  <div className="text-yellow-400 flex">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className={`w-5 h-5 ${i < review.reviewRating ? 'text-yellow-400' : 'text-gray-300'}`}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">{review.reviewBody}</p>
+                <div className="flex justify-between items-center text-sm text-gray-500">
+                  <span>{review.author}</span>
+                  <span>{formatDate(review.datePublished)}</span>
+                </div>
               </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">2</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">System Design</h3>
-                <p className="text-gray-600">Custom design of integrated systems</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">3</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Smart Installation</h3>
-                <p className="text-gray-600">Professional installation of advanced components</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">4</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">System Integration</h3>
-                <p className="text-gray-600">Connecting and configuring smart features</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">5</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">User Training</h3>
-                <p className="text-gray-600">Comprehensive training on system features</p>
-              </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dynamic FAQ Section */}
+        <div className="bg-white rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+          <DynamicFAQ initialFAQs={initialFAQs} category="roofing" />
+        </div>
+
+        {/* Sticky Mobile Navigation */}
+        <div
+          className={`fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 transition-transform duration-300 transform md:hidden ${
+            showMobileNav ? 'translate-y-0' : 'translate-y-full'
+          } z-50`}
+        >
+          <div className="container mx-auto flex justify-between items-center space-x-4">
+            <a
+              href="tel:+441234567890"
+              className="flex-1 bg-primary-500 text-white px-4 py-3 rounded-lg font-semibold text-center"
+            >
+              Call Now
+            </a>
+            <a
+              href="#contact-form"
+              className="flex-1 bg-accent text-white px-4 py-3 rounded-lg font-semibold text-center"
+            >
+              Get Quote
+            </a>
+          </div>
+        </div>
+
+        {/* Sticky CTA for Mobile */}
+        <div className={`fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 transition-transform duration-300 transform md:hidden ${
+          isSticky ? 'translate-y-0' : 'translate-y-full'
+        } z-50`}>
+          <div className="container mx-auto flex justify-between items-center">
+            <a
+              href="#contact-form"
+              className="bg-accent text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-accent-dark transition-colors w-full text-center"
+            >
+              Get Free Quotes
+            </a>
           </div>
         </div>
       </div>
