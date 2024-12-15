@@ -7,29 +7,28 @@ interface Review {
   datePublished: string;
 }
 
-interface ReviewSchemaProps {
-  itemReviewed: {
-    name: string;
-    image?: string;
-    description?: string;
-  };
-  reviews: Review[];
-  aggregateRating: {
-    ratingValue: number;
-    reviewCount: number;
-    bestRating?: number;
-    worstRating?: number;
-  };
+interface ItemReviewed {
+  name: string;
+  image: string;
+  description: string;
 }
 
-const ReviewSchema: React.FC<ReviewSchemaProps> = ({
-  itemReviewed,
-  reviews,
-  aggregateRating
-}) => {
+interface AggregateRating {
+  ratingValue: number;
+  reviewCount: number;
+}
+
+interface Props {
+  itemReviewed: ItemReviewed;
+  reviews: Review[];
+  aggregateRating: AggregateRating;
+}
+
+const ReviewSchema: React.FC<Props> = ({ itemReviewed, reviews, aggregateRating }) => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": `#business-reviews`,
     name: itemReviewed.name,
     image: itemReviewed.image,
     description: itemReviewed.description,
@@ -37,8 +36,8 @@ const ReviewSchema: React.FC<ReviewSchemaProps> = ({
       "@type": "AggregateRating",
       ratingValue: aggregateRating.ratingValue,
       reviewCount: aggregateRating.reviewCount,
-      bestRating: aggregateRating.bestRating || 5,
-      worstRating: aggregateRating.worstRating || 1
+      bestRating: "5",
+      worstRating: "1"
     },
     review: reviews.map(review => ({
       "@type": "Review",
@@ -48,7 +47,9 @@ const ReviewSchema: React.FC<ReviewSchemaProps> = ({
       },
       reviewRating: {
         "@type": "Rating",
-        ratingValue: review.reviewRating
+        ratingValue: review.reviewRating,
+        bestRating: "5",
+        worstRating: "1"
       },
       reviewBody: review.reviewBody,
       datePublished: review.datePublished

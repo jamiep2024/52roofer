@@ -43,11 +43,13 @@ interface FAQ {
 
 const RoofingCompaniesNearMe: React.FC = () => {
   const [isSticky, setIsSticky] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(false);
   const areaNames = Object.values(serviceAreas).map(area => area.name);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 300);
+      setShowMobileNav(window.scrollY > 500);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -176,6 +178,14 @@ const RoofingCompaniesNearMe: React.FC = () => {
     }
   ];
 
+  // Voice search optimized content
+  const voiceSearchContent = `
+    Looking for roofing companies near you? We help homeowners find trusted local roofing professionals 
+    in their area. Whether you need emergency repairs, a full roof replacement, or routine maintenance, 
+    our network of verified contractors can help. Simply tell us what you need, and we'll connect you 
+    with the right experts in ${areaNames.join(', ')}.
+  `;
+
   return (
     <ServiceLayout
       heroImage="/images/services/local-roofing-hero.jpg"
@@ -197,10 +207,18 @@ const RoofingCompaniesNearMe: React.FC = () => {
             location={{
               name: "Oxford",
               county: "Oxfordshire",
-              postcodes: ["OX1", "OX2", "OX3", "OX4"]
+              postcodes: ["OX1", "OX2", "OX3", "OX4"],
+              coordinates: {
+                latitude: 51.7520,
+                longitude: -1.2577
+              }
             }}
             url="https://www.52roofer.com"
             image="/images/services/local-roofing-hero.jpg"
+            rating={{
+              ratingValue: 4.8,
+              reviewCount: reviews.length
+            }}
           />
           
           <HowToSchema
@@ -233,18 +251,17 @@ const RoofingCompaniesNearMe: React.FC = () => {
           />
         </Head>
 
-        {/* Introduction */}
-        <div>
-          <p className="lead text-xl text-gray-600">
-            Find reliable roofing companies in your local area across {areaNames.join(', ')}. 
-            We connect you with trusted professionals who understand your specific roofing needs.
+        {/* Voice Search Optimized Introduction */}
+        <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
+          <p className="text-xl text-gray-700 leading-relaxed" aria-label="Voice search friendly introduction">
+            {voiceSearchContent}
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
@@ -252,7 +269,7 @@ const RoofingCompaniesNearMe: React.FC = () => {
           ))}
         </div>
 
-        {/* Benefits Section */}
+        {/* Benefits Section with Enhanced Multimedia */}
         <div className="bg-gray-50 rounded-xl p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Benefits of Local Roofing Companies</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -266,19 +283,19 @@ const RoofingCompaniesNearMe: React.FC = () => {
           </div>
         </div>
 
-        {/* How to Choose Section */}
+        {/* How to Choose Section with Optimized Images */}
         <div className="bg-white rounded-xl p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Choose a Roofing Company</h2>
           <div className="space-y-8">
             {howToSteps.map((step, index) => (
               <div key={index} className="flex flex-col md:flex-row items-start gap-6 bg-gray-50 rounded-xl p-6">
-                <div className="flex-shrink-0 w-full md:w-1/3 relative h-48">
+                <div className="flex-shrink-0 w-full md:w-1/3 relative aspect-video">
                   <Image
                     src={step.image}
                     alt={step.name}
-                    width={400}
-                    height={300}
-                    className="rounded-lg object-cover"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
                     priority={index === 0}
                   />
                 </div>
@@ -291,7 +308,7 @@ const RoofingCompaniesNearMe: React.FC = () => {
           </div>
         </div>
 
-        {/* Video Section */}
+        {/* Video Section with Enhanced Schema */}
         <div className="bg-gray-50 rounded-xl p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Expert Guide: Choosing a Roofing Company</h2>
           <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
@@ -309,7 +326,7 @@ const RoofingCompaniesNearMe: React.FC = () => {
           </p>
         </div>
 
-        {/* Reviews Section */}
+        {/* Reviews Section with Schema */}
         <div className="bg-white rounded-xl p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Customer Reviews</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -339,80 +356,32 @@ const RoofingCompaniesNearMe: React.FC = () => {
           </div>
         </div>
 
-        {/* Process Section */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Process</h2>
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">1</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Initial Contact</h3>
-                <p className="text-gray-600">Share your roofing requirements with us</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">2</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Local Match</h3>
-                <p className="text-gray-600">We connect you with trusted local companies</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">3</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Free Quotes</h3>
-                <p className="text-gray-600">Receive detailed quotes from local professionals</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">4</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Quality Service</h3>
-                <p className="text-gray-600">Get your roofing work done by trusted experts</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Features Section */}
-        <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Standards</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Licensed & Insured</h3>
-                <p className="text-gray-600">All companies are fully licensed and insured</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Quality Materials</h3>
-                <p className="text-gray-600">Use of premium roofing materials</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Expert Teams</h3>
-                <p className="text-gray-600">Skilled and experienced roofing crews</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Satisfaction Guarantee</h3>
-                <p className="text-gray-600">Commitment to customer satisfaction</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Dynamic FAQ Section */}
         <div className="bg-white rounded-xl p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
           <DynamicFAQ initialFAQs={initialFAQs} category="roofing" />
+        </div>
+
+        {/* Sticky Mobile Navigation */}
+        <div
+          className={`fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 transition-transform duration-300 transform md:hidden ${
+            showMobileNav ? 'translate-y-0' : 'translate-y-full'
+          } z-50`}
+        >
+          <div className="container mx-auto flex justify-between items-center space-x-4">
+            <a
+              href="tel:+441234567890"
+              className="flex-1 bg-primary-500 text-white px-4 py-3 rounded-lg font-semibold text-center"
+            >
+              Call Now
+            </a>
+            <a
+              href="#contact-form"
+              className="flex-1 bg-accent text-white px-4 py-3 rounded-lg font-semibold text-center"
+            >
+              Get Quote
+            </a>
+          </div>
         </div>
 
         {/* Sticky CTA for Mobile */}

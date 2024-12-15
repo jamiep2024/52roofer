@@ -1,101 +1,161 @@
 import React from 'react';
 
-interface LocalBusinessSchemaProps {
-  businessName: string;
-  location: {
-    name: string;
-    county: string;
-    postcodes: string[];
+interface Location {
+  name: string;
+  county: string;
+  postcodes: string[];
+  coordinates?: {
+    latitude: number;
+    longitude: number;
   };
-  url: string;
-  image: string;
-  telephone?: string;
 }
 
-const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = ({
-  businessName = "52Roofer",
+interface Props {
+  businessName: string;
+  location: Location;
+  url: string;
+  image: string;
+  rating?: {
+    ratingValue: number;
+    reviewCount: number;
+  };
+  priceRange?: string;
+}
+
+const LocalBusinessSchema: React.FC<Props> = ({
+  businessName,
   location,
   url,
   image,
-  telephone = "0800 123 4567"
+  rating,
+  priceRange = "££"
 }) => {
+  // Default coordinates for Oxford if not provided
+  const defaultCoordinates = {
+    latitude: 51.7520,
+    longitude: -1.2577
+  };
+
+  const coordinates = location.coordinates || defaultCoordinates;
+
+  // Service area radius (in kilometers) - adjust based on actual coverage
+  const serviceRadius = 50;
+
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": url,
+    "@type": "RoofingContractor",
+    "@id": `${url}#business`,
     name: businessName,
     image: image,
-    telephone: telephone,
-    priceRange: "££",
+    url: url,
+    telephone: "+44-000-000-0000", // Replace with actual phone
+    priceRange: priceRange,
     address: {
       "@type": "PostalAddress",
       addressLocality: location.name,
       addressRegion: location.county,
-      postalCode: location.postcodes[0],
-      addressCountry: "GB"
+      addressCountry: "GB",
+      postalCode: location.postcodes[0]
     },
     geo: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: 51.7520,  // Default to Oxford coordinates
-        longitude: -1.2577
-      },
-      geoRadius: "10000"
+      "@type": "GeoCoordinates",
+      latitude: coordinates.latitude,
+      longitude: coordinates.longitude
     },
-    url: url,
-    areaServed: location.postcodes.map(postcode => ({
+    areaServed: {
       "@type": "GeoCircle",
       geoMidpoint: {
         "@type": "GeoCoordinates",
-        latitude: 51.7520,
-        longitude: -1.2577
+        latitude: coordinates.latitude,
+        longitude: coordinates.longitude
       },
-      geoRadius: "5000"
-    })),
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Roofing Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Emergency Roof Repairs",
-            description: "24/7 emergency roof repair services"
-          }
+      geoRadius: serviceRadius * 1000 // Convert to meters
+    },
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: coordinates.latitude,
+        longitude: coordinates.longitude
+      },
+      geoRadius: serviceRadius * 1000
+    },
+    hasMap: `https://www.google.com/maps?q=${coordinates.latitude},${coordinates.longitude}`,
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        opens: "08:00",
+        closes: "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "09:00",
+        closes: "16:00"
+      }
+    ],
+    sameAs: [
+      "https://www.facebook.com/52roofer",
+      "https://twitter.com/52roofer",
+      "https://www.linkedin.com/company/52roofer"
+    ],
+    ...(rating && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: rating.ratingValue,
+        reviewCount: rating.reviewCount
+      }
+    }),
+    makesOffer: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Roof Repair",
+          description: "Professional roof repair services"
         },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Roof Installation",
-            description: "Complete roof installation and replacement services"
-          }
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Roof Maintenance",
-            description: "Regular roof maintenance and inspection services"
-          }
+        areaServed: {
+          "@type": "GeoCircle",
+          geoMidpoint: {
+            "@type": "GeoCoordinates",
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude
+          },
+          geoRadius: serviceRadius * 1000
         }
-      ]
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      opens: "00:00",
-      closes: "23:59"
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Roof Installation",
+          description: "Complete roof installation services"
+        },
+        areaServed: {
+          "@type": "GeoCircle",
+          geoMidpoint: {
+            "@type": "GeoCoordinates",
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude
+          },
+          geoRadius: serviceRadius * 1000
+        }
+      }
+    ],
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${url}/search?q={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
     }
   };
 

@@ -1,51 +1,36 @@
 import React from 'react';
 
-interface HowToStep {
+interface Step {
   name: string;
   text: string;
-  image?: string;
-  url?: string;
+  image: string;
 }
 
-interface HowToSchemaProps {
+interface Props {
   name: string;
   description: string;
-  steps: HowToStep[];
-  totalTime?: string;
-  estimatedCost?: {
-    currency: string;
-    value: string | number;
-  };
-  image?: string;
+  steps: Step[];
+  totalTime: string;
 }
 
-const HowToSchema: React.FC<HowToSchemaProps> = ({
-  name,
-  description,
-  steps,
-  totalTime,
-  estimatedCost,
-  image
-}) => {
+const HowToSchema: React.FC<Props> = ({ name, description, steps, totalTime }) => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name,
-    description,
-    image,
-    totalTime,
-    estimatedCost: estimatedCost ? {
-      "@type": "MonetaryAmount",
-      currency: estimatedCost.currency,
-      value: estimatedCost.value
-    } : undefined,
+    name: name,
+    description: description,
+    totalTime: totalTime,
     step: steps.map((step, index) => ({
       "@type": "HowToStep",
       position: index + 1,
       name: step.name,
       text: step.text,
-      image: step.image,
-      url: step.url
+      image: {
+        "@type": "ImageObject",
+        url: step.image,
+        height: "300",
+        width: "400"
+      }
     }))
   };
 

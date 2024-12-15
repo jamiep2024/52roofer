@@ -1,43 +1,47 @@
 import React from 'react';
 
-interface VideoSchemaProps {
+interface Props {
   name: string;
   description: string;
   thumbnailUrl: string;
   uploadDate: string;
+  duration: string;
+  embedUrl: string;
   contentUrl?: string;
-  embedUrl?: string;
-  duration?: string;
-  width?: number;
-  height?: number;
-  isFamilyFriendly?: boolean;
 }
 
-const VideoSchema: React.FC<VideoSchemaProps> = ({
+const VideoSchema: React.FC<Props> = ({
   name,
   description,
   thumbnailUrl,
   uploadDate,
-  contentUrl,
-  embedUrl,
   duration,
-  width,
-  height,
-  isFamilyFriendly = true
+  embedUrl,
+  contentUrl
 }) => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    name,
-    description,
-    thumbnailUrl,
-    uploadDate,
-    contentUrl,
-    embedUrl,
-    duration,
-    width,
-    height,
-    isFamilyFriendly
+    name: name,
+    description: description,
+    thumbnailUrl: thumbnailUrl,
+    uploadDate: uploadDate,
+    duration: duration,
+    embedUrl: embedUrl,
+    ...(contentUrl && { contentUrl: contentUrl }),
+    publisher: {
+      "@type": "Organization",
+      name: "52Roofer",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.52roofer.com/images/logo.png"
+      }
+    },
+    isFamilyFriendly: true,
+    potentialAction: {
+      "@type": "WatchAction",
+      target: embedUrl
+    }
   };
 
   return (

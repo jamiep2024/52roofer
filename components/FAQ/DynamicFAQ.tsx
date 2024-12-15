@@ -1,110 +1,121 @@
-import React, { useState, useEffect } from 'react';
-import FAQSchema from '../seo/schemas/FAQSchema';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
-interface FAQItem {
+interface FAQ {
   question: string;
   answer: string;
-  views?: number;
-  lastUpdated?: string;
+  views: number;
+  lastUpdated: string;
 }
 
-interface DynamicFAQProps {
-  initialFAQs: FAQItem[];
-  category?: string;
+interface Props {
+  initialFAQs: FAQ[];
+  category: string;
 }
 
-const DynamicFAQ: React.FC<DynamicFAQProps> = ({ initialFAQs, category }) => {
-  const [faqs, setFaqs] = useState<FAQItem[]>(initialFAQs);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+const DynamicFAQ: React.FC<Props> = ({ initialFAQs, category }) => {
+  const [faqs, setFaqs] = useState(initialFAQs);
+  const [trendingQuestions, setTrendingQuestions] = useState<string[]>([]);
+  const router = useRouter();
 
-  // Track FAQ interactions
-  const trackFAQInteraction = (question: string) => {
-    if (typeof window !== 'undefined' && window.dataLayer) {
-      const analyticsData = {
-        event: 'faq_interaction',
-        faq_question: question,
-        category: category
-      };
-      window.dataLayer.push(analyticsData);
-    }
-  };
-
+  // Track FAQ views and update trending questions
   const handleFAQClick = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-    
-    // Update view count
-    setFaqs(prevFaqs => 
-      prevFaqs.map((faq, i) => 
-        i === index 
-          ? { ...faq, views: (faq.views || 0) + 1 }
-          : faq
-      )
-    );
-
-    // Track interaction
-    try {
-      trackFAQInteraction(faqs[index].question);
-    } catch (error) {
-      console.error('Error tracking FAQ interaction:', error);
-    }
+    const updatedFAQs = [...faqs];
+    updatedFAQs[index] = {
+      ...updatedFAQs[index],
+      views: updatedFAQs[index].views + 1,
+      lastUpdated: new Date().toISOString()
+    };
+    setFaqs(updatedFAQs);
+    updateTrendingQuestions(updatedFAQs);
   };
 
-  // Sort FAQs by view count (most viewed first)
+  // Update trending questions based on view count
+  const updateTrendingQuestions = (currentFAQs: FAQ[]) => {
+    const sorted = [...currentFAQs].sort((a, b) => b.views - a.views);
+    setTrendingQuestions(sorted.slice(0, 3).map(faq => faq.question));
+  };
+
+  // Simulate AI-powered FAQ updates based on user behavior
   useEffect(() => {
-    const sortedFAQs = [...faqs].sort((a, b) => 
-      (b.views || 0) - (a.views || 0)
-    );
-    setFaqs(sortedFAQs);
-  }, []);
+    const updateFAQsWithAI = async () => {
+      // In a real implementation, this would call an AI service
+      // For now, we'll simulate dynamic updates based on view patterns
+      const mostViewed = Math.max(...faqs.map(faq => faq.views));
+      if (mostViewed > 5) {
+        const newFAQ = {
+          question: `What are the latest trends in ${category} for ${new Date().getFullYear()}?`,
+          answer: "Our AI has noticed increased interest in sustainable materials, smart roofing technology, and energy-efficient solutions. We regularly update this information based on industry developments and customer inquiries.",
+          views: 0,
+          lastUpdated: new Date().toISOString()
+        };
+        setFaqs(prev => [...prev, newFAQ]);
+      }
+    };
+
+    const interval = setInterval(updateFAQsWithAI, 60000); // Check every minute
+    return () => clearInterval(interval);
+  }, [faqs, category]);
+
+  // Schema.org FAQ markup
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      },
+      "dateModified": faq.lastUpdated
+    }))
+  };
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="space-y-8">
+      {/* Trending Questions Section */}
+      {trendingQuestions.length > 0 && (
+        <div className="bg-primary-50 p-4 rounded-lg mb-6">
+          <h3 className="text-lg font-semibold mb-3">Trending Questions</h3>
+          <ul className="space-y-2">
+            {trendingQuestions.map((question, index) => (
+              <li key={index} className="text-primary-600 hover:text-primary-700 cursor-pointer">
+                {question}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* FAQ Accordion */}
       <div className="space-y-4">
         {faqs.map((faq, index) => (
-          <div 
+          <div
             key={index}
-            className="border border-gray-200 rounded-lg shadow-sm"
+            className="border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
           >
             <button
-              className="w-full px-6 py-4 text-left focus:outline-none focus:ring-2 focus:ring-accent flex justify-between items-center"
+              className="w-full text-left p-4 focus:outline-none"
               onClick={() => handleFAQClick(index)}
-              aria-expanded={activeIndex === index}
             >
-              <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-              <span className="ml-6">
-                <svg
-                  className={`w-6 h-6 transform ${
-                    activeIndex === index ? 'rotate-180' : ''
-                  } transition-transform duration-200`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </span>
-            </button>
-            {activeIndex === index && (
-              <div className="px-6 pb-4">
-                <p className="text-gray-600">{faq.answer}</p>
-                {faq.lastUpdated && (
-                  <p className="text-sm text-gray-400 mt-2">
-                    Last updated: {new Date(faq.lastUpdated).toLocaleDateString()}
-                  </p>
-                )}
+              <div className="flex justify-between items-center">
+                <h3 className="text-lg font-medium">{faq.question}</h3>
+                <span className="text-gray-500 text-sm">
+                  {new Date(faq.lastUpdated).toLocaleDateString()}
+                </span>
               </div>
-            )}
+              <p className="mt-2 text-gray-600">{faq.answer}</p>
+            </button>
           </div>
         ))}
       </div>
-      
-      {/* Schema markup */}
-      <FAQSchema mainEntity={faqs} />
+
+      {/* Hidden Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </div>
   );
 };

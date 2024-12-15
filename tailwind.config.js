@@ -60,7 +60,12 @@ module.exports = {
         'sm-mobile': ['0.875rem', { lineHeight: '1.25rem' }],
         'base-mobile': ['1rem', { lineHeight: '1.5rem' }],
       },
+      aspectRatio: {
+        'video': '16 / 9',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

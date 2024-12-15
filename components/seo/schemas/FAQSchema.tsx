@@ -1,26 +1,38 @@
 import React from 'react';
 
-interface FAQItem {
+interface FAQ {
   question: string;
   answer: string;
+  views?: number;
+  lastUpdated?: string;
 }
 
-interface FAQSchemaProps {
-  mainEntity: FAQItem[];
+interface Props {
+  faqs: FAQ[];
+  category?: string;
 }
 
-const FAQSchema: React.FC<FAQSchemaProps> = ({ mainEntity }) => {
+const FAQSchema: React.FC<Props> = ({ faqs, category }) => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: mainEntity.map(item => ({
+    "mainEntity": faqs.map(faq => ({
       "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
+      "name": faq.question,
+      "acceptedAnswer": {
         "@type": "Answer",
-        text: item.answer
+        "text": faq.answer
+      },
+      ...(faq.lastUpdated && {
+        "dateModified": faq.lastUpdated
+      })
+    })),
+    ...(category && {
+      "about": {
+        "@type": "Thing",
+        "name": category
       }
-    }))
+    })
   };
 
   return (
