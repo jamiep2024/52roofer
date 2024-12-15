@@ -1,61 +1,74 @@
-# 52roofer.com - Local Roofing Referral Platform
+# 52Roofer Website
 
-A modern web platform connecting homeowners with trusted local roofers in Oxfordshire, Gloucestershire, Wiltshire, and Berkshire regions.
+## Image Requirements
 
-## Features
+### Roofing Companies Page Images
 
-- Location-based roofer matching
-- Simple user interface for property details and roofing issues
-- Dynamic local landing pages with SEO optimization
-- Mobile-first responsive design
-- Integration with modern web technologies
+The following images are needed for the "How to Choose a Roofing Company" section. Please provide high-quality images that meet these specifications:
 
-## Tech Stack
+Required Images:
+1. `research-roofing.jpg` - Image showing someone researching roofing companies online
+2. `credentials-check.jpg` - Image depicting verification of roofing credentials/licenses
+3. `roofing-quote.jpg` - Image showing a roofing quote or estimate process
+4. `completed-roof.jpg` - Image of a successfully completed roofing project
+5. `warranty-check.jpg` - Image representing warranty or documentation review
 
-- Next.js 14 for server-side rendering and static site generation
-- React 18 for UI components
-- TypeScript for type safety
-- TailwindCSS for styling
-- Netlify for hosting and continuous deployment
+Image Specifications:
+- Format: JPG/JPEG
+- Resolution: Minimum 1200x800 pixels (16:9 aspect ratio)
+- File size: Optimized for web (typically 200KB-1MB)
+- Quality: Professional, well-lit images
+- Location: Save in `/public/images/services/` directory
 
-## Getting Started
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/52roofer.git
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Run the development server:
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
-## Project Structure
-
-```
-52roofer/
-├── components/     # Reusable UI components
-├── pages/         # Next.js pages and API routes
-├── public/        # Static assets
-├── styles/        # Global styles and Tailwind config
-├── types/         # TypeScript type definitions
-└── utils/         # Helper functions and utilities
-```
+Currently using temporary images from existing assets. Replace these with specific images when available.
 
 ## Development
 
-- `npm run dev` - Start development server
-- `npm run build` - Build production bundle
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+### Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+### Building
+
+```bash
+# Create production build
+npm run build
+
+# Start production server
+npm start
+```
+
+### Environment Variables
+
+Copy `.env.example` to `.env.local` and update the values:
+
+```bash
+cp .env.example .env.local
+```
+
+## Deployment
+
+The site is deployed on Netlify with automatic deployments from the main branch.
+
+### Build Configuration
+
+The build process is configured in `netlify.toml` and includes:
+- Node.js and NPM version requirements
+- Build command and publish directory
+- Environment variables
+
+## Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Submit a pull request
 
 ## License
 
-Private - All Rights Reserved
+Private - All rights reserved
