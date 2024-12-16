@@ -1,5 +1,5 @@
 import React from 'react';
-import ConversationalRoofingTemplate from './conversational-roofing-template';
+import ConversationalRoofingTemplate from '../../components/templates/conversational-roofing-template';
 
 const EmergencyRoofRepairsNew: React.FC = () => {
   const initialFAQs = [
