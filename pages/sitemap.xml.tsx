@@ -20,41 +20,68 @@ const services = [
   'roof-inspection',
   'gutter-services',
   'skylight-installation',
-  'roof-ventilation'
+  'roof-ventilation',
+  'voice-roof-repairs',
+  'voice-roof-installation',
+  'voice-roofing-services',
+  'emergency-roof-repairs-new'
 ];
 
-function getAllLocationPages() {
+// Oxford neighborhoods
+const oxfordNeighborhoods = [
+  'blackbird-leys',
+  'botley',
+  'cowley',
+  'headington',
+  'wolvercote',
+  'jericho',
+  'marston',
+  'rose-hill',
+  'iffley',
+  'summertown'
+];
+
+// Wiltshire special towns
+const wiltshireSpecialTowns = [
+  'warminster',
+  'marlborough',
+  'chippenham',
+  'devizes',
+  'melksham',
+  'trowbridge',
+  'bradford-on-avon',
+  'westbury',
+  'calne',
+  'salisbury'
+];
+
+function getAllLocationPages(): string[] {
+  const locationPages: string[] = [];
+
   // Get all location pages from serviceAreas
-  const locationPages = Object.entries(serviceAreas).flatMap(([countyKey, county]) => {
-    return county.mainTowns.map(town => {
+  Object.entries(serviceAreas).forEach(([countyKey, county]) => {
+    county.mainTowns.forEach(town => {
       const townSlug = town.toLowerCase().replace(/ /g, '-');
       
-      // Special cases for Wiltshire towns
-      if (countyKey === 'wiltshire' && [
-        'warminster', 'marlborough', 'chippenham', 'devizes', 
-        'melksham', 'trowbridge', 'bradford-on-avon', 'westbury', 
-        'calne', 'salisbury'
-      ].includes(townSlug)) {
-        return `roofers-in-${townSlug}-wiltshire`;
-      }
+      // Add regular town page
+      locationPages.push(`roofers-in-${townSlug}`);
       
-      // Special cases for Oxford neighborhoods
-      if (countyKey === 'oxfordshire' && [
-        'blackbird-leys', 'botley', 'cowley', 'headington', 
-        'wolvercote', 'jericho', 'marston', 'rose-hill', 
-        'iffley', 'summertown'
-      ].includes(townSlug)) {
-        return `roofers-in-${townSlug}-oxford`;
+      // Add special case for Wiltshire towns
+      if (countyKey === 'wiltshire' && wiltshireSpecialTowns.includes(townSlug)) {
+        locationPages.push(`roofers-in-${townSlug}-wiltshire`);
       }
-      
-      return `roofers-in-${townSlug}`;
     });
+  });
+
+  // Add Oxford neighborhoods
+  oxfordNeighborhoods.forEach(neighborhood => {
+    locationPages.push(`roofers-in-${neighborhood}-oxford`);
   });
 
   return locationPages;
 }
 
-function generateServiceLocationUrls() {
+function generateServiceLocationUrls(): string[] {
   const urls: string[] = [];
   
   // Generate URLs for each service in each location
@@ -64,6 +91,13 @@ function generateServiceLocationUrls() {
       services.forEach(service => {
         urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${locationSlug}`);
       });
+    });
+  });
+
+  // Add service pages for Oxford neighborhoods
+  oxfordNeighborhoods.forEach(neighborhood => {
+    services.forEach(service => {
+      urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${neighborhood}-oxford`);
     });
   });
 
