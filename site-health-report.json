@@ -1,0 +1,316 @@
+{
+  "timestamp": "2024-12-20T12:13:06.248Z",
+  "summary": {
+    "totalPagesScanned": 148,
+    "pagesWithSchemaIssues": 31,
+    "pages404": 3,
+    "pages301": 0
+  },
+  "details": [
+    {
+      "url": "https://52roofer.com/",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/about",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/skylight-installation",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-firms-near-me",
+      "schemaIssues": [
+        "Missing @id in schema",
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-contractors",
+      "schemaIssues": [
+        "Missing @id in schema",
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-construction",
+      "schemaIssues": [
+        "Missing @id in schema",
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me",
+      "schemaIssues": [
+        "Missing @id in schema",
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/roofers-near-me",
+      "schemaIssues": [
+        "Missing @id in schema type: BreadcrumbList",
+        "Missing @id in schema type: HowTo"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/roof-ventilation",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/roof-replacement",
+      "schemaIssues": [
+        "Missing @id in schema",
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/roof-maintenance",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/roof-installation",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/roof-inspection",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/residential-roofing",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/",
+      "schemaIssues": [],
+      "statusCode": 308,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/gutter-service",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/emergency-roof-repairs-new",
+      "schemaIssues": [
+        "Missing @id in schema type: BreadcrumbList",
+        "Missing @id in schema type: HowTo"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/emergency-roof-repair",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/commercial-roofing",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/apex-roofing",
+      "schemaIssues": [
+        "Missing @id in schema",
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/advanced-roofing",
+      "schemaIssues": [
+        "Missing @id in schema",
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/resources/roofing-faq",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/resources/",
+      "schemaIssues": [],
+      "statusCode": 308,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/locations/",
+      "schemaIssues": [],
+      "statusCode": 308,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/locations/[slug]",
+      "schemaIssues": [],
+      "statusCode": 404,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/location/[slug]",
+      "schemaIssues": [],
+      "statusCode": 308,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/county/[slug]",
+      "schemaIssues": [],
+      "statusCode": 404,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/blog/ultimate-roof-ventilation-guide",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/blog/uk-weather-roofing-problems",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/blog/slate-roofs-complete-guide",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/blog/signs-you-need-roof-replacement",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/blog/professional-roof-inspection-guide",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/blog/new-roof-cost-guide",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/blog/",
+      "schemaIssues": [],
+      "statusCode": 308,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/blog/energy-efficient-roofing",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/blog/complete-guide-to-roof-maintenance",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/blog/choosing-right-roofing-material",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/services/[service]/[location]",
+      "schemaIssues": [],
+      "statusCode": 404,
+      "redirectChain": []
+    },
+    {
+      "url": "https://52roofer.com/resources/guides/slate-roofs",
+      "schemaIssues": [
+        "Missing @id in schema"
+      ],
+      "statusCode": 200,
+      "redirectChain": []
+    }
+  ]
+}

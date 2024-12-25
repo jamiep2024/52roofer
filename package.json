@@ -1,0 +1,53 @@
+{
+  "name": "NewRoofingCo",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "20.x",
+    "npm": "9.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "verify": "node scripts/verify-site-health.js",
+    "fix": "node scripts/fix-site-issues.js",
+    "optimize": "npm run verify && npm run fix && npm run verify"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "2.5.0",
+    "@tailwindcss/aspect-ratio": "0.4.2",
+    "axios": "1.7.9",
+    "clsx": "^2.0.0",
+    "express": "4.21.2",
+    "framer-motion": "^10.16.16",
+    "googleapis": "144.0.0",
+    "next": "14.0.4",
+    "next-seo": "6.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "5.4.0",
+    "react-intersection-observer": "^9.5.3",
+    "sass": "^1.69.5",
+    "sharp": "0.33.5",
+    "tailwind-merge": "^2.1.0",
+    "typescript": "^5.3.3",
+    "xml2js": "0.6.2"
+  },
+  "devDependencies": {
+    "@heroicons/react": "2.2.0",
+    "@types/next-seo": "1.10.0",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
+    "autoprefixer": "^10.4.16",
+    "eslint": "8.57.1",
+    "eslint-config-next": "14.0.4",
+    "glob": "11.0.0",
+    "node-fetch": "3.3.2",
+    "node-html-parser": "6.1.13",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  }
+}
