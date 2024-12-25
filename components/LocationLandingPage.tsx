@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import LeadForm from './forms/LeadForm';
 import { Business } from '../types/business';
+import { serviceAreas } from '../data/serviceAreas';
 
 interface LocationLandingPageProps {
   city: string;
@@ -18,6 +19,18 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({
 }) => {
   // Convert city name to URL-friendly format
   const citySlug = city.toLowerCase().replace(/ /g, '-');
+
+  // Find the county key and data
+  const countyEntry = Object.entries(serviceAreas).find(([_, data]) => data.name === county);
+  const countyKey = countyEntry?.[0];
+  const countyData = countyEntry?.[1];
+
+  // Get nearby locations (other towns in the same county)
+  const nearbyLocations = countyData?.mainTowns.filter(town => town !== city) || [];
+
+  // Get major cities from all counties
+  const majorCities = ['Oxford', 'Reading', 'Southampton', 'Portsmouth', 'Milton Keynes', 'Swindon', 'Gloucester'];
+  const otherMajorCities = majorCities.filter(majorCity => majorCity !== city);
 
   return (
     <div className="bg-white">
@@ -95,6 +108,54 @@ const LocationLandingPage: React.FC<LocationLandingPageProps> = ({
             <li>Emergency response available</li>
             <li>Competitive pricing</li>
           </ul>
+
+          {/* Nearby Locations */}
+          <h3>Nearby Locations</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 not-prose">
+            {nearbyLocations.slice(0, 6).map(town => {
+              const townSlug = town.toLowerCase().replace(/ /g, '-');
+              const path = `/roofers-in-${townSlug}${countyKey === 'wiltshire' ? '-wiltshire' : ''}`;
+              
+              return (
+                <Link
+                  key={town}
+                  href={path}
+                  className="text-blue-600 hover:text-blue-800 text-lg"
+                >
+                  Roofers in {town}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Major Cities */}
+          <h3>Other Major Cities</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 not-prose">
+            {otherMajorCities.map(majorCity => {
+              const citySlug = majorCity.toLowerCase().replace(/ /g, '-');
+              return (
+                <Link
+                  key={majorCity}
+                  href={`/roofers-in-${citySlug}`}
+                  className="text-blue-600 hover:text-blue-800 text-lg"
+                >
+                  Roofers in {majorCity}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* County Link */}
+          {countyKey && (
+            <div className="mt-8 not-prose">
+              <Link
+                href={`/county/${countyKey}`}
+                className="text-blue-600 hover:text-blue-800 text-xl"
+              >
+                View All {county} Locations
+              </Link>
+            </div>
+          )}
         </div>
       </div>
 

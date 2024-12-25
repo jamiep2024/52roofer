@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import LeadForm from './forms/LeadForm';
+import { serviceAreas } from '../data/serviceAreas';
 
 interface CountyLandingPageProps {
   county: string;
@@ -13,6 +14,19 @@ const CountyLandingPage: React.FC<CountyLandingPageProps> = ({
   mainTowns,
   postcodes,
 }) => {
+  // Get current county key
+  const currentCountyKey = Object.entries(serviceAreas).find(
+    ([_, data]) => data.name === county
+  )?.[0];
+
+  // Get other counties for navigation
+  const otherCounties = Object.entries(serviceAreas)
+    .filter(([key, data]) => data.name !== county)
+    .map(([key, data]) => ({
+      key,
+      name: data.name
+    }));
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -49,11 +63,22 @@ const CountyLandingPage: React.FC<CountyLandingPageProps> = ({
           <p>
             We provide our services across {county}, including:
           </p>
-          <ul className="grid grid-cols-2 gap-4">
-            {mainTowns.map((town) => (
-              <li key={town}>{town}</li>
-            ))}
-          </ul>
+          <div className="grid grid-cols-2 gap-4 not-prose">
+            {mainTowns.map((town) => {
+              const townSlug = town.toLowerCase().replace(/ /g, '-');
+              const path = `/roofers-in-${townSlug}${currentCountyKey === 'wiltshire' ? '-wiltshire' : ''}`;
+              
+              return (
+                <Link
+                  key={town}
+                  href={path}
+                  className="text-blue-600 hover:text-blue-800 text-lg"
+                >
+                  Roofers in {town}
+                </Link>
+              );
+            })}
+          </div>
 
           <h3>Postcodes Covered</h3>
           <p>
@@ -81,6 +106,20 @@ const CountyLandingPage: React.FC<CountyLandingPageProps> = ({
             <li>Emergency response available</li>
             <li>Competitive pricing</li>
           </ul>
+
+          {/* Other Counties Section */}
+          <h3>Our Coverage in Other Counties</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 not-prose">
+            {otherCounties.map(({ key, name }) => (
+              <Link
+                key={key}
+                href={`/county/${key}`}
+                className="text-blue-600 hover:text-blue-800 text-lg"
+              >
+                {name} Roofers
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 
