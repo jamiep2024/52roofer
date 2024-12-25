@@ -1,0 +1,5 @@
+/* Import global styles */
+@import "../styles/globals.css";
+
+/* Additional styles for service worker */
+/* Add any service worker specific styles here */

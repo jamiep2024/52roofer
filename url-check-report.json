@@ -1,0 +1,158 @@
+{
+  "timestamp": "2024-12-25T00:54:22.716Z",
+  "summary": {
+    "total": 184,
+    "ok": 148,
+    "redirects": 0,
+    "notFound": 36,
+    "otherErrors": 0
+  },
+  "redirects": [],
+  "notFound": [
+    {
+      "url": "https://52roofer.com/index",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/all-in-one-demo",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/sitemaps/services.xml",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/sitemaps/resources.xml",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/sitemaps/main.xml",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/sitemaps/locations.xml",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/sitemaps/counties.xml",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/sitemaps/combinations.xml",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/sitemaps/blog.xml",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/gutter-services",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/emergency-roof-repairs",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/[service]",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/locations/[slug]",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/locations/[city]",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/county/[slug]",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/wolvercote-oxford",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/westbury-wiltshire",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/warminster-wiltshire",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/trowbridge-wiltshire",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/summertown-oxford",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/salisbury-wiltshire",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/rose-hill-oxford",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/melksham-wiltshire",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/marston-oxford",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/marlborough-wiltshire",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/jericho-oxford",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/iffley-oxford",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/headington-oxford",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/devizes-wiltshire",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/cowley-oxford",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/chippenham-wiltshire",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/calne-wiltshire",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/bradford-on-avon-wiltshire",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/botley-oxford",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/roofing-companies-near-me/blackbird-leys-oxford",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    },
+    {
+      "url": "https://52roofer.com/services/[service]/[location]",
+      "response": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1\"/><meta name=\"theme-color\" content=\"#1a365d\"/><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>404: This page could not be found</title><meta name=\"next-head-count\" content=\"7\"/><link rel=\"preload\" href=\"/_n"
+    }
+  ],
+  "otherErrors": []
+}

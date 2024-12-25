@@ -1,0 +1,18 @@
+{
+  "extends": ["next/core-web-vitals", "prettier"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-img-element": "off",
+    "react/jsx-no-target-blank": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "@next/next/no-sync-scripts": "off",
+    "react/display-name": "off"
+  },
+  "settings": {
+    "next": {
+      "rootDir": "."
+    }
+  },
+  "ignorePatterns": ["node_modules/", ".next/", "out/", "public/", "scripts/"]
+}

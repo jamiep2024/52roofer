@@ -1,0 +1,731 @@
+{
+  "totalExpectedUrls": 121,
+  "urlsInSitemap": 7,
+  "urlsWithBrokenLinks": 0,
+  "urlsWithErrors": 0,
+  "missingFromSitemap": [
+    "/",
+    "/services/roof-installation",
+    "/services/roof-replacement",
+    "/services/roof-maintenance",
+    "/services/roof-repair",
+    "/services/emergency-roof-repairs",
+    "/services/skylight-installation",
+    "/services/roof-ventilation",
+    "/services/gutter-services",
+    "/services/roof-inspection",
+    "/services/commercial-roofing",
+    "/services/residential-roofing",
+    "/services/advanced-roofing",
+    "/services/apex-roofing",
+    "/services/roofing-firms-near-me",
+    "/services/roofing-construction",
+    "/services/roofing-contractors",
+    "/services/roofing-companies-near-me",
+    "/services/emergency-roofing",
+    "/services/roofers-near-me",
+    "/blog/choosing-right-roofing-material",
+    "/blog/complete-guide-to-roof-maintenance",
+    "/blog/uk-weather-roofing-problems",
+    "/blog/energy-efficient-roofing",
+    "/blog/ultimate-roof-ventilation-guide",
+    "/blog/new-roof-cost-guide",
+    "/blog/professional-roof-inspection-guide",
+    "/blog/signs-you-need-roof-replacement",
+    "/county/berkshire",
+    "/roofers-in-reading",
+    "/roofers-in-newbury",
+    "/roofers-in-windsor",
+    "/roofers-in-maidenhead",
+    "/roofers-in-bracknell",
+    "/roofers-in-slough",
+    "/roofers-in-wokingham",
+    "/roofers-in-thatcham",
+    "/roofers-in-hungerford",
+    "/roofers-in-ascot",
+    "/county/oxfordshire",
+    "/roofers-in-oxford",
+    "/roofers-in-banbury",
+    "/roofers-in-bicester",
+    "/roofers-in-witney",
+    "/roofers-in-didcot",
+    "/roofers-in-abingdon",
+    "/roofers-in-thame",
+    "/roofers-in-henley-on-thames",
+    "/roofers-in-wallingford",
+    "/roofers-in-chipping-norton",
+    "/county/wiltshire",
+    "/roofers-in-swindon",
+    "/roofers-in-salisbury",
+    "/roofers-in-chippenham",
+    "/roofers-in-trowbridge",
+    "/roofers-in-marlborough",
+    "/roofers-in-devizes",
+    "/roofers-in-warminster",
+    "/roofers-in-melksham",
+    "/roofers-in-calne",
+    "/roofers-in-corsham",
+    "/county/gloucestershire",
+    "/roofers-in-gloucester",
+    "/roofers-in-cheltenham",
+    "/roofers-in-stroud",
+    "/roofers-in-cirencester",
+    "/roofers-in-tewkesbury",
+    "/roofers-in-dursley",
+    "/roofers-in-tetbury",
+    "/roofers-in-stow-on-the-wold",
+    "/roofers-in-moreton-in-marsh",
+    "/roofers-in-fairford",
+    "/county/hampshire",
+    "/roofers-in-southampton",
+    "/roofers-in-portsmouth",
+    "/roofers-in-winchester",
+    "/roofers-in-basingstoke",
+    "/roofers-in-andover",
+    "/roofers-in-aldershot",
+    "/roofers-in-farnborough",
+    "/roofers-in-eastleigh",
+    "/roofers-in-fareham",
+    "/roofers-in-gosport",
+    "/county/surrey",
+    "/roofers-in-guildford",
+    "/roofers-in-woking",
+    "/roofers-in-farnham",
+    "/roofers-in-epsom",
+    "/roofers-in-redhill",
+    "/roofers-in-reigate",
+    "/roofers-in-staines",
+    "/roofers-in-dorking",
+    "/roofers-in-camberley",
+    "/roofers-in-leatherhead",
+    "/county/buckinghamshire",
+    "/roofers-in-milton-keynes",
+    "/roofers-in-high-wycombe",
+    "/roofers-in-aylesbury",
+    "/roofers-in-amersham",
+    "/roofers-in-marlow",
+    "/roofers-in-buckingham",
+    "/roofers-in-chesham",
+    "/roofers-in-beaconsfield",
+    "/roofers-in-princes-risborough",
+    "/roofers-in-gerrards-cross",
+    "/county/westSussex",
+    "/roofers-in-crawley",
+    "/roofers-in-worthing",
+    "/roofers-in-horsham",
+    "/roofers-in-chichester",
+    "/roofers-in-bognor-regis",
+    "/roofers-in-littlehampton",
+    "/roofers-in-east-grinstead",
+    "/roofers-in-haywards-heath",
+    "/roofers-in-burgess-hill",
+    "/roofers-in-shoreham-by-sea"
+  ],
+  "details": [
+    {
+      "url": "/",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/about",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/contact",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/blog",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/resources",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roof-installation",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roof-replacement",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roof-maintenance",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roof-repair",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/emergency-roof-repairs",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/skylight-installation",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roof-ventilation",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/gutter-services",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roof-inspection",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/commercial-roofing",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/residential-roofing",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/advanced-roofing",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/apex-roofing",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roofing-firms-near-me",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roofing-construction",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roofing-contractors",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roofing-companies-near-me",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/emergency-roofing",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/services/roofers-near-me",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/blog/choosing-right-roofing-material",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/blog/complete-guide-to-roof-maintenance",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/blog/uk-weather-roofing-problems",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/blog/energy-efficient-roofing",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/blog/ultimate-roof-ventilation-guide",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/blog/new-roof-cost-guide",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/blog/professional-roof-inspection-guide",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/blog/signs-you-need-roof-replacement",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/county/berkshire",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-reading",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-newbury",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-windsor",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-maidenhead",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-bracknell",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-slough",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-wokingham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-thatcham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-hungerford",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-ascot",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/county/oxfordshire",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-oxford",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-banbury",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-bicester",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-witney",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-didcot",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-abingdon",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-thame",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-henley-on-thames",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-wallingford",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-chipping-norton",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/county/wiltshire",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-swindon",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-salisbury",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-chippenham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-trowbridge",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-marlborough",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-devizes",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-warminster",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-melksham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-calne",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-corsham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/county/gloucestershire",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-gloucester",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-cheltenham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-stroud",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-cirencester",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-tewkesbury",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-dursley",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-tetbury",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-stow-on-the-wold",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-moreton-in-marsh",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-fairford",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/county/hampshire",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-southampton",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-portsmouth",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-winchester",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-basingstoke",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-andover",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-aldershot",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-farnborough",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-eastleigh",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-fareham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-gosport",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/county/surrey",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-guildford",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-woking",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-farnham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-epsom",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-redhill",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-reigate",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-staines",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-dorking",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-camberley",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-leatherhead",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/county/buckinghamshire",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-milton-keynes",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-high-wycombe",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-aylesbury",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-amersham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-marlow",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-buckingham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-chesham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-beaconsfield",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-princes-risborough",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-gerrards-cross",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/county/westSussex",
+      "status": "404",
+      "error": "File not found"
+    },
+    {
+      "url": "/roofers-in-crawley",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-worthing",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-horsham",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-chichester",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-bognor-regis",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-littlehampton",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-east-grinstead",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-haywards-heath",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-burgess-hill",
+      "status": "OK",
+      "brokenLinks": null
+    },
+    {
+      "url": "/roofers-in-shoreham-by-sea",
+      "status": "OK",
+      "brokenLinks": null
+    }
+  ]
+}

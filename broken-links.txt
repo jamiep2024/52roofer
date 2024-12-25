@@ -1,0 +1,1342 @@
+Getting links from: https://52roofer.com/
+├───OK─── https://52roofer.com/services
+├───OK─── https://52roofer.com/blog
+├───OK─── https://52roofer.com/resources/roofing-faq
+├───OK─── https://52roofer.com/locations
+├───OK─── https://52roofer.com/about
+├───OK─── https://52roofer.com/contact
+├───OK─── https://52roofer.com/find-roofer
+├───OK─── https://52roofer.com/county/oxfordshire
+├───OK─── https://52roofer.com/county/gloucestershire
+├───OK─── https://52roofer.com/county/wiltshire
+├───OK─── https://52roofer.com/county/berkshire
+├───OK─── https://52roofer.com/county/hampshire
+├───OK─── https://52roofer.com/county/surrey
+├───OK─── https://52roofer.com/county/buckinghamshire
+├───OK─── https://52roofer.com/county/west-sussex
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+└───OK─── https://www.grandeurheritageroofing.com/
+Finished! 63 links found. 39 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/services
+├───OK─── https://52roofer.com/services/commercial-roofing
+├─BROKEN─ https://52roofer.com/services/emergency-roof-repairs (HTTP_404)
+├───OK─── https://52roofer.com/services/residential-roofing
+├───OK─── https://52roofer.com/services/roof-maintenance
+├───OK─── https://52roofer.com/services/roof-inspection
+├─BROKEN─ https://52roofer.com/services/gutter-services (HTTP_404)
+├───OK─── https://52roofer.com/services/roof-ventilation
+├───OK─── https://52roofer.com/services/skylight-installation
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 67 links found. 51 excluded. 10 broken.
+
+Getting links from: https://52roofer.com/blog
+├───OK─── https://52roofer.com/blog/complete-guide-to-roof-maintenance
+├───OK─── https://52roofer.com/blog/signs-you-need-roof-replacement
+├───OK─── https://52roofer.com/blog/choosing-right-roofing-material
+├───OK─── https://52roofer.com/blog/professional-roof-inspection-guide
+├───OK─── https://52roofer.com/blog/new-roof-cost-guide
+├───OK─── https://52roofer.com/blog/ultimate-roof-ventilation-guide
+├───OK─── https://52roofer.com/blog/uk-weather-roofing-problems
+├───OK─── https://52roofer.com/blog/energy-efficient-roofing
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 67 links found. 51 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/resources/roofing-faq
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/locations
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/newbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/windsor (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/maidenhead (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/bracknell (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/banbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/salisbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chippenham (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/cheltenham (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/southampton (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/portsmouth (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/woking (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/crawley (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/worthing (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 78 links found. 52 excluded. 26 broken.
+
+Getting links from: https://52roofer.com/about
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/contact
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 58 links found. 50 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/find-roofer
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/county/oxfordshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 59 links found. 51 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/county/gloucestershire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 59 links found. 51 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/county/wiltshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 59 links found. 51 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/county/berkshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 59 links found. 51 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/county/hampshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 59 links found. 51 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/county/surrey
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 59 links found. 51 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/county/buckinghamshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 59 links found. 51 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/county/west-sussex
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 53 links found. 45 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/services/commercial-roofing
+├───OK─── https://52roofer.com/roofers-in-reading
+├───OK─── https://52roofer.com/roofers-in-newbury
+├───OK─── https://52roofer.com/roofers-in-windsor
+├───OK─── https://52roofer.com/roofers-in-maidenhead
+├───OK─── https://52roofer.com/roofers-in-bracknell
+├───OK─── https://52roofer.com/roofers-in-slough
+├───OK─── https://52roofer.com/roofers-in-wokingham
+├───OK─── https://52roofer.com/roofers-in-thatcham
+├───OK─── https://52roofer.com/roofers-in-hungerford
+├───OK─── https://52roofer.com/roofers-in-ascot
+├───OK─── https://52roofer.com/roofers-in-oxford
+├───OK─── https://52roofer.com/roofers-in-banbury
+├───OK─── https://52roofer.com/roofers-in-bicester
+├───OK─── https://52roofer.com/roofers-in-witney
+├───OK─── https://52roofer.com/roofers-in-didcot
+├───OK─── https://52roofer.com/roofers-in-abingdon
+├───OK─── https://52roofer.com/roofers-in-thame
+├───OK─── https://52roofer.com/roofers-in-henley-on-thames
+├───OK─── https://52roofer.com/roofers-in-wallingford
+├───OK─── https://52roofer.com/roofers-in-chipping-norton
+├───OK─── https://52roofer.com/roofers-in-swindon
+├───OK─── https://52roofer.com/roofers-in-salisbury-wiltshire
+├───OK─── https://52roofer.com/roofers-in-chippenham-wiltshire
+├───OK─── https://52roofer.com/roofers-in-trowbridge-wiltshire
+├───OK─── https://52roofer.com/roofers-in-marlborough-wiltshire
+├───OK─── https://52roofer.com/roofers-in-devizes-wiltshire
+├───OK─── https://52roofer.com/roofers-in-warminster-wiltshire
+├───OK─── https://52roofer.com/roofers-in-melksham-wiltshire
+├───OK─── https://52roofer.com/roofers-in-calne-wiltshire
+├───OK─── https://52roofer.com/roofers-in-corsham
+├───OK─── https://52roofer.com/roofers-in-gloucester
+├───OK─── https://52roofer.com/roofers-in-cheltenham
+├───OK─── https://52roofer.com/roofers-in-stroud
+├───OK─── https://52roofer.com/roofers-in-cirencester
+├───OK─── https://52roofer.com/roofers-in-tewkesbury
+├───OK─── https://52roofer.com/roofers-in-dursley
+├───OK─── https://52roofer.com/roofers-in-tetbury
+├───OK─── https://52roofer.com/roofers-in-stow-on-the-wold
+├───OK─── https://52roofer.com/roofers-in-moreton-in-marsh
+├───OK─── https://52roofer.com/roofers-in-fairford
+├───OK─── https://52roofer.com/roofers-in-southampton
+├───OK─── https://52roofer.com/roofers-in-portsmouth
+├───OK─── https://52roofer.com/roofers-in-winchester
+├───OK─── https://52roofer.com/roofers-in-basingstoke
+├───OK─── https://52roofer.com/roofers-in-andover
+├───OK─── https://52roofer.com/roofers-in-aldershot
+├───OK─── https://52roofer.com/roofers-in-farnborough
+├───OK─── https://52roofer.com/roofers-in-eastleigh
+├───OK─── https://52roofer.com/roofers-in-fareham
+├───OK─── https://52roofer.com/roofers-in-gosport
+├───OK─── https://52roofer.com/roofers-in-guildford
+├───OK─── https://52roofer.com/roofers-in-woking
+├───OK─── https://52roofer.com/roofers-in-farnham
+├───OK─── https://52roofer.com/roofers-in-epsom
+├───OK─── https://52roofer.com/roofers-in-redhill
+├───OK─── https://52roofer.com/roofers-in-reigate
+├───OK─── https://52roofer.com/roofers-in-staines
+├───OK─── https://52roofer.com/roofers-in-dorking
+├───OK─── https://52roofer.com/roofers-in-camberley
+├───OK─── https://52roofer.com/roofers-in-leatherhead
+├───OK─── https://52roofer.com/roofers-in-milton-keynes
+├───OK─── https://52roofer.com/roofers-in-high-wycombe
+├───OK─── https://52roofer.com/roofers-in-aylesbury
+├───OK─── https://52roofer.com/roofers-in-amersham
+├───OK─── https://52roofer.com/roofers-in-marlow
+├───OK─── https://52roofer.com/roofers-in-buckingham
+├───OK─── https://52roofer.com/roofers-in-chesham
+├───OK─── https://52roofer.com/roofers-in-beaconsfield
+├───OK─── https://52roofer.com/roofers-in-princes-risborough
+├───OK─── https://52roofer.com/roofers-in-gerrards-cross
+├───OK─── https://52roofer.com/roofers-in-crawley
+├───OK─── https://52roofer.com/roofers-in-worthing
+├───OK─── https://52roofer.com/roofers-in-horsham
+├───OK─── https://52roofer.com/roofers-in-chichester
+├───OK─── https://52roofer.com/roofers-in-bognor-regis
+├───OK─── https://52roofer.com/roofers-in-littlehampton
+├───OK─── https://52roofer.com/roofers-in-east-grinstead
+├───OK─── https://52roofer.com/roofers-in-haywards-heath
+├───OK─── https://52roofer.com/roofers-in-burgess-hill
+├───OK─── https://52roofer.com/roofers-in-shoreham-by-sea
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 133 links found. 45 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/services/residential-roofing
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 133 links found. 125 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/services/roof-maintenance
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 133 links found. 125 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/services/roof-inspection
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 133 links found. 125 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/services/roof-ventilation
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 133 links found. 125 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/services/skylight-installation
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 133 links found. 125 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/blog/complete-guide-to-roof-maintenance
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/blog/signs-you-need-roof-replacement
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/blog/choosing-right-roofing-material
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/blog/professional-roof-inspection-guide
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/blog/new-roof-cost-guide
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/blog/ultimate-roof-ventilation-guide
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/blog/uk-weather-roofing-problems
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/blog/energy-efficient-roofing
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 52 links found. 44 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-reading
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-newbury
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-windsor
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-maidenhead
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-bracknell
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-slough
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-wokingham
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-thatcham
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-hungerford
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-ascot
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-oxford
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-banbury
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-bicester
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-witney
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-didcot
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-abingdon
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-thame
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-henley-on-thames
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-wallingford
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-chipping-norton
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-swindon
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-salisbury-wiltshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-chippenham-wiltshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-trowbridge-wiltshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-marlborough-wiltshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-devizes-wiltshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-warminster-wiltshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-melksham-wiltshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-calne-wiltshire
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-corsham
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-gloucester
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-cheltenham
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-stroud
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-cirencester
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-tewkesbury
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-dursley
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-tetbury
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-stow-on-the-wold
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-moreton-in-marsh
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-fairford
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-southampton
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-portsmouth
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-winchester
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-basingstoke
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-andover
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-aldershot
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-farnborough
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-eastleigh
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-fareham
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-gosport
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-guildford
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-woking
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-farnham
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-epsom
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-redhill
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-reigate
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-staines
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-dorking
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-camberley
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-leatherhead
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-milton-keynes
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-high-wycombe
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-aylesbury
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-amersham
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-marlow
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-buckingham
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-chesham
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-beaconsfield
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-princes-risborough
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-gerrards-cross
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-crawley
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-worthing
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-horsham
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-chichester
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-bognor-regis
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-littlehampton
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-east-grinstead
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-haywards-heath
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-burgess-hill
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Getting links from: https://52roofer.com/roofers-in-shoreham-by-sea
+├─BROKEN─ https://52roofer.com/location/oxford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/gloucester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/swindon (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/reading (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/guildford (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/aylesbury (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/chichester (HTTP_308)
+├─BROKEN─ https://52roofer.com/location/winchester (HTTP_308)
+Finished! 54 links found. 46 excluded. 8 broken.
+
+Finished! 6489 links found. 5479 excluded. 900 broken.
+Elapsed time: 1 minute, 20 seconds

@@ -1,0 +1,182 @@
+{
+  "total": 28,
+  "ok": 28,
+  "errors": 0,
+  "details": {
+    "blog.xml.tsx": [
+      {
+        "url": "/blog/choosing-right-roofing-material",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/blog/choosing-right-roofing-material.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/blog/complete-guide-to-roof-maintenance",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/blog/complete-guide-to-roof-maintenance.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/blog/uk-weather-roofing-problems",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/blog/uk-weather-roofing-problems.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/blog/energy-efficient-roofing",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/blog/energy-efficient-roofing.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/blog/ultimate-roof-ventilation-guide",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/blog/ultimate-roof-ventilation-guide.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/blog/new-roof-cost-guide",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/blog/new-roof-cost-guide.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/blog/professional-roof-inspection-guide",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/blog/professional-roof-inspection-guide.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/blog/signs-you-need-roof-replacement",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/blog/signs-you-need-roof-replacement.tsx",
+        "brokenLinks": null
+      }
+    ],
+    "services.xml.tsx": [
+      {
+        "url": "/services/roof-installation",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roof-installation.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/roof-replacement",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roof-replacement.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/roof-maintenance",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roof-maintenance.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/roof-repair",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roof-repair.js",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/emergency-roof-repairs-new",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/emergency-roof-repairs-new.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/skylight-installation",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/skylight-installation.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/roof-ventilation",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roof-ventilation.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/roof-inspection",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roof-inspection.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/commercial-roofing",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/commercial-roofing.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/residential-roofing",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/residential-roofing.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/advanced-roofing",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/advanced-roofing.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/apex-roofing",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/apex-roofing.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/roofing-firms-near-me",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roofing-firms-near-me.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/roofing-construction",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roofing-construction.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/roofing-contractors",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roofing-contractors.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/roofing-companies-near-me",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roofing-companies-near-me.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/emergency-roofing",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/emergency-roofing.js",
+        "brokenLinks": null
+      },
+      {
+        "url": "/services/roofers-near-me",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/services/roofers-near-me.tsx",
+        "brokenLinks": null
+      }
+    ],
+    "resources.xml.tsx": [
+      {
+        "url": "/resources/index",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/resources/index.tsx",
+        "brokenLinks": null
+      },
+      {
+        "url": "/resources/roofing-faq",
+        "status": "OK",
+        "file": "/Users/admin/52roofer/52roofer/pages/resources/roofing-faq.tsx",
+        "brokenLinks": null
+      }
+    ],
+    "locations.xml.tsx": []
+  }
+}

@@ -1,0 +1,18 @@
+[build]
+  command = "npm install && npm run build"
+  publish = ".next"
+  node_version = "20.x"
+
+[build.environment]
+  NEXT_PUBLIC_SITE_URL = "https://52roofer.com"
+  NODE_VERSION = "20"
+  NPM_VERSION = "9"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "text/xml"
+    Cache-Control = "public, max-age=0, must-revalidate"
