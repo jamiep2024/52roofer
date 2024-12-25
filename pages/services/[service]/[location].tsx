@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import { serviceAreas } from '../../../data/serviceAreas';
 import LeadForm from '../../../components/forms/LeadForm';
@@ -64,13 +65,29 @@ const oxfordNeighborhoods = [
   'rose-hill',
   'iffley',
   'summertown'
-].map(n => `${n}-oxford`);
+];
+
+// Wiltshire special towns
+const wiltshireSpecialTowns = [
+  'warminster',
+  'marlborough',
+  'chippenham',
+  'devizes',
+  'melksham',
+  'trowbridge',
+  'bradford-on-avon',
+  'westbury',
+  'calne',
+  'salisbury'
+];
 
 interface ServicePageProps {
   service: string;
   location: string;
   county: string;
   serviceInfo: ServiceInfo;
+  nearbyLocations: string[];
+  countyKey: string;
 }
 
 interface Params extends ParsedUrlQuery {
@@ -78,10 +95,18 @@ interface Params extends ParsedUrlQuery {
   location: string;
 }
 
-export default function ServicePage({ service, location, county, serviceInfo }: ServicePageProps) {
-  // Format location name for display (e.g., "blackbird-leys-oxford" -> "Blackbird Leys")
+export default function ServicePage({ 
+  service, 
+  location, 
+  county, 
+  serviceInfo,
+  nearbyLocations,
+  countyKey
+}: ServicePageProps) {
+  // Format location name for display
   const displayLocation = location
     .replace('-oxford', '')
+    .replace('-wiltshire', '')
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
@@ -166,6 +191,38 @@ export default function ServicePage({ service, location, county, serviceInfo }: 
             <li>Gutter services</li>
             <li>Chimney repairs</li>
           </ul>
+
+          {/* Nearby Locations */}
+          <h3>Other Areas We Serve in {county}</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 not-prose">
+            {nearbyLocations.map(loc => {
+              const isWiltshireSpecial = countyKey === 'wiltshire' && 
+                wiltshireSpecialTowns.includes(loc.toLowerCase().replace(/ /g, '-'));
+              
+              const locationSlug = loc.toLowerCase().replace(/ /g, '-') + 
+                (isWiltshireSpecial ? '-wiltshire' : '');
+              
+              return (
+                <Link
+                  key={loc}
+                  href={`/services/${service}/${locationSlug}`}
+                  className="text-blue-600 hover:text-blue-800"
+                >
+                  {serviceInfo.title} in {loc}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Link to County Page */}
+          <div className="mt-8 not-prose">
+            <Link
+              href={`/county/${countyKey}`}
+              className="text-blue-600 hover:text-blue-800 text-xl"
+            >
+              View All {county} Locations
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -211,30 +268,45 @@ export default function ServicePage({ service, location, county, serviceInfo }: 
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  // Get all regular town paths
-  const townPaths = Object.keys(services).flatMap(service =>
-    Object.values(serviceAreas).flatMap(area =>
-      area.mainTowns.map(town => ({
+  const paths: { params: { service: string; location: string } }[] = [];
+
+  // Add paths for all services
+  Object.keys(services).forEach(service => {
+    // Generate paths for all counties and their towns
+    Object.entries(serviceAreas).forEach(([countyKey, county]) => {
+      county.mainTowns.forEach(town => {
+        const townSlug = town.toLowerCase().replace(/ /g, '-');
+        
+        // Add regular town path
+        paths.push({
+          params: {
+            service,
+            location: townSlug
+          }
+        });
+
+        // Add Wiltshire special town variants
+        if (countyKey === 'wiltshire' && wiltshireSpecialTowns.includes(townSlug)) {
+          paths.push({
+            params: {
+              service,
+              location: `${townSlug}-wiltshire`
+            }
+          });
+        }
+      });
+    });
+
+    // Add Oxford neighborhood paths
+    oxfordNeighborhoods.forEach(neighborhood => {
+      paths.push({
         params: {
           service,
-          location: town.toLowerCase().replace(/ /g, '-')
+          location: `${neighborhood}-oxford`
         }
-      }))
-    )
-  );
-
-  // Get Oxford neighborhood paths
-  const oxfordPaths = Object.keys(services).flatMap(service =>
-    oxfordNeighborhoods.map(neighborhood => ({
-      params: {
-        service,
-        location: neighborhood
-      }
-    }))
-  );
-
-  // Combine all paths
-  const paths = [...townPaths, ...oxfordPaths];
+      });
+    });
+  });
 
   return {
     paths,
@@ -250,21 +322,46 @@ export const getStaticProps: GetStaticProps<ServicePageProps, Params> = async ({
   const { service, location: locationSlug } = params;
   
   // Check if this is an Oxford neighborhood
-  const isOxfordNeighborhood = oxfordNeighborhoods.includes(locationSlug);
+  const isOxfordNeighborhood = oxfordNeighborhoods.some(n => 
+    locationSlug === `${n}-oxford`
+  );
+  
+  // Check if this is a Wiltshire special town
+  const isWiltshireSpecial = wiltshireSpecialTowns.some(t => 
+    locationSlug === `${t}-wiltshire`
+  );
   
   if (isOxfordNeighborhood) {
-    const displayLocation = locationSlug
-      .replace('-oxford', '')
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+    // Get other Oxford neighborhoods as nearby locations
+    const nearbyLocations = oxfordNeighborhoods
+      .filter(n => `${n}-oxford` !== locationSlug)
+      .map(n => n.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '));
 
     return {
       props: {
         service,
         location: locationSlug,
         county: 'Oxfordshire',
-        serviceInfo: services[service]
+        serviceInfo: services[service],
+        nearbyLocations,
+        countyKey: 'oxfordshire'
+      }
+    };
+  }
+
+  if (isWiltshireSpecial) {
+    // Get other Wiltshire towns as nearby locations
+    const nearbyLocations = serviceAreas.wiltshire.mainTowns
+      .filter(town => town.toLowerCase().replace(/ /g, '-') !== locationSlug.replace('-wiltshire', ''));
+
+    return {
+      props: {
+        service,
+        location: locationSlug,
+        county: 'Wiltshire',
+        serviceInfo: services[service],
+        nearbyLocations,
+        countyKey: 'wiltshire'
       }
     };
   }
@@ -272,12 +369,17 @@ export const getStaticProps: GetStaticProps<ServicePageProps, Params> = async ({
   // Handle regular towns
   let foundLocation = '';
   let foundCounty = '';
+  let foundCountyKey = '';
+  let nearbyLocations: string[] = [];
   
-  Object.entries(serviceAreas).forEach(([_, area]) => {
+  Object.entries(serviceAreas).forEach(([countyKey, area]) => {
     area.mainTowns.forEach(town => {
       if (town.toLowerCase().replace(/ /g, '-') === locationSlug) {
         foundLocation = town;
         foundCounty = area.name;
+        foundCountyKey = countyKey;
+        // Get other towns in the same county as nearby locations
+        nearbyLocations = area.mainTowns.filter(t => t !== town);
       }
     });
   });
@@ -291,7 +393,9 @@ export const getStaticProps: GetStaticProps<ServicePageProps, Params> = async ({
       service,
       location: locationSlug,
       county: foundCounty,
-      serviceInfo: services[service]
+      serviceInfo: services[service],
+      nearbyLocations,
+      countyKey: foundCountyKey
     }
   };
 };
