@@ -28,7 +28,8 @@ const generalServices = [
   'voice-roof-repairs',
   'voice-roof-installation',
   'voice-roofing-services',
-  'emergency-roof-repairs-new'
+  'emergency-roof-repairs-new',
+  'roofers-near-me'
 ];
 
 // All services combined for general service pages
@@ -89,21 +90,21 @@ function getAllLocationPages(): string[] {
     county.mainTowns.forEach(town => {
       const townSlug = town.toLowerCase().replace(/ /g, '-');
       
-      // Add regular town page
+      // Add all variants for each town
       locationPages.push(`roofers-in-${townSlug}`);
+      locationPages.push(`location/${townSlug}`);
+      locationPages.push(`locations/${townSlug}`);
       
       // Add special case for Wiltshire towns
       if (countyKey === 'wiltshire' && wiltshireSpecialTowns.includes(townSlug)) {
         locationPages.push(`roofers-in-${townSlug}-wiltshire`);
+        locationPages.push(`location/${townSlug}-wiltshire`);
+        locationPages.push(`locations/${townSlug}-wiltshire`);
       }
-
-      // Add location page variants
-      locationPages.push(`location/${townSlug}`);
-      locationPages.push(`locations/${townSlug}`);
     });
   });
 
-  // Add Oxford neighborhoods
+  // Add Oxford neighborhoods with all variants
   oxfordNeighborhoods.forEach(neighborhood => {
     locationPages.push(`roofers-in-${neighborhood}-oxford`);
     locationPages.push(`location/${neighborhood}-oxford`);
@@ -125,13 +126,6 @@ function generateServiceLocationUrls(): string[] {
       locationSpecificServices.forEach(service => {
         urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${locationSlug}`);
       });
-
-      // Special case for Wiltshire towns
-      if (wiltshireSpecialTowns.includes(locationSlug)) {
-        locationSpecificServices.forEach(service => {
-          urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${locationSlug}-wiltshire`);
-        });
-      }
     });
   });
 
@@ -142,10 +136,17 @@ function generateServiceLocationUrls(): string[] {
     });
   });
 
-  // Add service index pages
-  allServices.forEach(service => {
-    urls.push(`${EXTERNAL_DATA_URL}/services/${service}`);
-  });
+  // Generate URLs for Wiltshire special towns
+  Object.values(serviceAreas)
+    .find(area => area.name === 'Wiltshire')
+    ?.mainTowns
+    .filter(town => wiltshireSpecialTowns.includes(town.toLowerCase().replace(/ /g, '-')))
+    .forEach(town => {
+      const townSlug = town.toLowerCase().replace(/ /g, '-');
+      locationSpecificServices.forEach(service => {
+        urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${townSlug}-wiltshire`);
+      });
+    });
 
   return urls;
 }
@@ -208,6 +209,14 @@ function generateSiteMap(locationPages: string[]) {
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
      </url>
+     ${allServices.map(service => `
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/services/${service}</loc>
+       <lastmod>${currentDate}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     `).join('')}
 
      <!-- Service Location Pages -->
      ${serviceLocationUrls.map(url => `
