@@ -62,6 +62,25 @@ const wiltshireSpecialTowns = [
   'salisbury'
 ];
 
+// Blog posts
+const blogPosts = [
+  'choosing-right-roofing-material',
+  'complete-guide-to-roof-maintenance',
+  'energy-efficient-roofing',
+  'new-roof-cost-guide',
+  'professional-roof-inspection-guide',
+  'signs-you-need-roof-replacement',
+  'slate-roofs-complete-guide',
+  'uk-weather-roofing-problems',
+  'ultimate-roof-ventilation-guide'
+];
+
+// Resource pages
+const resourcePages = [
+  'roofing-faq',
+  'guides/slate-roofs'
+];
+
 function getAllLocationPages(): string[] {
   const locationPages: string[] = [];
 
@@ -77,6 +96,9 @@ function getAllLocationPages(): string[] {
       if (countyKey === 'wiltshire' && wiltshireSpecialTowns.includes(townSlug)) {
         locationPages.push(`roofers-in-${townSlug}-wiltshire`);
       }
+
+      // Add location page variant
+      locationPages.push(`locations/${townSlug}`);
     });
   });
 
@@ -95,9 +117,18 @@ function generateServiceLocationUrls(): string[] {
   Object.values(serviceAreas).forEach(area => {
     area.mainTowns.forEach(town => {
       const locationSlug = town.toLowerCase().replace(/ /g, '-');
+      
+      // Regular service-location combinations
       locationSpecificServices.forEach(service => {
         urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${locationSlug}`);
       });
+
+      // Special case for Wiltshire towns
+      if (wiltshireSpecialTowns.includes(locationSlug)) {
+        locationSpecificServices.forEach(service => {
+          urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${locationSlug}-wiltshire`);
+        });
+      }
     });
   });
 
@@ -153,60 +184,14 @@ function generateSiteMap(locationPages: string[]) {
        <changefreq>weekly</changefreq>
        <priority>0.8</priority>
      </url>
+     ${blogPosts.map(post => `
      <url>
-       <loc>${EXTERNAL_DATA_URL}/blog/choosing-right-roofing-material</loc>
+       <loc>${EXTERNAL_DATA_URL}/blog/${post}</loc>
        <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog/complete-guide-to-roof-maintenance</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog/energy-efficient-roofing</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog/new-roof-cost-guide</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog/professional-roof-inspection-guide</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog/signs-you-need-roof-replacement</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog/slate-roofs-complete-guide</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog/uk-weather-roofing-problems</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog/ultimate-roof-ventilation-guide</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
+     `).join('')}
 
      <!-- Service Pages -->
      <url>
@@ -241,18 +226,14 @@ function generateSiteMap(locationPages: string[]) {
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
+     ${resourcePages.map(page => `
      <url>
-       <loc>${EXTERNAL_DATA_URL}/resources/roofing-faq</loc>
+       <loc>${EXTERNAL_DATA_URL}/resources/${page}</loc>
        <lastmod>${currentDate}</lastmod>
        <changefreq>monthly</changefreq>
        <priority>0.7</priority>
      </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/resources/guides/slate-roofs</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
+     `).join('')}
 
      <!-- County Pages -->
      ${Object.entries(serviceAreas).map(([key, county]) => `
@@ -263,21 +244,6 @@ function generateSiteMap(locationPages: string[]) {
        <priority>0.8</priority>
      </url>
      `).join('')}
-
-     <!-- Major Cities -->
-     ${Object.entries(serviceAreas).map(([key, county]) => {
-       const majorCities = county.mainTowns.filter(town => 
-         ['Oxford', 'Reading', 'Southampton', 'Portsmouth', 'Milton Keynes', 'Swindon', 'Gloucester'].includes(town)
-       );
-       return majorCities.map(city => `
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/locations/${city.toLowerCase().replace(/ /g, '-')}</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-       `).join('');
-     }).join('')}
 
      <!-- Location Pages -->
      ${locationPages
