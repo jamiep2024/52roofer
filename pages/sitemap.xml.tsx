@@ -97,7 +97,8 @@ function getAllLocationPages(): string[] {
         locationPages.push(`roofers-in-${townSlug}-wiltshire`);
       }
 
-      // Add location page variant
+      // Add location page variants
+      locationPages.push(`location/${townSlug}`);
       locationPages.push(`locations/${townSlug}`);
     });
   });
@@ -105,6 +106,8 @@ function getAllLocationPages(): string[] {
   // Add Oxford neighborhoods
   oxfordNeighborhoods.forEach(neighborhood => {
     locationPages.push(`roofers-in-${neighborhood}-oxford`);
+    locationPages.push(`location/${neighborhood}-oxford`);
+    locationPages.push(`locations/${neighborhood}-oxford`);
   });
 
   return locationPages;
@@ -137,6 +140,11 @@ function generateServiceLocationUrls(): string[] {
     locationSpecificServices.forEach(service => {
       urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${neighborhood}-oxford`);
     });
+  });
+
+  // Add service index pages
+  allServices.forEach(service => {
+    urls.push(`${EXTERNAL_DATA_URL}/services/${service}`);
   });
 
   return urls;
@@ -200,14 +208,6 @@ function generateSiteMap(locationPages: string[]) {
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
      </url>
-     ${allServices.map(service => `
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/${service}</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     `).join('')}
 
      <!-- Service Location Pages -->
      ${serviceLocationUrls.map(url => `
