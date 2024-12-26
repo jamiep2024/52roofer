@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import LeadForm from './forms/LeadForm';
 import { serviceAreas } from '../data/serviceAreas';
+import AdvancedSEO from './seo/AdvancedSEO';
+import LocalBusinessSchema from './seo/LocalBusinessSchema';
 
 interface CountyLandingPageProps {
   county: string;
@@ -27,8 +29,35 @@ const CountyLandingPage: React.FC<CountyLandingPageProps> = ({
       name: data.name
     }));
 
+  // SEO data
+  const seoTitle = `Professional Roofing Services in ${county} | 52 Roofer`;
+  const seoDescription = `Expert roofing solutions for homeowners and businesses across ${county}. Serving ${mainTowns.slice(0, 5).join(', ')} and surrounding areas. Free quotes available.`;
+
+  // Business schema data
+  const businessSchemaLocation = {
+    name: mainTowns[0], // Using first major town as primary location
+    county: county,
+    postcodes: postcodes,
+  };
+
   return (
     <div className="bg-white">
+      <AdvancedSEO 
+        title={seoTitle}
+        description={seoDescription}
+        location={county}
+      />
+      <LocalBusinessSchema
+        businessName="52 Roofer"
+        location={businessSchemaLocation}
+        url={`https://52roofer.com/county/${currentCountyKey}`}
+        image="https://52roofer.com/images/logo.png"
+        rating={{
+          ratingValue: 4.9,
+          reviewCount: 150
+        }}
+      />
+
       {/* Hero Section */}
       <div className="bg-blue-600">
         <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">

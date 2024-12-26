@@ -4,32 +4,32 @@ import ConversationalRoofingTemplate from '../../components/templates/conversati
 const VoiceRoofRepairs: React.FC = () => {
   const initialFAQs = [
     {
-      question: "Hey Google, I need emergency roof repairs",
-      answer: "We provide 24/7 emergency roof repair services including: 1) Leak repairs within 2-4 hours, 2) Storm damage assessment and fixes, 3) Temporary weatherproofing, 4) Complete damage evaluation, 5) Insurance claim assistance. Our emergency team is always ready to respond quickly to prevent further damage to your property.",
+      question: "Hey Google, I need roof repair",
+      answer: "We offer comprehensive roof repair services including: 1) Emergency leak repairs, 2) Storm damage restoration, 3) Shingle replacement, 4) Structural repairs, 5) Preventive maintenance. Our certified technicians quickly identify and fix issues to protect your property.",
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
       question: "Alexa, how much do roof repairs cost?",
-      answer: "Roof repair costs vary by type: 1) Minor repairs (few tiles): £100-£300, 2) Leak repairs: £200-£600, 3) Chimney repairs: £400-£1000, 4) Storm damage: £500-£2000, 5) Emergency callout: Additional £100-£200. We provide free inspections and detailed quotes before starting any work.",
+      answer: "Repair costs vary by type: 1) Minor repairs: £200-£500, 2) Leak fixes: £400-£1,000, 3) Storm damage: £500-£3,000, 4) Structural repairs: £1,000-£5,000, 5) Partial replacement: £2,000-£4,000. We provide accurate quotes after inspection.",
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
       question: "OK Google, how long do roof repairs take?",
-      answer: "Repair times depend on the issue: 1) Emergency patches: 2-4 hours, 2) Tile replacements: 1-2 hours, 3) Leak repairs: 2-6 hours, 4) Structural repairs: 1-3 days, 5) Chimney repairs: 1-2 days. Weather conditions may affect timing, but we work efficiently to minimize disruption.",
+      answer: "Repair times vary by scope: 1) Emergency repairs: Same day service, 2) Minor fixes: 1-2 days, 3) Major repairs: 2-4 days, 4) Storm damage: 2-5 days, 5) Structural work: 3-7 days. Weather conditions may affect completion times.",
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: "Siri, what roof repairs do you handle?",
-      answer: "We handle all types of repairs: 1) Leak detection and fixing, 2) Tile/slate replacement, 3) Chimney and flashing repairs, 4) Storm damage restoration, 5) Structural repairs, 6) Gutter system repairs, 7) Roof valley repairs, 8) Ridge tile repointing. All repairs are performed by certified professionals.",
+      question: "Siri, what roof repairs can you do?",
+      answer: "We handle all types of repairs: 1) Leak detection and fixing, 2) Shingle replacement/repair, 3) Storm/weather damage restoration, 4) Structural repairs, 5) Chimney/flashing repairs. Our experts are trained in all roofing materials and repair techniques.",
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: "Hey Google, do you guarantee roof repairs?",
-      answer: "Yes, all our repairs come with guarantees: 1) Workmanship warranty: 5-10 years, 2) Materials warranty: 10-25 years, 3) Emergency repair guarantee: 2-5 years, 4) Leak-free guarantee: 2-5 years. We also provide ongoing maintenance support and free inspections during the warranty period.",
+      question: "Hey Google, do you offer emergency roof repairs?",
+      answer: "Yes, we provide 24/7 emergency services: 1) Immediate response team, 2) Temporary leak protection, 3) Storm damage containment, 4) Same-day repairs when possible, 5) Full damage assessment. We prioritize preventing further damage to your property.",
       views: 0,
       lastUpdated: new Date().toISOString()
     }
@@ -40,65 +40,65 @@ const VoiceRoofRepairs: React.FC = () => {
     serviceName: "Roof Repairs",
     serviceType: "voice-roof-repairs",
     priceRange: "££",
-    timeRequired: "PT4H",
+    timeRequired: "P2D",
     heroTitle: "Need Roof Repairs? Just Ask!",
-    heroDescription: "Voice-activated roof repair services - tell your device what's wrong",
+    heroDescription: "Voice-activated roof repair services - tell your device what you need fixed",
     mainContent: {
       introSection: {
         title: "Just Say: 'Fix My Roof!'",
-        description: "Whether you're dealing with leaks, storm damage, or general wear and tear, we're here to help. Simply ask your smart device to find roof repair services, and we'll respond quickly to assess and fix the problem.",
+        description: "From emergency repairs to maintenance fixes, we're here to help. Simply ask your smart device to find professional roof repair services, and we'll quickly resolve your roofing issues.",
         features: [
-          "• 24/7 emergency response",
-          "• Free damage assessment",
+          "• 24/7 emergency service",
+          "• Expert repair teams",
           "• All types of repairs",
-          "• Insurance claim support"
+          "• Quality guarantees"
         ]
       },
       problemSolvingSection: {
-        title: "Common Roof Problems We Fix",
+        title: "Your Repair Solutions",
         problems: [
           {
-            emoji: "💧",
+            emoji: "🚰",
             title: "'I have a roof leak'",
-            description: "Fast leak detection and repair",
+            description: "Emergency leak repairs",
             features: [
-              "Immediate response",
-              "Advanced leak detection",
-              "Permanent solutions",
-              "Preventive measures"
+              "Fast response",
+              "Leak detection",
+              "Water damage prevention",
+              "Complete repair"
             ]
           },
           {
             emoji: "🌪️",
-            title: "'Storm damage repair needed'",
-            description: "Emergency storm damage restoration",
+            title: "'Storm damaged my roof'",
+            description: "Storm damage restoration",
             features: [
-              "24/7 emergency service",
+              "Emergency response",
+              "Damage assessment",
               "Temporary protection",
-              "Complete restoration",
-              "Insurance assistance"
+              "Full repairs"
             ]
           },
           {
-            emoji: "🏺",
-            title: "'Broken tiles or slates'",
-            description: "Professional tile replacement",
+            emoji: "🏠",
+            title: "'Missing roof tiles'",
+            description: "Tile replacement service",
             features: [
-              "Match existing materials",
-              "Quick replacement",
-              "Prevent water damage",
-              "Improve appearance"
+              "Match existing tiles",
+              "Proper installation",
+              "Prevent leaks",
+              "Quick service"
             ]
           },
           {
-            emoji: "🏗️",
-            title: "'Structural roof issues'",
-            description: "Comprehensive structural repairs",
+            emoji: "🔧",
+            title: "'General roof repairs'",
+            description: "Comprehensive repair service",
             features: [
-              "Expert assessment",
-              "Professional repairs",
-              "Long-term solutions",
-              "Safety compliance"
+              "Full inspection",
+              "Expert repairs",
+              "Quality materials",
+              "Long-term solutions"
             ]
           }
         ]
@@ -108,42 +108,42 @@ const VoiceRoofRepairs: React.FC = () => {
         steps: [
           {
             title: "Emergency Response",
-            description: "Quick assessment of damage",
+            description: "Quick action when needed",
             features: [
+              "24/7 availability",
               "Fast arrival",
-              "Safety check",
-              "Damage assessment",
-              "Immediate action plan"
+              "Initial assessment",
+              "Immediate protection"
             ]
           },
           {
             title: "Detailed Inspection",
-            description: "Thorough problem diagnosis",
+            description: "Finding all issues",
             features: [
-              "Visual inspection",
-              "Technical assessment",
+              "Complete check",
               "Problem identification",
-              "Solution planning"
+              "Photo documentation",
+              "Repair planning"
             ]
           },
           {
-            title: "Professional Repair",
-            description: "Expert repair execution",
+            title: "Professional Repairs",
+            description: "Expert repair work",
             features: [
               "Quality materials",
               "Skilled technicians",
               "Proper techniques",
-              "Safety measures"
+              "Thorough repairs"
             ]
           },
           {
-            title: "Quality Check",
-            description: "Ensuring lasting repairs",
+            title: "Final Verification",
+            description: "Ensuring quality",
             features: [
-              "Final inspection",
-              "Weather testing",
-              "Cleanup completion",
-              "Warranty provision"
+              "Repair inspection",
+              "Water testing",
+              "Clean-up completion",
+              "Final report"
             ]
           }
         ]

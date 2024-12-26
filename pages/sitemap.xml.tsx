@@ -1,288 +1,144 @@
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps } from 'next';
 import { serviceAreas } from '../data/serviceAreas';
 
-const EXTERNAL_DATA_URL = 'https://52roofer.com';
+const DOMAIN = 'https://www.52roofer.com';
 
-// Services that should have location-specific pages
-const locationSpecificServices = [
-  'roofing-companies-near-me',
-  'roofing-firms-near-me',
-  'roofing-contractors',
-  'roof-replacement',
-  'apex-roofing',
-  'advanced-roofing',
-  'roofing-construction'
-];
-
-// Services that should NOT have location-specific pages
-const generalServices = [
-  'residential-roofing',
-  'commercial-roofing',
-  'roof-installation',
-  'roof-maintenance',
-  'emergency-roof-repair',
-  'roof-inspection',
-  'gutter-service',
-  'skylight-installation',
-  'roof-ventilation',
-  'voice-roof-repairs',
-  'voice-roof-installation',
-  'voice-roofing-services',
-  'emergency-roof-repairs-new',
-  'roofers-near-me'
-];
-
-// All services combined for general service pages
-const allServices = [...locationSpecificServices, ...generalServices];
-
-// Oxford neighborhoods
-const oxfordNeighborhoods = [
-  'blackbird-leys',
-  'botley',
-  'cowley',
-  'headington',
-  'wolvercote',
-  'jericho',
-  'marston',
-  'rose-hill',
-  'iffley',
-  'summertown'
-];
-
-// Wiltshire special towns
-const wiltshireSpecialTowns = [
-  'warminster',
-  'marlborough',
-  'chippenham',
-  'devizes',
-  'melksham',
-  'trowbridge',
-  'bradford-on-avon',
-  'westbury',
-  'calne',
-  'salisbury'
-];
-
-// Blog posts
-const blogPosts = [
-  'choosing-right-roofing-material',
-  'complete-guide-to-roof-maintenance',
-  'energy-efficient-roofing',
-  'new-roof-cost-guide',
-  'professional-roof-inspection-guide',
-  'signs-you-need-roof-replacement',
-  'slate-roofs-complete-guide',
-  'uk-weather-roofing-problems',
-  'ultimate-roof-ventilation-guide'
-];
-
-// Resource pages
-const resourcePages = [
-  'roofing-faq',
-  'guides/slate-roofs'
-];
-
-function getAllLocationPages(): string[] {
-  const locationPages: string[] = [];
-
-  // Get all location pages from serviceAreas
-  Object.entries(serviceAreas).forEach(([countyKey, county]) => {
-    county.mainTowns.forEach(town => {
-      const townSlug = town.toLowerCase().replace(/ /g, '-');
-      
-      // Add all variants for each town
-      locationPages.push(`roofers-in-${townSlug}`);
-      locationPages.push(`location/${townSlug}`);
-      locationPages.push(`locations/${townSlug}`);
-      
-      // Add special case for Wiltshire towns
-      if (countyKey === 'wiltshire' && wiltshireSpecialTowns.includes(townSlug)) {
-        locationPages.push(`roofers-in-${townSlug}-wiltshire`);
-        locationPages.push(`location/${townSlug}-wiltshire`);
-        locationPages.push(`locations/${townSlug}-wiltshire`);
-      }
-    });
-  });
-
-  // Add Oxford neighborhoods with all variants
-  oxfordNeighborhoods.forEach(neighborhood => {
-    locationPages.push(`roofers-in-${neighborhood}-oxford`);
-    locationPages.push(`location/${neighborhood}-oxford`);
-    locationPages.push(`locations/${neighborhood}-oxford`);
-  });
-
-  return locationPages;
-}
-
-function generateServiceLocationUrls(): string[] {
-  const urls: string[] = [];
-  
-  // Generate URLs for all towns
-  Object.values(serviceAreas).forEach(area => {
-    area.mainTowns.forEach(town => {
-      const locationSlug = town.toLowerCase().replace(/ /g, '-');
-      
-      // Regular service-location combinations
-      locationSpecificServices.forEach(service => {
-        urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${locationSlug}`);
-      });
-    });
-  });
-
-  // Generate URLs for Oxford neighborhoods
-  oxfordNeighborhoods.forEach(neighborhood => {
-    locationSpecificServices.forEach(service => {
-      urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${neighborhood}-oxford`);
-    });
-  });
-
-  // Generate URLs for Wiltshire special towns
-  Object.values(serviceAreas)
-    .find(area => area.name === 'Wiltshire')
-    ?.mainTowns
-    .filter(town => wiltshireSpecialTowns.includes(town.toLowerCase().replace(/ /g, '-')))
-    .forEach(town => {
-      const townSlug = town.toLowerCase().replace(/ /g, '-');
-      locationSpecificServices.forEach(service => {
-        urls.push(`${EXTERNAL_DATA_URL}/services/${service}/${townSlug}-wiltshire`);
-      });
-    });
-
-  return urls;
-}
-
-function generateSiteMap(locationPages: string[]) {
-  const serviceLocationUrls = generateServiceLocationUrls();
-  const currentDate = new Date().toISOString();
-
-  return `<?xml version="1.0" encoding="UTF-8"?>
-   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-           xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-     <!-- Main Pages -->
-     <url>
-       <loc>${EXTERNAL_DATA_URL}</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>1.0</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/about</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/contact</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/find-roofer</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-
-     <!-- Blog Pages -->
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>weekly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     ${blogPosts.map(post => `
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog/${post}</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-     `).join('')}
-
-     <!-- Service Pages -->
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     ${allServices.map(service => `
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/services/${service}</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     `).join('')}
-
-     <!-- Service Location Pages -->
-     ${serviceLocationUrls.map(url => `
-     <url>
-       <loc>${url}</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     `).join('')}
-
-     <!-- Resources Pages -->
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/resources</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-     ${resourcePages.map(page => `
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/resources/${page}</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7</priority>
-     </url>
-     `).join('')}
-
-     <!-- County Pages -->
-     ${Object.entries(serviceAreas).map(([key, county]) => `
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/county/${key}</loc>
-       <lastmod>${currentDate}</lastmod>
-       <changefreq>weekly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     `).join('')}
-
-     <!-- Location Pages -->
-     ${locationPages
-       .map(page => `
-       <url>
-           <loc>${EXTERNAL_DATA_URL}/${page}</loc>
-           <lastmod>${currentDate}</lastmod>
-           <changefreq>weekly</changefreq>
-           <priority>0.9</priority>
-       </url>
-     `)
-       .join('')}
-   </urlset>
- `;
-}
-
-function SiteMap() {
-  // getServerSideProps will do the heavy lifting
-}
+const Sitemap = () => null;
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  // Get all location pages
-  const locationPages = getAllLocationPages();
-  
-  // Generate the XML sitemap with the locations data
-  const sitemap = generateSiteMap(locationPages);
+  // Location pages from our URL check
+  const locationPages = [
+    'abingdon', 'aldershot', 'amersham', 'andover', 'ascot', 'aylesbury',
+    'banbury', 'basingstoke', 'beaconsfield', 'bicester', 'blackbird-leys-oxford',
+    'bognor-regis', 'botley-oxford', 'bracknell', 'bradford-on-avon-wiltshire',
+    'buckingham', 'burgess-hill', 'calne-wiltshire', 'calne', 'camberley',
+    'cheltenham', 'chesham', 'chichester', 'chippenham-wiltshire', 'chippenham',
+    'chipping-norton', 'cirencester', 'corsham', 'cowley-oxford', 'crawley',
+    'devizes-wiltshire', 'devizes', 'didcot', 'dorking', 'dursley',
+    'east-grinstead', 'eastleigh', 'epsom', 'fairford', 'fareham', 'farnborough',
+    'farnham', 'gerrards-cross', 'gloucester', 'gosport', 'guildford',
+    'haywards-heath', 'headington-oxford', 'henley-on-thames', 'high-wycombe',
+    'horsham', 'hungerford', 'iffley-oxford', 'jericho-oxford', 'leatherhead',
+    'littlehampton', 'maidenhead', 'marlborough-wiltshire', 'marlborough',
+    'marlow', 'marston-oxford', 'melksham-wiltshire', 'melksham', 'milton-keynes',
+    'moreton-in-marsh', 'newbury', 'oxford', 'portsmouth', 'princes-risborough',
+    'reading', 'redhill', 'reigate', 'rose-hill-oxford', 'salisbury-wiltshire',
+    'salisbury', 'shoreham-by-sea', 'slough', 'southampton', 'staines',
+    'stow-on-the-wold', 'stroud', 'summertown-oxford', 'swindon', 'tetbury',
+    'tewkesbury', 'thame', 'thatcham', 'trowbridge-wiltshire', 'trowbridge',
+    'wallingford', 'warminster-wiltshire', 'warminster', 'westbury-wiltshire',
+    'winchester', 'windsor', 'witney', 'woking', 'wokingham', 'wolvercote-oxford',
+    'worthing'
+  ];
+
+  const pages = [
+    // Core pages
+    '',
+    '/about',
+    '/contact',
+    '/find-roofer',
+    '/locations',
+    '/services',
+    
+    // Blog posts
+    '/blog',
+    '/blog/choosing-right-roofing-material',
+    '/blog/complete-guide-to-roof-maintenance',
+    '/blog/energy-efficient-roofing',
+    '/blog/new-roof-cost-guide',
+    '/blog/professional-roof-inspection-guide',
+    '/blog/signs-you-need-roof-replacement',
+    '/blog/slate-roofs-complete-guide',
+    '/blog/uk-weather-roofing-problems',
+    '/blog/ultimate-roof-ventilation-guide',
+
+    // Resources
+    '/resources',
+    '/resources/guides/slate-roofs',
+    '/resources/roofing-faq',
+
+    // Standard Services
+    '/services/commercial-roofing',
+    '/services/emergency-roof-repair',
+    '/services/gutter-service',
+    '/services/residential-roofing',
+    '/services/roof-inspection',
+    '/services/roof-installation',
+    '/services/roof-maintenance',
+    '/services/roof-ventilation',
+    '/services/skylight-installation',
+
+    // Voice-Optimized Services
+    '/services/voice-commercial-roofing',
+    '/services/voice-gutter-service',
+    '/services/voice-residential-roofing',
+    '/services/voice-roof-inspection',
+    '/services/voice-roof-installation',
+    '/services/voice-roof-maintenance',
+    '/services/voice-roof-repairs',
+    '/services/voice-roof-ventilation',
+    '/services/voice-roofing-services',
+    '/services/voice-skylight-installation',
+
+    // Counties
+    '/county/berkshire',
+    '/county/buckinghamshire',
+    '/county/gloucestershire',
+    '/county/hampshire',
+    '/county/oxfordshire',
+    '/county/surrey',
+    '/county/west-sussex',
+    '/county/wiltshire',
+  ];
+
+  // Add all location pages
+  locationPages.forEach(location => {
+    pages.push(`/roofers-in-${location}`);
+  });
+
+  // Add dynamic service+location pages
+  const services = [
+    'commercial-roofing',
+    'residential-roofing',
+    'roof-installation',
+    'roof-maintenance',
+    'roof-inspection',
+    'skylight-installation',
+    'roof-ventilation',
+    'gutter-service'
+  ];
+
+  locationPages.forEach(location => {
+    services.forEach(service => {
+      pages.push(`/services/${service}/${location}`);
+    });
+  });
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      ${pages.map(page => `
+        <url>
+          <loc>${DOMAIN}${page}</loc>
+          <lastmod>${new Date().toISOString()}</lastmod>
+          <changefreq>${
+            page.includes('blog') ? 'monthly' : 
+            page.startsWith('/services/') ? 'weekly' :
+            'weekly'
+          }</changefreq>
+          <priority>${
+            page === '' ? '1.0' : 
+            page.startsWith('/services/voice-') ? '0.9' :
+            page.startsWith('/services/') ? '0.8' :
+            page.startsWith('/blog/') ? '0.7' :
+            page.startsWith('/roofers-in-') ? '0.7' :
+            page.startsWith('/county/') ? '0.6' :
+            '0.5'
+          }</priority>
+        </url>
+      `).join('')}
+    </urlset>`;
 
   res.setHeader('Content-Type', 'text/xml');
-  // No caching - always generate fresh
-  res.setHeader('Cache-Control', 'no-store, must-revalidate');
   res.write(sitemap);
   res.end();
 
@@ -291,4 +147,4 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   };
 };
 
-export default SiteMap;
+export default Sitemap;

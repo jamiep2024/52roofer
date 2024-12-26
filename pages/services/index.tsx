@@ -1,253 +1,215 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
+import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { serviceAreas } from '../../data/serviceAreas';
+import { NextSeo } from 'next-seo';
 
-// Get array of area names for display
-const areaNames = Object.values(serviceAreas).map(area => area.name);
-
-// Get all towns from all counties
-const allTowns = Object.values(serviceAreas).reduce((acc, area) => {
-  return [...acc, ...area.mainTowns.map(town => ({
-    name: town,
-    county: area.name
-  }))];
-}, [] as { name: string; county: string }[]);
-
-const services = [
+// Services that should have location-specific pages
+const locationSpecificServices = [
   {
-    id: 1,
-    title: 'Commercial Roofing',
-    slug: 'commercial-roofing',
-    description: 'Professional roofing solutions for businesses and commercial properties.',
-    icon: '🏢'
-  },
-  {
-    id: 2,
-    title: 'Emergency Roof Repairs',
-    slug: 'emergency-roof-repairs',
-    description: '24/7 emergency roofing services for urgent repairs and storm damage.',
-    icon: '🚨'
-  },
-  {
-    id: 3,
-    title: 'Residential Roofing',
-    slug: 'residential-roofing',
-    description: 'Complete roofing services for homes and residential properties.',
-    icon: '🏠'
-  },
-  {
-    id: 4,
-    title: 'Roof Maintenance',
-    slug: 'roof-maintenance',
-    description: 'Regular maintenance and inspections to extend your roof\'s lifespan.',
-    icon: '🔧'
-  },
-  {
-    id: 5,
-    title: 'Roof Inspection',
-    slug: 'roof-inspection',
-    description: 'Thorough roof inspections to identify and prevent potential issues.',
-    icon: '🔍'
-  },
-  {
-    id: 6,
-    title: 'Gutter Services',
-    slug: 'gutter-services',
-    description: 'Professional gutter installation, repair, and maintenance services.',
-    icon: '🏗️'
-  },
-  {
-    id: 7,
-    title: 'Roof Ventilation',
-    slug: 'roof-ventilation',
-    description: 'Expert ventilation solutions for optimal roof performance.',
-    icon: '💨'
-  },
-  {
-    id: 8,
-    title: 'Skylight Installation',
-    slug: 'skylight-installation',
-    description: 'Professional skylight installation and maintenance services.',
-    icon: '☀️'
-  },
-  // New Services with Location-specific Pages
-  {
-    id: 9,
-    title: 'Local Roofing Companies',
     slug: 'roofing-companies-near-me',
+    title: 'Local Roofing Companies',
     description: 'Connect with trusted local roofing companies in your area.',
-    icon: '📍',
-    hasLocationPages: true
+    icon: '📍'
   },
   {
-    id: 10,
-    title: 'Professional Roofing Firms',
     slug: 'roofing-firms-near-me',
+    title: 'Professional Roofing Firms',
     description: 'Expert roofing firms delivering quality and reliability.',
-    icon: '🏛️',
-    hasLocationPages: true
+    icon: '🏛️'
   },
   {
-    id: 11,
-    title: 'Roofing Contractors',
     slug: 'roofing-contractors',
+    title: 'Roofing Contractors',
     description: 'Licensed and certified roofing contractors for your project.',
-    icon: '👷',
-    hasLocationPages: true
+    icon: '👷'
   },
   {
-    id: 12,
-    title: 'Roof Replacement',
     slug: 'roof-replacement',
+    title: 'Roof Replacement',
     description: 'Complete roof replacement services with quality materials.',
-    icon: '🔄',
-    hasLocationPages: true
+    icon: '🔄'
   },
   {
-    id: 13,
-    title: 'Apex Roofing',
     slug: 'apex-roofing',
+    title: 'Apex Roofing',
     description: 'Specialized solutions for apex and pitched roof designs.',
-    icon: '🏔️',
-    hasLocationPages: true
+    icon: '🏔️'
   },
   {
-    id: 14,
-    title: 'Advanced Roofing',
     slug: 'advanced-roofing',
+    title: 'Advanced Roofing',
     description: 'Cutting-edge roofing technology and innovative solutions.',
-    icon: '🚀',
-    hasLocationPages: true
+    icon: '🚀'
   },
   {
-    id: 15,
-    title: 'Roofing Construction',
     slug: 'roofing-construction',
+    title: 'Roofing Construction',
     description: 'Comprehensive roofing construction and project management.',
-    icon: '🏗️',
-    hasLocationPages: true
+    icon: '🏗️'
   }
 ];
 
-const servicesSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Professional Roofing Services",
-  "provider": {
-    "@type": "Organization",
-    "name": "52roofer.com",
-    "image": "https://www.52roofer.com/images/logo.png"
+// General services without location pages
+const generalServices = [
+  {
+    slug: 'residential-roofing',
+    title: 'Residential Roofing',
+    description: 'Complete roofing solutions for homes and residential properties.',
+    icon: '🏠'
   },
-  "areaServed": Object.values(serviceAreas).map(area => ({
-    "@type": "State",
-    "name": area.name
-  })),
-  "description": "Comprehensive roofing services including commercial, residential, emergency repairs, and maintenance."
-};
+  {
+    slug: 'commercial-roofing',
+    title: 'Commercial Roofing',
+    description: 'Professional roofing services for businesses and commercial buildings.',
+    icon: '🏢'
+  },
+  {
+    slug: 'roof-installation',
+    title: 'Roof Installation',
+    description: 'Expert installation of new roofs with quality materials.',
+    icon: '🔨'
+  },
+  {
+    slug: 'roof-maintenance',
+    title: 'Roof Maintenance',
+    description: 'Regular maintenance to keep your roof in optimal condition.',
+    icon: '🔧'
+  },
+  {
+    slug: 'emergency-roof-repair',
+    title: 'Emergency Roof Repair',
+    description: '24/7 emergency roofing services for urgent repairs.',
+    icon: '🚨'
+  },
+  {
+    slug: 'roof-inspection',
+    title: 'Roof Inspection',
+    description: 'Thorough roof inspections and condition assessments.',
+    icon: '🔍'
+  },
+  {
+    slug: 'gutter-service',
+    title: 'Gutter Services',
+    description: 'Installation, repair, and maintenance of guttering systems.',
+    icon: '🌧️'
+  },
+  {
+    slug: 'skylight-installation',
+    title: 'Skylight Installation',
+    description: 'Professional skylight installation and maintenance.',
+    icon: '☀️'
+  },
+  {
+    slug: 'roof-ventilation',
+    title: 'Roof Ventilation',
+    description: 'Expert roof ventilation solutions for optimal airflow.',
+    icon: '💨'
+  }
+];
 
-const ServicesIndex = () => {
-  const [selectedLocations, setSelectedLocations] = useState<{ [key: string]: string }>({});
-
-  const handleLocationChange = (serviceId: number, location: string) => {
-    setSelectedLocations(prev => ({
-      ...prev,
-      [serviceId]: location
-    }));
-  };
-
+export default function ServicesPage() {
   return (
     <>
-      <Head>
-        <title>Professional Roofing Services | 52roofer.com</title>
-        <meta 
-          name="description" 
-          content={`Expert roofing services across ${areaNames.join(', ')}. Commercial, residential, emergency repairs, and maintenance services from trusted local roofers.`} 
-        />
-        <link rel="canonical" href="https://www.52roofer.com/services" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
-        />
-      </Head>
+      <NextSeo
+        title="Professional Roofing Services | 52 Roofer"
+        description="Comprehensive roofing services including residential, commercial, repairs, and maintenance. Expert solutions tailored to your needs."
+        canonical="https://52roofer.com/services"
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Our Roofing Services
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Professional roofing services across {areaNames.join(', ')}. Quality workmanship guaranteed.
-          </p>
+      <div className="bg-white">
+        {/* Hero Section */}
+        <div className="bg-blue-600">
+          <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+              Our Roofing Services
+            </h1>
+            <p className="mt-6 text-xl text-gray-100 max-w-3xl">
+              Professional roofing solutions for all your needs. From repairs to complete installations,
+              we deliver quality workmanship and reliable service.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div 
-              key={service.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-            >
-              <div className="p-6">
-                <div className="text-3xl mb-4">{service.icon}</div>
-                <h2 className="text-2xl font-semibold text-gray-900 mb-3">
-                  {service.title}
-                </h2>
-                <p className="text-gray-600 mb-4">
-                  {service.description}
-                </p>
-                {service.hasLocationPages ? (
-                  <div>
-                    <select
-                      className="w-full p-2 border border-gray-300 rounded-md mb-4"
-                      value={selectedLocations[service.id] || ''}
-                      onChange={(e) => handleLocationChange(service.id, e.target.value)}
-                    >
-                      <option value="">Select your location</option>
-                      {allTowns.map((town, index) => (
-                        <option key={index} value={town.name.toLowerCase().replace(/ /g, '-')}>
-                          {town.name}, {town.county}
-                        </option>
-                      ))}
-                    </select>
-                    <Link
-                      href={selectedLocations[service.id] 
-                        ? `/services/${service.slug}/${selectedLocations[service.id]}`
-                        : '#'}
-                      className={`block w-full text-center px-4 py-2 rounded-md ${
-                        selectedLocations[service.id]
-                          ? 'bg-accent text-white hover:bg-accent/90'
-                          : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      }`}
-                    >
-                      {selectedLocations[service.id]
-                        ? 'View Service'
-                        : 'Select a location'}
-                    </Link>
-                  </div>
-                ) : (
-                  <Link 
-                    href={`/services/${service.slug}`}
-                    className="block w-full text-center px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90"
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          {/* General Services */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">General Roofing Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {generalServices.map((service) => (
+                <Link
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  className="block p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
+                >
+                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {service.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Location-Specific Services */}
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Local Roofing Services</h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Find specialized roofing services in your area. Select a service to view locations near you.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {locationSpecificServices.map((service) => (
+                <div
+                  key={service.slug}
+                  className="block p-6 bg-white rounded-lg border border-gray-200"
+                >
+                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {service.description}
+                  </p>
+                  <Link
+                    href="/locations"
+                    className="text-blue-600 hover:text-blue-800 font-medium"
                   >
-                    View Service
+                    Find in your area →
                   </Link>
-                )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="bg-gray-50">
+          <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              <span className="block">Need expert roofing help?</span>
+              <span className="block text-blue-600">Get in touch for a free quote.</span>
+            </h2>
+            <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+              <div className="inline-flex rounded-md shadow">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                >
+                  Contact Us
+                </Link>
               </div>
             </div>
-          ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Link
-            href="/find-roofer"
-            className="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-accent hover:bg-accent/90 transition-all"
-          >
-            Find a Roofer Near You
-          </Link>
+          </div>
         </div>
       </div>
     </>
   );
-};
+}
 
-export default ServicesIndex;
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {}
+  };
+};

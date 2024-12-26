@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 
 const SITE_URL = 'https://52roofer.com';
-const LOCAL_SITEMAP_URL = 'http://localhost:3002/sitemap.xml'; // Updated port to 3002
+const LOCAL_SITEMAP_URL = 'http://localhost:3003/sitemap.xml'; // Updated port to 3003
 const BATCH_SIZE = 50; // Check URLs in batches to avoid overwhelming the server
 const DELAY_BETWEEN_BATCHES = 2000; // 2 seconds delay between batches
 

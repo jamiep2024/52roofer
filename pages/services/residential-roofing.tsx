@@ -1,188 +1,120 @@
 import React from 'react';
 import Head from 'next/head';
-import { serviceAreas } from '../../data/serviceAreas';
 import ServiceLayout from '../../components/ServiceLayout';
 
-const areaNames = Object.values(serviceAreas).map(area => area.name);
-
-const ResidentialRoofing = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Residential Roofing Services",
-    "provider": {
-      "@type": "Organization",
-      "name": "52roofer.com"
-    },
-    "areaServed": Object.values(serviceAreas).map(area => ({
-      "@type": "State",
-      "name": area.name
-    })),
-    "description": "Complete residential roofing services including installations, repairs, and replacements across the UK."
-  };
-
-  const services = [
-    {
-      title: "New Roof Installation",
-      description: "Complete installation of new roofs with quality materials",
-      icon: "🏠"
-    },
-    {
-      title: "Roof Repairs",
-      description: "Fix leaks, damaged tiles, and structural issues",
-      icon: "🔧"
-    },
-    {
-      title: "Roof Replacement",
-      description: "Full roof replacement when repairs aren't enough",
-      icon: "🔄"
-    },
-    {
-      title: "Tile & Slate Roofing",
-      description: "Expert installation of tile and slate roofs",
-      icon: "🏺"
-    }
-  ];
-
-  const benefits = [
-    {
-      title: "Quality Materials",
-      description: "Premium roofing materials from trusted suppliers",
-      icon: "🏆"
-    },
-    {
-      title: "Expert Installation",
-      description: "Skilled roofers with years of experience",
-      icon: "👨‍🔧"
-    },
-    {
-      title: "Long-term Warranty",
-      description: "Comprehensive warranties on all our work",
-      icon: "✅"
-    }
-  ];
+const ResidentialRoofing: React.FC = () => {
+  const serviceName = "Residential Roofing";
+  const serviceDescription = "Expert residential roofing services including installations, repairs, and maintenance for homeowners.";
 
   return (
-    <ServiceLayout
-      heroImage="/images/services/residential-hero.jpg"
-      heroTitle="Residential Roofing Services"
-      heroDescription="Protect your home with expert roofing solutions"
-      serviceName="Residential Roofing"
-    >
+    <>
       <Head>
-        <title>Residential Roofing Services | 52roofer.com</title>
-        <meta 
-          name="description" 
-          content={`Expert residential roofing services across ${areaNames.join(', ')}. Quality workmanship guaranteed for all home roofing needs.`}
-        />
-        <link rel="canonical" href="https://www.52roofer.com/services/residential-roofing" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
+        <title>{`${serviceName} Services | Professional Residential Roofers`}</title>
+        <meta name="description" content={serviceDescription} />
+        <meta name="keywords" content="residential roofing, home roofing, house roof, roof installation, roof repair, roofing services" />
       </Head>
 
-      <div className="space-y-12">
-        {/* Introduction */}
-        <div>
-          <p className="lead text-xl text-gray-600">
-            Expert residential roofing solutions across {areaNames.join(', ')}. 
-            We provide comprehensive roofing services to protect your home and family.
+      <ServiceLayout
+        heroTitle="Professional Residential Roofing Services"
+        heroDescription="Expert roofing solutions for your home, delivered with quality and care"
+        serviceName={serviceName}
+      >
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Comprehensive Residential Roofing Solutions
+          </h2>
+          <p className="mb-4">
+            Our residential roofing services are designed to provide homeowners with complete peace of mind. 
+            Whether you need a new roof installation, repairs, or maintenance, our expert team delivers 
+            quality workmanship and exceptional service.
           </p>
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+          <div className="grid md:grid-cols-2 gap-6 mt-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">New Roof Installation</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Professional installation by certified roofers</li>
+                <li>Wide range of high-quality materials</li>
+                <li>Energy-efficient roofing options</li>
+                <li>Long-term warranties available</li>
+              </ul>
             </div>
-          ))}
-        </div>
-
-        {/* Benefits Section */}
-        <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Us?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <div className="text-xl font-semibold mb-2">{benefit.title}</div>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Process Section */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Installation Process</h2>
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">1</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Initial Consultation</h3>
-                <p className="text-gray-600">We discuss your needs and arrange a site visit</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">2</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Detailed Inspection</h3>
-                <p className="text-gray-600">Thorough assessment of your roof's condition</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">3</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Custom Solution</h3>
-                <p className="text-gray-600">Tailored roofing solution with detailed quote</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">4</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Expert Installation</h3>
-                <p className="text-gray-600">Professional installation with minimal disruption</p>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Roof Repairs & Maintenance</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Emergency repair services</li>
+                <li>Leak detection and repair</li>
+                <li>Storm damage restoration</li>
+                <li>Preventive maintenance programs</li>
+              </ul>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Additional Features */}
-        <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Additional Services</h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <li className="flex items-center">
-              <span className="text-accent mr-2">✓</span>
-              <span>Chimney Repairs and Maintenance</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-accent mr-2">✓</span>
-              <span>Roof Window Installation</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-accent mr-2">✓</span>
-              <span>Guttering and Drainage</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-accent mr-2">✓</span>
-              <span>Roof Insulation</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-accent mr-2">✓</span>
-              <span>Lead Work</span>
-            </li>
-            <li className="flex items-center">
-              <span className="text-accent mr-2">✓</span>
-              <span>Emergency Repairs</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </ServiceLayout>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Why Choose Our Residential Roofing Services?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Expert Craftsmanship</h3>
+              <p>Our certified roofers bring years of experience and expertise to every project.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Quality Materials</h3>
+              <p>We use only premium roofing materials from trusted manufacturers.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Comprehensive Warranties</h3>
+              <p>Our work is backed by industry-leading warranties for your peace of mind.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Our Residential Roofing Process
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">1. Initial Consultation</h3>
+              <p>We begin with a thorough assessment of your roofing needs and provide a detailed quote.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">2. Planning & Materials</h3>
+              <p>We help you select the right materials and create a comprehensive project plan.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">3. Professional Installation</h3>
+              <p>Our expert team executes the project with precision and attention to detail.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">4. Final Inspection</h3>
+              <p>We conduct a thorough inspection to ensure everything meets our high standards.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Residential Roofing FAQs
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">How long does a residential roof installation take?</h3>
+              <p>Most residential roof installations take 2-4 days, depending on the size and complexity of your roof.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">What types of roofing materials do you offer?</h3>
+              <p>We offer a wide range of materials including asphalt shingles, slate, metal roofing, and more.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Do you offer emergency repair services?</h3>
+              <p>Yes, we provide 24/7 emergency repair services for urgent roofing issues.</p>
+            </div>
+          </div>
+        </section>
+      </ServiceLayout>
+    </>
   );
 };
 

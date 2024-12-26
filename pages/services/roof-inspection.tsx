@@ -1,191 +1,146 @@
 import React from 'react';
 import Head from 'next/head';
-import { serviceAreas } from '../../data/serviceAreas';
 import ServiceLayout from '../../components/ServiceLayout';
 
-const areaNames = Object.values(serviceAreas).map(area => area.name);
-
-const RoofInspection = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Roof Inspection Services",
-    "provider": {
-      "@type": "Organization",
-      "name": "52roofer.com"
-    },
-    "areaServed": Object.values(serviceAreas).map(area => ({
-      "@type": "State",
-      "name": area.name
-    })),
-    "description": "Professional roof inspection services for residential and commercial properties."
-  };
-
-  const services = [
-    {
-      title: "Visual Inspection",
-      description: "Comprehensive exterior and interior checks",
-      icon: "👁️"
-    },
-    {
-      title: "Drone Inspection",
-      description: "Advanced aerial roof assessment",
-      icon: "🚁"
-    },
-    {
-      title: "Moisture Detection",
-      description: "Advanced leak and moisture scanning",
-      icon: "💧"
-    },
-    {
-      title: "Detailed Reports",
-      description: "Complete documentation with photos",
-      icon: "📋"
-    }
-  ];
-
-  const benefits = [
-    {
-      title: "Early Detection",
-      description: "Identify issues before they become major problems",
-      icon: "🔍"
-    },
-    {
-      title: "Cost Savings",
-      description: "Prevent expensive repairs with timely maintenance",
-      icon: "💰"
-    },
-    {
-      title: "Peace of Mind",
-      description: "Know your roof's exact condition",
-      icon: "✨"
-    }
-  ];
+const RoofInspection: React.FC = () => {
+  const serviceName = "Roof Inspection";
+  const serviceDescription = "Professional roof inspection services providing detailed assessments and reports to identify potential issues and maintain your roof's integrity.";
 
   return (
-    <ServiceLayout
-      heroImage="/images/services/roof-inspection-hero.jpg"
-      heroTitle="Professional Roof Inspection Services"
-      heroDescription="Comprehensive roof assessments for your peace of mind"
-    >
+    <>
       <Head>
-        <title>Roof Inspection Services | 52roofer.com</title>
-        <meta 
-          name="description" 
-          content={`Professional roof inspection services across ${areaNames.join(', ')}. Detailed assessments and reports for your property.`}
-        />
-        <link rel="canonical" href="https://www.52roofer.com/services/roof-inspection" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
+        <title>{`${serviceName} Services | Expert Roof Inspections`}</title>
+        <meta name="description" content={serviceDescription} />
+        <meta name="keywords" content="roof inspection, roof assessment, roof survey, roof check, professional roof inspector, roof condition report" />
       </Head>
 
-      <div className="space-y-12">
-        {/* Introduction */}
-        <div>
-          <p className="lead text-xl text-gray-600">
-            Expert roof inspection services across {areaNames.join(', ')}. 
-            We use advanced technology and proven methods to assess your roof's condition thoroughly.
+      <ServiceLayout
+        heroTitle="Professional Roof Inspection Services"
+        heroDescription="Comprehensive roof assessments by certified inspectors"
+        serviceName={serviceName}
+      >
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Expert Roof Inspection Services
+          </h2>
+          <p className="mb-4">
+            Our professional roof inspection services provide thorough assessments of your roof's condition, 
+            identifying potential issues before they become major problems. Our certified inspectors use advanced 
+            techniques and equipment to ensure nothing is overlooked.
           </p>
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+          <div className="grid md:grid-cols-2 gap-6 mt-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Residential Inspections</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Complete roof system evaluation</li>
+                <li>Leak detection services</li>
+                <li>Storm damage assessment</li>
+                <li>Pre-purchase inspections</li>
+              </ul>
             </div>
-          ))}
-        </div>
-
-        {/* Benefits Section */}
-        <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Benefits of Regular Inspections</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <div className="text-xl font-semibold mb-2">{benefit.title}</div>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Process Section */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Inspection Process</h2>
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">1</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Exterior Assessment</h3>
-                <p className="text-gray-600">Thorough examination of all roof components</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">2</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Interior Check</h3>
-                <p className="text-gray-600">Inspection of attic and interior signs of damage</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">3</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Documentation</h3>
-                <p className="text-gray-600">Detailed photos and notes of findings</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">4</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Report Delivery</h3>
-                <p className="text-gray-600">Comprehensive report with recommendations</p>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Commercial Inspections</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Detailed structural analysis</li>
+                <li>Compliance verification</li>
+                <li>Maintenance planning</li>
+                <li>Insurance documentation</li>
+              </ul>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Features Section */}
-        <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">What We Check</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Shingles & Materials</h3>
-                <p className="text-gray-600">Condition of roofing materials and wear patterns</p>
-              </div>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            What We Inspect
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Structural Elements</h3>
+              <p>Assessment of rafters, trusses, and decking integrity.</p>
             </div>
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Drainage Systems</h3>
-                <p className="text-gray-600">Gutters, downspouts, and drainage efficiency</p>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Surface Materials</h3>
+              <p>Evaluation of shingles, tiles, or other roofing materials.</p>
             </div>
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Structural Integrity</h3>
-                <p className="text-gray-600">Support systems and overall structure</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Ventilation</h3>
-                <p className="text-gray-600">Proper airflow and ventilation systems</p>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Drainage Systems</h3>
+              <p>Inspection of gutters, downspouts, and drainage patterns.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </ServiceLayout>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Our Inspection Process
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">1. External Assessment</h3>
+              <p>Visual inspection of all exterior roofing components and materials.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">2. Internal Inspection</h3>
+              <p>Examination of attic space, internal structures, and ventilation systems.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">3. Documentation</h3>
+              <p>Detailed photography and documentation of findings.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">4. Report Generation</h3>
+              <p>Comprehensive report with findings and recommendations.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Types of Inspections
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Routine Inspections</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Annual maintenance checks</li>
+                <li>Seasonal assessments</li>
+                <li>Preventive evaluations</li>
+                <li>General condition reports</li>
+              </ul>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Specialized Inspections</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Insurance claims assessment</li>
+                <li>Storm damage evaluation</li>
+                <li>Pre-sale inspections</li>
+                <li>Warranty compliance checks</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Inspection FAQs
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">How often should I have my roof inspected?</h3>
+              <p>We recommend professional inspections at least once a year, or after severe weather events.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">What's included in the inspection report?</h3>
+              <p>Our reports include detailed findings, photos, condition assessments, and recommended actions.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">How long does an inspection take?</h3>
+              <p>Most residential inspections take 1-2 hours, while commercial properties may require longer.</p>
+            </div>
+          </div>
+        </section>
+      </ServiceLayout>
+    </>
   );
 };
 

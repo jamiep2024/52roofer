@@ -5,100 +5,100 @@ const VoiceRoofingServices: React.FC = () => {
   const initialFAQs = [
     {
       question: "Hey Google, what roofing services do you offer?",
-      answer: "We provide comprehensive roofing services including: 1) Emergency repairs for leaks and storm damage, 2) Complete roof installations and replacements, 3) Routine maintenance and inspections, 4) Gutter services and weatherproofing, 5) Energy-efficient upgrades and insulation. Each service is delivered by certified professionals with extensive local experience.",
+      answer: "We provide comprehensive roofing services including: 1) New roof installations, 2) Roof repairs and maintenance, 3) Emergency services, 4) Roof inspections, 5) Specialty roofing solutions. Our certified teams handle all aspects of residential and commercial roofing.",
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: "Alexa, how much do roofing services cost?",
-      answer: "Roofing costs vary based on service type: 1) Inspections: £100-£250, 2) Minor repairs: £150-£500, 3) Major repairs: £500-£2000, 4) Full replacements: £5,000-£15,000. Factors affecting cost include roof size, material choice, and complexity. We provide detailed quotes and can work with insurance claims when applicable.",
+      question: "Alexa, find a reliable roofer near me",
+      answer: "Our trusted roofing services include: 1) Free consultations, 2) Licensed and insured teams, 3) Quality material options, 4) Comprehensive warranties, 5) Emergency response available. We serve your local area with professional roofing solutions.",
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: "OK Google, how long do roofing services take?",
-      answer: "Service times vary by project: 1) Emergency repairs: 1-4 hours, 2) Standard repairs: 1-2 days, 3) Full roof replacement: 2-5 days, 4) Inspections: 1-2 hours. Weather conditions and project complexity can affect timelines. We'll provide a detailed schedule during consultation and keep you updated throughout the process.",
+      question: "OK Google, do you do commercial roofing?",
+      answer: "Yes, we offer full commercial roofing services: 1) Flat roof systems, 2) Industrial roofing, 3) Commercial maintenance, 4) Large-scale installations, 5) Business-specific solutions. Our teams are equipped for projects of any size.",
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: "Siri, what roofing materials do you recommend?",
-      answer: "We recommend materials based on your specific needs: 1) Slate: Most durable, 100+ year lifespan, premium look, 2) Clay tiles: 60+ years, traditional style, excellent insulation, 3) Concrete tiles: 50+ years, cost-effective, versatile, 4) Modern composites: Energy efficient, environmentally friendly. We'll help you choose based on your budget, style preferences, and local climate.",
+      question: "Siri, what makes your roofing service different?",
+      answer: "We stand out through: 1) Certified expertise in all roofing types, 2) 24/7 emergency availability, 3) Comprehensive service range, 4) Premium material options, 5) Industry-leading warranties. Our focus is on quality and customer satisfaction.",
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: "Hey Google, do you offer warranties on roofing work?",
-      answer: "Yes, we provide comprehensive warranties: 1) Workmanship warranty: 10-25 years covering installation quality, 2) Materials warranty: 20-50 years from manufacturers, 3) Emergency repair warranty: 2-5 years, 4) Maintenance guarantee: 1-2 years on routine work. All warranties are fully documented and transferable if you sell your property.",
+      question: "Hey Google, how do I schedule roofing service?",
+      answer: "Booking is easy: 1) Voice command for initial contact, 2) Free consultation scheduling, 3) Flexible appointment times, 4) Emergency same-day service available, 5) Online booking options. We'll respond quickly to arrange your service.",
       views: 0,
       lastUpdated: new Date().toISOString()
     }
   ];
 
   const pageConfig = {
-    title: "Professional Roofing Services",
+    title: "Voice-Activated Roofing Services",
     serviceName: "Roofing Services",
     serviceType: "voice-roofing-services",
-    priceRange: "££-£££",
-    timeRequired: "P1D",
-    heroTitle: "Need Roofing Services? Just Ask!",
-    heroDescription: "Voice-activated roofing services - tell your device what you need",
+    priceRange: "£££",
+    timeRequired: "P3D",
+    heroTitle: "All Your Roofing Needs - Just Ask!",
+    heroDescription: "Complete roofing services activated by voice - tell your device what you need",
     mainContent: {
       introSection: {
         title: "Just Say: 'I Need a Roofer!'",
-        description: "Whether you need repairs, maintenance, or a complete new roof, we're here to help. Simply ask your smart device to find professional roofing services, and we'll take care of everything from initial consultation to final inspection.",
+        description: "Access our full range of roofing services through your smart device. From repairs to installations, maintenance to emergencies, we're here to help with all your roofing needs.",
         features: [
-          "• Instant connection to expert roofers",
-          "• Free consultation and quotes",
-          "• All roofing services covered",
-          "• Professional advice and guidance"
+          "• Comprehensive services",
+          "• Expert roofing teams",
+          "• Emergency response",
+          "• Quality guaranteed"
         ]
       },
       problemSolvingSection: {
-        title: "How Can We Help You?",
+        title: "Your Roofing Solutions",
         problems: [
           {
             emoji: "🏠",
-            title: "'I need a roof inspection'",
-            description: "Comprehensive roof assessments with detailed reports",
+            title: "'Need residential roofing'",
+            description: "Complete home roofing services",
             features: [
-              "Full condition report",
-              "Maintenance recommendations",
-              "Photo documentation",
-              "Cost estimates"
+              "New installations",
+              "Repairs & maintenance",
+              "Emergency service",
+              "Inspections"
+            ]
+          },
+          {
+            emoji: "🏢",
+            title: "'Commercial roofing needed'",
+            description: "Business roofing solutions",
+            features: [
+              "Commercial systems",
+              "Industrial roofing",
+              "Maintenance plans",
+              "Emergency repairs"
             ]
           },
           {
             emoji: "🔧",
-            title: "'My roof needs repairs'",
-            description: "Expert repairs for all types of roof damage",
+            title: "'Emergency roof service'",
+            description: "24/7 emergency response",
             features: [
-              "Emergency repairs",
-              "Leak fixing",
-              "Tile replacement",
-              "Storm damage repair"
+              "Fast response",
+              "Damage control",
+              "Immediate repairs",
+              "Storm damage"
             ]
           },
           {
-            emoji: "🏗️",
-            title: "'I want a new roof'",
-            description: "Complete roof replacement and installation",
+            emoji: "📋",
+            title: "'Schedule roof inspection'",
+            description: "Professional roof assessments",
             features: [
-              "Multiple material options",
-              "Energy-efficient solutions",
-              "Professional installation",
-              "Long-term warranties"
-            ]
-          },
-          {
-            emoji: "🌧️",
-            title: "'Need better weatherproofing'",
-            description: "Enhanced protection against weather",
-            features: [
-              "Weather-resistant materials",
-              "Improved insulation",
-              "Ventilation solutions",
-              "Preventive treatments"
+              "Detailed inspection",
+              "Written reports",
+              "Maintenance plans",
+              "Issue prevention"
             ]
           }
         ]
@@ -107,43 +107,43 @@ const VoiceRoofingServices: React.FC = () => {
         title: "Our Service Process",
         steps: [
           {
-            title: "Initial Consultation",
-            description: "Free assessment of your roofing needs",
+            title: "Initial Contact",
+            description: "Easy service access",
             features: [
-              "Detailed inspection",
-              "Professional recommendations",
-              "Clear cost estimates",
-              "Timeline planning"
+              "Voice activation",
+              "Quick response",
+              "Service scheduling",
+              "Need assessment"
             ]
           },
           {
-            title: "Custom Solution",
-            description: "Tailored service plan for your specific needs",
+            title: "Professional Assessment",
+            description: "Expert evaluation",
             features: [
-              "Material selection",
-              "Technical specifications",
-              "Budget optimization",
-              "Schedule coordination"
+              "Site inspection",
+              "Service planning",
+              "Cost estimation",
+              "Solution proposal"
             ]
           },
           {
-            title: "Professional Execution",
-            description: "Expert service delivery by qualified roofers",
+            title: "Quality Service",
+            description: "Expert execution",
             features: [
-              "Safety compliance",
+              "Skilled teams",
               "Quality materials",
-              "Skilled workmanship",
-              "Site cleanliness"
+              "Safety focus",
+              "Efficient work"
             ]
           },
           {
-            title: "Quality Assurance",
-            description: "Final inspection and satisfaction guarantee",
+            title: "Complete Satisfaction",
+            description: "Ensuring quality results",
             features: [
-              "Thorough inspection",
-              "Warranty provision",
-              "Maintenance advice",
-              "Follow-up support"
+              "Final inspection",
+              "Quality check",
+              "Cleanup completion",
+              "Service warranty"
             ]
           }
         ]

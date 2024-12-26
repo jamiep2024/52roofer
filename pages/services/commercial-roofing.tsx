@@ -1,191 +1,120 @@
 import React from 'react';
 import Head from 'next/head';
-import { serviceAreas } from '../../data/serviceAreas';
 import ServiceLayout from '../../components/ServiceLayout';
 
-const areaNames = Object.values(serviceAreas).map(area => area.name);
-
-const CommercialRoofing = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Commercial Roofing Services",
-    "provider": {
-      "@type": "Organization",
-      "name": "52roofer.com"
-    },
-    "areaServed": Object.values(serviceAreas).map(area => ({
-      "@type": "State",
-      "name": area.name
-    })),
-    "description": "Professional commercial roofing services including installation, repair, and maintenance for businesses."
-  };
-
-  const services = [
-    {
-      title: "Flat Roof Systems",
-      description: "EPDM, TPO, and modified bitumen roofing",
-      icon: "🏢"
-    },
-    {
-      title: "Metal Roofing",
-      description: "Durable metal roofing solutions",
-      icon: "🔧"
-    },
-    {
-      title: "Green Roofing",
-      description: "Sustainable roofing options",
-      icon: "🌱"
-    },
-    {
-      title: "Preventive Maintenance",
-      description: "Regular inspections and maintenance",
-      icon: "🔍"
-    }
-  ];
-
-  const benefits = [
-    {
-      title: "Energy Efficiency",
-      description: "Reduce cooling costs with reflective roofing",
-      icon: "⚡"
-    },
-    {
-      title: "Durability",
-      description: "Long-lasting commercial grade materials",
-      icon: "💪"
-    },
-    {
-      title: "Minimal Disruption",
-      description: "Efficient installation process",
-      icon: "🏃"
-    }
-  ];
+const CommercialRoofing: React.FC = () => {
+  const serviceName = "Commercial Roofing";
+  const serviceDescription = "Professional commercial roofing solutions for businesses, including installations, repairs, and maintenance services.";
 
   return (
-    <ServiceLayout
-      heroImage="/images/services/commercial-roofing-hero.jpg"
-      heroTitle="Commercial Roofing Services"
-      heroDescription="Expert roofing solutions for your business"
-    >
+    <>
       <Head>
-        <title>Commercial Roofing Services | 52roofer.com</title>
-        <meta 
-          name="description" 
-          content={`Professional commercial roofing services across ${areaNames.join(', ')}. Expert installation and maintenance for businesses.`}
-        />
-        <link rel="canonical" href="https://www.52roofer.com/services/commercial-roofing" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
+        <title>{`${serviceName} Services | Expert Commercial Roofers`}</title>
+        <meta name="description" content={serviceDescription} />
+        <meta name="keywords" content="commercial roofing, business roofing, industrial roofing, commercial roof repair, flat roofing, commercial roof installation" />
       </Head>
 
-      <div className="space-y-12">
-        {/* Introduction */}
-        <div>
-          <p className="lead text-xl text-gray-600">
-            Comprehensive commercial roofing solutions across {areaNames.join(', ')}. 
-            We specialize in flat roofs, metal roofing, and sustainable options for businesses of all sizes.
+      <ServiceLayout
+        heroTitle="Professional Commercial Roofing Services"
+        heroDescription="Expert roofing solutions for your business, delivered with minimal disruption"
+        serviceName={serviceName}
+      >
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Complete Commercial Roofing Solutions
+          </h2>
+          <p className="mb-4">
+            Our commercial roofing services are tailored to meet the unique needs of businesses and industrial properties. 
+            We understand that minimizing disruption to your operations is crucial, which is why we offer flexible scheduling 
+            and efficient project management.
           </p>
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+          <div className="grid md:grid-cols-2 gap-6 mt-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Commercial Roof Installation</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>New construction roofing</li>
+                <li>Roof replacement services</li>
+                <li>Energy-efficient systems</li>
+                <li>Custom roofing solutions</li>
+              </ul>
             </div>
-          ))}
-        </div>
-
-        {/* Benefits Section */}
-        <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <div className="text-xl font-semibold mb-2">{benefit.title}</div>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Process Section */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Process</h2>
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">1</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Initial Assessment</h3>
-                <p className="text-gray-600">Thorough inspection of your commercial property</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">2</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Custom Solution</h3>
-                <p className="text-gray-600">Tailored roofing plan for your business needs</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">3</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Professional Installation</h3>
-                <p className="text-gray-600">Expert installation with minimal business disruption</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">4</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Ongoing Support</h3>
-                <p className="text-gray-600">Regular maintenance and warranty coverage</p>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Commercial Maintenance</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Preventive maintenance programs</li>
+                <li>Regular inspections</li>
+                <li>Emergency repair services</li>
+                <li>Leak detection and repair</li>
+              </ul>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Features Section */}
-        <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Licensed & Insured</h3>
-                <p className="text-gray-600">Fully certified commercial roofing experts</p>
-              </div>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Commercial Roofing Systems
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Built-Up Roofing</h3>
+              <p>Traditional multi-layer system ideal for flat or low-slope roofs.</p>
             </div>
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Quality Materials</h3>
-                <p className="text-gray-600">Premium commercial-grade roofing materials</p>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Modified Bitumen</h3>
+              <p>Durable system with excellent waterproofing properties.</p>
             </div>
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">24/7 Support</h3>
-                <p className="text-gray-600">Emergency response for urgent issues</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="text-accent text-xl">✓</span>
-              <div>
-                <h3 className="font-semibold mb-1">Warranty</h3>
-                <p className="text-gray-600">Comprehensive warranty coverage</p>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Single-Ply Membranes</h3>
+              <p>Modern, energy-efficient EPDM and TPO roofing systems.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </ServiceLayout>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Our Commercial Process
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">1. Site Assessment</h3>
+              <p>Comprehensive evaluation of your commercial property's roofing needs.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">2. Custom Solution Design</h3>
+              <p>Development of tailored roofing solutions that meet your specific requirements.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">3. Professional Installation</h3>
+              <p>Expert installation with minimal disruption to your business operations.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">4. Quality Assurance</h3>
+              <p>Rigorous quality control and final inspection process.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Commercial Roofing FAQs
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">How long does a commercial roof installation take?</h3>
+              <p>Installation time varies based on the size and complexity of the project, typically ranging from 1-3 weeks.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Do you offer warranties?</h3>
+              <p>Yes, we provide comprehensive warranties on both materials and workmanship for commercial projects.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Can you work around our business hours?</h3>
+              <p>Yes, we offer flexible scheduling options to minimize disruption to your business operations.</p>
+            </div>
+          </div>
+        </section>
+      </ServiceLayout>
+    </>
   );
 };
 

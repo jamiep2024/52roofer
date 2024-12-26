@@ -1,175 +1,146 @@
 import React from 'react';
 import Head from 'next/head';
-import { serviceAreas } from '../../data/serviceAreas';
 import ServiceLayout from '../../components/ServiceLayout';
 
-const areaNames = Object.values(serviceAreas).map(area => area.name);
-
-const RoofVentilation = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Roof Ventilation Services",
-    "provider": {
-      "@type": "Organization",
-      "name": "52roofer.com"
-    },
-    "areaServed": Object.values(serviceAreas).map(area => ({
-      "@type": "State",
-      "name": area.name
-    })),
-    "description": "Professional roof ventilation solutions for optimal air flow and temperature control."
-  };
-
-  const services = [
-    {
-      title: "Ridge Vents",
-      description: "Installation of continuous ridge ventilation systems",
-      icon: "🏠"
-    },
-    {
-      title: "Soffit Vents",
-      description: "Under-eave ventilation for proper airflow",
-      icon: "💨"
-    },
-    {
-      title: "Roof Fans",
-      description: "Powered ventilation solutions for enhanced airflow",
-      icon: "🌪️"
-    },
-    {
-      title: "Gable Vents",
-      description: "Side wall ventilation for attic spaces",
-      icon: "🔲"
-    }
-  ];
-
-  const benefits = [
-    {
-      title: "Energy Savings",
-      description: "Reduce cooling costs with proper ventilation",
-      icon: "💰"
-    },
-    {
-      title: "Moisture Control",
-      description: "Prevent mold and structural damage",
-      icon: "💧"
-    },
-    {
-      title: "Extended Roof Life",
-      description: "Protect your roof from premature aging",
-      icon: "⏳"
-    }
-  ];
+const RoofVentilation: React.FC = () => {
+  const serviceName = "Roof Ventilation";
+  const serviceDescription = "Professional roof ventilation services to improve your home's energy efficiency and protect your roof from moisture damage.";
 
   return (
-    <ServiceLayout
-      heroImage="/images/services/ventilation-hero.jpg"
-      heroTitle="Roof Ventilation Services"
-      heroDescription="Optimize your roof's performance with proper ventilation"
-    >
+    <>
       <Head>
-        <title>Roof Ventilation Services | 52roofer.com</title>
-        <meta 
-          name="description" 
-          content={`Expert roof ventilation services across ${areaNames.join(', ')}. Improve energy efficiency and protect your property.`}
-        />
-        <link rel="canonical" href="https://www.52roofer.com/services/roof-ventilation" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
+        <title>{`${serviceName} Services | Expert Roof Ventilation`}</title>
+        <meta name="description" content={serviceDescription} />
+        <meta name="keywords" content="roof ventilation, attic ventilation, roof vents, ventilation installation, air flow, moisture control" />
       </Head>
 
-      <div className="space-y-12">
-        {/* Introduction */}
-        <div>
-          <p className="lead text-xl text-gray-600">
-            Professional roof ventilation solutions across {areaNames.join(', ')}. 
-            We help maintain optimal temperature and airflow in your property while reducing energy costs.
+      <ServiceLayout
+        heroTitle="Professional Roof Ventilation Services"
+        heroDescription="Optimize your roof's performance with expert ventilation solutions"
+        serviceName={serviceName}
+      >
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Expert Roof Ventilation Solutions
+          </h2>
+          <p className="mb-4">
+            Proper roof ventilation is crucial for maintaining your home's energy efficiency and protecting 
+            your roof from moisture damage. Our professional ventilation services ensure optimal airflow 
+            and temperature control throughout your roof space.
           </p>
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+          <div className="grid md:grid-cols-2 gap-6 mt-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Ventilation Installation</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Ridge vent installation</li>
+                <li>Soffit vent fitting</li>
+                <li>Gable vent installation</li>
+                <li>Power ventilator setup</li>
+              </ul>
             </div>
-          ))}
-        </div>
-
-        {/* Benefits Section */}
-        <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Benefits of Proper Ventilation</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <div className="text-xl font-semibold mb-2">{benefit.title}</div>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Process Section */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Installation Process</h2>
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">1</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Ventilation Assessment</h3>
-                <p className="text-gray-600">Evaluate current ventilation and identify needs</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">2</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Custom Design</h3>
-                <p className="text-gray-600">Design optimal ventilation solution for your property</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">3</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Professional Installation</h3>
-                <p className="text-gray-600">Expert installation of ventilation components</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center">4</div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Performance Testing</h3>
-                <p className="text-gray-600">Verify proper airflow and system functionality</p>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">System Improvements</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Ventilation assessment</li>
+                <li>Airflow optimization</li>
+                <li>System upgrades</li>
+                <li>Efficiency improvements</li>
+              </ul>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* FAQ Section */}
-        <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Common Questions</h2>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Types of Ventilation
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Ridge Vents</h3>
+              <p>Continuous ventilation along the roof's peak for optimal airflow.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Soffit Vents</h3>
+              <p>Under-eave ventilation for proper air intake and circulation.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Power Ventilators</h3>
+              <p>Mechanical ventilation for enhanced air movement when needed.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Our Ventilation Process
+          </h2>
           <div className="space-y-6">
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Why is roof ventilation important?</h3>
-              <p className="text-gray-600">Proper roof ventilation helps regulate temperature, prevent moisture buildup, and extend your roof's lifespan while reducing energy costs.</p>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">1. Ventilation Assessment</h3>
+              <p>Comprehensive evaluation of current ventilation and airflow patterns.</p>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">How do I know if I need better ventilation?</h3>
-              <p className="text-gray-600">Signs include high energy bills, ice dams in winter, hot attic spaces in summer, and moisture or mold in your attic.</p>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">2. System Design</h3>
+              <p>Custom ventilation solution design based on your specific needs.</p>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">What types of ventilation do you offer?</h3>
-              <p className="text-gray-600">We offer ridge vents, soffit vents, gable vents, roof fans, and custom ventilation solutions tailored to your needs.</p>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">3. Professional Installation</h3>
+              <p>Expert installation of ventilation components and systems.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">4. Performance Testing</h3>
+              <p>Verification of proper airflow and system effectiveness.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </ServiceLayout>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Benefits of Proper Ventilation
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Energy Benefits</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Reduced cooling costs</li>
+                <li>Improved energy efficiency</li>
+                <li>Better temperature control</li>
+                <li>Lower utility bills</li>
+              </ul>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Protection Benefits</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Moisture control</li>
+                <li>Mold prevention</li>
+                <li>Extended roof life</li>
+                <li>Ice dam prevention</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Ventilation FAQs
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">How do I know if I need better ventilation?</h3>
+              <p>Signs include high energy bills, hot attic spaces, ice dams in winter, and moisture issues.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">What type of ventilation is best?</h3>
+              <p>The best system depends on your roof design, climate, and specific needs. We provide custom recommendations.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">How long does installation take?</h3>
+              <p>Most ventilation installations can be completed in 1-2 days, depending on the system complexity.</p>
+            </div>
+          </div>
+        </section>
+      </ServiceLayout>
+    </>
   );
 };
 
