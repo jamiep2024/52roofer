@@ -60,26 +60,30 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
 
     // Standard Services
     '/services/commercial-roofing',
+    '/services/residential-roofing',
     '/services/emergency-roof-repair',
     '/services/gutter-service',
-    '/services/residential-roofing',
     '/services/roof-inspection',
     '/services/roof-installation',
     '/services/roof-maintenance',
     '/services/roof-ventilation',
     '/services/skylight-installation',
+    '/services/new-roof-near-me',
+    '/services/roof-cost-near-me',
+    '/services/emergency-roofing',
+    '/services/roof-estimate',
+    '/services/flat-roof',
+    '/services/roof-replacement',
+    '/services/local-roofer',
 
     // Voice-Optimized Services
     '/services/voice-commercial-roofing',
-    '/services/voice-gutter-service',
     '/services/voice-residential-roofing',
-    '/services/voice-roof-inspection',
-    '/services/voice-roof-installation',
     '/services/voice-roof-maintenance',
-    '/services/voice-roof-repairs',
-    '/services/voice-roof-ventilation',
-    '/services/voice-roofing-services',
+    '/services/voice-roof-inspection',
     '/services/voice-skylight-installation',
+    '/services/voice-roof-ventilation',
+    '/services/voice-gutter-service',
     '/services/voice-new-roof-near-me',
     '/services/voice-roof-cost-near-me',
     '/services/voice-emergency-roofing',
@@ -87,6 +91,9 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     '/services/voice-flat-roof',
     '/services/voice-roof-replacement',
     '/services/voice-local-roofer',
+    '/services/voice-roof-installation',
+    '/services/voice-roof-repairs',
+    '/services/voice-roofing-services',
 
     // Counties
     '/county/berkshire',
@@ -104,25 +111,45 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     pages.push(`/roofers-in-${location}`);
   });
 
-  // Add dynamic service+location pages
+  // All standard services
   const services = [
     'commercial-roofing',
     'residential-roofing',
+    'emergency-roof-repair',
+    'gutter-service',
+    'roof-inspection',
     'roof-installation',
     'roof-maintenance',
-    'roof-inspection',
-    'skylight-installation',
     'roof-ventilation',
-    'gutter-service'
+    'skylight-installation',
+    'new-roof-near-me',
+    'roof-cost-near-me',
+    'emergency-roofing',
+    'roof-estimate',
+    'flat-roof',
+    'roof-replacement',
+    'local-roofer'
   ];
 
-  // Add voice service location pages
+  // All voice services
   const voiceServices = [
+    'voice-commercial-roofing',
+    'voice-residential-roofing',
+    'voice-roof-maintenance',
+    'voice-roof-inspection',
+    'voice-skylight-installation',
+    'voice-roof-ventilation',
+    'voice-gutter-service',
+    'voice-new-roof-near-me',
+    'voice-roof-cost-near-me',
     'voice-emergency-roofing',
     'voice-roof-estimate',
     'voice-flat-roof',
     'voice-roof-replacement',
-    'voice-local-roofer'
+    'voice-local-roofer',
+    'voice-roof-installation',
+    'voice-roof-repairs',
+    'voice-roofing-services'
   ];
 
   // Add standard service+location combinations

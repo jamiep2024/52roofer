@@ -1,72 +1,73 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ConversationalRoofingTemplate from '../../../components/templates/conversational-roofing-template';
-import { locationData } from '../../../data/locationData';
+import { serviceAreas } from '../../../data/serviceAreas';
 
 interface LocationPageProps {
   location: string;
   county: string;
+  displayLocation: string;
 }
 
-const VoiceRoofRepairsLocation: React.FC<LocationPageProps> = ({ location, county }) => {
+const VoiceRoofRepairsLocation: React.FC<LocationPageProps> = ({ location, county, displayLocation }) => {
   const initialFAQs = [
     {
-      question: `Hey Google, find roof repairs in ${location}`,
-      answer: `Our ${location} repair services include: 1) Emergency repairs for ${county} weather damage, 2) Leak fixes and waterproofing, 3) Tile and slate repairs, 4) Storm damage restoration, 5) Preventive maintenance. Fast response across ${location}.`,
+      question: `Hey Google, find roof repairs in ${displayLocation}`,
+      answer: `Our ${displayLocation} repair services include: 1) Emergency repairs for ${county} weather damage, 2) Leak fixes and waterproofing, 3) Tile and slate repairs, 4) Storm damage restoration, 5) Preventive maintenance. Fast response across ${displayLocation}.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Alexa, how much do roof repairs cost in ${location}?`,
-      answer: `${location} repair costs vary: 1) Minor repairs: £150-£400, 2) Leak fixes: £200-£600, 3) Storm damage: £500-£2,000, 4) Emergency service: Additional £100-£200, 5) Major repairs: From £1,000. Prices reflect ${county} market rates.`,
+      question: `Alexa, how much do roof repairs cost in ${displayLocation}?`,
+      answer: `${displayLocation} repair costs vary: 1) Minor repairs: £150-£400, 2) Leak fixes: £200-£600, 3) Storm damage: £500-£2,000, 4) Emergency service: Additional £100-£200, 5) Major repairs: From £1,000. Prices reflect ${county} market rates.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `OK Google, how quickly can you repair my roof in ${location}?`,
-      answer: `${location} repair response times: 1) Emergency repairs: 2-4 hours in ${county}, 2) Urgent fixes: Same day, 3) Standard repairs: 1-3 days, 4) Major work: 2-5 days, 5) Weather dependent work: Scheduled accordingly. Fast service when you need it.`,
+      question: `OK Google, how quickly can you repair my roof in ${displayLocation}?`,
+      answer: `${displayLocation} repair response times: 1) Emergency repairs: 2-4 hours in ${county}, 2) Urgent fixes: Same day, 3) Standard repairs: 1-3 days, 4) Major work: 2-5 days, 5) Weather dependent work: Scheduled accordingly. Fast service when you need it.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Siri, what roof repairs do you handle in ${location}?`,
-      answer: `We handle all ${location} repairs including: 1) Leak detection and fixing for ${county} properties, 2) Storm damage repair, 3) Tile replacement, 4) Flashing repairs, 5) Structural fixes. Complete repair solutions.`,
+      question: `Siri, what roof repairs do you handle in ${displayLocation}?`,
+      answer: `We handle all ${displayLocation} repairs including: 1) Leak detection and fixing for ${county} properties, 2) Storm damage repair, 3) Tile replacement, 4) Flashing repairs, 5) Structural fixes. Complete repair solutions.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Hey Google, do you offer emergency roof repairs in ${location}?`,
-      answer: `Yes, our ${location} emergency service includes: 1) 24/7 response in ${county}, 2) Rapid damage assessment, 3) Temporary weather protection, 4) Permanent repairs, 5) Insurance documentation. Always here when you need us.`,
+      question: `Hey Google, do you offer emergency roof repairs in ${displayLocation}?`,
+      answer: `Yes, our ${displayLocation} emergency service includes: 1) 24/7 response in ${county}, 2) Rapid damage assessment, 3) Temporary weather protection, 4) Permanent repairs, 5) Insurance documentation. Always here when you need us.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     }
   ];
 
   const pageConfig = {
-    title: `Professional Roof Repairs in ${location}`,
-    serviceName: `${location} Roof Repairs`,
+    title: `Professional Roof Repairs in ${displayLocation}`,
+    serviceName: `${displayLocation} Roof Repairs`,
     serviceType: "voice-roof-repairs",
     priceRange: "££",
     timeRequired: "P1D",
-    heroTitle: `Need Roof Repairs in ${location}? Just Ask!`,
-    heroDescription: `Voice-activated roof repair services in ${location} - expert solutions when you need them`,
+    heroTitle: `Need Roof Repairs in ${displayLocation}? Just Ask!`,
+    heroDescription: `Voice-activated roof repair services in ${displayLocation} - expert solutions when you need them`,
     mainContent: {
       introSection: {
-        title: `Just Say: 'Fix My Roof in ${location}!'`,
-        description: `Need professional roof repairs in ${location}? Simply ask your smart device about local repair services, and our experienced ${location} team will fix your roof quickly and effectively.`,
+        title: `Just Say: 'Fix My Roof in ${displayLocation}!'`,
+        description: `Need professional roof repairs in ${displayLocation}? Simply ask your smart device about local repair services, and our experienced ${displayLocation} team will fix your roof quickly and effectively.`,
         features: [
-          `• ${location} repair experts`,
+          `• ${displayLocation} repair experts`,
           "• Emergency service",
           `• ${county} experience`,
           "• Quality guarantees"
         ]
       },
       problemSolvingSection: {
-        title: `${location} Repair Solutions`,
+        title: `${displayLocation} Repair Solutions`,
         problems: [
           {
             emoji: "💧",
-            title: `'${location} roof leak'`,
+            title: `'${displayLocation} roof leak'`,
             description: "Leak repair",
             features: [
               "Leak detection",
@@ -77,7 +78,7 @@ const VoiceRoofRepairsLocation: React.FC<LocationPageProps> = ({ location, count
           },
           {
             emoji: "🌪️",
-            title: `'${location} storm damage'`,
+            title: `'${displayLocation} storm damage'`,
             description: "Storm repair",
             features: [
               "Emergency response",
@@ -88,7 +89,7 @@ const VoiceRoofRepairsLocation: React.FC<LocationPageProps> = ({ location, count
           },
           {
             emoji: "🏠",
-            title: `'${location} tile repair'`,
+            title: `'${displayLocation} tile repair'`,
             description: "Tile fixing",
             features: [
               "Tile replacement",
@@ -99,7 +100,7 @@ const VoiceRoofRepairsLocation: React.FC<LocationPageProps> = ({ location, count
           },
           {
             emoji: "⚡",
-            title: `'${location} emergency fix'`,
+            title: `'${displayLocation} emergency fix'`,
             description: "Emergency service",
             features: [
               "Fast response",
@@ -111,7 +112,7 @@ const VoiceRoofRepairsLocation: React.FC<LocationPageProps> = ({ location, count
         ]
       },
       processSection: {
-        title: `Our ${location} Repair Process`,
+        title: `Our ${displayLocation} Repair Process`,
         steps: [
           {
             title: "Initial Assessment",
@@ -162,10 +163,60 @@ const VoiceRoofRepairsLocation: React.FC<LocationPageProps> = ({ location, count
   return <ConversationalRoofingTemplate config={pageConfig} />;
 };
 
+// Oxford neighborhoods
+const oxfordNeighborhoods = [
+  'blackbird-leys',
+  'botley',
+  'cowley',
+  'headington',
+  'wolvercote',
+  'jericho',
+  'marston',
+  'rose-hill',
+  'iffley',
+  'summertown'
+];
+
+// Wiltshire special towns
+const wiltshireSpecialTowns = [
+  'warminster',
+  'marlborough',
+  'chippenham',
+  'devizes',
+  'melksham',
+  'trowbridge',
+  'bradford-on-avon',
+  'westbury',
+  'calne',
+  'salisbury'
+];
+
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.keys(locationData).map(location => ({
-    params: { location }
-  }));
+  const paths: { params: { location: string } }[] = [];
+
+  // Add all main towns from each county
+  Object.entries(serviceAreas).forEach(([countyKey, county]) => {
+    county.mainTowns.forEach(town => {
+      const townSlug = town.toLowerCase().replace(/ /g, '-');
+      paths.push({
+        params: { location: townSlug }
+      });
+
+      // Add Wiltshire special town variants
+      if (countyKey === 'wiltshire' && wiltshireSpecialTowns.includes(townSlug)) {
+        paths.push({
+          params: { location: `${townSlug}-wiltshire` }
+        });
+      }
+    });
+  });
+
+  // Add Oxford neighborhoods
+  oxfordNeighborhoods.forEach(neighborhood => {
+    paths.push({
+      params: { location: `${neighborhood}-oxford` }
+    });
+  });
 
   return {
     paths,
@@ -175,9 +226,63 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const location = params?.location as string;
-  const locationInfo = locationData[location];
+  
+  // Check if this is an Oxford neighborhood
+  const isOxfordNeighborhood = oxfordNeighborhoods.some(n => 
+    location === `${n}-oxford`
+  );
+  
+  if (isOxfordNeighborhood) {
+    const displayLocation = location
+      .replace('-oxford', '')
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
 
-  if (!locationInfo) {
+    return {
+      props: {
+        location,
+        county: 'Oxfordshire',
+        displayLocation
+      }
+    };
+  }
+
+  // Check if this is a Wiltshire special town
+  const isWiltshireSpecial = wiltshireSpecialTowns.some(t => 
+    location === `${t}-wiltshire`
+  );
+  
+  if (isWiltshireSpecial) {
+    const displayLocation = location
+      .replace('-wiltshire', '')
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
+    return {
+      props: {
+        location,
+        county: 'Wiltshire',
+        displayLocation
+      }
+    };
+  }
+
+  // Handle regular towns
+  let foundLocation = '';
+  let foundCounty = '';
+  
+  Object.entries(serviceAreas).forEach(([_, area]) => {
+    area.mainTowns.forEach(town => {
+      if (town.toLowerCase().replace(/ /g, '-') === location) {
+        foundLocation = town;
+        foundCounty = area.name;
+      }
+    });
+  });
+
+  if (!foundLocation) {
     return {
       notFound: true
     };
@@ -185,8 +290,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      location: locationInfo.name,
-      county: locationInfo.county
+      location,
+      county: foundCounty,
+      displayLocation: foundLocation
     }
   };
 };

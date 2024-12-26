@@ -1,72 +1,73 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ConversationalRoofingTemplate from '../../../components/templates/conversational-roofing-template';
-import { locationData } from '../../../data/locationData';
+import { serviceAreas } from '../../../data/serviceAreas';
 
 interface LocationPageProps {
   location: string;
   county: string;
+  displayLocation: string;
 }
 
-const VoiceRoofingServicesLocation: React.FC<LocationPageProps> = ({ location, county }) => {
+const VoiceRoofingServicesLocation: React.FC<LocationPageProps> = ({ location, county, displayLocation }) => {
   const initialFAQs = [
     {
-      question: `Hey Google, what roofing services are available in ${location}?`,
-      answer: `Our ${location} roofing services include: 1) Complete installations for ${county} properties, 2) Repairs and maintenance, 3) Emergency services, 4) Inspections and surveys, 5) Specialist services like skylights and ventilation. Full service coverage across ${location}.`,
+      question: `Hey Google, what roofing services are available in ${displayLocation}?`,
+      answer: `Our ${displayLocation} roofing services include: 1) Complete installations for ${county} properties, 2) Repairs and maintenance, 3) Emergency services, 4) Inspections and surveys, 5) Specialist services like skylights and ventilation. Full service coverage across ${displayLocation}.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Alexa, find a complete roofing service in ${location}`,
-      answer: `We provide comprehensive ${location} services including: 1) New roof installations suited to ${county}, 2) Emergency repairs 24/7, 3) Regular maintenance programs, 4) Commercial and residential work, 5) Specialist installations. One-stop roofing solution.`,
+      question: `Alexa, find a complete roofing service in ${displayLocation}`,
+      answer: `We provide comprehensive ${displayLocation} services including: 1) New roof installations suited to ${county}, 2) Emergency repairs 24/7, 3) Regular maintenance programs, 4) Commercial and residential work, 5) Specialist installations. One-stop roofing solution.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `OK Google, what roofing work can you do in ${location}?`,
-      answer: `Our ${location} expertise covers: 1) All roof types common in ${county}, 2) Emergency and routine repairs, 3) Maintenance and inspections, 4) Improvements and upgrades, 5) Specialist installations. Professional service for all needs.`,
+      question: `OK Google, what roofing work can you do in ${displayLocation}?`,
+      answer: `Our ${displayLocation} expertise covers: 1) All roof types common in ${county}, 2) Emergency and routine repairs, 3) Maintenance and inspections, 4) Improvements and upgrades, 5) Specialist installations. Professional service for all needs.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Siri, what makes your ${location} roofing service different?`,
-      answer: `We stand out in ${location} through: 1) Extensive ${county} experience, 2) Comprehensive service range, 3) Emergency 24/7 availability, 4) Quality guarantees, 5) Professional expertise. Complete customer satisfaction.`,
+      question: `Siri, what makes your ${displayLocation} roofing service different?`,
+      answer: `We stand out in ${displayLocation} through: 1) Extensive ${county} experience, 2) Comprehensive service range, 3) Emergency 24/7 availability, 4) Quality guarantees, 5) Professional expertise. Complete customer satisfaction.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Hey Google, do you offer full roofing services in ${location}?`,
-      answer: `Yes, our ${location} full service includes: 1) Free consultations for ${county} properties, 2) Complete project management, 3) All types of roofing work, 4) Emergency response service, 5) Aftercare and maintenance. Everything you need.`,
+      question: `Hey Google, do you offer full roofing services in ${displayLocation}?`,
+      answer: `Yes, our ${displayLocation} full service includes: 1) Free consultations for ${county} properties, 2) Complete project management, 3) All types of roofing work, 4) Emergency response service, 5) Aftercare and maintenance. Everything you need.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     }
   ];
 
   const pageConfig = {
-    title: `Complete Roofing Services in ${location}`,
-    serviceName: `${location} Roofing Services`,
+    title: `Complete Roofing Services in ${displayLocation}`,
+    serviceName: `${displayLocation} Roofing Services`,
     serviceType: "voice-roofing-services",
     priceRange: "£££",
     timeRequired: "P1D",
-    heroTitle: `Need Roofing Services in ${location}? Just Ask!`,
-    heroDescription: `Voice-activated roofing services in ${location} - complete solutions for all your roofing needs`,
+    heroTitle: `Need Roofing Services in ${displayLocation}? Just Ask!`,
+    heroDescription: `Voice-activated roofing services in ${displayLocation} - complete solutions for all your roofing needs`,
     mainContent: {
       introSection: {
-        title: `Just Say: 'Find Roofing Services in ${location}!'`,
-        description: `Looking for comprehensive roofing services in ${location}? Simply ask your smart device about local roofing services, and our experienced ${location} team will handle all your roofing needs.`,
+        title: `Just Say: 'Find Roofing Services in ${displayLocation}!'`,
+        description: `Looking for comprehensive roofing services in ${displayLocation}? Simply ask your smart device about local roofing services, and our experienced ${displayLocation} team will handle all your roofing needs.`,
         features: [
-          `• Complete ${location} service`,
+          `• Complete ${displayLocation} service`,
           "• Professional team",
           `• ${county} expertise`,
           "• Quality guaranteed"
         ]
       },
       problemSolvingSection: {
-        title: `${location} Roofing Solutions`,
+        title: `${displayLocation} Roofing Solutions`,
         problems: [
           {
             emoji: "🏠",
-            title: `'${location} new roof'`,
+            title: `'${displayLocation} new roof'`,
             description: "Complete installation",
             features: [
               "Full service",
@@ -77,7 +78,7 @@ const VoiceRoofingServicesLocation: React.FC<LocationPageProps> = ({ location, c
           },
           {
             emoji: "🔧",
-            title: `'${location} repairs'`,
+            title: `'${displayLocation} repairs'`,
             description: "Professional repairs",
             features: [
               "Fast response",
@@ -88,7 +89,7 @@ const VoiceRoofingServicesLocation: React.FC<LocationPageProps> = ({ location, c
           },
           {
             emoji: "🔍",
-            title: `'${location} inspection'`,
+            title: `'${displayLocation} inspection'`,
             description: "Thorough assessment",
             features: [
               "Complete check",
@@ -99,7 +100,7 @@ const VoiceRoofingServicesLocation: React.FC<LocationPageProps> = ({ location, c
           },
           {
             emoji: "⚡",
-            title: `'${location} emergency'`,
+            title: `'${displayLocation} emergency'`,
             description: "Emergency response",
             features: [
               "24/7 service",
@@ -111,7 +112,7 @@ const VoiceRoofingServicesLocation: React.FC<LocationPageProps> = ({ location, c
         ]
       },
       processSection: {
-        title: `Our ${location} Service Process`,
+        title: `Our ${displayLocation} Service Process`,
         steps: [
           {
             title: "Initial Contact",
@@ -162,10 +163,60 @@ const VoiceRoofingServicesLocation: React.FC<LocationPageProps> = ({ location, c
   return <ConversationalRoofingTemplate config={pageConfig} />;
 };
 
+// Oxford neighborhoods
+const oxfordNeighborhoods = [
+  'blackbird-leys',
+  'botley',
+  'cowley',
+  'headington',
+  'wolvercote',
+  'jericho',
+  'marston',
+  'rose-hill',
+  'iffley',
+  'summertown'
+];
+
+// Wiltshire special towns
+const wiltshireSpecialTowns = [
+  'warminster',
+  'marlborough',
+  'chippenham',
+  'devizes',
+  'melksham',
+  'trowbridge',
+  'bradford-on-avon',
+  'westbury',
+  'calne',
+  'salisbury'
+];
+
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.keys(locationData).map(location => ({
-    params: { location }
-  }));
+  const paths: { params: { location: string } }[] = [];
+
+  // Add all main towns from each county
+  Object.entries(serviceAreas).forEach(([countyKey, county]) => {
+    county.mainTowns.forEach(town => {
+      const townSlug = town.toLowerCase().replace(/ /g, '-');
+      paths.push({
+        params: { location: townSlug }
+      });
+
+      // Add Wiltshire special town variants
+      if (countyKey === 'wiltshire' && wiltshireSpecialTowns.includes(townSlug)) {
+        paths.push({
+          params: { location: `${townSlug}-wiltshire` }
+        });
+      }
+    });
+  });
+
+  // Add Oxford neighborhoods
+  oxfordNeighborhoods.forEach(neighborhood => {
+    paths.push({
+      params: { location: `${neighborhood}-oxford` }
+    });
+  });
 
   return {
     paths,
@@ -175,9 +226,63 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const location = params?.location as string;
-  const locationInfo = locationData[location];
+  
+  // Check if this is an Oxford neighborhood
+  const isOxfordNeighborhood = oxfordNeighborhoods.some(n => 
+    location === `${n}-oxford`
+  );
+  
+  if (isOxfordNeighborhood) {
+    const displayLocation = location
+      .replace('-oxford', '')
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
 
-  if (!locationInfo) {
+    return {
+      props: {
+        location,
+        county: 'Oxfordshire',
+        displayLocation
+      }
+    };
+  }
+
+  // Check if this is a Wiltshire special town
+  const isWiltshireSpecial = wiltshireSpecialTowns.some(t => 
+    location === `${t}-wiltshire`
+  );
+  
+  if (isWiltshireSpecial) {
+    const displayLocation = location
+      .replace('-wiltshire', '')
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
+    return {
+      props: {
+        location,
+        county: 'Wiltshire',
+        displayLocation
+      }
+    };
+  }
+
+  // Handle regular towns
+  let foundLocation = '';
+  let foundCounty = '';
+  
+  Object.entries(serviceAreas).forEach(([_, area]) => {
+    area.mainTowns.forEach(town => {
+      if (town.toLowerCase().replace(/ /g, '-') === location) {
+        foundLocation = town;
+        foundCounty = area.name;
+      }
+    });
+  });
+
+  if (!foundLocation) {
     return {
       notFound: true
     };
@@ -185,8 +290,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      location: locationInfo.name,
-      county: locationInfo.county
+      location,
+      county: foundCounty,
+      displayLocation: foundLocation
     }
   };
 };

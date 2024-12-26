@@ -1,72 +1,73 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ConversationalRoofingTemplate from '../../../components/templates/conversational-roofing-template';
-import { locationData } from '../../../data/locationData';
+import { serviceAreas } from '../../../data/serviceAreas';
 
 interface LocationPageProps {
   location: string;
   county: string;
+  displayLocation: string;
 }
 
-const VoiceGutterServiceLocation: React.FC<LocationPageProps> = ({ location, county }) => {
+const VoiceGutterServiceLocation: React.FC<LocationPageProps> = ({ location, county, displayLocation }) => {
   const initialFAQs = [
     {
-      question: `Hey Google, find gutter services in ${location}`,
-      answer: `Our ${location} gutter services include: 1) Complete gutter cleaning for ${county} properties, 2) Gutter repairs and maintenance, 3) New gutter installation, 4) Downpipe services, 5) Emergency gutter repairs. Professional service across ${location}.`,
+      question: `Hey Google, find gutter services in ${displayLocation}`,
+      answer: `Our ${displayLocation} gutter services include: 1) Complete gutter cleaning for ${county} properties, 2) Gutter repairs and maintenance, 3) New gutter installation, 4) Downpipe services, 5) Emergency gutter repairs. Professional service across ${displayLocation}.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Alexa, how much does gutter cleaning cost in ${location}?`,
-      answer: `${location} gutter cleaning costs: 1) Standard house: £60-£100, 2) Large properties: £100-£200, 3) Commercial buildings: Custom quote, 4) Repairs from £80, 5) New installations: From £500. Prices may vary based on ${county} property specifics.`,
+      question: `Alexa, how much does gutter cleaning cost in ${displayLocation}?`,
+      answer: `${displayLocation} gutter cleaning costs: 1) Standard house: £60-£100, 2) Large properties: £100-£200, 3) Commercial buildings: Custom quote, 4) Repairs from £80, 5) New installations: From £500. Prices may vary based on ${county} property specifics.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `OK Google, when should I clean my gutters in ${location}?`,
-      answer: `In ${location}, we recommend: 1) Autumn cleaning after leaf fall, 2) Spring check after ${county} winter, 3) After major storms, 4) Quarterly for properties near trees, 5) Bi-annual maintenance minimum. Regular checks prevent costly repairs.`,
+      question: `OK Google, when should I clean my gutters in ${displayLocation}?`,
+      answer: `In ${displayLocation}, we recommend: 1) Autumn cleaning after leaf fall, 2) Spring check after ${county} winter, 3) After major storms, 4) Quarterly for properties near trees, 5) Bi-annual maintenance minimum. Regular checks prevent costly repairs.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Siri, what gutter problems need immediate attention in ${location}?`,
-      answer: `${location} gutter emergencies include: 1) Overflowing in heavy ${county} rain, 2) Visible sagging or pulling away, 3) Water damage to walls, 4) Blocked downpipes, 5) Ice dam formation in winter. We provide rapid emergency response.`,
+      question: `Siri, what gutter problems need immediate attention in ${displayLocation}?`,
+      answer: `${displayLocation} gutter emergencies include: 1) Overflowing in heavy ${county} rain, 2) Visible sagging or pulling away, 3) Water damage to walls, 4) Blocked downpipes, 5) Ice dam formation in winter. We provide rapid emergency response.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Hey Google, what gutter materials are best for ${location}?`,
-      answer: `Best gutters for ${location}'s climate: 1) uPVC: Affordable and durable in ${county} weather, 2) Aluminum: Lightweight and rust-resistant, 3) Cast iron: Traditional for period properties, 4) Seamless aluminum: Minimal leaks, 5) Copper: Premium longevity option.`,
+      question: `Hey Google, what gutter materials are best for ${displayLocation}?`,
+      answer: `Best gutters for ${displayLocation}'s climate: 1) uPVC: Affordable and durable in ${county} weather, 2) Aluminum: Lightweight and rust-resistant, 3) Cast iron: Traditional for period properties, 4) Seamless aluminum: Minimal leaks, 5) Copper: Premium longevity option.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     }
   ];
 
   const pageConfig = {
-    title: `Professional Gutter Services in ${location}`,
-    serviceName: `${location} Gutter Services`,
+    title: `Professional Gutter Services in ${displayLocation}`,
+    serviceName: `${displayLocation} Gutter Services`,
     serviceType: "voice-gutter-service",
     priceRange: "££",
     timeRequired: "P1D",
-    heroTitle: `Need Gutter Help in ${location}? Just Ask!`,
-    heroDescription: `Voice-activated gutter services in ${location} - expert solutions for your property`,
+    heroTitle: `Need Gutter Help in ${displayLocation}? Just Ask!`,
+    heroDescription: `Voice-activated gutter services in ${displayLocation} - expert solutions for your property`,
     mainContent: {
       introSection: {
-        title: `Just Say: 'Find Gutter Services in ${location}!'`,
-        description: `Need professional gutter services in ${location}? Simply ask your smart device about local gutter services, and our experienced ${location} team will help maintain your property's drainage system.`,
+        title: `Just Say: 'Find Gutter Services in ${displayLocation}!'`,
+        description: `Need professional gutter services in ${displayLocation}? Simply ask your smart device about local gutter services, and our experienced ${displayLocation} team will help maintain your property's drainage system.`,
         features: [
-          `• ${location} gutter experts`,
+          `• ${displayLocation} gutter experts`,
           "• Professional cleaning",
           `• ${county} repairs`,
           "• New installations"
         ]
       },
       problemSolvingSection: {
-        title: `${location} Gutter Solutions`,
+        title: `${displayLocation} Gutter Solutions`,
         problems: [
           {
             emoji: "🧹",
-            title: `'Clean ${location} gutters'`,
+            title: `'Clean ${displayLocation} gutters'`,
             description: "Professional cleaning",
             features: [
               "Complete clear",
@@ -77,7 +78,7 @@ const VoiceGutterServiceLocation: React.FC<LocationPageProps> = ({ location, cou
           },
           {
             emoji: "🔧",
-            title: `'Fix ${location} gutters'`,
+            title: `'Fix ${displayLocation} gutters'`,
             description: "Expert repairs",
             features: [
               "Leak fixing",
@@ -88,7 +89,7 @@ const VoiceGutterServiceLocation: React.FC<LocationPageProps> = ({ location, cou
           },
           {
             emoji: "🏠",
-            title: `'New ${location} gutters'`,
+            title: `'New ${displayLocation} gutters'`,
             description: "Full installation",
             features: [
               "Quality materials",
@@ -99,7 +100,7 @@ const VoiceGutterServiceLocation: React.FC<LocationPageProps> = ({ location, cou
           },
           {
             emoji: "⚡",
-            title: `'Emergency ${location} service'`,
+            title: `'Emergency ${displayLocation} service'`,
             description: "Rapid response",
             features: [
               "Quick arrival",
@@ -111,7 +112,7 @@ const VoiceGutterServiceLocation: React.FC<LocationPageProps> = ({ location, cou
         ]
       },
       processSection: {
-        title: `Our ${location} Gutter Process`,
+        title: `Our ${displayLocation} Gutter Process`,
         steps: [
           {
             title: "Initial Assessment",
@@ -162,10 +163,60 @@ const VoiceGutterServiceLocation: React.FC<LocationPageProps> = ({ location, cou
   return <ConversationalRoofingTemplate config={pageConfig} />;
 };
 
+// Oxford neighborhoods
+const oxfordNeighborhoods = [
+  'blackbird-leys',
+  'botley',
+  'cowley',
+  'headington',
+  'wolvercote',
+  'jericho',
+  'marston',
+  'rose-hill',
+  'iffley',
+  'summertown'
+];
+
+// Wiltshire special towns
+const wiltshireSpecialTowns = [
+  'warminster',
+  'marlborough',
+  'chippenham',
+  'devizes',
+  'melksham',
+  'trowbridge',
+  'bradford-on-avon',
+  'westbury',
+  'calne',
+  'salisbury'
+];
+
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.keys(locationData).map(location => ({
-    params: { location }
-  }));
+  const paths: { params: { location: string } }[] = [];
+
+  // Add all main towns from each county
+  Object.entries(serviceAreas).forEach(([countyKey, county]) => {
+    county.mainTowns.forEach(town => {
+      const townSlug = town.toLowerCase().replace(/ /g, '-');
+      paths.push({
+        params: { location: townSlug }
+      });
+
+      // Add Wiltshire special town variants
+      if (countyKey === 'wiltshire' && wiltshireSpecialTowns.includes(townSlug)) {
+        paths.push({
+          params: { location: `${townSlug}-wiltshire` }
+        });
+      }
+    });
+  });
+
+  // Add Oxford neighborhoods
+  oxfordNeighborhoods.forEach(neighborhood => {
+    paths.push({
+      params: { location: `${neighborhood}-oxford` }
+    });
+  });
 
   return {
     paths,
@@ -175,9 +226,63 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const location = params?.location as string;
-  const locationInfo = locationData[location];
+  
+  // Check if this is an Oxford neighborhood
+  const isOxfordNeighborhood = oxfordNeighborhoods.some(n => 
+    location === `${n}-oxford`
+  );
+  
+  if (isOxfordNeighborhood) {
+    const displayLocation = location
+      .replace('-oxford', '')
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
 
-  if (!locationInfo) {
+    return {
+      props: {
+        location,
+        county: 'Oxfordshire',
+        displayLocation
+      }
+    };
+  }
+
+  // Check if this is a Wiltshire special town
+  const isWiltshireSpecial = wiltshireSpecialTowns.some(t => 
+    location === `${t}-wiltshire`
+  );
+  
+  if (isWiltshireSpecial) {
+    const displayLocation = location
+      .replace('-wiltshire', '')
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
+    return {
+      props: {
+        location,
+        county: 'Wiltshire',
+        displayLocation
+      }
+    };
+  }
+
+  // Handle regular towns
+  let foundLocation = '';
+  let foundCounty = '';
+  
+  Object.entries(serviceAreas).forEach(([_, area]) => {
+    area.mainTowns.forEach(town => {
+      if (town.toLowerCase().replace(/ /g, '-') === location) {
+        foundLocation = town;
+        foundCounty = area.name;
+      }
+    });
+  });
+
+  if (!foundLocation) {
     return {
       notFound: true
     };
@@ -185,8 +290,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      location: locationInfo.name,
-      county: locationInfo.county
+      location,
+      county: foundCounty,
+      displayLocation: foundLocation
     }
   };
 };

@@ -2,41 +2,42 @@ import React from 'react';
 import Head from 'next/head';
 import ServiceLayout from '../../../components/ServiceLayout';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { locationData } from '../../../data/locationData';
+import { serviceAreas } from '../../../data/serviceAreas';
 
 interface LocationPageProps {
   location: string;
   county: string;
+  displayLocation: string;
 }
 
-const GutterServiceLocation: React.FC<LocationPageProps> = ({ location, county }) => {
-  const serviceName = `Gutter Services in ${location}`;
-  const serviceDescription = `Professional gutter installation, repair, and maintenance services in ${location}. Expert solutions for homes and businesses across ${county}.`;
+const GutterServiceLocation: React.FC<LocationPageProps> = ({ location, county, displayLocation }) => {
+  const serviceName = `Gutter Services in ${displayLocation}`;
+  const serviceDescription = `Professional gutter installation, repair, and maintenance services in ${displayLocation}. Expert solutions for homes and businesses across ${county}.`;
 
   return (
     <>
       <Head>
-        <title>{`${serviceName} | Expert Gutter Services in ${location}`}</title>
+        <title>{`${serviceName} | Expert Gutter Services in ${displayLocation}`}</title>
         <meta name="description" content={serviceDescription} />
-        <meta name="keywords" content={`gutter services ${location}, gutter repair ${location}, gutter installation ${county}, gutter maintenance ${location}, gutter cleaning ${location}`} />
+        <meta name="keywords" content={`gutter services ${displayLocation}, gutter repair ${displayLocation}, gutter installation ${county}, gutter maintenance ${displayLocation}, gutter cleaning ${displayLocation}`} />
       </Head>
 
       <ServiceLayout
-        heroTitle={`Professional Gutter Services in ${location}`}
-        heroDescription={`Complete gutter solutions for ${location} properties, ensuring proper drainage and protection`}
+        heroTitle={`Professional Gutter Services in ${displayLocation}`}
+        heroDescription={`Complete gutter solutions for ${displayLocation} properties, ensuring proper drainage and protection`}
         serviceName={serviceName}
       >
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Comprehensive Gutter Solutions in {location}
+            Comprehensive Gutter Solutions in {displayLocation}
           </h2>
           <p className="mb-4">
-            Our professional gutter services in {location} ensure your property's drainage system functions perfectly year-round. 
+            Our professional gutter services in {displayLocation} ensure your property's drainage system functions perfectly year-round. 
             We provide complete solutions for homes and businesses across {county}.
           </p>
           <div className="grid md:grid-cols-2 gap-6 mt-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Installation Services in {location}</h3>
+              <h3 className="text-xl font-semibold mb-4">Installation Services in {displayLocation}</h3>
               <ul className="list-disc pl-5 space-y-2">
                 <li>New gutter systems</li>
                 <li>Seamless guttering</li>
@@ -45,7 +46,7 @@ const GutterServiceLocation: React.FC<LocationPageProps> = ({ location, county }
               </ul>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">{location} Maintenance Services</h3>
+              <h3 className="text-xl font-semibold mb-4">{displayLocation} Maintenance Services</h3>
               <ul className="list-disc pl-5 space-y-2">
                 <li>Regular cleaning</li>
                 <li>Preventive maintenance</li>
@@ -58,7 +59,7 @@ const GutterServiceLocation: React.FC<LocationPageProps> = ({ location, county }
 
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Gutter Solutions in {location}
+            Gutter Solutions in {displayLocation}
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -67,23 +68,23 @@ const GutterServiceLocation: React.FC<LocationPageProps> = ({ location, county }
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">Gutter Guards</h3>
-              <p>Protection systems suited to {location} conditions.</p>
+              <p>Protection systems suited to {displayLocation} conditions.</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">Downpipe Systems</h3>
-              <p>Efficient water management for {location} buildings.</p>
+              <p>Efficient water management for {displayLocation} buildings.</p>
             </div>
           </div>
         </section>
 
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Our {location} Gutter Service Process
+            Our {displayLocation} Gutter Service Process
           </h2>
           <div className="space-y-6">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">1. System Assessment</h3>
-              <p>Thorough evaluation of your {location} property's guttering needs.</p>
+              <p>Thorough evaluation of your {displayLocation} property's guttering needs.</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">2. Custom Solution</h3>
@@ -91,31 +92,31 @@ const GutterServiceLocation: React.FC<LocationPageProps> = ({ location, county }
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">3. Professional Service</h3>
-              <p>Expert installation or maintenance by {location} specialists.</p>
+              <p>Expert installation or maintenance by {displayLocation} specialists.</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">4. Quality Check</h3>
-              <p>Comprehensive testing of your {location} gutter system.</p>
+              <p>Comprehensive testing of your {displayLocation} gutter system.</p>
             </div>
           </div>
         </section>
 
         <section>
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            {location} Gutter Service FAQs
+            {displayLocation} Gutter Service FAQs
           </h2>
           <div className="space-y-6">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">How often should gutters be cleaned in {location}?</h3>
-              <p>We recommend cleaning gutters at least twice a year in {location}, with additional checks after severe {county} weather.</p>
+              <h3 className="text-xl font-semibold mb-4">How often should gutters be cleaned in {displayLocation}?</h3>
+              <p>We recommend cleaning gutters at least twice a year in {displayLocation}, with additional checks after severe {county} weather.</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">What gutter systems do you install in {location}?</h3>
-              <p>We install various gutter systems in {location}, including seamless aluminum, copper, and uPVC options.</p>
+              <h3 className="text-xl font-semibold mb-4">What gutter systems do you install in {displayLocation}?</h3>
+              <p>We install various gutter systems in {displayLocation}, including seamless aluminum, copper, and uPVC options.</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Do you offer gutter guards in {location}?</h3>
-              <p>Yes, we provide and install various gutter guard systems suited to {location} conditions.</p>
+              <h3 className="text-xl font-semibold mb-4">Do you offer gutter guards in {displayLocation}?</h3>
+              <p>Yes, we provide and install various gutter guard systems suited to {displayLocation} conditions.</p>
             </div>
           </div>
         </section>
@@ -124,10 +125,60 @@ const GutterServiceLocation: React.FC<LocationPageProps> = ({ location, county }
   );
 };
 
+// Oxford neighborhoods
+const oxfordNeighborhoods = [
+  'blackbird-leys',
+  'botley',
+  'cowley',
+  'headington',
+  'wolvercote',
+  'jericho',
+  'marston',
+  'rose-hill',
+  'iffley',
+  'summertown'
+];
+
+// Wiltshire special towns
+const wiltshireSpecialTowns = [
+  'warminster',
+  'marlborough',
+  'chippenham',
+  'devizes',
+  'melksham',
+  'trowbridge',
+  'bradford-on-avon',
+  'westbury',
+  'calne',
+  'salisbury'
+];
+
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.keys(locationData).map(location => ({
-    params: { location }
-  }));
+  const paths: { params: { location: string } }[] = [];
+
+  // Add all main towns from each county
+  Object.entries(serviceAreas).forEach(([countyKey, county]) => {
+    county.mainTowns.forEach(town => {
+      const townSlug = town.toLowerCase().replace(/ /g, '-');
+      paths.push({
+        params: { location: townSlug }
+      });
+
+      // Add Wiltshire special town variants
+      if (countyKey === 'wiltshire' && wiltshireSpecialTowns.includes(townSlug)) {
+        paths.push({
+          params: { location: `${townSlug}-wiltshire` }
+        });
+      }
+    });
+  });
+
+  // Add Oxford neighborhoods
+  oxfordNeighborhoods.forEach(neighborhood => {
+    paths.push({
+      params: { location: `${neighborhood}-oxford` }
+    });
+  });
 
   return {
     paths,
@@ -137,9 +188,63 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const location = params?.location as string;
-  const locationInfo = locationData[location];
+  
+  // Check if this is an Oxford neighborhood
+  const isOxfordNeighborhood = oxfordNeighborhoods.some(n => 
+    location === `${n}-oxford`
+  );
+  
+  if (isOxfordNeighborhood) {
+    const displayLocation = location
+      .replace('-oxford', '')
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
 
-  if (!locationInfo) {
+    return {
+      props: {
+        location,
+        county: 'Oxfordshire',
+        displayLocation
+      }
+    };
+  }
+
+  // Check if this is a Wiltshire special town
+  const isWiltshireSpecial = wiltshireSpecialTowns.some(t => 
+    location === `${t}-wiltshire`
+  );
+  
+  if (isWiltshireSpecial) {
+    const displayLocation = location
+      .replace('-wiltshire', '')
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
+    return {
+      props: {
+        location,
+        county: 'Wiltshire',
+        displayLocation
+      }
+    };
+  }
+
+  // Handle regular towns
+  let foundLocation = '';
+  let foundCounty = '';
+  
+  Object.entries(serviceAreas).forEach(([_, area]) => {
+    area.mainTowns.forEach(town => {
+      if (town.toLowerCase().replace(/ /g, '-') === location) {
+        foundLocation = town;
+        foundCounty = area.name;
+      }
+    });
+  });
+
+  if (!foundLocation) {
     return {
       notFound: true
     };
@@ -147,8 +252,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      location: locationInfo.name,
-      county: locationInfo.county
+      location,
+      county: foundCounty,
+      displayLocation: foundLocation
     }
   };
 };

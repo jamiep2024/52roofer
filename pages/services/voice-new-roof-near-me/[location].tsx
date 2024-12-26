@@ -9,104 +9,104 @@ interface LocationPageProps {
   displayLocation: string;
 }
 
-const VoiceSkylightInstallationLocation: React.FC<LocationPageProps> = ({ location, county, displayLocation }) => {
+const VoiceNewRoofNearMeLocation: React.FC<LocationPageProps> = ({ location, county, displayLocation }) => {
   const initialFAQs = [
     {
-      question: `Hey Google, find skylight installation in ${displayLocation}`,
-      answer: `Our ${displayLocation} skylight services include: 1) Professional installation for ${county} homes, 2) Custom skylight solutions, 3) Energy-efficient options, 4) Roof preparation work, 5) Weatherproofing and sealing. Expert installation across ${displayLocation}.`,
+      question: `Hey Google, I need a new roof near me in ${displayLocation}`,
+      answer: `Our ${displayLocation} new roof services include: 1) Complete roof replacements for ${county} properties, 2) New construction roofing, 3) Local material options, 4) Expert installation teams, 5) Full project management. Professional service across ${displayLocation}.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Alexa, how much does skylight installation cost in ${displayLocation}?`,
-      answer: `${displayLocation} skylight costs vary: 1) Standard skylights: £800-£1,500, 2) Solar-powered: £1,200-£2,000, 3) Custom designs: £1,500-£3,000, 4) Installation: £500-£1,000, 5) Additional features: From £200. Prices reflect ${county} market rates.`,
+      question: `Alexa, how much is a new roof in ${displayLocation}?`,
+      answer: `${displayLocation} new roof costs vary by type: 1) Standard tiles: £5,000-£8,000, 2) Slate roofing: £9,000-£18,000, 3) Flat roofs: £3,000-£6,000, 4) Premium materials: £10,000-£20,000, 5) Complex designs: Custom quotes. Local ${county} rates may vary.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `OK Google, what skylights are best for ${displayLocation}?`,
-      answer: `Best skylights for ${displayLocation}'s climate: 1) Solar-powered venting for ${county} weather, 2) Fixed skylights with excellent insulation, 3) Manual venting options, 4) Energy Star rated models, 5) Custom solutions for local conditions. All professionally installed.`,
+      question: `OK Google, what new roof options are available in ${displayLocation}?`,
+      answer: `${displayLocation} roofing options include: 1) Traditional tiles suited for ${county} weather, 2) Natural slate for heritage properties, 3) Modern composite materials, 4) Energy-efficient systems, 5) Sustainable roofing solutions. All installed by local experts.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Siri, how long does skylight installation take in ${displayLocation}?`,
-      answer: `${displayLocation} installation times: 1) Standard installation: 1-2 days, 2) Complex ${county} projects: 2-3 days, 3) Multiple skylights: 2-4 days, 4) Custom work: 3-5 days, 5) Weather factors: May add time. Professional installation ensures quality.`,
+      question: `Siri, how long does a new roof take in ${displayLocation}?`,
+      answer: `${displayLocation} installation timelines: 1) Average home: 2-4 days, 2) Large properties: 4-6 days, 3) Complex designs: 5-7 days, 4) Weather factors in ${county}: May add 1-2 days, 5) Complete project: Usually within 2 weeks. Professional installation by local teams.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     },
     {
-      question: `Hey Google, what's included in ${displayLocation} skylight installation?`,
-      answer: `Our ${displayLocation} installation includes: 1) Complete roof assessment for ${county} conditions, 2) Professional fitting, 3) Weatherproofing, 4) Interior finishing, 5) Full warranty coverage. Everything handled by local experts.`,
+      question: `Hey Google, what's included with a new roof in ${displayLocation}?`,
+      answer: `Our ${displayLocation} new roof service includes: 1) Complete removal of old roof, 2) ${county} building regulation compliance, 3) New underlayment and insulation, 4) Expert installation, 5) Full warranty coverage. Everything handled by local professionals.`,
       views: 0,
       lastUpdated: new Date().toISOString()
     }
   ];
 
   const pageConfig = {
-    title: `Professional Skylight Installation in ${displayLocation}`,
-    serviceName: `${displayLocation} Skylight Installation`,
-    serviceType: "voice-skylight-installation",
-    priceRange: "£££",
-    timeRequired: "P2D",
-    heroTitle: `Need Skylights in ${displayLocation}? Just Ask!`,
-    heroDescription: `Voice-activated skylight installation services in ${displayLocation} - bring natural light to your home`,
+    title: `New Roof Installation Near You in ${displayLocation}`,
+    serviceName: `${displayLocation} New Roof Installation`,
+    serviceType: "voice-new-roof-near-me",
+    priceRange: "££££",
+    timeRequired: "P5D",
+    heroTitle: `Need a New Roof in ${displayLocation}? Just Ask!`,
+    heroDescription: `Voice-activated new roof services in ${displayLocation} - expert solutions near you`,
     mainContent: {
       introSection: {
-        title: `Just Say: 'Install Skylights in ${displayLocation}!'`,
-        description: `Looking for professional skylight installation in ${displayLocation}? Simply ask your smart device about local skylight services, and our experienced ${displayLocation} team will transform your home with natural light.`,
+        title: `Just Say: 'Find New Roof Installation Near Me in ${displayLocation}!'`,
+        description: `Looking for professional new roof installation in ${displayLocation}? Simply ask your smart device about local roofing services, and our experienced ${displayLocation} team will handle your entire project.`,
         features: [
-          `• ${displayLocation} skylight experts`,
-          "• Professional installation",
+          `• ${displayLocation} roofing experts`,
+          "• Quality materials",
           `• ${county} experience`,
-          "• Quality guarantees"
+          "• Full warranties"
         ]
       },
       problemSolvingSection: {
-        title: `${displayLocation} Skylight Solutions`,
+        title: `${displayLocation} New Roof Solutions`,
         problems: [
           {
-            emoji: "🌞",
-            title: `'New ${displayLocation} skylight'`,
+            emoji: "🏠",
+            title: `'New ${displayLocation} roof needed'`,
             description: "Complete installation",
             features: [
-              "Quality products",
+              "Local assessment",
+              "Material choice",
               "Expert fitting",
-              "Weather sealing",
               "Full warranty"
             ]
           },
           {
-            emoji: "🏠",
-            title: `'${displayLocation} home upgrade'`,
-            description: "Home improvement",
+            emoji: "🏗️",
+            title: `'${displayLocation} construction'`,
+            description: "New build roofing",
             features: [
-              "Natural light",
-              "Energy savings",
-              "Value addition",
-              "Modern design"
+              "Design planning",
+              "Material selection",
+              "Code compliance",
+              "Quality assurance"
             ]
           },
           {
-            emoji: "🌡️",
-            title: `'${displayLocation} ventilation'`,
-            description: "Ventilation solutions",
+            emoji: "🌱",
+            title: `'${displayLocation} eco-roofing'`,
+            description: "Sustainable solutions",
             features: [
-              "Fresh air",
-              "Temperature control",
               "Energy efficiency",
-              "Smart controls"
+              "Green materials",
+              "Solar ready",
+              "Future proof"
             ]
           },
           {
             emoji: "💎",
-            title: `'${displayLocation} custom design'`,
-            description: "Custom solutions",
+            title: `'${displayLocation} premium roof'`,
+            description: "High-end options",
             features: [
-              "Unique designs",
-              "Size options",
-              "Style choices",
-              "Special features"
+              "Premium materials",
+              "Expert design",
+              "Custom solutions",
+              "Luxury finish"
             ]
           }
         ]
@@ -120,38 +120,38 @@ const VoiceSkylightInstallationLocation: React.FC<LocationPageProps> = ({ locati
             features: [
               "Site assessment",
               "Design discussion",
-              "Option review",
+              "Material selection",
               "Quote provision"
             ]
           },
           {
-            title: "Preparation Work",
+            title: "Detailed Planning",
             description: "Installation prep",
             features: [
-              "Roof inspection",
-              "Area preparation",
-              "Material delivery",
-              "Safety setup"
+              "Material ordering",
+              "Team scheduling",
+              "Permit handling",
+              "Safety planning"
             ]
           },
           {
-            title: "Expert Installation",
-            description: "Professional fitting",
+            title: "Professional Installation",
+            description: "Expert fitting",
             features: [
-              "Precise cutting",
-              "Proper mounting",
-              "Weather sealing",
-              "Interior finish"
+              "Old roof removal",
+              "New installation",
+              "Quality control",
+              "Progress updates"
             ]
           },
           {
             title: "Final Inspection",
             description: "Quality assurance",
             features: [
-              "Leak testing",
-              "Operation check",
-              "Clean-up verify",
-              "Warranty provide"
+              "Complete check",
+              "Cleanup verify",
+              "Warranty provide",
+              "Final walkthrough"
             ]
           }
         ]
@@ -297,4 +297,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export default VoiceSkylightInstallationLocation;
+export default VoiceNewRoofNearMeLocation;
