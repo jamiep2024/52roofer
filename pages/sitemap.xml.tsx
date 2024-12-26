@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { serviceAreas } from '../data/serviceAreas';
+import { locationData } from '../data/locationData';
 
 const DOMAIN = 'https://www.52roofer.com';
 
@@ -115,8 +116,25 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     'gutter-service'
   ];
 
+  // Add voice service location pages
+  const voiceServices = [
+    'voice-emergency-roofing',
+    'voice-roof-estimate',
+    'voice-flat-roof',
+    'voice-roof-replacement',
+    'voice-local-roofer'
+  ];
+
+  // Add standard service+location combinations
   locationPages.forEach(location => {
     services.forEach(service => {
+      pages.push(`/services/${service}/${location}`);
+    });
+  });
+
+  // Add voice service+location combinations
+  locationPages.forEach(location => {
+    voiceServices.forEach(service => {
       pages.push(`/services/${service}/${location}`);
     });
   });
