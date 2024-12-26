@@ -121,7 +121,7 @@ const Footer = () => {
                     ].map((city) => (
                       <li key={city}>
                         <Link
-                          href={`/location/${city}`}
+                          href={`/roofers-in-${city}`}
                           className="text-gray-400 hover:text-accent transition-colors duration-200 block py-1 touch-target capitalize"
                         >
                           {city}
