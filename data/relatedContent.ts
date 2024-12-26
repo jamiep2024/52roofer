@@ -14,7 +14,14 @@ type ServiceType =
   | 'voice-roof-inspection'
   | 'voice-skylight-installation'
   | 'voice-roof-ventilation'
-  | 'voice-gutter-service';
+  | 'voice-gutter-service'
+  | 'voice-new-roof-near-me'
+  | 'voice-roof-cost-near-me'
+  | 'voice-emergency-roofing'
+  | 'voice-roof-estimate'
+  | 'voice-flat-roof'
+  | 'voice-roof-replacement'
+  | 'voice-local-roofer';
 
 // Service-to-Blog mappings
 export const serviceBlogMappings: Partial<Record<ServiceType, RelatedContent[]>> = {
@@ -43,158 +50,312 @@ export const serviceBlogMappings: Partial<Record<ServiceType, RelatedContent[]>>
 
 // Service-to-Service mappings
 export const serviceRelationships: Record<ServiceType, RelatedContent[]> = {
-  'voice-commercial-roofing': [
+  'voice-emergency-roofing': [
     {
-      title: 'Voice Roof Installation',
-      path: '/services/voice-roof-installation',
-      description: 'Professional roof installation services through voice commands'
+      title: 'Voice Local Roofer',
+      path: '/services/voice-local-roofer',
+      description: 'Find emergency roofers in your area'
     },
     {
-      title: 'Voice Roof Maintenance',
-      path: '/services/voice-roof-maintenance',
-      description: 'Regular maintenance services activated by voice'
+      title: 'Voice Roof Repairs',
+      path: '/services/voice-roof-repairs',
+      description: 'Expert emergency repair services'
+    },
+    {
+      title: 'Voice Roof Estimate',
+      path: '/services/voice-roof-estimate',
+      description: 'Get quick repair estimates'
     },
     {
       title: 'Voice Roof Inspection',
       path: '/services/voice-roof-inspection',
-      description: 'Expert roof inspections through voice activation'
+      description: 'Emergency damage assessment'
+    }
+  ],
+  'voice-roof-estimate': [
+    {
+      title: 'Voice Roof Cost Near Me',
+      path: '/services/voice-roof-cost-near-me',
+      description: 'Local roofing cost information'
+    },
+    {
+      title: 'Voice Local Roofer',
+      path: '/services/voice-local-roofer',
+      description: 'Connect with local estimators'
+    },
+    {
+      title: 'Voice Roof Replacement',
+      path: '/services/voice-roof-replacement',
+      description: 'Full replacement estimates'
+    },
+    {
+      title: 'Voice New Roof Near Me',
+      path: '/services/voice-new-roof-near-me',
+      description: 'Local new roof pricing'
+    }
+  ],
+  'voice-flat-roof': [
+    {
+      title: 'Voice Roof Installation',
+      path: '/services/voice-roof-installation',
+      description: 'Expert flat roof installation'
+    },
+    {
+      title: 'Voice Roof Maintenance',
+      path: '/services/voice-roof-maintenance',
+      description: 'Flat roof maintenance services'
+    },
+    {
+      title: 'Voice Roof Repairs',
+      path: '/services/voice-roof-repairs',
+      description: 'Flat roof repair solutions'
+    },
+    {
+      title: 'Voice Roof Estimate',
+      path: '/services/voice-roof-estimate',
+      description: 'Get flat roof quotes'
+    }
+  ],
+  'voice-roof-replacement': [
+    {
+      title: 'Voice New Roof Near Me',
+      path: '/services/voice-new-roof-near-me',
+      description: 'Local roof replacement services'
+    },
+    {
+      title: 'Voice Roof Cost Near Me',
+      path: '/services/voice-roof-cost-near-me',
+      description: 'Replacement cost information'
+    },
+    {
+      title: 'Voice Roof Estimate',
+      path: '/services/voice-roof-estimate',
+      description: 'Get replacement quotes'
+    },
+    {
+      title: 'Voice Local Roofer',
+      path: '/services/voice-local-roofer',
+      description: 'Find replacement experts'
+    }
+  ],
+  'voice-local-roofer': [
+    {
+      title: 'Voice New Roof Near Me',
+      path: '/services/voice-new-roof-near-me',
+      description: 'Local new roof services'
+    },
+    {
+      title: 'Voice Emergency Roofing',
+      path: '/services/voice-emergency-roofing',
+      description: 'Emergency local roofers'
+    },
+    {
+      title: 'Voice Roof Estimate',
+      path: '/services/voice-roof-estimate',
+      description: 'Get local quotes'
+    },
+    {
+      title: 'Voice Roof Cost Near Me',
+      path: '/services/voice-roof-cost-near-me',
+      description: 'Local pricing information'
+    }
+  ],
+  'voice-new-roof-near-me': [
+    {
+      title: 'Voice Roof Cost Near Me',
+      path: '/services/voice-roof-cost-near-me',
+      description: 'Get local pricing for your new roof'
+    },
+    {
+      title: 'Voice Roof Installation',
+      path: '/services/voice-roof-installation',
+      description: 'Professional roof installation services'
+    },
+    {
+      title: 'Voice Local Roofer',
+      path: '/services/voice-local-roofer',
+      description: 'Find local installation experts'
+    },
+    {
+      title: 'Voice Roof Estimate',
+      path: '/services/voice-roof-estimate',
+      description: 'Get new roof quotes'
+    }
+  ],
+  'voice-roof-cost-near-me': [
+    {
+      title: 'Voice New Roof Near Me',
+      path: '/services/voice-new-roof-near-me',
+      description: 'Find local new roof services'
+    },
+    {
+      title: 'Voice Roof Estimate',
+      path: '/services/voice-roof-estimate',
+      description: 'Get detailed cost estimates'
+    },
+    {
+      title: 'Voice Local Roofer',
+      path: '/services/voice-local-roofer',
+      description: 'Connect with local experts'
+    },
+    {
+      title: 'Voice Roof Replacement',
+      path: '/services/voice-roof-replacement',
+      description: 'Full replacement pricing'
+    }
+  ],
+  'voice-commercial-roofing': [
+    {
+      title: 'Voice Roof Installation',
+      path: '/services/voice-roof-installation',
+      description: 'Professional roof installation services'
+    },
+    {
+      title: 'Voice Roof Maintenance',
+      path: '/services/voice-roof-maintenance',
+      description: 'Regular maintenance services'
+    },
+    {
+      title: 'Voice Roof Inspection',
+      path: '/services/voice-roof-inspection',
+      description: 'Expert roof inspections'
     },
     {
       title: 'Voice Emergency Repairs',
       path: '/services/voice-roof-repairs',
-      description: '24/7 emergency repair services via voice command'
+      description: '24/7 emergency repair services'
     }
   ],
   'voice-residential-roofing': [
     {
       title: 'Voice Roof Installation',
       path: '/services/voice-roof-installation',
-      description: 'Expert installation services through voice commands'
+      description: 'Expert installation services'
     },
     {
       title: 'Voice Gutter Services',
       path: '/services/voice-gutter-service',
-      description: 'Complete gutter solutions via voice activation'
+      description: 'Complete gutter solutions'
     },
     {
       title: 'Voice Skylight Installation',
       path: '/services/voice-skylight-installation',
-      description: 'Professional skylight services through voice commands'
+      description: 'Professional skylight services'
     },
     {
       title: 'Voice Roof Maintenance',
       path: '/services/voice-roof-maintenance',
-      description: 'Regular maintenance services activated by voice'
+      description: 'Regular maintenance services'
     }
   ],
   'voice-roof-maintenance': [
     {
       title: 'Voice Roof Inspection',
       path: '/services/voice-roof-inspection',
-      description: 'Professional inspections through voice commands'
+      description: 'Professional inspections'
     },
     {
       title: 'Voice Roof Repairs',
       path: '/services/voice-roof-repairs',
-      description: 'Expert repair services via voice activation'
+      description: 'Expert repair services'
     },
     {
       title: 'Voice Gutter Services',
       path: '/services/voice-gutter-service',
-      description: 'Complete gutter maintenance solutions'
+      description: 'Gutter maintenance solutions'
     },
     {
       title: 'Voice Roof Ventilation',
       path: '/services/voice-roof-ventilation',
-      description: 'Professional ventilation services and maintenance'
+      description: 'Ventilation services'
     }
   ],
   'voice-roof-inspection': [
     {
       title: 'Voice Roof Repairs',
       path: '/services/voice-roof-repairs',
-      description: 'Expert repair services based on inspection findings'
+      description: 'Expert repair services'
     },
     {
       title: 'Voice Roof Maintenance',
       path: '/services/voice-roof-maintenance',
-      description: 'Regular maintenance following inspection recommendations'
+      description: 'Regular maintenance'
     },
     {
       title: 'Voice Gutter Services',
       path: '/services/voice-gutter-service',
-      description: 'Professional gutter inspections and services'
+      description: 'Gutter inspections'
     },
     {
       title: 'Voice Roof Ventilation',
       path: '/services/voice-roof-ventilation',
-      description: 'Ventilation assessment and solutions'
+      description: 'Ventilation assessment'
     }
   ],
   'voice-skylight-installation': [
     {
       title: 'Voice Roof Installation',
       path: '/services/voice-roof-installation',
-      description: 'Complete roof installation services for skylight preparation'
+      description: 'Complete roof installation'
     },
     {
       title: 'Voice Roof Inspection',
       path: '/services/voice-roof-inspection',
-      description: 'Professional inspections including skylight assessments'
+      description: 'Professional inspections'
     },
     {
       title: 'Voice Roof Ventilation',
       path: '/services/voice-roof-ventilation',
-      description: 'Ventilation solutions working with skylights'
+      description: 'Ventilation solutions'
     },
     {
       title: 'Voice Roof Maintenance',
       path: '/services/voice-roof-maintenance',
-      description: 'Regular maintenance including skylight care'
+      description: 'Regular maintenance'
     }
   ],
   'voice-roof-ventilation': [
     {
       title: 'Voice Roof Inspection',
       path: '/services/voice-roof-inspection',
-      description: 'Professional ventilation assessments and inspections'
+      description: 'Ventilation assessments'
     },
     {
       title: 'Voice Roof Maintenance',
       path: '/services/voice-roof-maintenance',
-      description: 'Regular maintenance including ventilation care'
+      description: 'Regular maintenance'
     },
     {
       title: 'Voice Skylight Installation',
       path: '/services/voice-skylight-installation',
-      description: 'Skylight solutions with proper ventilation'
+      description: 'Skylight solutions'
     },
     {
       title: 'Voice Roof Installation',
       path: '/services/voice-roof-installation',
-      description: 'Complete roof systems with integrated ventilation'
+      description: 'Complete roof systems'
     }
   ],
   'voice-gutter-service': [
     {
       title: 'Voice Roof Inspection',
       path: '/services/voice-roof-inspection',
-      description: 'Complete roof and gutter inspections'
+      description: 'Complete inspections'
     },
     {
       title: 'Voice Roof Maintenance',
       path: '/services/voice-roof-maintenance',
-      description: 'Regular maintenance including gutter care'
+      description: 'Regular maintenance'
     },
     {
       title: 'Voice Roof Repairs',
       path: '/services/voice-roof-repairs',
-      description: 'Expert repairs for roof and gutter issues'
+      description: 'Expert repairs'
     },
     {
       title: 'Voice Roof Installation',
       path: '/services/voice-roof-installation',
-      description: 'New roof systems with integrated guttering'
+      description: 'New roof systems'
     }
   ],
   'roof-inspection': [],

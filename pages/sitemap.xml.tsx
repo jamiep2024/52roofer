@@ -79,6 +79,13 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     '/services/voice-roof-ventilation',
     '/services/voice-roofing-services',
     '/services/voice-skylight-installation',
+    '/services/voice-new-roof-near-me',
+    '/services/voice-roof-cost-near-me',
+    '/services/voice-emergency-roofing',
+    '/services/voice-roof-estimate',
+    '/services/voice-flat-roof',
+    '/services/voice-roof-replacement',
+    '/services/voice-local-roofer',
 
     // Counties
     '/county/berkshire',
