@@ -1,1 +1,8 @@
-{}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/roofers-in-chippenham-wiltshire": "pages/roofers-in-chippenham-wiltshire.js",
+  "/blog/choosing-right-roofing-material": "pages/blog/choosing-right-roofing-material.js",
+  "/services/roof-installation": "pages/services/roof-installation.js"
+}

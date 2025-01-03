@@ -1,9 +1,90 @@
 import SEO from '../components/seo/SEO';
 import Layout from '../components/layout/Layout';
-// pages/all-in-one-demo.tsx
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+
+interface HeroImageProps {
+  src: string;
+  alt: string;
+}
+
+interface LeadFormProps {
+  source: string;
+}
+
+interface LocalBusinessSchemaProps {
+  businessName: string;
+  location: {
+    name: string;
+    county: string;
+    postcodes: string[];
+    coordinates?: {
+      latitude: number;
+      longitude: number;
+    };
+  };
+  url: string;
+  image: string;
+}
+
+interface HowToSchemaProps {
+  name: string;
+  description: string;
+  steps: Array<{
+    name: string;
+    text: string;
+    image: string;
+  }>;
+  totalTime: string;
+}
+
+interface ReviewSchemaProps {
+  itemReviewed: {
+    name: string;
+    image: string;
+    description: string;
+  };
+  reviews: Array<{
+    author: string;
+    reviewRating: number;
+    reviewBody: string;
+    datePublished: string;
+  }>;
+  aggregateRating: {
+    ratingValue: number;
+    reviewCount: number;
+  };
+}
+
+interface VideoSchemaProps {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  duration: string;
+  embedUrl: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+  views: number;
+  lastUpdated: string;
+}
+
+interface DynamicFAQProps {
+  initialFAQs: FAQ[];
+  category: string;
+}
+
+interface ServiceLayoutProps {
+  heroImage: string;
+  heroTitle: string;
+  heroDescription: string;
+  serviceName: string;
+  children?: React.ReactNode;
+}
 
 // =======================
 // Data Definitions
@@ -38,7 +119,7 @@ export const businesses = [
 // =======================
 
 // 1) A simple HeroImage component
-function HeroImage({ src, alt }: { src: string; alt: string }) {
+function HeroImage({ src, alt }: HeroImageProps) {
   return (
 <Layout>
 <SEO title="" description="" />

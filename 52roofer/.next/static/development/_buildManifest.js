@@ -1,5 +1,1 @@
-self.__BUILD_MANIFEST = {
-  __rewrites: { afterFiles: [], beforeFiles: [], fallback: [] },
-  sortedPages: ["\u002F_app"],
-};
-self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB();
+self.__BUILD_MANIFEST = {__rewrites:{afterFiles:[],beforeFiles:[],fallback:[]},"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/roofers-in-chippenham-wiltshire":["static\u002Fchunks\u002Fpages\u002Froofers-in-chippenham-wiltshire.js"],"/services/roof-installation":["static\u002Fchunks\u002Fpages\u002Fservices\u002Froof-installation.js"],sortedPages:["\u002F_app","\u002F_error","\u002Froofers-in-chippenham-wiltshire","\u002Fservices\u002Froof-installation"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

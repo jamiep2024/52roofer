@@ -1,174 +1,130 @@
-const SitemapGenerator = require("sitemap-generator");
-const fs = require("fs").promises;
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-// Configuration for 52roofer.com
-const config = {
-  baseURL: "https://52roofer.com",
-  outputPath: "./public/sitemap.xml",
-  urlListPath: "./scripts/url-list.json",
-  maxDepth: 5,
-  locations: [
-    "oxford",
-    "watchfield",
-    "swindon",
-    "reading",
-    "wiltshire",
-    "gloucestershire",
-  ],
-  services: [
-    "emergency-roof-repairs",
-    "roof-maintenance",
-    "roof-installation",
-    "guttering",
-    "chimney-repairs",
-    "flat-roofing",
-  ],
-  excludePatterns: [
-    "/404",
-    "/500",
-    "/api/",
-    "/login",
-    "/logout",
-    "/admin",
-    "/assets/",
-    ".jpg",
-    ".png",
-    ".gif",
-    ".pdf",
-  ],
-};
+const SITE_URL = 'https://52roofer.com';
+const PAGES_DIR = path.join(process.cwd(), 'pages');
 
-// Generate all possible URLs
-function generateStaticUrls() {
-  const urls = ["/", "/about", "/contact", "/services", "/blog", "/locations"];
+// Helper function to get all pages recursively
+function getAllPages(dir = PAGES_DIR) {
+  let pages = [];
+  const items = fs.readdirSync(dir);
 
-  // Add service pages
-  config.services.forEach((service) => {
-    urls.push(`/services/${service}`);
-  });
+  for (const item of items) {
+    const fullPath = path.join(dir, item);
+    const stat = fs.statSync(fullPath);
 
-  // Add location pages
-  config.locations.forEach((location) => {
-    urls.push(`/locations/${location}`);
-
-    // Add service+location combinations
-    config.services.forEach((service) => {
-      urls.push(`/locations/${location}/services/${service}`);
-    });
-  });
-
-  return urls;
-}
-
-async function generateSitemap() {
-  console.log(`Starting sitemap generation for ${config.baseURL}`);
-  console.log(`Current time: ${new Date().toISOString()}`);
-
-  try {
-    // Create necessary directories
-    await fs.mkdir(path.dirname(config.outputPath), { recursive: true });
-    await fs.mkdir(path.dirname(config.urlListPath), { recursive: true });
-
-    // Initialize generator
-    const generator = SitemapGenerator(config.baseURL, {
-      stripQuerystring: true,
-      filepath: config.outputPath,
-      maxDepth: config.maxDepth,
-      exclude: config.excludePatterns,
-      lastMod: true,
-      changeFreq: "weekly",
-      priorityMap: [1.0, 0.8, 0.6, 0.4, 0.2],
-    });
-
-    // Track URLs
-    const urlTracker = {
-      discovered: new Set(),
-      excluded: new Set(),
-      errors: new Set(),
-      staticUrls: generateStaticUrls(),
-    };
-
-    // Event handlers
-    generator.on("add", (url) => {
-      urlTracker.discovered.add(url);
-      console.log(`Added: ${url}`);
-    });
-
-    generator.on("ignore", (url) => {
-      urlTracker.excluded.add(url);
-      console.log(`Ignored: ${url}`);
-    });
-
-    generator.on("error", (error) => {
-      console.error("Error:", error);
-      urlTracker.errors.add(error.url || "Unknown URL");
-    });
-
-    generator.on("done", async () => {
-      console.log("\nSitemap generation completed!");
-
-      // Combine and deduplicate URLs
-      const allUrls = [
-        ...new Set([
-          ...urlTracker.staticUrls,
-          ...Array.from(urlTracker.discovered),
-        ]),
-      ];
-
-      // Save URL list
-      const urlList = {
-        generatedAt: new Date().toISOString(),
-        baseURL: config.baseURL,
-        statistics: {
-          total: allUrls.length,
-          static: urlTracker.staticUrls.length,
-          discovered: urlTracker.discovered.size,
-          excluded: urlTracker.excluded.size,
-          errors: urlTracker.errors.size,
-        },
-        urls: allUrls,
-      };
-
-      await fs.writeFile(config.urlListPath, JSON.stringify(urlList, null, 2));
-
-      // Print statistics
-      console.log("\nGeneration Statistics:");
-      console.log("-----------------------");
-      console.log(`Total URLs: ${allUrls.length}`);
-      console.log(`Static URLs: ${urlTracker.staticUrls.length}`);
-      console.log(`Discovered URLs: ${urlTracker.discovered.size}`);
-      console.log(`Excluded URLs: ${urlTracker.excluded.size}`);
-      console.log(`Errors: ${urlTracker.errors.size}`);
-      console.log("\nFiles generated:");
-      console.log(`- Sitemap: ${config.outputPath}`);
-      console.log(`- URL List: ${config.urlListPath}`);
-    });
-
-    // Start the crawler
-    console.log("Starting crawler...");
-    generator.start();
-
-    // Add static URLs after a short delay
-    setTimeout(() => {
-      urlTracker.staticUrls.forEach((url) => {
-        generator.queueURL(new URL(url, config.baseURL).href);
-      });
-    }, 1000);
-  } catch (error) {
-    console.error("Fatal error:", error);
-    process.exit(1);
+    if (stat.isDirectory()) {
+      if (!item.startsWith('_') && !['api', 'sitemaps'].includes(item)) {
+        pages = pages.concat(getAllPages(fullPath));
+      }
+    } else if (
+      (item.endsWith('.tsx') || item.endsWith('.ts')) &&
+      !item.startsWith('_') &&
+      !item.startsWith('.') &&
+      !item.includes('[') && // Exclude dynamic routes
+      !item.includes('sitemap')
+    ) {
+      pages.push(fullPath);
+    }
   }
+
+  return pages;
 }
 
-// Handle process termination
-process.on("SIGINT", () => {
-  console.log("\nSitemap generation interrupted");
-  process.exit(0);
-});
+// Helper function to convert file path to URL
+function pathToUrl(filePath) {
+  const relativePath = path.relative(PAGES_DIR, filePath);
+  return `${SITE_URL}/${relativePath
+    .replace(/\\/g, '/')
+    .replace(/\.tsx?$/, '')
+    .replace(/\/index$/, '')}`;
+}
+
+// Generate sitemap XML
+function generateSitemap() {
+  console.log('Generating sitemap...\n');
+
+  const pages = getAllPages();
+  console.log(`Found ${pages.length} pages\n`);
+
+  // Group pages by type
+  const pageGroups = {
+    locations: [],
+    services: [],
+    blog: [],
+    other: []
+  };
+
+  pages.forEach(page => {
+    const url = pathToUrl(page);
+    if (url.includes('/locations/')) {
+      pageGroups.locations.push(url);
+    } else if (url.includes('/services/')) {
+      pageGroups.services.push(url);
+    } else if (url.includes('/blog/')) {
+      pageGroups.blog.push(url);
+    } else {
+      pageGroups.other.push(url);
+    }
+  });
+
+  // Generate individual sitemaps
+  const sitemapsDir = path.join(process.cwd(), 'public', 'sitemaps');
+  if (!fs.existsSync(sitemapsDir)) {
+    fs.mkdirSync(sitemapsDir, { recursive: true });
+  }
+
+  // Helper function to create sitemap content
+  function createSitemapContent(urls, changefreq = 'weekly', priority = '0.8') {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(url => `  <url>
+    <loc>${url}</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+  }
+
+  // Create individual sitemaps
+  Object.entries(pageGroups).forEach(([type, urls]) => {
+    if (urls.length > 0) {
+      const sitemapPath = path.join(sitemapsDir, `${type}.xml`);
+      fs.writeFileSync(sitemapPath, createSitemapContent(urls));
+      console.log(`Created ${type} sitemap with ${urls.length} URLs`);
+    }
+  });
+
+  // Create sitemap index
+  const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${Object.keys(pageGroups)
+    .filter(type => pageGroups[type].length > 0)
+    .map(type => `  <sitemap>
+    <loc>${SITE_URL}/sitemaps/${type}.xml</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+  </sitemap>`).join('\n')}
+</sitemapindex>`;
+
+  fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), sitemapIndex);
+  console.log('\nCreated sitemap index');
+
+  // Create robots.txt
+  const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml`;
+
+  fs.writeFileSync(path.join(process.cwd(), 'public', 'robots.txt'), robotsTxt);
+  console.log('Created robots.txt');
+
+  console.log('\nSitemap generation complete!');
+}
 
 // Run the generator
-generateSitemap().catch((error) => {
-  console.error("Fatal error:", error);
-  process.exit(1);
-});
+try {
+  generateSitemap();
+} catch (error) {
+  console.error('Error generating sitemap:', error);
+}

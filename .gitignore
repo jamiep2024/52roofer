@@ -1,3 +1,6 @@
+node_modules
+node_modules
+cat > .gitignore << 'EOL'
 # dependencies
 /node_modules
 /.pnp
@@ -34,5 +37,10 @@ yarn-error.log*
 next-env.d.ts
 
 # IDE
-.idea
-.vscode
+.idea/
+.vscode/
+
+# Cache
+.cache/
+dist/
+EOL
