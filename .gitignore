@@ -40,4 +40,7 @@ next-env.d.ts
 # Cache
 .cache/
 dist/
+
+# dependencies
+/node_modules
 EOL
