@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["shared/*"],
+      "@vite/*": ["vite-landing/src/*"],
+      "@next/*": ["52roofer/*"]
+    }
+  }
+}

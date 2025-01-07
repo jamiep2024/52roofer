@@ -1,0 +1,14 @@
+<svg width="120" height="24" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- Google G Logo -->
+  <path d="M12 12c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-2-1c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z" fill="#4285F4"/>
+  <!-- Yellow Stars -->
+  <g transform="translate(20, 4)" fill="#FBBC05">
+    <path d="M8 0L6 6 0 7l4 4-1 6 5-3 5 3-1-6 4-4-6-1z"/>
+    <path d="M24 0l-2 6-6 1 4 4-1 6 5-3 5 3-1-6 4-4-6-1z"/>
+    <path d="M40 0l-2 6-6 1 4 4-1 6 5-3 5 3-1-6 4-4-6-1z"/>
+    <path d="M56 0l-2 6-6 1 4 4-1 6 5-3 5 3-1-6 4-4-6-1z"/>
+    <path d="M72 0l-2 6-6 1 4 4-1 6 5-3 5 3-1-6 4-4-6-1z"/>
+  </g>
+  <!-- Background Rectangle -->
+  <rect x="0" y="0" width="120" height="24" fill="none" stroke="#E8E8E8" stroke-width="1" rx="12"/>
+</svg>
