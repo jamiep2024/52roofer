@@ -1,4 +1,3 @@
-cat > tsconfig.json << 'EOL'
 {
   "compilerOptions": {
     "target": "es5",
@@ -17,10 +16,9 @@ cat > tsconfig.json << 'EOL'
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "*": ["./src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
-EOL
