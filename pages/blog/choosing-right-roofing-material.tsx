@@ -18,16 +18,12 @@ const articleSchema = {
   "publisher": {
     "@type": "Organization",
     "name": "52roofer.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.52roofer.com/images/logo.png"
-        </Layout>
-
-      );
-}
-
-  },
-  "description": "Comprehensive guide to choosing the perfect roofing material for your home. Compare costs, durability, and benefits of different roofing materials.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.52roofer.com/images/logo.png"
+      }
+    },
+    "description": "Comprehensive guide to choosing the perfect roofing material for your home. Compare costs, durability, and benefits of different roofing materials.",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://www.52roofer.com/blog/choosing-right-roofing-material"

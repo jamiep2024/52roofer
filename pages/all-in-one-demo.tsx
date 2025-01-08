@@ -1,9 +1,28 @@
-import SEO from '../components/seo/SEO';
-import Layout from '../components/layout/Layout';
-// pages/all-in-one-demo.tsx
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import Layout from '../components/layout/Layout';
+import SEO from '../components/seo/SEO';
+
+interface FAQ {
+  question: string;
+  answer: string;
+  views: number;
+  lastUpdated: string;
+}
+
+interface Step {
+  name: string;
+  text: string;
+  image: string;
+}
+
+interface Review {
+  author: string;
+  reviewRating: number;
+  reviewBody: string;
+  datePublished: string;
+}
 
 // =======================
 // Data Definitions
@@ -40,16 +59,16 @@ export const businesses = [
 // 1) A simple HeroImage component
 function HeroImage({ src, alt }: { src: string; alt: string }) {
   return (
-<Layout>
-<SEO title="" description="" />
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      sizes="100vw"
-      style={{ objectFit: 'cover' }}
-      priority
-    />
+    <div className="relative w-full h-96">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="100vw"
+        style={{ objectFit: 'cover' }}
+        priority
+      />
+    </div>
   );
 }
 
@@ -306,39 +325,41 @@ function ConversationalRoofingTemplate({ config }: { config: any }) {
     <div>
       <Head>
         <title>{title}</title>
-        <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "RoofingContractor",
-      "@id": "https://52roofer.com/all-in-one-demo#organization",
-      "name": "52Roofer",
-      "url": "https://52roofer.com/all-in-one-demo",
-      "image": "https://52roofer.com/images/hero-bg.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Oxford",
-        "addressRegion": "Oxfordshire",
-        "addressCountry": "GB"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://52roofer.com/all-in-one-demo#webpage",
-      "url": "https://52roofer.com/all-in-one-demo",
-      "name": "Roofing Services",
-      "isPartOf": {
-        "@id": "https://52roofer.com/#website"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://52roofer.com/all-in-one-demo#faq",
-      "mainEntity": []
-    }
-  ]
-}</script>
-</Head>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "RoofingContractor",
+                "@id": "https://52roofer.com/all-in-one-demo#organization",
+                "name": "52Roofer",
+                "url": "https://52roofer.com/all-in-one-demo",
+                "image": "https://52roofer.com/images/hero-bg.jpg",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Oxford",
+                  "addressRegion": "Oxfordshire",
+                  "addressCountry": "GB"
+                }
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://52roofer.com/all-in-one-demo#webpage",
+                "url": "https://52roofer.com/all-in-one-demo",
+                "name": "Roofing Services",
+                "isPartOf": {
+                  "@id": "https://52roofer.com/#website"
+                }
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://52roofer.com/all-in-one-demo#faq",
+                "mainEntity": []
+              }
+            ]
+          })}
+        </script>
+      </Head>
 
       <header className="p-8 bg-blue-200">
         <h1 className="text-3xl font-bold">{heroTitle}</h1>
@@ -1052,40 +1073,41 @@ function AdvancedRoofing() {
 // =======================
 export default function AllInOnePage() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold p-4">
-        All-In-One Demo: Multiple Components in One File
-      </h1>
-      <p className="px-4 pb-8">
-        Below are three separate "pages" (VoiceRoofInstallation, RoofersInBeaconsfield, 
-        AdvancedRoofing) all in one file for demonstration. In a real Next.js app, 
-        each would normally be in <code>/pages</code> or in its own separate file.
-      </p>
+    <Layout>
+      <div>
+        <h1 className="text-3xl font-bold p-4">
+          All-In-One Demo: Multiple Components in One File
+        </h1>
+        <p className="px-4 pb-8">
+          Below are three separate "pages" (VoiceRoofInstallation, RoofersInBeaconsfield, 
+          AdvancedRoofing) all in one file for demonstration. In a real Next.js app, 
+          each would normally be in <code>/pages</code> or in its own separate file.
+        </p>
 
-      <hr className="my-4" />
-      <section id="voice-roof-installation" className="mb-16">
-        <h2 className="text-xl font-semibold px-4 my-4">
-          1) VoiceRoofInstallation
-        </h2>
-        <VoiceRoofInstallation />
-      </section>
+        <hr className="my-4" />
+        <section id="voice-roof-installation" className="mb-16">
+          <h2 className="text-xl font-semibold px-4 my-4">
+            1) VoiceRoofInstallation
+          </h2>
+          <VoiceRoofInstallation />
+        </section>
 
-      <hr className="my-4" />
-      <section id="roofers-in-beaconsfield" className="mb-16">
-        <h2 className="text-xl font-semibold px-4 my-4">
-          2) RoofersInBeaconsfield
-        </h2>
-        <RoofersInBeaconsfield />
-      </section>
+        <hr className="my-4" />
+        <section id="roofers-in-beaconsfield" className="mb-16">
+          <h2 className="text-xl font-semibold px-4 my-4">
+            2) RoofersInBeaconsfield
+          </h2>
+          <RoofersInBeaconsfield />
+        </section>
 
-      <hr className="my-4" />
-      <section id="advanced-roofing" className="mb-16">
-        <h2 className="text-xl font-semibold px-4 my-4">
-          3) AdvancedRoofing
-        </h2>
-        <AdvancedRoofing />
-      </section>
-    </div>
-</Layout>
+        <hr className="my-4" />
+        <section id="advanced-roofing" className="mb-16">
+          <h2 className="text-xl font-semibold px-4 my-4">
+            3) AdvancedRoofing
+          </h2>
+          <AdvancedRoofing />
+        </section>
+      </div>
+    </Layout>
   );
 }
