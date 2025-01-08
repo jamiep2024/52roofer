@@ -1,10 +1,10 @@
 import React from 'react';
 import { NextPage } from 'next';
-import Layout from '../../../components/layout/Layout';
-import Hero from '../../../components/Hero';
-import ServiceAreas from '../../../components/ServiceAreas';
-import Reviews from '../../../components/Reviews';
-import ContactForm from '../../../components/forms/ContactForm';
+import Layout from '../../../../components/layout/Layout';
+import Hero, { HeroProps } from '../../../../components/Hero';
+import ServiceAreas, { ServiceAreasProps } from '../../../../components/ServiceAreas';
+import Reviews, { ReviewsProps } from '../../../../components/Reviews';
+import ContactForm, { ContactFormProps } from '../../../../components/forms/ContactForm';
 
 const ReadingPage: NextPage = () => {
   return (
