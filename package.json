@@ -42,6 +42,7 @@
     "next-seo": "^6.4.0",
     "next-sitemap": "^4.2.3",
     "node-fetch": "2.7.0",
+    "node-sass": "7.0.3",
     "postcss": "^8.4.32",
     "react": "19.0.0",
     "react-dom": "19.0.0",

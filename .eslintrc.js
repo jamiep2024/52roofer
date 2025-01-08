@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['next/core-web-configs', 'plugin:@typescript-eslint/recommended'],
+  extends: ['next/core-web-vitals', 'plugin:@typescript-eslint/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
@@ -8,5 +8,7 @@ module.exports = {
       jsx: true,
     },
   },
-  rules: {}
+  rules: {
+    // Add any specific rules here
+  }
 }

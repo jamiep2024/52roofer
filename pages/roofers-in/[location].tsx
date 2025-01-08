@@ -4,7 +4,7 @@ import Layout from "../../components/Layout";
 
 export default function Page() {
   const router = useRouter();
-  const { location } = router.query; // This will grab the dynamic parameter
+  const { location } = router.query;
   
   return (
     <Layout>
@@ -19,34 +19,5 @@ export default function Page() {
       </div>
     </Layout>
   );
-}
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has type errors.
-    ignoreBuildErrors: true,
-  }
-}
-
-module.exports = {
-  extends: ['next/core-web-configs', 'plugin:@typescript-eslint/recommended'],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-  rules: {
-    // Add any specific rules here
-  }
 }
 
