@@ -116,9 +116,8 @@ const faqSchema = {
 
 export default function About() {
   return (
-<Layout>
-<SEO title="" description="" />
-    <>
+    <Layout>
+      <SEO title="" description="" />
       <NextSeo
         title="#1 Emergency Roofers Near Me | 24/7 Local Roof Repairs | Best Price Guarantee 2024"
         description="FAST Emergency Roofer Near Me 24/7 Roof Repairs 10-Year Guarantee 500+ 5 Reviews FREE Quote in 1Hr. Best Local Roofers: Oxfordshire, Gloucestershire, Wiltshire & Berkshire. Roof Replacement from 2999. Emergency Call-Out in 60mins!"
@@ -151,7 +150,7 @@ export default function About() {
           url: 'https://www.52roofer.com/about',
           site_name: '52roofer.com - #1 Emergency Roofing Services',
           title: 'Emergency Roofer Near Me | 24/7 Local Roof Repairs | Best Price Guarantee',
-          description: 'URGENT Roof Repairs? We&apos;re Here 24/7! 60min Response FREE Quote 10-Year Guarantee. Your Local Emergency Roofers in Oxfordshire & Surrounding Areas. CALL NOW!',
+          description: 'URGENT Roof Repairs? We\'re Here 24/7! 60min Response FREE Quote 10-Year Guarantee. Your Local Emergency Roofers in Oxfordshire & Surrounding Areas. CALL NOW!',
           images: [
             {
               url: 'https://www.52roofer.com/images/og-image.jpg',
@@ -174,46 +173,55 @@ export default function About() {
         <meta name="description" content="FAST Emergency Roofer in Watchfield & Oxford - 24/7 Roof Repairs 10-Year Guarantee 500+ 5 Reviews 60min Response FREE Quote. Covering SN6 8TJ & Surrounding Areas. Roof Replacement from 2999. CALL NOW!" />
         <meta name="keywords" content="emergency roofer near me, local roofers, 24 hour roof repair oxford" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <script 
+        <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema)
+          }}
         />
-        <script 
+        <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema)
+          }}
         />
-        <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "RoofingContractor",
-      "@id": "https://52roofer.com/about#organization",
-      "name": "52Roofer",
-      "url": "https://52roofer.com/about",
-      "image": "https://52roofer.com/images/hero-bg.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Oxford",
-        "addressRegion": "Oxfordshire",
-        "addressCountry": "GB"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://52roofer.com/about#webpage",
-      "url": "https://52roofer.com/about",
-      "name": "Roofing Services",
-      "isPartOf": {
-        "@id": "https://52roofer.com/#website"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://52roofer.com/about#faq",
-      "mainEntity": []
-    }
-  ]
-}</script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "RoofingContractor",
+                  "@id": "https://52roofer.com/about#organization",
+                  "name": "52Roofer",
+                  "url": "https://52roofer.com/about",
+                  "image": "https://52roofer.com/images/hero-bg.jpg",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Oxford",
+                    "addressRegion": "Oxfordshire",
+                    "addressCountry": "GB"
+                  }
+                },
+                {
+                  "@type": "WebPage",
+                  "@id": "https://52roofer.com/about#webpage",
+                  "url": "https://52roofer.com/about",
+                  "name": "Roofing Services",
+                  "isPartOf": {
+                    "@id": "https://52roofer.com/#website"
+                  }
+                },
+                {
+                  "@type": "FAQPage",
+                  "@id": "https://52roofer.com/about#faq",
+                  "mainEntity": []
+                }
+              ]
+            })
+          }}
+        />
 </Head>
 
       <main className="bg-white">
@@ -269,7 +277,6 @@ export default function About() {
           </div>
         </div>
       </main>
-    </>
-</Layout>
+    </Layout>
   );
-};
+}
