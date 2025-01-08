@@ -178,13 +178,13 @@ export default function About() {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema)
           }}
-        />
+        ></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(faqSchema)
           }}
-        />
+        ></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -221,7 +221,7 @@ export default function About() {
               ]
             })
           }}
-        />
+        ></script>
 </Head>
 
       <main className="bg-white">
