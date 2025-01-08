@@ -1,0 +1,23 @@
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Layout from "../../components/Layout";
+
+export default function Page() {
+  const router = useRouter();
+  const { location } = router.query; // This will grab the dynamic parameter
+  
+  return (
+    <Layout>
+      <Head>
+        <title>52Roofer - Professional Roofing Services in {location}</title>
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold mb-8">
+          Professional Roofing Services in {location}
+        </h1>
+        {/* Page content will be added here */}
+      </div>
+    </Layout>
+  );
+}
+

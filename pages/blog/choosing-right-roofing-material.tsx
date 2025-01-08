@@ -1,5 +1,5 @@
-import SEO from '../components/seo/SEO';
-import Layout from '../components/layout/Layout';
+import SEO from '../../components/seo/SEO';
+import Layout from '../../components/layout/Layout';
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -134,9 +134,10 @@ const RoofingMaterialsGuide = () => {
 
   return (
     <Layout>
-      <Layout>
-<SEO title="" description="" />
-    <>
+      <SEO 
+        title="Complete Guide to Roofing Materials | Expert Comparison | 52roofer.com"
+        description="Compare different roofing materials - costs, durability, pros and cons. Expert guide to choosing the perfect roofing material for your home and budget."
+      />
       <Head>
         <title>Complete Guide to Roofing Materials | Expert Comparison | 52roofer.com</title>
         <meta name="description" content="Compare different roofing materials - costs, durability, pros and cons. Expert guide to choosing the perfect roofing material for your home and budget." />
@@ -146,38 +147,43 @@ const RoofingMaterialsGuide = () => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema, materialsSchema]) }}
         />
-        <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "RoofingContractor",
-      "@id": "https://52roofer.com/blog/choosing-right-roofing-material#organization",
-      "name": "52Roofer",
-      "url": "https://52roofer.com/blog/choosing-right-roofing-material",
-      "image": "https://52roofer.com/images/hero-bg.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Oxford",
-        "addressRegion": "Oxfordshire",
-        "addressCountry": "GB"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://52roofer.com/blog/choosing-right-roofing-material#webpage",
-      "url": "https://52roofer.com/blog/choosing-right-roofing-material",
-      "name": "Roofing Services",
-      "isPartOf": {
-        "@id": "https://52roofer.com/#website"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://52roofer.com/blog/choosing-right-roofing-material#faq",
-      "mainEntity": []
-    }
-  ]
-}</script>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "RoofingContractor",
+          "@id": "https://52roofer.com/blog/choosing-right-roofing-material#organization",
+          "name": "52Roofer",
+          "url": "https://52roofer.com/blog/choosing-right-roofing-material",
+          "image": "https://52roofer.com/images/hero-bg.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Oxford",
+            "addressRegion": "Oxfordshire",
+            "addressCountry": "GB"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://52roofer.com/blog/choosing-right-roofing-material#webpage",
+          "url": "https://52roofer.com/blog/choosing-right-roofing-material",
+          "name": "Roofing Services",
+          "isPartOf": {
+            "@id": "https://52roofer.com/#website"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://52roofer.com/blog/choosing-right-roofing-material#faq",
+          "mainEntity": []
+        }
+      ]
+    })
+  }}
+/>
 </Head>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -278,7 +284,7 @@ const RoofingMaterialsGuide = () => {
           </div>
         </article>
       </div>
-    </>
+    </Layout>
   );
 };
 
