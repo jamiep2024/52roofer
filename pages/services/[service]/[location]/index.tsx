@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
-import { serviceAreas } from '../../../data/serviceAreas';
-import LeadForm from '../../../components/forms/LeadForm';
-import Layout from '../../../components/layout/Layout';
+import { serviceAreas } from '../../../../data/serviceAreas';
+import LeadForm from '../../../../components/forms/LeadForm';
+import Layout from '../../../../components/layout/Layout';
 
 interface ServiceInfo {
   title: string;
@@ -137,38 +137,43 @@ export default function ServicePage({ service, location, county, serviceInfo }: 
             })
           }}
         />
-  <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "RoofingContractor",
-      "@id": "https://52roofer.com/services/[service]/[location]#organization",
-      "name": "52Roofer",
-      "url": "https://52roofer.com/services/[service]/[location]",
-      "image": "https://52roofer.com/images/hero-bg.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Oxford",
-        "addressRegion": "Oxfordshire",
-        "addressCountry": "GB"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://52roofer.com/services/[service]/[location]#webpage",
-      "url": "https://52roofer.com/services/[service]/[location]",
-      "name": "Roofing Services",
-      "isPartOf": {
-        "@id": "https://52roofer.com/#website"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://52roofer.com/services/[service]/[location]#faq",
-      "mainEntity": []
-    }
-  ]
-}</script>
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "RoofingContractor",
+            "@id": `https://52roofer.com/services/${service}/${location.toLowerCase().replace(/ /g, '-')}#organization`,
+            "name": "52Roofer",
+            "url": `https://52roofer.com/services/${service}/${location.toLowerCase().replace(/ /g, '-')}`,
+            "image": "https://52roofer.com/images/hero-bg.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Oxford",
+              "addressRegion": "Oxfordshire",
+              "addressCountry": "GB"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": `https://52roofer.com/services/${service}/${location.toLowerCase().replace(/ /g, '-')}#webpage`,
+            "url": `https://52roofer.com/services/${service}/${location.toLowerCase().replace(/ /g, '-')}`,
+            "name": "Roofing Services",
+            "isPartOf": {
+              "@id": "https://52roofer.com/#website"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": `https://52roofer.com/services/${service}/${location.toLowerCase().replace(/ /g, '-')}#faq`,
+            "mainEntity": []
+          }
+        ]
+      })
+    }}
+  />
 </Head>
 
       {/* Hero Section */}
