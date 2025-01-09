@@ -13,7 +13,8 @@
     "verify": "node scripts/verify-all-urls.js",
     "check-links": "node scripts/verify-site-health.js",
     "analyze": "cross-env ANALYZE=true next build",
-    "test": "echo \"No tests specified\""
+    "test": "echo \"No tests specified\"",
+    "sitemap": "ts-node --project tsconfig.scripts.json scripts/scripts/generate-sitemap.ts"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -59,7 +60,8 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.33.2",
     "prettier": "^3.1.1",
-    "prettier-plugin-tailwindcss": "^0.5.9"
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "ts-node": "^10.9.2"
   },
   "engines": {
     "node": ">=18.17.0",
