@@ -1,14 +1,12 @@
 // scripts/generate-sitemap.ts
-import { writeFileSync } from "fs";
-import { globby } from "globby";
+import globby from "globby";
 import prettier from "prettier";
 
-async function generate() {
+async function generate(): Promise<string> {
   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
   const pages = await globby([
-    "pages/**/*.tsx",
-    "pages/**/*.ts",
-    "pages/**/*.js",
+    "pages/**/*.{tsx,ts,js}",
+    "pages/**/\\[*\\]*.{tsx,ts,js}", // Include dynamic routes
     "!pages/_*.tsx",
     "!pages/api",
     "!pages/404.tsx",
@@ -43,7 +41,7 @@ async function generate() {
     parser: "html",
   });
 
-  writeFileSync("public/sitemap.xml", formatted);
+  return formatted;
 }
 
-generate();
+export default generate;
