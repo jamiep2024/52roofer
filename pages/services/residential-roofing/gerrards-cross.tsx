@@ -1,31 +1,34 @@
-import ServiceLayout from "'components/ServiceLayout"' (see below for file content);
+import ServiceLayout from '../../components/ServiceLayout';
+import SchemaMarkup from '../../components/SchemaMarkup';
 
 const ServiceLocationPage = () => {
   const meta = {
     title: '[Service] Services in Gerrards Cross | 52Roofer',
-    description: 'Professional residential roofing services in Gerrards Cross. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!',
-    canonical: 'https://52roofer.com/services/residential roofing/roofers-in-gerrards-cross',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "RoofingContractor",
-      "name": "52Roofer",
-      "url": "https://52roofer.com/services/residential roofing/roofers-in-gerrards-cross",
-      "description": "Professional residential roofing services in Gerrards Cross. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!",
-      "areaServed": "Gerrards Cross",
-      "priceRange": "$$",
-      "paymentAccepted": ["Cash", "Credit Card", "Check"],
-      "currenciesAccepted": "USD",
-      "sameAs": [
-        "https://www.facebook.com/52roofer",
-        "https://twitter.com/52roofer"
-      ]
-    }
+    description: 'Professional Residential Roofing services in Gerrards Cross. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!',
+    canonical: 'https://52roofer.com/services/Residential Roofing/roofers-in-gerrards-cross'
+  };
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "52Roofer",
+    "url": "https://52roofer.com/services/Residential Roofing/roofers-in-gerrards-cross",
+    "description": "Professional Residential Roofing services in Gerrards Cross. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!",
+    "areaServed": "Gerrards Cross",
+    "priceRange": "$$",
+    "paymentAccepted": ["Cash", "Credit Card", "Check"],
+    "currenciesAccepted": "USD",
+    "sameAs": [
+      "https://www.facebook.com/52roofer",
+      "https://twitter.com/52roofer"
+    ]
   };
 
   return (
     <ServiceLayout meta={meta}>
-      <h1>[Service] Services in Gerrards Cross</h1>
-      <p>Our expert team provides comprehensive residential roofing services in Gerrards Cross, including:</p>
+      <SchemaMarkup schema={schema} />
+      <h1>[Service] Services in {meta.title.split('|')[0].trim()}</h1>
+      <p>Our expert team provides comprehensive Residential Roofing services in Gerrards Cross, including:</p>
       <ul>
         <li>Roof repairs and maintenance</li>
         <li>Complete roof replacements</li>

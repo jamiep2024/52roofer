@@ -1,31 +1,34 @@
-import ServiceLayout from "'components/ServiceLayout"' (see below for file content);
+import ServiceLayout from '../../components/ServiceLayout';
+import SchemaMarkup from '../../components/SchemaMarkup';
 
 const ServiceLocationPage = () => {
   const meta = {
     title: '[Service] Services in Aldershot | 52Roofer',
-    description: 'Professional residential roofing services in Aldershot. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!',
-    canonical: 'https://52roofer.com/services/residential roofing/roofers-in-aldershot',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "RoofingContractor",
-      "name": "52Roofer",
-      "url": "https://52roofer.com/services/residential roofing/roofers-in-aldershot",
-      "description": "Professional residential roofing services in Aldershot. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!",
-      "areaServed": "Aldershot",
-      "priceRange": "$$",
-      "paymentAccepted": ["Cash", "Credit Card", "Check"],
-      "currenciesAccepted": "USD",
-      "sameAs": [
-        "https://www.facebook.com/52roofer",
-        "https://twitter.com/52roofer"
-      ]
-    }
+    description: 'Professional Residential Roofing services in Aldershot. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!',
+    canonical: 'https://52roofer.com/services/Residential Roofing/roofers-in-aldershot'
+  };
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "52Roofer",
+    "url": "https://52roofer.com/services/Residential Roofing/roofers-in-aldershot",
+    "description": "Professional Residential Roofing services in Aldershot. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!",
+    "areaServed": "Aldershot",
+    "priceRange": "$$",
+    "paymentAccepted": ["Cash", "Credit Card", "Check"],
+    "currenciesAccepted": "USD",
+    "sameAs": [
+      "https://www.facebook.com/52roofer",
+      "https://twitter.com/52roofer"
+    ]
   };
 
   return (
     <ServiceLayout meta={meta}>
-      <h1>[Service] Services in Aldershot</h1>
-      <p>Our expert team provides comprehensive residential roofing services in Aldershot, including:</p>
+      <SchemaMarkup schema={schema} />
+      <h1>[Service] Services in {meta.title.split('|')[0].trim()}</h1>
+      <p>Our expert team provides comprehensive Residential Roofing services in Aldershot, including:</p>
       <ul>
         <li>Roof repairs and maintenance</li>
         <li>Complete roof replacements</li>

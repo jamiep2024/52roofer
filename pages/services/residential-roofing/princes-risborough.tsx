@@ -1,31 +1,34 @@
-import ServiceLayout from "'components/ServiceLayout"' (see below for file content);
+import ServiceLayout from '../../components/ServiceLayout';
+import SchemaMarkup from '../../components/SchemaMarkup';
 
 const ServiceLocationPage = () => {
   const meta = {
     title: '[Service] Services in Princes Risborough | 52Roofer',
-    description: 'Professional residential roofing services in Princes Risborough. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!',
-    canonical: 'https://52roofer.com/services/residential roofing/roofers-in-princes-risborough',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "RoofingContractor",
-      "name": "52Roofer",
-      "url": "https://52roofer.com/services/residential roofing/roofers-in-princes-risborough",
-      "description": "Professional residential roofing services in Princes Risborough. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!",
-      "areaServed": "Princes Risborough",
-      "priceRange": "$$",
-      "paymentAccepted": ["Cash", "Credit Card", "Check"],
-      "currenciesAccepted": "USD",
-      "sameAs": [
-        "https://www.facebook.com/52roofer",
-        "https://twitter.com/52roofer"
-      ]
-    }
+    description: 'Professional Residential Roofing services in Princes Risborough. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!',
+    canonical: 'https://52roofer.com/services/Residential Roofing/roofers-in-princes-risborough'
+  };
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "52Roofer",
+    "url": "https://52roofer.com/services/Residential Roofing/roofers-in-princes-risborough",
+    "description": "Professional Residential Roofing services in Princes Risborough. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!",
+    "areaServed": "Princes Risborough",
+    "priceRange": "$$",
+    "paymentAccepted": ["Cash", "Credit Card", "Check"],
+    "currenciesAccepted": "USD",
+    "sameAs": [
+      "https://www.facebook.com/52roofer",
+      "https://twitter.com/52roofer"
+    ]
   };
 
   return (
     <ServiceLayout meta={meta}>
-      <h1>[Service] Services in Princes Risborough</h1>
-      <p>Our expert team provides comprehensive residential roofing services in Princes Risborough, including:</p>
+      <SchemaMarkup schema={schema} />
+      <h1>[Service] Services in {meta.title.split('|')[0].trim()}</h1>
+      <p>Our expert team provides comprehensive Residential Roofing services in Princes Risborough, including:</p>
       <ul>
         <li>Roof repairs and maintenance</li>
         <li>Complete roof replacements</li>

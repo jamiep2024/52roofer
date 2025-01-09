@@ -1,31 +1,34 @@
-import ServiceLayout from "'components/ServiceLayout"' (see below for file content);
+import ServiceLayout from '../../components/ServiceLayout';
+import SchemaMarkup from '../../components/SchemaMarkup';
 
 const ServiceLocationPage = () => {
   const meta = {
     title: '[Service] Services in Summertown Oxford | 52Roofer',
-    description: 'Professional roof maintenance services in Summertown Oxford. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!',
-    canonical: 'https://52roofer.com/services/roof maintenance/roofers-in-summertown-oxford',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "RoofingContractor",
-      "name": "52Roofer",
-      "url": "https://52roofer.com/services/roof maintenance/roofers-in-summertown-oxford",
-      "description": "Professional roof maintenance services in Summertown Oxford. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!",
-      "areaServed": "Summertown Oxford",
-      "priceRange": "$$",
-      "paymentAccepted": ["Cash", "Credit Card", "Check"],
-      "currenciesAccepted": "USD",
-      "sameAs": [
-        "https://www.facebook.com/52roofer",
-        "https://twitter.com/52roofer"
-      ]
-    }
+    description: 'Professional Roof Maintenance services in Summertown Oxford. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!',
+    canonical: 'https://52roofer.com/services/Roof Maintenance/roofers-in-summertown-oxford'
+  };
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "52Roofer",
+    "url": "https://52roofer.com/services/Roof Maintenance/roofers-in-summertown-oxford",
+    "description": "Professional Roof Maintenance services in Summertown Oxford. Expert roofing solutions from 52Roofer. Licensed, insured, and trusted local roofers. Free estimates!",
+    "areaServed": "Summertown Oxford",
+    "priceRange": "$$",
+    "paymentAccepted": ["Cash", "Credit Card", "Check"],
+    "currenciesAccepted": "USD",
+    "sameAs": [
+      "https://www.facebook.com/52roofer",
+      "https://twitter.com/52roofer"
+    ]
   };
 
   return (
     <ServiceLayout meta={meta}>
-      <h1>[Service] Services in Summertown Oxford</h1>
-      <p>Our expert team provides comprehensive roof maintenance services in Summertown Oxford, including:</p>
+      <SchemaMarkup schema={schema} />
+      <h1>[Service] Services in {meta.title.split('|')[0].trim()}</h1>
+      <p>Our expert team provides comprehensive Roof Maintenance services in Summertown Oxford, including:</p>
       <ul>
         <li>Roof repairs and maintenance</li>
         <li>Complete roof replacements</li>

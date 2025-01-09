@@ -1,24 +1,18 @@
-import LocalBusinessSchema from '../components/seo/LocalBusinessSchema';
-import SEO from '../components/seo/SEO';
-import Layout from '../components/layout/Layout';
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { serviceAreas } from '../../data/serviceAreas';
-import ServiceLayout from '../../components/ServiceLayout';
-import LocalBusinessSchema from '../../components/seo/LocalBusinessSchema';
-import HowToSchema from '../../components/seo/schemas/HowToSchema';
-import ReviewSchema from '../../components/seo/schemas/ReviewSchema';
-import VideoSchema from '../../components/seo/schemas/VideoSchema';
-import DynamicFAQ from '../../components/FAQ/DynamicFAQ';
+import { serviceAreas } from '../../../data/serviceAreas';
+import ServiceLayout from '../../../components/ServiceLayout';
+import LocalBusinessSchema from '../../../components/seo/LocalBusinessSchema';
+import HowToSchema from '../../../components/seo/schemas/HowToSchema';
+import ReviewSchema from '../../../components/seo/schemas/ReviewSchema';
+import VideoSchema from '../../../components/seo/schemas/VideoSchema';
+import DynamicFAQ from '../../../components/FAQ/DynamicFAQ';
 
 interface Service {
   title: string;
   description: string;
   icon: string;
-    </Layout>
-
-  );
 }
 
 interface Benefit {
@@ -63,10 +57,7 @@ const RoofReplacement: React.FC = () => {
       setShowMobileNav(window.scrollY > 500);
     };
     window.addEventListener('scroll', handleScroll);
-    return (
-    <Layout>
-      <Layout>
-<SEO title="" description="" />) => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const services: Service[] = [
@@ -201,10 +192,13 @@ const RoofReplacement: React.FC = () => {
 
   return (
     <ServiceLayout
-      heroImage="/images/services/local-roofing-hero.jpg"
-      heroTitle="Professional Roof Replacement Services"
-      heroDescription="Expert roof replacement with quality materials and workmanship"
-      serviceName="Roof Replacement"
+      title="Professional Roof Replacement Services"
+      description="Expert roof replacement with quality materials and workmanship"
+      image="/images/services/local-roofing-hero.jpg"
+      service="Roof Replacement"
+      serviceAreas={areaNames}
+      reviews={reviews}
+      faqs={initialFAQs}
     >
       <div className="space-y-12">
         <Head>
@@ -264,38 +258,40 @@ const RoofReplacement: React.FC = () => {
           />
           
 
-        <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "RoofingContractor",
-      "@id": "https://52roofer.com/services/roof-replacement#organization",
-      "name": "52Roofer",
-      "url": "https://52roofer.com/services/roof-replacement",
-      "image": "https://52roofer.com/images/hero-bg.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Oxford",
-        "addressRegion": "Oxfordshire",
-        "addressCountry": "GB"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://52roofer.com/services/roof-replacement#webpage",
-      "url": "https://52roofer.com/services/roof-replacement",
-      "name": "Roofing Services",
-      "isPartOf": {
-        "@id": "https://52roofer.com/#website"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://52roofer.com/services/roof-replacement#faq",
-      "mainEntity": []
-    }
-  ]
-}</script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "RoofingContractor",
+                "@id": "https://52roofer.com/services/roof-replacement#organization",
+                "name": "52Roofer",
+                "url": "https://52roofer.com/services/roof-replacement",
+                "image": "https://52roofer.com/images/hero-bg.jpg",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Oxford",
+                  "addressRegion": "Oxfordshire",
+                  "addressCountry": "GB"
+                }
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://52roofer.com/services/roof-replacement#webpage",
+                "url": "https://52roofer.com/services/roof-replacement",
+                "name": "Roofing Services",
+                "isPartOf": {
+                  "@id": "https://52roofer.com/#website"
+                }
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://52roofer.com/services/roof-replacement#faq",
+                "mainEntity": []
+              }
+            ]
+          })}
+        </script>
 </Head>
 
         {/* Voice Search Optimized Introduction */}

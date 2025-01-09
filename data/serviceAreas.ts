@@ -1,140 +1,50 @@
-export const serviceAreas = {
-  berkshire: {
-    name: "Berkshire",
-    postcodes: ["RG1-RG31", "RG40-RG45", "SL1-SL6"],
-    mainTowns: [
-      "Reading",
-      "Newbury",
-      "Windsor",
-      "Maidenhead",
-      "Bracknell",
-      "Slough",
-      "Wokingham",
-      "Thatcham",
-      "Hungerford",
-      "Ascot",
-    ],
+interface ServiceArea {
+  name: string;
+  slug: string;
+}
+
+const serviceAreas: Record<string, ServiceArea> = {
+  abingdon: {
+    name: 'Abingdon',
+    slug: 'abingdon'
   },
-  oxfordshire: {
-    name: "Oxfordshire",
-    postcodes: [
-      "OX1-OX5",
-      "OX9-OX14",
-      "OX18",
-      "OX20",
-      "OX25-OX29",
-      "OX33",
-      "OX39",
-      "OX44",
-      "OX49",
-    ],
-    mainTowns: [
-      "Oxford",
-      "Banbury",
-      "Bicester",
-      "Witney",
-      "Didcot",
-      "Abingdon",
-      "Thame",
-      "Henley-on-Thames",
-      "Wallingford",
-      "Chipping Norton",
-    ],
+  aldershot: {
+    name: 'Aldershot',
+    slug: 'aldershot'
   },
-  wiltshire: {
-    name: "Wiltshire",
-    postcodes: ["SN1-SN16", "SN25-SN26", "BA12-BA15", "SP1-SP5"],
-    mainTowns: [
-      "Swindon",
-      "Salisbury",
-      "Chippenham",
-      "Trowbridge",
-      "Marlborough",
-      "Devizes",
-      "Warminster",
-      "Melksham",
-      "Calne",
-      "Corsham",
-    ],
+  amersham: {
+    name: 'Amersham',
+    slug: 'amersham'
   },
-  gloucestershire: {
-    name: "Gloucestershire",
-    postcodes: ["GL1-GL20", "GL50-GL56"],
-    mainTowns: [
-      "Gloucester",
-      "Cheltenham",
-      "Stroud",
-      "Cirencester",
-      "Tewkesbury",
-      "Dursley",
-      "Tetbury",
-      "Stow-on-the-Wold",
-      "Moreton-in-Marsh",
-      "Fairford",
-    ],
+  andover: {
+    name: 'Andover',
+    slug: 'andover'
   },
-  hampshire: {
-    name: "Hampshire",
-    postcodes: ["SO14-SO53", "PO1-PO17", "RG21-RG29"],
-    mainTowns: [
-      "Southampton",
-      "Portsmouth",
-      "Winchester",
-      "Basingstoke",
-      "Andover",
-      "Aldershot",
-      "Farnborough",
-      "Eastleigh",
-      "Fareham",
-      "Gosport",
-    ],
+  ascot: {
+    name: 'Ascot',
+    slug: 'ascot'
   },
-  surrey: {
-    name: "Surrey",
-    postcodes: ["GU1-GU35", "KT1-KT24", "RH1-RH11"],
-    mainTowns: [
-      "Guildford",
-      "Woking",
-      "Farnham",
-      "Epsom",
-      "Redhill",
-      "Reigate",
-      "Staines",
-      "Dorking",
-      "Camberley",
-      "Leatherhead",
-    ],
+  aylesbury: {
+    name: 'Aylesbury',
+    slug: 'aylesbury'
   },
-  buckinghamshire: {
-    name: "Buckinghamshire",
-    postcodes: ["HP1-HP23", "MK1-MK19"],
-    mainTowns: [
-      "Milton Keynes",
-      "High Wycombe",
-      "Aylesbury",
-      "Amersham",
-      "Marlow",
-      "Buckingham",
-      "Chesham",
-      "Beaconsfield",
-      "Princes Risborough",
-      "Gerrards Cross",
-    ],
+  banbury: {
+    name: 'Banbury',
+    slug: 'banbury'
   },
-  westSussex: {
-    name: "West Sussex",
-    postcodes: ["BN11-BN18", "PO18-PO22", "RH10-RH20"],
-    mainTowns: [
-      "Crawley",
-      "Worthing",
-      "Horsham",
-      "Chichester",
-      "Bognor Regis",
-      "Littlehampton",
-      "East Grinstead",
-      "Haywards Heath",
-      "Burgess Hill",
-      "Shoreham-by-Sea",
-    ],
+  basingstoke: {
+    name: 'Basingstoke',
+    slug: 'basingstoke'
   },
+  beaconsfield: {
+    name: 'Beaconsfield',
+    slug: 'beaconsfield'
+  },
+  bicester: {
+    name: 'Bicester',
+    slug: 'bicester'
+  }
+  // Add more areas as needed
 };
+
+export { serviceAreas };

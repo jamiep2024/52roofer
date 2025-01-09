@@ -1,13 +1,29 @@
 {
   "extends": ["next/core-web-vitals", "prettier"],
   "rules": {
-    "@next/next/no-html-link-for-pages": "off",
+    "@next/next/no-html-link-for-pages": "error",
     "react/no-unescaped-entities": "off",
-    "@next/next/no-img-element": "off",
+    "@next/next/no-img-element": "error",
     "react/jsx-no-target-blank": "off",
     "react-hooks/exhaustive-deps": "warn",
-    "@next/next/no-sync-scripts": "off",
-    "react/display-name": "off"
+    "@next/next/no-sync-scripts": "error",
+    "react/display-name": "off",
+    "@next/next/google-font-display": "warn",
+    "@next/next/google-font-preconnect": "warn",
+    "@next/next/no-assign-module-variable": "error",
+    "@next/next/no-async-client-component": "error",
+    "@next/next/no-before-interactive-script-outside-document": "error",
+    "@next/next/no-css-tags": "error",
+    "@next/next/no-document-import-in-page": "error",
+    "@next/next/no-duplicate-head": "error",
+    "@next/next/no-head-element": "error",
+    "@next/next/no-head-import-in-document": "error",
+    "@next/next/no-page-custom-font": "error",
+    "@next/next/no-script-component-in-head": "error",
+    "@next/next/no-styled-jsx-in-document": "error",
+    "@next/next/no-title-in-document-head": "error",
+    "@next/next/no-typos": "warn",
+    "@next/next/no-unwanted-polyfillio": "warn"
   },
   "settings": {
     "next": {

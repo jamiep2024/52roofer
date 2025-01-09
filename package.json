@@ -6,7 +6,6 @@
   "license": "MIT",
   "description": "52Roofer - Professional Roofing Services Website",
   "scripts": {
-    "generate-sitemap": "node scripts/generate-sitemap.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -14,8 +13,7 @@
     "verify": "node scripts/verify-all-urls.js",
     "check-links": "node scripts/verify-site-health.js",
     "analyze": "cross-env ANALYZE=true next build",
-    "sitemap": "node ./scripts/generate-sitemap.js",
-    "postbuild": "next-sitemap",
+    "sitemap": "tsx ./scripts/generate-sitemap.ts",
     "test": "echo \"No tests specified\""
   },
   "dependencies": {
@@ -60,7 +58,13 @@
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-react": "^7.33.2",
     "prettier": "^3.1.1",
-    "prettier-plugin-tailwindcss": "^0.5.9"
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "ts-node": "10.9.2",
+    "tsx": "4.19.2"
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   },
   "engines": {
     "node": ">=18.17.0",
