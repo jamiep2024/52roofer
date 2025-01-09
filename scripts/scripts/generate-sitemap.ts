@@ -37,7 +37,7 @@ async function generateSitemap() {
     parser: "html"
   });
 
-  writeFileSync("public/sitemap.xml", formatted, "utf8");
+  writeFileSync("52roofer/public/sitemap.xml", formatted, "utf8");
 }
 
 (async () => {

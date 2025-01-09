@@ -1,14 +1,15 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "target": "es2020",
     "noEmit": false,
     "outDir": "./dist",
-    "rootDir": "./scripts/scripts",
+    "rootDir": "./scripts",
     "module": "CommonJS",
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["scripts/**/*.ts"]
+  "include": ["scripts/scripts/**/*.ts"]
 }
