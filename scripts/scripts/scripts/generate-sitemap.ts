@@ -1,13 +1,12 @@
-cat > (scripts / generate - sitemap.ts) << "EOL";
 import { writeFileSync } from "fs";
-import { globby } from "globby";
+import globby from "globby";
 import prettier from "prettier";
 import path from "path";
 
 async function generateSitemap(): Promise<void> {
   try {
     const prettierConfig = await prettier.resolveConfig("./.prettierrc");
-    const pages = await globby([
+    const pages: string[] = await globby([
       "pages/**/*.tsx",
       "pages/**/*.ts",
       "pages/**/*.js",
@@ -20,7 +19,7 @@ async function generateSitemap(): Promise<void> {
 
     const siteUrl = "https://52roofer.com";
 
-    const staticPages = pages.map((page) => {
+    const staticPages = pages.map((page: string) => {
       const path = page
         .replace("pages", "")
         .replace(/\.(tsx|ts|jsx|js)$/, "")
@@ -58,7 +57,7 @@ async function generateSitemap(): Promise<void> {
       </urlset>
     `;
 
-    const formatted = prettier.format(sitemap, {
+    const formatted = await prettier.format(sitemap, {
       ...prettierConfig,
       parser: "html",
     });
@@ -74,4 +73,3 @@ async function generateSitemap(): Promise<void> {
 }
 
 generateSitemap().catch(console.error);
-EOL;
