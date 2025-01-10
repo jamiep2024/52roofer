@@ -14,13 +14,8 @@
     "verify": "node scripts/verify-all-urls.js",
     "check-links": "node scripts/verify-site-health.js",
     "analyze": "cross-env ANALYZE=true next build",
-<<<<<<< HEAD
-    "sitemap": "tsx ./scripts/generate-sitemap.ts",
-    "test": "echo \"No tests specified\""
-=======
     "test": "echo \"No tests specified\"",
-    "sitemap": "ts-node --project tsconfig.scripts.json scripts/scripts/generate-sitemap.ts"
->>>>>>> 5144277172e154fb92c1be62166b7b6c847d1845
+    "sitemap": "tsx ./scripts/generate-sitemap.ts"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -50,12 +45,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "schema-dts": "^1.1.2",
-<<<<<<< HEAD
-    "tailwindcss": "^3.4.0",
-=======
     "sitemap-generator": "7.5.2",
     "tailwindcss": "3.4.17",
->>>>>>> 5144277172e154fb92c1be62166b7b6c847d1845
     "typescript": "^5.3.3",
     "xml2js": "^0.6.2"
   },
@@ -65,7 +56,6 @@
     "@types/node-fetch": "^2.6.9",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
-<<<<<<< HEAD
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-react": "^7.33.2",
     "globby": "14.0.2",
@@ -77,15 +67,6 @@
   "ts-node": {
     "esm": true,
     "experimentalSpecifierResolution": "node"
-=======
-    "esbuild": "0.24.2",
-    "eslint": "9.17.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-react": "^7.33.2",
-    "prettier": "^3.1.1",
-    "prettier-plugin-tailwindcss": "^0.5.9",
-    "ts-node": "^10.9.2"
->>>>>>> 5144277172e154fb92c1be62166b7b6c847d1845
   },
   "engines": {
     "node": ">=18.17.0",
