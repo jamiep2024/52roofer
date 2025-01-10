@@ -10,7 +10,6 @@ const nextConfig = {
     domains: ['images.unsplash.com'],
     formats: ['image/avif', 'image/webp'],
   },
-<<<<<<< HEAD
   async redirects() {
     return [
       // Location redirects
@@ -60,7 +59,7 @@ const nextConfig = {
         permanent: true,
         destination: "https://52roofer.com/:path*",
       },
-      // Trailing slash handling
+     // Trailing slash handling
       {
         source: "/:path+/",
         destination: "/:path+",
@@ -68,44 +67,40 @@ const nextConfig = {
       },
     ];
   },
-  async headers() {
+   async headers() {
     return [
-      {
-        source: "/sitemap.xml",
+          {
+            source: "/sitemap.xml",
+            headers: [
+              {
+                key: "Content-Type",
+                value: "application/xml",
+              },
+             ],
+           },
+     {
+        source: '/(.*)',
         headers: [
           {
-            key: "Content-Type",
-            value: "application/xml",
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
           },
         ],
       },
     ];
   },
-};
-=======
-  headers: async () => [
-    {
-      source: '/(.*)',
-      headers: [
-        {
-          key: 'X-Content-Type-Options',
-          value: 'nosniff',
-        },
-        {
-          key: 'X-Frame-Options',
-          value: 'DENY',
-        },
-        {
-          key: 'X-XSS-Protection',
-          value: '1; mode=block',
-        },
-      ],
-    },
-  ],
   output: 'standalone',
   productionBrowserSourceMaps: true,
   reactStrictMode: true,
-}
+};
 
-module.exports = nextConfig
->>>>>>> 5144277172e154fb92c1be62166b7b6c847d1845
+module.exports = nextConfig;
+
