@@ -61,5 +61,17 @@ const nextConfig = {
       },
     ];
   },
-  // Rest of your config...
+  async headers() {
+    return [
+      {
+        source: "/sitemap.xml",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/xml",
+          },
+        ],
+      },
+    ];
+  },
 };
