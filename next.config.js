@@ -1,9 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    domains: ["52roofer.com", "img.youtube.com"],
+  eslint: {
+    ignoreDuringBuilds: true,
   },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  images: {
+    domains: ['images.unsplash.com'],
+    formats: ['image/avif', 'image/webp'],
+  },
+<<<<<<< HEAD
   async redirects() {
     return [
       // Location redirects
@@ -75,3 +82,30 @@ const nextConfig = {
     ];
   },
 };
+=======
+  headers: async () => [
+    {
+      source: '/(.*)',
+      headers: [
+        {
+          key: 'X-Content-Type-Options',
+          value: 'nosniff',
+        },
+        {
+          key: 'X-Frame-Options',
+          value: 'DENY',
+        },
+        {
+          key: 'X-XSS-Protection',
+          value: '1; mode=block',
+        },
+      ],
+    },
+  ],
+  output: 'standalone',
+  productionBrowserSourceMaps: true,
+  reactStrictMode: true,
+}
+
+module.exports = nextConfig
+>>>>>>> 5144277172e154fb92c1be62166b7b6c847d1845

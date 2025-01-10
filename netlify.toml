@@ -7,3 +7,6 @@
   [headers.values]
     Content-Type = "text/xml"
     Cache-Control = "public, max-age=0, must-revalidate"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
