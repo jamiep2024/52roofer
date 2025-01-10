@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import Layout from '../layout/Layout';
 import Hero from '../Hero';
-import LocationDetails from '../LocationDetails';
 import ServiceAreas from '../ServiceAreas';
 
 interface LocationPageTemplateProps {
@@ -21,7 +20,6 @@ export default function LocationPageTemplate({
         title={`Roofing Services in ${locationName}`}
         image={heroImage}
       />
-      <LocationDetails location={locationName} />
       <ServiceAreas location={locationName} />
       {children}
     </Layout>
