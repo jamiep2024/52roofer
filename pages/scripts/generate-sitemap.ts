@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import { globby } from 'globby';
 import * as prettier from 'prettier';
 
-export default async function generateSitemap() {
+export async function generateSitemap() {
   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
   const pages = await globby([
     "pages/**/*.tsx",
@@ -46,4 +46,4 @@ export default async function generateSitemap() {
   await fs.writeFile(resolve("public/sitemap.xml"), formatted);
 }
 
-generateSitemap();
+export default { generateSitemap };
