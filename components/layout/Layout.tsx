@@ -7,6 +7,7 @@ import MobileOptimizer from "../optimization/MobileOptimizer";
 
 interface LayoutProps {
   children: React.ReactNode;
+  title?: string;
 }
 
 export const metadata: Metadata = {
