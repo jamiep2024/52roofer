@@ -2,11 +2,12 @@ import React from 'react'
 import QuoteForm from './QuoteForm'
 
 interface HeroProps {
+  title: string
   locationName: string
   heroImage: string
 }
 
-export default function Hero({ locationName, heroImage }: HeroProps) {
+export default function Hero({ title, locationName, heroImage }: HeroProps) {
   return (
     <div className="relative min-h-[600px] bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }}>
       <div className="absolute inset-0 bg-black/50"></div>
@@ -23,7 +24,7 @@ export default function Hero({ locationName, heroImage }: HeroProps) {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 md:mb-8 text-center md:text-left">
-              Your Trusted Local Roofing Experts in {locationName}
+              {title}
             </h1>
             
             <p className="text-lg md:text-2xl mb-8 md:mb-10 text-center md:text-left">
