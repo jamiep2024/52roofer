@@ -1,9 +1,9 @@
-// scripts/generate-sitemap.ts
-import { writeFileSync } from "fs";
-import { globby } from "globby";
-import prettier from "prettier";
+import { promises as fs } from 'fs';
+import { resolve } from 'path';
+import { globby } from 'globby';
+import * as prettier from 'prettier';
 
-async function generate() {
+export default async function generateSitemap() {
   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
   const pages = await globby([
     "pages/**/*.tsx",
@@ -18,7 +18,7 @@ async function generate() {
     <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${pages
-        .map((page) => {
+        .map((page: string) => {
           const path = page
             .replace("pages", "")
             .replace(".tsx", "")
@@ -38,12 +38,12 @@ async function generate() {
     </urlset>
   `;
 
-  const formatted = prettier.format(sitemap, {
+  const formatted = await prettier.format(sitemap, {
     ...prettierConfig,
     parser: "html",
   });
 
-  writeFileSync("public/sitemap.xml", formatted);
+  await fs.writeFile(resolve("public/sitemap.xml"), formatted);
 }
 
-generate();
+generateSitemap();
