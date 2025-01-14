@@ -23,5 +23,5 @@
       "rootDir": "."
     }
   },
-  "ignorePatterns": ["node_modules/", ".next/", "out/", "public/", "scripts/"]
+  "ignorePatterns": ["node_modules/", ".next/", "out/", "public/"]
 }
