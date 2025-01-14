@@ -1,12 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Header = () => {
+interface HeaderProps {
+  title: string;
+}
+
+const Header = ({ title }: HeaderProps) => {
   return (
     <header className="bg-white shadow-sm">
       <div className="container mx-auto px-4 py-6 flex justify-between items-center">
         <Link href="/">
-          <a className="text-2xl font-bold text-gray-800">52Roofer</a>
+          <a className="text-2xl font-bold text-gray-800">{title}</a>
         </Link>
         <nav className="space-x-6">
           <Link href="/services">
