@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { generateSitemap } from '../scripts/generate-sitemap';
+import { generateSitemap } from '@scripts/generate-sitemap';
 
 export default async function handler(
   req: NextApiRequest,
