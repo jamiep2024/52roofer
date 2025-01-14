@@ -17,7 +17,8 @@ export default function LocationPageTemplate({
     <Layout title={`${locationName} Roofing Services`}>
       <Hero 
         title={`Roofing Services in ${locationName}`}
-        image={heroImage}
+        heroImage={heroImage}
+        locationName={locationName}
       />
       
       {children}
