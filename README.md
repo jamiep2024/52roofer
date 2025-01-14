@@ -75,3 +75,6 @@ The build process is configured in `netlify.toml` and includes:
 ## License
 
 Private - All rights reserved
+ 
+ 
+ 
